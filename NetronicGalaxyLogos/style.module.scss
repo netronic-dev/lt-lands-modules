@@ -1,0 +1,36 @@
+.logos {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  hr {
+    height: 55px;
+    border: 1px solid #4f4f4f;
+  }
+
+  .cell img {
+    height: 100%;
+    padding: 20px 40px;
+  }
+}
+@media (max-width: 576px) {
+  .logos {
+    height: auto;
+    hr {
+      border: 1px solid #1b1b1b;
+    }
+    .cell {
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+    .cell img {
+      padding: 25px 0;
+    }
+    .cell:last-child img {
+      padding: 0px 0;
+    }
+  }
+}

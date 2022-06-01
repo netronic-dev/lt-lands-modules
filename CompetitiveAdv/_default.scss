@@ -1,0 +1,29 @@
+$font-family: Inter;
+$color-1: #0090ff;
+$color-2: #000;
+$text-color: #4f4f4f;
+
+%title {
+	font-family: Inter-Medium;
+	font-size: 36px;
+	line-height: 50px;
+	color: #000000;
+	margin: 0;
+	span {
+		color: $color-1;
+		text-transform: uppercase;
+	}
+}
+
+%page_grid {
+	width: 100%;
+	max-width: 1210px;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+@media (max-width: 575px) {
+	%title {
+		font-size: 24px;
+		line-height: 29px;
+	}
+}

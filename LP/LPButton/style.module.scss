@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"),
+	"../default";
+
+%button {
+	outline: 0;
+	border: 0;
+	border-radius: 60px;
+	font-family: $font-1;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	height: 45px;
+	width: max-content;
+	padding: 0 25px 0;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.button {
+	@extend %button;
+	color: #fff;
+}
+.light_button {
+	@extend %button;
+	color: #000;
+}
+.video_icon {
+	margin-left: 17px;
+}
+.hover_black {
+	&:hover {
+		background-color: #000 !important;
+	}
+}
+
+.hover_white {
+	&:hover {
+		color: #040e18;
+		background-color: #fff !important;
+	}
+}
+
+.hover_blue {
+	&:hover {
+		background-color: #0090ff !important;
+	}
+}
+.hover_grey {
+	&:hover {
+		background: #c4c4c4 !important;
+		color: #040e18;
+		.video_icon {
+			path {
+				fill: #040e18;
+			}
+		}
+	}
+}
+.hover_dark_blue {
+	&:hover {
+		background: #0061ac !important;
+	}
+}
+@media (max-width: 500px) {
+	.full_width {
+		width: 100%;
+		height: 60px;
+		font-size: 18px;
+		line-height: 25px;
+		justify-content: center;
+	}
+}

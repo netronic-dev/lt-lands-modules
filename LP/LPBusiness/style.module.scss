@@ -1,0 +1,10 @@
+.business {
+	background: #f1f4f6;
+	border-radius: 20px 20px 0 0;
+	margin-top: 120px;
+}
+@media (max-width: 600px) {
+	.business {
+		margin-top: 80px;
+	}
+}

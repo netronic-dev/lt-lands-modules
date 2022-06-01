@@ -1,0 +1,22 @@
+@import "../default";
+
+.reviews {
+	padding: 150px 0 80px;
+	background-color: #f1f4f6;
+	border-radius: 0 0 20px 20px;
+	* {
+		font-family: $font-1;
+	}
+	.title {
+		@extend %page_grid;
+		@extend %title;
+		color: $black;
+		margin-bottom: 65px;
+		margin-top: 0;
+	}
+}
+@media (max-width: 600px) {
+	.reviews {
+		padding: 40px 0 80px;
+	}
+}

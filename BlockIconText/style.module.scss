@@ -1,0 +1,79 @@
+%title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+}
+%text {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.first {
+  padding: 45px 45px 50px 45px;
+  .title {
+    @extend %title;
+    color: #212121;
+  }
+  .text {
+    @extend %text;
+    color: #8e8e8e;
+  }
+  .icon {
+    margin-bottom: 15px;
+    img {
+      width: 55px;
+    }
+  }
+}
+.second {
+  .title {
+    @extend %title;
+    color: #fff;
+  }
+  .text {
+    @extend %text;
+    color: #8e8e8e;
+  }
+  .icon {
+    margin-bottom: 15px;
+    img {
+      width: 55px;
+    }
+  }
+}
+.third {
+  .title {
+    @extend %title;
+    color: #1d1d1f;
+  }
+  .text {
+    @extend %text;
+    color: #4f4f4f;
+  }
+}
+.lto_Black {
+  .title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .text {
+    @extend %text;
+    color: #8e8e8e;
+  }
+  .icon {
+    margin-bottom: 15px;
+    img {
+      width: 60px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .first {
+    padding: 30px;
+  }
+}

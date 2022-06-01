@@ -1,0 +1,263 @@
+%margins {
+	margin: 0 auto;
+	width: 1170px;
+}
+.body_top {
+	padding-bottom: 70px;
+	position: relative;
+	overflow: hidden;
+	.body_top_bg {
+		position: absolute;
+		overflow: hidden;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+	}
+}
+.body_top__content {
+	@extend %margins;
+	position: relative;
+	z-index: 2;
+	margin-top: 125px;
+	text-align: center;
+	.title {
+		width: 970px;
+		margin: 0 auto;
+		font-weight: 700;
+		font-size: 72px;
+		line-height: 80px;
+		color: #212121;
+	}
+
+	.text {
+		width: 570px;
+		margin: 40px auto;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 28px;
+		color: #4f4f4f;
+	}
+	.button {
+		width: max-content;
+		margin: 0 auto;
+		position: relative;
+	}
+}
+.body_top__image {
+	margin: 55px auto 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+}
+.body_middle {
+	background-color: #000;
+	padding: 150px 0;
+	.title_center {
+		width: 570px;
+		margin: 0 auto 90px;
+		text-align: center;
+		color: #fff;
+	}
+	.cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+		width: 775px;
+		margin: 0 auto 20px;
+		.cards__cell {
+			background-color: #101010;
+			padding: 40px 45px 50px 45px;
+			h3 {
+				font-weight: 400;
+				font-size: 24px;
+				line-height: 24px;
+				color: #ffffff;
+			}
+			p {
+			}
+		}
+	}
+	.middle_card {
+		background-color: #101010;
+		width: 775px;
+		margin: 0 auto 200px;
+		padding: 100px 0;
+		.middle_card__cells {
+			padding: 0 100px;
+			margin-bottom: 65px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 20px;
+			grid-row-gap: 40px;
+			.cell {
+				border-top: 1px solid #8e8e8e;
+				padding-top: 30px;
+				.number {
+					font-weight: 700;
+					font-size: 72px;
+					line-height: 54px;
+					color: #ffffff;
+					margin-bottom: 20px;
+				}
+				.cell__text {
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 24px;
+					color: #8e8e8e;
+				}
+			}
+		}
+		.image {
+			margin-bottom: 85px;
+			img {
+				width: 100%;
+			}
+		}
+		.content {
+			padding: 0 80px;
+			text-align: center;
+			.title_center {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.BIT_cards {
+		@extend %margins;
+		.BIT_cards_grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-column-gap: 20px;
+			grid-row-gap: 20px;
+		}
+		.BIT_cards__cell {
+			padding: 45px;
+			background-color: #101010;
+		}
+	}
+}
+.body_bottom {
+	background-color: #fff;
+	padding-bottom: 100px;
+	.body_bottom__image {
+		width: 100%;
+		margin-bottom: 65px;
+		img {
+			margin-top: -5px;
+			width: 100%;
+		}
+	}
+	.bottom_BIT_cards {
+		@extend %margins;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-row-gap: 20px;
+		grid-column-gap: 20px;
+		.cell {
+			background-color: #101010;
+			padding: 40px 50px 70px 35px;
+		}
+	}
+}
+@media (max-width: 1200px) {
+	%margins {
+		margin-left: 20px;
+		margin-right: 20px;
+		width: auto;
+	}
+	.body_top {
+		background-image: none;
+	}
+	.body_middle {
+		.BIT_cards {
+			.BIT_cards_grid {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.body_top__content {
+		margin-top: 50px;
+		.title {
+			width: auto;
+			font-size: 50px;
+			line-height: 60px;
+		}
+	}
+	.body_middle {
+		.cards {
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		.middle_card {
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.body_middle {
+		.cards {
+			grid-template-columns: 1fr;
+			grid-row-gap: 20px;
+		}
+		.middle_card {
+			.middle_card__cells {
+				padding: 0 50px;
+			}
+			.content {
+				padding: 0 20px;
+			}
+			.title_center {
+				width: auto;
+				margin: 0 20px 90px;
+			}
+		}
+		.BIT_cards {
+			.BIT_cards_grid {
+				grid-template-columns: 1fr;
+			}
+			.BIT_cards__cell {
+				padding: 35px;
+			}
+		}
+	}
+	.body_bottom {
+		background-color: #fff;
+		padding-bottom: 100px;
+		.bottom_BIT_cards {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+@media (max-width: 650px) {
+	.body_top__content {
+		.title {
+			font-size: 36px;
+			line-height: 42px;
+		}
+		.text {
+			width: auto;
+		}
+	}
+	.body_middle {
+		.middle_card {
+			.middle_card__cells {
+				grid-template-columns: 1fr;
+				padding: 0 20px;
+			}
+		}
+	}
+}
+@media (max-width: 576px) {
+	.body_middle {
+		.title_center {
+			width: auto;
+			margin: 0 20px 90px;
+		}
+	}
+}

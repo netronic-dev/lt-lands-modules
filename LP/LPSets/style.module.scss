@@ -1,0 +1,74 @@
+@import "../default";
+
+.sets {
+	padding-top: 150px;
+	background: #202020;
+}
+.title {
+	@extend %page_grid;
+	@extend %title;
+	color: #f1f4f6;
+	margin-bottom: 85px;
+}
+.grid {
+	@extend %page_grid;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 40px;
+	margin-bottom: 150px;
+}
+.cell__title {
+	font-family: $font-1;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 45px;
+	text-transform: uppercase;
+	color: #f1f4f6;
+	margin: 0 0 33px;
+	span {
+		color: #0090ff;
+	}
+}
+.cell__text {
+	font-family: $font-1;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: #c4c4c4;
+	max-width: 500px;
+}
+.image {
+	position: relative;
+	height: 500px;
+	background-color: #fff;
+	img {
+		border-radius: 0px 0px 20px 20px;
+	}
+}
+@media (max-width: 1500px) {
+	.grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.cell__title {
+		font-size: 24px;
+		line-height: 36px;
+	}
+}
+@media (max-width: 650px) {
+	.sets {
+		padding-top: 85px;
+	}
+	.grid {
+		grid-template-columns: 1fr;
+		margin-bottom: 85px;
+	}
+	.cell__title {
+		font-size: 24px;
+		line-height: 30px;
+		margin: 0 0 15px;
+	}
+	.cell__text {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}

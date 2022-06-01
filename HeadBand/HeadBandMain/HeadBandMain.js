@@ -1,0 +1,70 @@
+import style from "../headband.module.scss"
+import Image from "next/image"
+import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
+import { PriceButton } from "../../../Buttons/Buttons"
+import { useInView } from "react-hook-inview"
+
+export default function HeadBandMain(props) {
+  const [ref, refVisible] = useInView(
+    {
+      unobserveOnEnter: true
+    }
+  )
+  return (
+    <div className={style.section_general} ref={ref}>
+      <div
+        className={`${style.section_general__bg} fade-animation`}
+        key={refVisible ? "bg" : "bg-inview"}
+      >
+        <Image
+          src="/bandNetronic/band-bg.jpg"
+          layout="fill"
+          quality={90}
+          priority={true}
+        />
+      </div>
+      <BreadCrumbs
+        color="anotherWhite"
+        breadcrumbData={props.breadcrumbData}
+      />
+      <section
+        className={`${style.inside_general} fade-up-animation`}
+        key={refVisible ? "text" : "text-inview"}
+      >
+        <h1>
+          {props.title}
+        </h1>
+        <p className={style.text}>
+          {props.text}
+        </p>
+        <div className={style.general__button}>
+          <PriceButton
+            en={props.en}
+            catalog={true}
+            style="blueWhite"
+            text={props.buttonText}
+          />
+        </div>
+      </section>
+      <div className={`${style.general__band} fade-animation`}
+        key={refVisible ? "band" : "band-inview"}>
+        <Image
+          src="/bandNetronic/band.png"
+          alt="band"
+          layout="responsive"
+          width={1100}
+          height={405}
+          quality={90}
+          priority={true}
+        />
+      </div>
+      <div className={style.general__button_new}>
+        <PriceButton
+          catalog={true}
+          style="blueWhite"
+          text={props.buttonText}
+        />
+      </div>
+    </div>
+  )
+}

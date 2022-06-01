@@ -1,0 +1,664 @@
+$grey: #8e8e8e;
+%margins {
+	width: 1170px;
+	margin: 0 auto;
+}
+%marginbtm_50 {
+	margin-bottom: 50px;
+}
+%flex_columns {
+	display: flex;
+	flex-direction: column;
+}
+%title {
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 60px;
+	width: 100%;
+}
+%grid_cards {
+	@extend %margins;
+	display: grid;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	margin-bottom: 20px;
+	h3 {
+		width: auto;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 34px;
+		color: #0090ff;
+		margin-bottom: 8px;
+	}
+	p {
+		margin: 0;
+		@extend %marginbtm_50;
+	}
+}
+%card {
+	@extend %flex_columns;
+	align-items: center;
+	background-color: #101010;
+	padding: 40px 35px 60px 35px;
+	border-radius: 5px;
+	.image {
+		width: 310px;
+	}
+}
+.footer_buttons {
+	margin-top: 100px;
+}
+
+.screen {
+	background-color: #000000;
+	h2 {
+		margin: 200px auto 70px auto;
+		width: 1170px;
+		color: #212121;
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 60px;
+	}
+	span {
+		color: $grey;
+	}
+	.img {
+		@extend %margins;
+	}
+	.img img {
+		width: 100%;
+		border-radius: 10px;
+	}
+}
+
+.lo__title {
+	padding-left: 30px;
+	color: $grey !important;
+	span {
+		color: #0090ff;
+	}
+}
+.icons_grid__title {
+	text-align: center;
+	margin-bottom: 100px;
+	span {
+		color: white;
+	}
+	.lo__title {
+		margin-top: 0;
+	}
+}
+.ready_chars {
+	@extend %grid_cards;
+	grid-template-columns: 2fr 1fr;
+	grid-column-gap: 20px;
+	.card_left {
+		border-radius: 5px;
+		padding: 55px 55px 60px;
+		background-color: #101010;
+		section {
+			margin-bottom: 50px;
+		}
+	}
+}
+.ready_chars__img_long {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.ready_chars_bit_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 30px;
+	grid-row-gap: 0px;
+}
+.empty {
+	flex: 1;
+}
+.section_general {
+	background: url("../../../public/lasertagOperator/lasertagOperator.svg");
+	height: 1300px;
+	width: 100%;
+	position: relative;
+	background-size: contain;
+	background-position: center center;
+	margin: 0 auto 0px;
+	@extend %flex_columns;
+}
+.bg_first {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.inside_general {
+	@extend %flex_columns;
+	align-items: center;
+	margin-bottom: 60px;
+	height: 100%;
+}
+.general__phone {
+	margin: 75px auto;
+	position: relative;
+	z-index: 3;
+	width: 350px;
+}
+.general_content {
+	transform: translateY(-100px);
+	@extend %margins;
+	z-index: 10;
+	@extend %flex_columns;
+	align-items: center;
+	height: 100%;
+	justify-content: flex-end;
+	margin-bottom: 50px;
+	h1 {
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 56px;
+		text-align: center;
+		color: #fff;
+		margin-bottom: 35px;
+	}
+	p {
+		width: 55%;
+		text-align: center;
+		@extend %marginbtm_50;
+	}
+}
+
+.icons_grid {
+	@extend %margins;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	background-color: #101010;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 50px;
+	padding: 60px 20px;
+	.column {
+		text-align: center;
+		img {
+			width: 60px;
+			margin-bottom: 25px;
+		}
+		p {
+			text-align: center;
+		}
+	}
+}
+
+.nonGrid {
+	@extend %grid_cards;
+	.card {
+		padding-bottom: 0;
+		p {
+			width: 100%;
+			margin: 0 0 20px 60px;
+			padding-right: 20px;
+		}
+	}
+}
+.nonGrid__img {
+	margin-bottom: -4px;
+	width: 100%;
+}
+.grid_easy_game {
+	@extend %grid_cards;
+	grid-template-columns: 1fr 1fr;
+	.card {
+		@extend %card;
+		p {
+			height: 120px;
+			margin-bottom: 50px;
+		}
+	}
+}
+.ready_scripts {
+	section {
+		@extend %margins;
+		h2 {
+			margin-bottom: 40px;
+		}
+		p {
+			padding-left: 30px;
+			margin-bottom: 70px;
+		}
+	}
+}
+.grid_ready_chars {
+	@extend %grid_cards;
+	grid-template-columns: 1fr 2fr;
+	.card {
+		@extend %card;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row-gap: 50px;
+		grid-column-gap: 20px;
+		text-align: center;
+		background-color: #101010;
+		.grid_ready_chars__img {
+			height: 65px;
+			margin-bottom: 25px;
+		}
+		p {
+			color: white;
+		}
+	}
+	.card_left {
+		@extend %card;
+	}
+}
+.grid_fastLearning {
+	@extend %grid_cards;
+	grid-template-columns: 1fr 2fr;
+	.grid_card_left {
+		@extend %card;
+		padding-bottom: 0;
+		.grid_fastLearning__img {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.card {
+		@extend %card;
+	}
+}
+.grid_personal_statistics {
+	@extend %grid_cards;
+	grid-template-columns: 1fr 1fr;
+	.card_left {
+		@extend %card;
+		padding-bottom: 0;
+		.card_left__img {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.card {
+		@extend %card;
+	}
+}
+.card {
+	@extend %card;
+}
+
+.phones_screen {
+	height: 1200px;
+	width: 80%;
+	margin: 0 auto 200px auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+%phones {
+	width: 100%;
+	height: 100%;
+	animation-duration: 900ms;
+	animation-delay: 300ms;
+	animation-timing-function: ease;
+	animation-direction: normal;
+	animation-fill-mode: both;
+	animation-iteration-count: 1;
+	img {
+		width: 100%;
+	}
+}
+.phones_first {
+	@extend %phones;
+	animation-name: phone-1-animation;
+}
+@keyframes phone-1-animation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(300px);
+	}
+}
+.phones_second {
+	@extend %phones;
+	animation-name: phone-2-animation;
+}
+@keyframes phone-2-animation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(530px);
+	}
+}
+.phones_third {
+	@extend %phones;
+	animation-name: phone-3-animation;
+}
+@keyframes phone-3-animation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(40px);
+	}
+}
+.phones_fours {
+	@extend %phones;
+	animation-name: phone-4-animation;
+}
+@keyframes phone-4-animation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(650px);
+	}
+}
+.phones_fives {
+	@extend %phones;
+	animation-name: phone-5-animation;
+}
+@keyframes phone-5-animation {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(440px);
+	}
+}
+.statistics {
+	section {
+		margin: 0 auto;
+		text-align: center;
+		width: 650px;
+		margin-bottom: 120px;
+	}
+	h2 {
+		width: 650px;
+		padding: 0;
+		margin: 0 0 30px;
+	}
+}
+@media (max-width: 1600px) {
+	.section_general {
+		height: 1400px;
+	}
+}
+@media (max-width: 1400px) {
+	.section_general {
+		height: 1300px;
+	}
+	.general_content {
+		transform: translateY(-160px);
+	}
+}
+@media (max-width: 1200px) {
+	.statistics {
+		section {
+			padding: 0 20px;
+			margin: 0 auto;
+			text-align: center;
+			width: 650px;
+			margin-bottom: 120px;
+		}
+	}
+	.general_content {
+		transform: translateY(-40px);
+	}
+	.section_general {
+		margin: 0 auto;
+		@extend %flex_columns;
+	}
+	.phones_screen {
+		height: auto;
+		width: auto;
+		padding: 0 50px;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.phones_first {
+		transform: translateY(0);
+	}
+	.phones_second {
+		transform: translateY(0);
+	}
+	.phones_third {
+		transform: translateY(0);
+	}
+	.phones_fours {
+		transform: translateY(0);
+	}
+	.phones_fives {
+		transform: translateY(0);
+	}
+	.grid_fastLearning {
+		grid-template-columns: 1fr;
+	}
+	%margins {
+		width: auto;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.bigScreenBlock {
+		h2 {
+			padding: 0 20px;
+		}
+	}
+	.screen {
+		h2 {
+			width: auto;
+		}
+	}
+	.grid_easy_game {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+@media (max-width: 992px) {
+	.icons_grid__title {
+		margin-bottom: 50px;
+	}
+	.phones_screen {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.ready_chars {
+		grid-template-columns: 1fr;
+	}
+	.grid_ready_chars {
+		grid-template-columns: 1fr;
+	}
+	.grid_personal_statistics {
+		grid-template-columns: 1fr;
+	}
+	.statisticsTable {
+		width: auto;
+		margin: 0;
+	}
+	.grid_easy_game {
+		grid-template-columns: 1fr;
+	}
+	.icons_grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.screen {
+		h2 {
+			margin: 150px auto 70px;
+			font-size: 40px;
+			line-height: 50px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.icons_grid__title {
+		h2 {
+			padding: 0;
+		}
+	}
+	.section_general {
+		height: 1200px;
+	}
+	.general_content {
+		transform: translateY(-60px);
+		margin-bottom: 0;
+		p {
+			width: auto;
+			padding: 0 20px;
+		}
+	}
+	.statistics {
+		section {
+			width: auto;
+			margin-bottom: 100px;
+		}
+		h2 {
+			width: auto;
+		}
+	}
+	.phones_screen {
+		margin-bottom: 100px;
+		grid-template-columns: 1fr 1fr;
+	}
+	.ready_chars_bit_grid {
+		grid-template-columns: 1fr;
+	}
+	.icons_grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.screen {
+		h2 {
+			font-size: 35px;
+			line-height: 45px;
+		}
+	}
+}
+@media (max-width: 576px) {
+	%card {
+		margin-left: 20px;
+		margin-right: 20px;
+		.grid_card__img {
+			width: 100%;
+		}
+		.image {
+			width: 250px;
+		}
+	}
+	.general__phone {
+		width: 270px;
+	}
+	.general__img {
+		top: 50px;
+		padding-bottom: 100%;
+	}
+	.grid_easy_game {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.ready_scripts {
+		section {
+			h2 {
+				padding: 0;
+			}
+			p {
+				padding: 0;
+			}
+		}
+	}
+	.statistics {
+		section {
+			width: auto;
+			margin-bottom: 140px;
+			h2 {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.grid_fastLearning {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.grid_personal_statistics {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.general_content {
+		transform: translateY(100px);
+		h1 {
+			font-size: 35px;
+			line-height: 45px;
+		}
+	}
+	.section_general {
+		height: 1150px;
+		background-size: cover;
+		margin-bottom: 180px;
+	}
+	.phones_screen {
+		margin-bottom: 50px;
+		height: auto;
+		grid-template-columns: 1fr;
+	}
+	.ready_chars {
+		.card_left {
+			border-radius: 5px;
+			padding: 30px;
+		}
+		.card {
+			margin: 0;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.grid_ready_chars {
+		margin-left: 0;
+		margin-right: 0;
+		.card {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	.table_tv {
+		font-size: 14px;
+		line-height: 18px;
+		.table_tv__head {
+			font-size: 14px;
+			line-height: 18px;
+		}
+		td {
+			padding: 15px;
+		}
+	}
+	.screen {
+		h2 {
+			font-size: 30px;
+			line-height: 40px;
+		}
+	}
+	.icons_grid {
+		grid-template-columns: 1fr;
+	}
+	.nonGrid {
+		margin: 0;
+		.card {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+		p {
+			padding: 40px 0 0 35px;
+			margin: 0 0 30px !important;
+		}
+	}
+	.nonGrid__img {
+		overflow-x: scroll;
+	}
+	.nonGrid__img_in {
+		width: 1000px;
+	}
+}

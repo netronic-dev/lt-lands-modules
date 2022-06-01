@@ -1,0 +1,132 @@
+@import "../default";
+
+.form_block {
+	position: relative;
+	padding: 150px 0;
+	background-color: #f1f4f6;
+	.form_block_inner {
+		background: center / cover no-repeat #202020 url(/LPNew/lines-bg.svg);
+		padding: 65px 350px;
+	}
+	.title {
+		font-family: $font-1;
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 50px;
+		text-align: left;
+		text-transform: uppercase;
+		color: #fff;
+		margin-bottom: 65px;
+		span {
+			color: #0090ff;
+		}
+	}
+}
+.short_form_block {
+	background: center / cover no-repeat #202020 url(/LPNew/lines-bg.svg);
+	border-radius: 20px;
+	padding: 60px;
+}
+.short_form_block_out {
+	background: #f1f4f6;
+	padding: 150px 20px;
+	.title {
+		font-family: $font-1;
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 50px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #fff;
+		margin-bottom: 70px;
+		span {
+			color: #0090ff;
+		}
+	}
+	.form {
+		margin: 0 auto;
+		width: 840px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			"name-input email-input phone-input"
+			". submit .";
+		grid-gap: 10px 40px;
+	}
+	.input_name_out {
+		grid-area: name-input;
+	}
+	.input_email_out {
+		grid-area: email-input;
+	}
+	.input_call_out {
+		grid-area: phone-input;
+	}
+	.submit {
+		grid-area: submit;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.agreement {
+	margin-bottom: 100px;
+}
+@media (max-width: 1500px) {
+	.form_block {
+		.form_block_inner {
+			padding: 65px 200px;
+		}
+	}
+}
+@media (max-width: 1279px) {
+	.form_block {
+		padding: 85px 0;
+		.form_block_inner {
+			padding: 65px 20px;
+		}
+	}
+}
+@media (max-width: 1050px) {
+	.short_form_block_out {
+		.form {
+			width: auto;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"name-input"
+				"email-input"
+				"phone-input"
+				"submit";
+			grid-gap: 10px 40px;
+		}
+		.title {
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 50px;
+		}
+	}
+	.form_block {
+		.title {
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 50px;
+		}
+	}
+}
+@media (max-width: 600px) {
+	.short_form_block_out {
+		background: #f1f4f6;
+		padding: 40px 20px;
+	}
+}
+@media (max-width: 500px) {
+	.short_form_block_out {
+		.short_form_block {
+			padding: 50px 18px;
+			.title {
+				text-align: left;
+			}
+		}
+	}
+}
