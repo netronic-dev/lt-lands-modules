@@ -1,6 +1,6 @@
 import style from "../sirius.module.scss"
 import Image from "next/image"
-import { PriceButton, VideoButton } from "../../../Buttons/Buttons"
+import { Button, VideoButton } from "../../../Buttons/Buttons"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
 
 export default function SiriusMain(props) {
@@ -30,8 +30,8 @@ export default function SiriusMain(props) {
           {props.title}
         </h1>
         {logoSirius}
-        <PriceButton
-          catalog={true}
+        <Button
+          type="catalog"
           style="blueWhite"
           text={props.buttonText}
           en={props.en}

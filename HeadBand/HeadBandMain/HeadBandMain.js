@@ -1,7 +1,7 @@
 import style from "../headband.module.scss"
 import Image from "next/image"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { PriceButton } from "../../../Buttons/Buttons"
+import { Button } from "../../../Buttons/Buttons"
 import { useInView } from "react-hook-inview"
 
 export default function HeadBandMain(props) {
@@ -38,9 +38,8 @@ export default function HeadBandMain(props) {
           {props.text}
         </p>
         <div className={style.general__button}>
-          <PriceButton
-            en={props.en}
-            catalog={true}
+          <Button
+            type="catalog"
             style="blueWhite"
             text={props.buttonText}
           />
@@ -59,8 +58,8 @@ export default function HeadBandMain(props) {
         />
       </div>
       <div className={style.general__button_new}>
-        <PriceButton
-          catalog={true}
+        <Button
+          type="catalog"
           style="blueWhite"
           text={props.buttonText}
         />

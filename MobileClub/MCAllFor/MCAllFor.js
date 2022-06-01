@@ -7,7 +7,7 @@ import { useSpring, animated } from 'react-spring'
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 80}px,${y / 80}px,0)`
 
-export default function AllFor(props) {
+export default function MCAllFor(props) {
 
   const [titleRef, isTitleVisible] = useInView({
     unobserveOnEnter: true

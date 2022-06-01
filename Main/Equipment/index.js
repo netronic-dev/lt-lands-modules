@@ -40,8 +40,8 @@ export default function MainEquipment(props) {
         <div className={style.equipment_menu}>
           <Link
             href={props.en ?
-              "/outdoor-laser-tag"
-              : "/vnearennoe-lasertag-oborudovanie"
+              "/mobile-laser-tag-equipment"
+              : "/lazertag-biznes/mobilniy-lasertag-business"
             }>
             <div className={
               firstCellIsActive ? style.cellActive : style.cell
@@ -51,7 +51,7 @@ export default function MainEquipment(props) {
 
               <div className="background">
                 <Image
-                  src="/index/outdoor-equipment.jpg"
+                  src="/index/mobile-equipment.jpg"
                   layout="fill"
                   objectFit="cover"
                   priority={true}
@@ -66,7 +66,10 @@ export default function MainEquipment(props) {
                 </p>
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
-                    <Link href={props.en ? "/outdoor-laser-tag" : "/vnearennoe-lasertag-oborudovanie"}>
+                    <Link href={props.en ?
+                      "/mobile-laser-tag-equipment"
+                      : "/lazertag-biznes/mobilniy-lasertag-business"
+                    }>
                       <a>
                         <ButtonDetails
                           theme="White"
@@ -79,14 +82,16 @@ export default function MainEquipment(props) {
 
             </div>
           </Link>
-          <Link href={props.en ? "/indoor-laser-tag-equipment" : "/arennoe-lasertag-oborudovanie"}>
+          <Link href={props.en ?
+            "/outdoor-laser-tag" : "/vnearennoe-lasertag-oborudovanie"
+          }>
             <div className={secondCellIsActive ? style.cellActive : style.cell
             }
               onMouseOver={onSecondCellChange}
             >
               <div className="background">
                 <Image
-                  src="/index/indoor-equipment.jpg"
+                  src="/index/outdoor-equipment.jpg"
                   layout="fill"
                   objectFit="cover"
                   priority={true}
@@ -102,9 +107,10 @@ export default function MainEquipment(props) {
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
                     <Link
-                      href={props.en ? "/indoor-laser-tag-equipment"
-                        : "/arennoe-lasertag-oborudovanie"
-                      }><a>
+                      href={props.en ?
+                        "/outdoor-laser-tag" : "/vnearennoe-lasertag-oborudovanie"
+                      }>
+                      <a>
                         <ButtonDetails
                           theme="White"
                           en={props.en}
@@ -116,8 +122,9 @@ export default function MainEquipment(props) {
             </div>
           </Link>
           <Link
-            href={props.en ? "/mobile-laser-tag-equipment"
-              : "/lazertag-biznes/mobilniy-lasertag-business"
+            href={props.en ?
+              "/indoor-laser-tag-equipment"
+              : "/arennoe-lasertag-oborudovanie"
             }>
             <div className={
               thirdCellIsActive ? style.cellActive : style.cell
@@ -126,7 +133,7 @@ export default function MainEquipment(props) {
             >
               <div className="background">
                 <Image
-                  src="/index/mobile-equipment.jpg"
+                  src="/index/indoor-equipment.jpg"
                   layout="fill"
                   objectFit="cover"
                   priority={true}
@@ -142,8 +149,9 @@ export default function MainEquipment(props) {
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
                     <Link
-                      href={props.en ? "/mobile-laser-tag-equipment"
-                        : "/lazertag-biznes/mobilniy-lasertag-business"
+                      href={props.en ?
+                        "/indoor-laser-tag-equipment"
+                        : "/arennoe-lasertag-oborudovanie"
                       }><a>
                         <ButtonDetails
                           theme="White"

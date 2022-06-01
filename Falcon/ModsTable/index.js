@@ -1,5 +1,5 @@
 import style from "../falcon.module.scss"
-import { PriceButton } from "../../../Buttons/Buttons"
+import { Button } from "../../../Buttons/Buttons"
 import { Fade, Zoom } from "react-awesome-reveal"
 import { nanoid } from "nanoid"
 
@@ -54,10 +54,8 @@ export default function FalconModsTable(props) {
           </div>
         </Zoom>
         <div>
-          <PriceButton
+          <Button
             style="blueWhite"
-            text={props.buttonText}
-            en={props.en}
             text={props.buttonText}
           />
         </div>

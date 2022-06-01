@@ -23,8 +23,8 @@ export default function LuxShockproof(props) {
         />
         <Parallax
           pages={1.4}
-          scrolling
-          vertical
+          scrolling={true}
+          vertical={true}
           className={style.shockproof_bg_parallax}
         >
           <ParallaxLayer

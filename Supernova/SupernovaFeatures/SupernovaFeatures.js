@@ -12,7 +12,7 @@ export default function SupernovaFeatures(props) {
         </h2>
       </Fade>
       <div className={style.slider}>
-        <SliderImageCell en={props.en} data={props.sliderData} />
+        <SliderImageCell data={props.sliderData} />
       </div>
     </section>
   )

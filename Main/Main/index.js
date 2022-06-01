@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Fade } from "react-awesome-reveal"
-import { FillButton, PriceButton } from "../../../Buttons/Buttons"
+import { FillButton, Button } from "../../../Buttons/Buttons"
 import style from "../main.module.scss"
 import Link from "next/link"
 
@@ -45,10 +45,8 @@ export default function MainMain(props) {
           <div className={style.buttons}>
             <Fade delay={1200} triggerOnce>
               <div>
-                <PriceButton
-                  style={"blueWhite"}
-                  catalog
-                  en={props.en}
+                <Button
+                  type="catalog"
                   text={props.buttonText}
                 />
               </div>
@@ -61,7 +59,6 @@ export default function MainMain(props) {
                       <FillButton
                         className={style.event_button}
                         style="whiteBlack"
-                        en={props.en}
                         text={props.eventButtonText}
                       />
                     </a>

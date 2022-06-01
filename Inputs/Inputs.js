@@ -18,12 +18,8 @@ export function Inputs(props) {
   let id
   if (props.id) {
     id = props.id
-  } else if (props.lp) {
-    id = "lp_form_submit"
-  } else if (props.en) {
-    id = "land_form_submit_en"
   } else {
-    id = "land_form_submit"
+    id = "land_form_submit_en"
   }
 
   const formik = useFormik({
@@ -35,7 +31,7 @@ export function Inputs(props) {
     validate,
     onSubmit: (values) => {
       setTimeout(() => {
-        router.push(props.lp ? "/lp/thanks-catalog" : "/thanks-catalog").then(() => router.reload());
+        router.push("/thanks-catalog").then(() => router.reload());
         document.body.style.overflowY = "scroll";
       }, 400);
     },
@@ -63,9 +59,9 @@ export function Inputs(props) {
             className="form_submit_land"
           >
             <div className={style.content}>
-              <h2 className={style.title}>{props.title ? props.title : "Получи каталог"}</h2>
+              <h2 className={style.title}>{props.title || "Получи каталог"}</h2>
               <p className={style.text}>
-                {props.text ? props.text : "С готовыми комплектациями для открытия бизнеса!"}
+                {props.text || "С готовыми комплектациями для открытия бизнеса!"}
               </p>
               <div className={style.input_out__outer}>
                 <div className={style.input_out}>
@@ -77,7 +73,7 @@ export function Inputs(props) {
                     maxLength="30"
                     onChange={formik.handleChange}
                     value={formik.values.phoneNumber}
-                    placeholder={props.en ? "Phone number" : "Номер телефона *"}
+                    placeholder="Phone number"
                   />
                   <div className={style.error_icon}>
                     {formik.errors.phoneNumber ? icons.error : formik.values.phoneNumber === "" ? null : icons.agree}
@@ -95,7 +91,7 @@ export function Inputs(props) {
                     id="emailLand"
                     name="email"
                     type="email"
-                    placeholder={props.en ? "Email" : "Почта *"}
+                    placeholder="Email"
                   />
                   <div className={style.error_icon}>
                     {formik.errors.email ? icons.error : formik.values.email === "" ? null : icons.agree}
@@ -108,7 +104,7 @@ export function Inputs(props) {
               onAgreementChange={onAgreementChange}
               agreement={formik.values.agreement}
               error={formik.errors.agreement}
-              en={props.en}
+              en
             />
             <FillButton
               style="blueWhite"
@@ -122,9 +118,9 @@ export function Inputs(props) {
         </div>
         <div className={style.right}>
           <Image
-            src={props.image ? props.image : "/index/catalogs.png"}
+            src={props.image || "/index/catalogs.png"}
             layout="fill"
-            objectFit={props.objectFit ? props.objectFit : "contain"}
+            objectFit={props.objectFit || "contain"}
             priority={true}
             quality={90}
           />
@@ -137,16 +133,8 @@ export function Inputs(props) {
 export function InputsWName(props) {
   const image = props.image ? props.image : "/index/catalogs.png"
   const router = useRouter();
-  let id
-  if (props.id) {
-    id = props.id
-  } else if (props.lp) {
-    id = "lp_form_submit"
-  } else if (props.en) {
-    id = "landwname_form_submit_en"
-  } else {
-    id = "landwname_form_submit"
-  }
+  let id = props.id || "landwname_form_submit_en"
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -157,7 +145,7 @@ export function InputsWName(props) {
     validate,
     onSubmit: (values) => {
       setTimeout(() => {
-        router.push(props.lp ? "/lp/thanks-catalog" : "/thanks-catalog").then(() => router.reload());
+        router.push("/thanks-catalog").then(() => router.reload());
         document.body.style.overflowY = "scroll";
       }, 400);
     },
@@ -186,9 +174,9 @@ export function InputsWName(props) {
             className="form_submit_land"
           >
             <div className={style.content}>
-              <h2 className={style.title}>{props.title ? props.title : "Получи каталог"}</h2>
+              <h2 className={style.title}>{props.title || "Получи каталог"}</h2>
               <p className={style.text}>
-                {props.text ? props.text : "С готовыми комплектациями для открытия бизнеса!"}
+                {props.text || "С готовыми комплектациями для открытия бизнеса!"}
               </p>
               <div className={style.input_out__outer}>
                 <div className={style.input_out}>
@@ -199,7 +187,7 @@ export function InputsWName(props) {
                     maxLength="30"
                     onChange={formik.handleChange}
                     value={formik.values.name}
-                    placeholder={props.en ? "Name" : "Имя"}
+                    placeholder="Name"
                   />
                   <div className={style.error_icon}>
                     {formik.errors.name ? icons.error : formik.values.name === "" ? null : icons.agree}
@@ -217,7 +205,7 @@ export function InputsWName(props) {
                     id="emailLand"
                     name="email"
                     type="email"
-                    placeholder={props.en ? "Email" : "Почта"}
+                    placeholder="Email"
                   />
                   <div className={style.error_icon}>
                     {formik.errors.email ? icons.error : formik.values.email === "" ? null : icons.agree}
@@ -235,7 +223,7 @@ export function InputsWName(props) {
                     maxLength="30"
                     onChange={formik.handleChange}
                     value={formik.values.phoneNumber}
-                    placeholder={props.en ? "Phone number" : "Номер телефона"}
+                    placeholder="Phone number"
                   />
                   <div className={style.error_icon}>
                     {formik.errors.phoneNumber ? icons.error : formik.values.phoneNumber === "" ? null : icons.agree}
@@ -264,7 +252,7 @@ export function InputsWName(props) {
           <Image
             src={image}
             layout="fill"
-            objectFit={props.objectFit ? props.objectFit : "contain"}
+            objectFit={props.objectFit || "contain"}
             quality={90}
             priority={true}
           />
@@ -289,21 +277,14 @@ function Agreement(props) {
         </div>
         <p className={style.agreement__text}>
           <span onClick={props.onAgreementChange}>
-            {props.en ? "I agree with conditions of the processing and use of my personal data" : "Подтверждаю, что ознакомился и согласен с условиями"}
+            I agree with conditions of the processing and use of my personal data
           </span>
-          {" "}{props.en ?
-            <Link href="/privacy-policy">
-              <a>
-                of my personal data
-              </a>
-            </Link>
-            :
-            <Link href="/agreement">
-              <a>
-                политики конфиденциальности
-              </a>
-            </Link>
-          }
+          {" "}
+          <Link href="/privacy-policy">
+            <a>
+              of my personal data
+            </a>
+          </Link>
         </p>
       </div>
       <div className={style.error}>{props.error}</div>

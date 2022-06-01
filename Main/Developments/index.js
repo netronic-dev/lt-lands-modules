@@ -1,5 +1,4 @@
 import { Fade } from "react-awesome-reveal"
-import { MainDataBanners } from "../../../../Data/sliderData"
 import SliderBanners from "../../../Slider/SliderBanners/SliderBanners"
 import style from "../main.module.scss"
 

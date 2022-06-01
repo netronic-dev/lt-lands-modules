@@ -1,7 +1,7 @@
 import style from "../galaxypulse.module.scss"
 import Image from "next/image"
 import { ColumnsSvgText } from "../../ColumnsSvgText/ColumnsSvgText"
-import { PriceButton, VideoButton } from "../../../Buttons/Buttons"
+import { Button, VideoButton } from "../../../Buttons/Buttons"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
 import { useInView } from "react-hook-inview"
 
@@ -44,12 +44,10 @@ export default function PulseMain(props) {
           </h1>
           <div className={style.buttons}>
             <div className={style.price_button}>
-              <PriceButton
-                catalog={true}
-                call={true}
+              <Button
+                type="catalog"
                 style="pulse"
                 text={props.buttonText}
-                en={props.en}
               />
             </div>
             <div className={style.video_button}>

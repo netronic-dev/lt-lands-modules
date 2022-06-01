@@ -28,10 +28,7 @@ export default function SupernovaTemplates(props) {
       </div>
       <div className={style.grid} ref={ref} key={isVisible ? 1 : 0}>
         <Image
-          src={
-            props.en ?
-              "/supernova/scenarios-en-1.png" :
-              "/supernova/scenarios-3.png"}
+          src="/supernova/scenarios-en-1.png"
           layout="responsive"
           className="zoom-animation"
           width={522}
@@ -40,10 +37,7 @@ export default function SupernovaTemplates(props) {
           quality={90}
         />
         <Image
-          src={
-            props.en ?
-              "/supernova/scenarios-en-3.png" :
-              "/supernova/scenarios-1.png"}
+          src="/supernova/scenarios-en-3.png"
           layout="responsive"
           className="zoom-animation animated-second"
           width={522}
@@ -52,10 +46,7 @@ export default function SupernovaTemplates(props) {
           quality={90}
         />
         <Image
-          src={
-            props.en ?
-              "/supernova/scenarios-en-2.png" :
-              "/supernova/scenarios-2.png"}
+          src="/supernova/scenarios-en-2.png"
           layout="responsive"
           className="zoom-animation animated-third"
           width={522}

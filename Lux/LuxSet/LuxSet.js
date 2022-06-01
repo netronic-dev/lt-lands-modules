@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { PriceButton } from "../../../Buttons/Buttons"
+import { Button } from "../../../Buttons/Buttons"
 import style from "../lux.module.scss"
 
 export default function LuxSet(props) {
@@ -223,7 +223,7 @@ export default function LuxSet(props) {
         </tbody>
       </table>
       <div className={style.button}>
-        <PriceButton style="blueBlack" text={props.buttonText} en={props.en} />
+        <Button style="blueBlack" text={props.buttonText} />
       </div>
     </section >
   )

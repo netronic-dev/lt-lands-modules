@@ -1,7 +1,7 @@
 import style from "../scorpion.module.scss"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs";
 import Image from "next/image"
-import { PriceButton } from "../../../Buttons/Buttons";
+import { Button } from "../../../Buttons/Buttons";
 import { Fade } from "react-awesome-reveal";
 import { useInView } from "react-hook-inview";
 
@@ -37,11 +37,10 @@ export default function ScorpionMain(props) {
         <p className={style.text}>
           {props.text}
         </p>
-        <PriceButton
-          catalog={true}
+        <Button
+          type="catalog"
           style="blueWhite"
           text={props.buttonText}
-          en={props.en}
         />
       </section>
     </div>

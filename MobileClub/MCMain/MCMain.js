@@ -25,7 +25,7 @@ export default function MCMain(props) {
         <div className={`${style.image_in}`}>
           <animated.div
             className={style.logo}
-            style={{ transform: springProps.xy.interpolate(trans1) }} >
+            style={{ transform: springProps.xy.to(trans1) }} >
             <Image
               src="/mobileClub/main-front.png"
               layout="responsive"

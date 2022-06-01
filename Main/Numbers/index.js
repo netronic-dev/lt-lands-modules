@@ -27,10 +27,10 @@ export default function MainNumbers(props) {
           </Fade>
           <Fade direction="up" triggerOnce delay={300}>
             <div className={style.cell}>
-              <img src="/index/vector/processor.svg" className={style.image} />
+              <img src="/index/vector/icon.svg" className={style.image} />
               <h3 className={style.cell_title}>
                 {isVisible ? (<CountUp end={props.secondCellNumber} duration={5} />) : ""}+
-            </h3>
+              </h3>
               <p className={style.cell_text}>
                 {props.secondCellText}
               </p>

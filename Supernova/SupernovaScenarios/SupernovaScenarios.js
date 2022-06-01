@@ -1,6 +1,6 @@
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
-import { PriceButton } from "../../../Buttons/Buttons"
+import { Button } from "../../../Buttons/Buttons"
 import style from "../style.module.scss"
 
 export default function SupernovaScenarios(props) {
@@ -19,7 +19,7 @@ export default function SupernovaScenarios(props) {
         </Fade>
         <Fade delay={300} triggerOnce>
           <div className={style.button}>
-            <PriceButton en={props.en} style="black" text={props.en ? "Check the price" : "УЗНАТЬ ЦЕНУ"} />
+            <Button style="black" text="Check the price" />
           </div>
         </Fade>
       </div>

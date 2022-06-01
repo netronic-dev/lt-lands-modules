@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { PriceButton, VideoButton } from "../../../Buttons/Buttons"
+import { Button, VideoButton } from "../../../Buttons/Buttons"
 import style from "../ms.module.scss"
 
 export default function MSMain(props) {
@@ -28,8 +28,8 @@ export default function MSMain(props) {
           {logoMS}
           <div className={style.buttons}>
             <div className={style.price_button}>
-              <PriceButton
-                catalog={true}
+              <Button
+                type="catalog"
                 style="blueWhite"
                 text={props.buttonText}
                 en={props.en}

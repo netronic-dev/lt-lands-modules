@@ -2,7 +2,7 @@ import { useInView } from "react-hook-inview"
 import { VideoButton } from "../../../Buttons/Buttons"
 import style from "../style.module.scss"
 
-export default function HowWorks(props) {
+export default function MCHowWorks(props) {
 
   const [ref, isVisible] = useInView({
     unobserveOnEnter: true
@@ -16,14 +16,14 @@ export default function HowWorks(props) {
       <div className={style.grid_out}>
         <div className={style.line}></div>
         <div className={style.grid}>
-          {props.data ? props.data.map((item, index) => (
+          {props.data.map((item, index) => (
             <Cell
               key={index}
               number={index + 1}
               text={item.text}
               icon={item.icon}
             />
-          )) : ""}
+          ))}
         </div>
       </div>
       <div className={`${style.button} zoom-animation`}>

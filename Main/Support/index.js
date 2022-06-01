@@ -91,7 +91,7 @@ export default function MainSupport(props) {
           </div>
           <div className={style.support_card_image_right}>
             <Image
-              src={props.en ? "/index/managers-en.png" : "/index/managers.png"}
+              src="/index/managers-en.png"
               layout="responsive"
               height={130}
               width={330}

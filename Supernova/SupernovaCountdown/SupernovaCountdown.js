@@ -1,13 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Countdown, { zeroPad } from 'react-countdown';
 import { useInView } from 'react-hook-inview';
-import { PopUpEmail } from '../../../InputForms/PopUpForms/PopUpForms';
+import { useModals } from '../../../../context/ModalsProvider';
 import style from "../style.module.scss"
 
 export default function SupernovaCountdown(props) {
 
-  const [isInputFormOpen, setInputFormOpen] = useState(false);
+  const modals = useModals()
 
   const counterRef = useRef()
 
@@ -26,20 +26,11 @@ export default function SupernovaCountdown(props) {
 
   function onInputFormOpen() {
     counterRef.current.pause();
-    setInputFormOpen(!isInputFormOpen);
-    isInputFormOpen === true
-      ? (document.body.className = "")
-      : (document.body.className = "popUp");
+    modals.EmailPhoneModalChangeVisibility()
   }
 
   return (
     <>
-      {isInputFormOpen === true ?
-        <PopUpEmail
-          en={props.en}
-          closeClick={onInputFormOpen}
-        />
-        : null}
       <section className={style.count_down} ref={ref}>
         <Fade direction="up" triggerOnce>
           <div className={style.logo} >

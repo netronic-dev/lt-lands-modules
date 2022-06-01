@@ -1,4 +1,3 @@
-import { Fade } from "react-awesome-reveal";
 import { useInView } from "react-hook-inview";
 import style from "./style.module.scss";
 

@@ -1,7 +1,7 @@
 import style from "../smart.module.scss"
 import Image from "next/image"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { PriceButton } from "../../../Buttons/Buttons"
+import { Button } from "../../../Buttons/Buttons"
 import { Fade } from "react-awesome-reveal"
 
 export default function KTMain(props) {
@@ -33,8 +33,8 @@ export default function KTMain(props) {
         </Fade>
         <Fade direction="down" triggerOnce>
           <div className={style.button}>
-            <PriceButton
-              catalog={true}
+            <Button
+              type="catalog"
               style="blueBlack"
               text={props.buttonText}
               en={props.en}

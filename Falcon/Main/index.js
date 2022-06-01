@@ -1,7 +1,7 @@
 import style from "../falcon.module.scss"
 import Image from "next/image"
 import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { PriceButton, VideoButton } from "../../../Buttons/Buttons"
+import { Button, VideoButton } from "../../../Buttons/Buttons"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
 
@@ -35,9 +35,8 @@ export default function FalconMain(props) {
           </p>
           <div className={style.general__buttons}>
             <div className={style.buttons_price}>
-              <PriceButton
-                en={props.en}
-                catalog={true}
+              <Button
+                type="catalog"
                 style="blueWhite"
                 text={props.buttonText}
               />

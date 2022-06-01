@@ -40,7 +40,7 @@ export default function SupernovaHowWorks(props) {
             onClick={next}
           >
             <span className={style.button_text}>
-              {props.en ? "Next" : "Далее"}
+              Next
             </span>
             {arrow}
           </button>
