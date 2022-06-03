@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Fade } from "react-awesome-reveal"
-import { FillButton, Button } from "../../../Buttons/Buttons"
+import { FillButton, Button } from "../../../lt-modules/Buttons"
 import style from "../main.module.scss"
 import Link from "next/link"
 

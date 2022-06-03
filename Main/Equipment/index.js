@@ -2,8 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Fade } from "react-awesome-reveal"
-import ButtonDetails from "../../../Buttons/ButtonDetails/ButtonDetails"
-import { ThemeForm } from "../../../InputForms/StaticForm/StaticForm"
+import ButtonDetails from "../../../lt-modules/Buttons/ButtonDetails"
+import { ThemeForm } from "../../../lt-modules/InputForms/StaticForm"
 import style from "../main.module.scss"
 
 export default function MainEquipment(props) {

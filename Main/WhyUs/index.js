@@ -1,6 +1,6 @@
 import { Fade } from "react-awesome-reveal"
-import { MapSales } from "../../../Map/MapSales"
-import SliderSmallPics from "../../../Slider/SliderSmallPics/SliderSmallPics"
+import { MapSales } from "../../../lt-modules/Map/MapSales"
+import SliderSmallPics from "../../../lt-modules/Slider/SliderSmallPics/SliderSmallPics"
 import style from "../main.module.scss"
 
 export default function MainWhyUs(props) {

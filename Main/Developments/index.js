@@ -1,5 +1,5 @@
 import { Fade } from "react-awesome-reveal"
-import SliderBanners from "../../../Slider/SliderBanners/SliderBanners"
+import SliderBanners from "../../../lt-modules/Slider/SliderBanners"
 import style from "../main.module.scss"
 
 export default function MainDevelopments(props) {
