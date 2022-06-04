@@ -1,5 +1,5 @@
 import { useInView } from "react-hook-inview"
-import { VideoButton } from "../../../Buttons/Buttons"
+import { VideoButton } from "../../../lt-modules/Buttons"
 import style from "../style.module.scss"
 
 export default function MCHowWorks(props) {

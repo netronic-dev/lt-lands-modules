@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
+import { BlockIconText } from "../../BlockIconText"
 import style from "../ms.module.scss"
 
 export default function MSCards(props) {

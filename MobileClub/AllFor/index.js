@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
-import { ThemeFormAll } from "../../../InputForms/StaticForm/StaticForm";
+import { ThemeFormAll } from "../../../lt-modules/InputForms/StaticForm";
 import style from "../style.module.scss"
 import { useSpring, animated } from 'react-spring'
 

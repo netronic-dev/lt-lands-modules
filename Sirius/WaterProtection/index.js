@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
+import { BlockIconText } from "../../BlockIconText"
 import style from "../sirius.module.scss"
 
 export default function SiriusWaterProtection(props) {

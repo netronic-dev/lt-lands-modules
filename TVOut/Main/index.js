@@ -1,7 +1,7 @@
 import style from "../tvout.module.scss"
 import Image from "next/image"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { NetronicGalaxyLogos } from "../../NetronicGalaxyLogos/NetronicGalaxyLogos"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
+import { NetronicGalaxyLogos } from "../../NetronicGalaxyLogos"
 import { Fade } from "react-awesome-reveal"
 
 export default function TVMain(props) {
@@ -18,12 +18,10 @@ export default function TVMain(props) {
           />
         </Fade>
       </div>
-      <Fade direction="down" triggerOnce>
-        <BreadCrumbs
-          color="white"
-          breadcrumbData={props.breadcrumbData}
-        />
-      </Fade>
+      <BreadCrumbs
+        color="white"
+        breadcrumbData={props.breadcrumbData}
+      />
       <div className={style.inside_general}>
         <Fade direction="up" triggerOnce>
           <h1 className={style.title}>

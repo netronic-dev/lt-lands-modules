@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Countdown, { zeroPad } from 'react-countdown';
 import { useInView } from 'react-hook-inview';
-import { useModals } from '../../../../context/ModalsProvider';
+import { useModals } from '../../../context/ModalsProvider';
 import style from "../style.module.scss"
 
 export default function SupernovaCountdown(props) {

@@ -1,4 +1,4 @@
-import { ColumnsSvgText2 } from "../../ColumnsSvgText/ColumnsSvgText"
+import { ColumnsSvgText2 } from "../../ColumnsSvgText"
 import style from "../scorpion.module.scss"
 import Image from "next/image"
 import { Fade } from "react-awesome-reveal"

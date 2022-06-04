@@ -1,6 +1,6 @@
 import style from "../lto.module.scss"
 import Image from "next/image"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 import { NetronicGalaxyLogos } from "../../NetronicGalaxyLogos"
 import { useInView } from "react-hook-inview"
 

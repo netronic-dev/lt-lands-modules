@@ -1,6 +1,6 @@
 import style from "../scorpion.module.scss"
 import Image from "next/image"
-import { ColumnTextImage } from "../../ColumnTextImage/ColumnTextImage"
+import { ColumnTextImage } from "../../ColumnTextImage"
 import { Fade } from "react-awesome-reveal"
 
 export default function Shockfight(props) {

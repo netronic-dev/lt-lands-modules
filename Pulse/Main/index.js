@@ -1,8 +1,8 @@
 import style from "../galaxypulse.module.scss"
 import Image from "next/image"
-import { ColumnsSvgText } from "../../ColumnsSvgText/ColumnsSvgText"
-import { Button, VideoButton } from "../../../Buttons/Buttons"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
+import { ColumnsSvgText } from "../../../lt-lands-modules/ColumnsSvgText"
+import { Button, VideoButton } from "../../../lt-modules/Buttons"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 import { useInView } from "react-hook-inview"
 
 export default function PulseMain(props) {

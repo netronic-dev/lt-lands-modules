@@ -1,6 +1,6 @@
 import style from "../falcon.module.scss"
 import Image from "next/image"
-import { ColumnsSvgText } from "../../ColumnsSvgText/ColumnsSvgText"
+import { ColumnsSvgText } from "../../ColumnsSvgText"
 import { Fade } from "react-awesome-reveal"
 
 export default function FalconSafetySensors(props) {

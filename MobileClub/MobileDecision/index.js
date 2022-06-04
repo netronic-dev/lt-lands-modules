@@ -1,5 +1,5 @@
 import { useInView } from "react-hook-inview"
-import SliderMobile from "../../../Slider/SliderMobile/SliderMobile"
+import SliderMobile from "../../../lt-modules/Slider/SliderMobile"
 import style from "../style.module.scss"
 
 export default function MCMobileDecision(props) {

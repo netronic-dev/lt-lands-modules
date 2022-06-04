@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
-import { BUTTON } from "../../../Buttons/Buttons";
+import { BUTTON } from "../../../lt-modules/Buttons";
 import style from "../style.module.scss"
 import { useSpring, animated } from 'react-spring'
 

@@ -1,5 +1,5 @@
 import { Fade } from "react-awesome-reveal"
-import SliderImageCell from "../../../Slider/SliderImageCell/SliderImageCell"
+import SliderImageCell from "../../../lt-modules/Slider/SliderImageCell"
 import style from "../style.module.scss"
 
 export default function SupernovaFeatures(props) {

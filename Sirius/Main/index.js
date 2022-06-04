@@ -1,7 +1,7 @@
 import style from "../sirius.module.scss"
 import Image from "next/image"
-import { Button, VideoButton } from "../../../Buttons/Buttons"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
+import { Button, VideoButton } from "../../../lt-modules/Buttons"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 
 export default function SiriusMain(props) {
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useInView } from "react-hook-inview"
-import { BUTTON } from "../../../Buttons/Buttons"
+import { BUTTON } from "../../../lt-modules/Buttons"
 import style from "../style.module.scss"
 
 export default function MCBusinessSupport(props) {
@@ -145,7 +145,6 @@ export default function MCBusinessSupport(props) {
             width={490}
             height={325}
             priority
-            quality={90}
           />
 
         </div>

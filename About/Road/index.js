@@ -1,6 +1,6 @@
 import style from "../about.module.scss"
 import Image from "next/image"
-import { SliderRoadmap } from "../../../Slider/SliderRoadmap/SliderRoadmap"
+import { SliderRoadmap } from "../../../lt-modules/Slider/SliderRoadmap"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
 import CountUp from "react-countup"

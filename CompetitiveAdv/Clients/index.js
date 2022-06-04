@@ -1,7 +1,5 @@
 import style from "./style.module.scss"
-import Image from "next/image"
-import Link from "next/link"
-import SliderReviewsLP from "../../../Slider/SliderReviewsLP/SliderReviewsLP";
+import SliderReviewsLP from "../../../lt-modules/Slider/SliderReviewsLP";
 import { useInView } from "react-hook-inview";
 
 export default function Section(props) {

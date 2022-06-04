@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Button } from "../../../Buttons/Buttons";
+import { Button } from "../../../lt-modules/Buttons";
 import style from "../lux.module.scss"
 import { useSpring, animated } from 'react-spring'
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 150}px,${y / 150}px,0)`

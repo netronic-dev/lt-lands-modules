@@ -1,9 +1,6 @@
 import style from "../sirius.module.scss"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
-import Link from "next/link"
-import dynamic from "next/dynamic"
-
-const SliderLand = dynamic(() => import("../../../Slider/SliderLand/SliderLand"))
+import { BlockIconText } from "../../BlockIconText"
+import SliderLand from "../../../lt-modules/Slider/SliderLand"
 
 export default function SiriusSevenModes(props) {
   return (

@@ -1,5 +1,5 @@
 import style from "../falcon.module.scss"
-import SliderTwoButtons from "../../../Slider/SliderTwoButtons/SliderTwoButtons"
+import SliderTwoButtons from "../../../lt-modules/Slider/SliderTwoButtons"
 import { Fade } from "react-awesome-reveal"
 
 export default function FalconModifications(props) {
@@ -7,7 +7,7 @@ export default function FalconModifications(props) {
     <>
       <div className={style.twoModifications}>
         <Fade direction="up" triggerOnce>
-          <h2 className={style.title_white}>{props.title}</h2>
+          <h2 className={`${style.title_white} ${style.title}`}>{props.title}</h2>
         </Fade>
         <Fade triggerOnce>
           <SliderTwoButtons

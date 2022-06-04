@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { useState } from "react"
-import { useInView } from "react-hook-inview"
-import { VideoPopUp } from "../../../Video/Video"
+import { VideoPopUp } from "../../../lt-modules/Video"
 import style from "../style.module.scss"
 
 export default function MCWhatIs(props) {
@@ -14,10 +13,6 @@ export default function MCWhatIs(props) {
       : (document.body.className = "popUp");
   }
 
-  const [ref, isVisible] = useInView({
-    unobserveOnEnter: true
-  })
-
   return (
     <>
       {isVideoActive ?
@@ -27,8 +22,6 @@ export default function MCWhatIs(props) {
         /> : null}
       <section
         className={`${style.what_is} fade-up-animation`}
-        ref={ref}
-        key={isVisible ? 2 : 3}
       >
         <div className={style.text_block}>
           <h2 className={style.title}>

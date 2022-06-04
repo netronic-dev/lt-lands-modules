@@ -1,5 +1,5 @@
 import style from "../tvout.module.scss"
-import SliderLand from "../../../Slider/SliderLand/SliderLand"
+import SliderLand from "../../../lt-modules/Slider/SliderLand"
 import { Fade, Zoom } from "react-awesome-reveal"
 
 export default function TVSlider(props) {

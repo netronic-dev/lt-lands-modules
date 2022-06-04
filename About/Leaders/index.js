@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Fade } from "react-awesome-reveal"
 import CountUp from "react-countup"
 import { useInView } from "react-hook-inview"
-import { SliderLeaders } from "../../../Slider/SliderLeaders/SliderLeaders"
+import { SliderLeaders } from "../../../lt-modules/Slider/SliderLeaders"
 import style from "../about.module.scss"
 
 export default function AboutLeaders(props) {

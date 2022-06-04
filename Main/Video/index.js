@@ -1,5 +1,5 @@
 import { Fade, Slide, Zoom } from "react-awesome-reveal"
-import VideoBlock from "../../../lt-modules/VideoBlock/VideoBlock"
+import VideoBlock from "../../../lt-modules/VideoBlock"
 import style from "../main.module.scss"
 
 export default function MainVideo(props) {

@@ -1,5 +1,5 @@
 import style from "../falcon.module.scss"
-import { Button } from "../../../Buttons/Buttons"
+import { Button } from "../../../lt-modules/Buttons"
 import { Fade, Zoom } from "react-awesome-reveal"
 import { nanoid } from "nanoid"
 

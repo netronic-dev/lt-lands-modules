@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { PhoneSection } from "../../PhoneSection/PhoneSection"
+import { PhoneSection } from "../../PhoneSection"
 import style from "../sirius.module.scss"
 
 export default function SiriusPhone(props) {

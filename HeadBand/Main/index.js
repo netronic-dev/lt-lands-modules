@@ -1,7 +1,7 @@
 import style from "../headband.module.scss"
 import Image from "next/image"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { Button } from "../../../Buttons/Buttons"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
+import { Button } from "../../../lt-modules/Buttons"
 import { useInView } from "react-hook-inview"
 
 export default function HeadBandMain(props) {

@@ -1,8 +1,7 @@
 import style from "../falcon.module.scss"
 import Image from "next/image"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { Button, VideoButton } from "../../../Buttons/Buttons"
-import { Fade } from "react-awesome-reveal"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
+import { Button, VideoButton } from "../../../lt-modules/Buttons"
 import { useInView } from "react-hook-inview"
 
 export default function FalconMain(props) {

@@ -1,7 +1,7 @@
 import style from "../scorpion.module.scss"
 import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
-import { ColumnsSvgText2 } from "../../ColumnsSvgText/ColumnsSvgText"
+import { BlockIconText } from "../../BlockIconText"
+import { ColumnsSvgText2 } from "../../ColumnsSvgText"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
 

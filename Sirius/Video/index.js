@@ -1,4 +1,4 @@
-import VideoBlock from "../../../VideoBlock/VideoBlock"
+import VideoBlock from "../../../lt-modules/VideoBlock"
 import style from "../sirius.module.scss"
 
 export default function SiriusVideo(props) {

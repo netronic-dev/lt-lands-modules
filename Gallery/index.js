@@ -1,5 +1,5 @@
-import SliderCards from "../../Slider/SliderCards/SliderCards";
-import { FooterButtons } from "../../FooterButtons/FooterButtons";
+import SliderCards from "../../lt-modules/Slider/SliderCards";
+import { FooterButtons } from "../../lt-modules/FooterButtons";
 import style from "./style.module.scss";
 
 export default function Gallery(props) {

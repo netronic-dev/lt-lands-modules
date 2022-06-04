@@ -1,5 +1,5 @@
 import { Fade, Zoom } from "react-awesome-reveal"
-import SliderLand from "../../../Slider/SliderLand/SliderLand"
+import SliderLand from "../../../lt-modules/Slider/SliderLand"
 import style from "../ms.module.scss"
 
 export default function MSSlider(props) {

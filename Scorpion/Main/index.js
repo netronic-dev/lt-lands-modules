@@ -1,7 +1,7 @@
 import style from "../scorpion.module.scss"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs";
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
 import Image from "next/image"
-import { Button } from "../../../Buttons/Buttons";
+import { Button } from "../../../lt-modules/Buttons";
 import { Fade } from "react-awesome-reveal";
 import { useInView } from "react-hook-inview";
 

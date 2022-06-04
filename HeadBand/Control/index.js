@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
-import { ColumnsSvgText } from "../../ColumnsSvgText/ColumnsSvgText";
+import { ColumnsSvgText } from "../../ColumnsSvgText";
 import style from "../headband.module.scss"
 
 export default function HeadBandControl(props) {

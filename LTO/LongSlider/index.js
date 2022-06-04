@@ -1,5 +1,5 @@
 import style from "../lto.module.scss"
-import { SliderLongCards } from "../../../Slider/SliderLongCards/SliderLongCards"
+import { SliderLongCards } from "../../../lt-modules/Slider/SliderLongCards"
 import { useInView } from "react-hook-inview"
 
 export default function LTOLongSlider(props) {

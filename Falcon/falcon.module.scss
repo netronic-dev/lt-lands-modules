@@ -44,7 +44,6 @@
 .section_general {
 	height: 1030px;
 	@extend %flex_columns;
-	margin-bottom: 90px;
 	position: relative;
 }
 .section_general_bg {
@@ -97,14 +96,16 @@
 .falconModifications {
 	position: relative;
 	z-index: 2;
-	margin-bottom: 100px;
+	padding: 100px 0;
+	background-color: #0c0c0c;
 }
 .falcon270 {
 	width: 100%;
 	margin-bottom: -5px;
 }
 .twoModifications {
-	h2 {
+	background-color: #0c0c0c;
+	.title {
 		text-align: center;
 		margin-bottom: 150px;
 	}
@@ -196,6 +197,9 @@
 			width: 915px;
 		}
 	}
+}
+.colourfulDisplay_outer {
+	background-color: #0c0c0c;
 }
 .colourfulDisplay {
 	padding: 100px 0;
@@ -486,7 +490,7 @@
 }
 @media (max-width: 576px) {
 	.columnsFalcon {
-		margin: 0 20px;
+		padding: 0 20px;
 	}
 	.impulseSimulation {
 		section {
@@ -508,10 +512,6 @@
 			width: auto;
 		}
 	}
-	.section_general {
-		height: 350px;
-		margin-bottom: 400px;
-	}
 	.inside_general {
 		margin-top: 150px;
 		padding: 0 20px;
@@ -529,6 +529,9 @@
 			width: 70% !important;
 			margin-bottom: 20px;
 		}
+	}
+	.falconModifications {
+		padding-top: 200px;
 	}
 	.activeExploitation {
 		.activeExploitation_content {

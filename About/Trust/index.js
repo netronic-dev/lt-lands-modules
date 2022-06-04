@@ -1,6 +1,6 @@
 import Image from "next/image"
 import style from "../about.module.scss"
-import SliderReviews from "../../../Slider/SliderReviews/SliderReviews"
+import SliderReviews from "../../../lt-modules/Slider/SliderReviews"
 import { Fade } from "react-awesome-reveal"
 
 export default function AboutTrust(props) {

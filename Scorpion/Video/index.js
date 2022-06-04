@@ -1,5 +1,5 @@
 import style from "../scorpion.module.scss"
-import VideoBlock from "../../../VideoBlock/VideoBlock";
+import VideoBlock from "../../../lt-modules/VideoBlock";
 import { Fade } from "react-awesome-reveal";
 
 export default function ScorpionVideo(props) {

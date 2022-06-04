@@ -1,6 +1,6 @@
 import style from "../lto.module.scss"
 import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
+import { BlockIconText } from "../../BlockIconText"
 import { useInView } from "react-hook-inview"
 
 export default function LTOThirdCards(props) {

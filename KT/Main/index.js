@@ -1,7 +1,7 @@
 import style from "../smart.module.scss"
 import Image from "next/image"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { Button } from "../../../Buttons/Buttons"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
+import { Button } from "../../../lt-modules/Buttons"
 import { Fade } from "react-awesome-reveal"
 
 export default function KTMain(props) {

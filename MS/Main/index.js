@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
-import { BreadCrumbs } from "../../../BreadCrumbs/BreadCrumbs"
-import { Button, VideoButton } from "../../../Buttons/Buttons"
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
+import { Button, VideoButton } from "../../../lt-modules/Buttons"
 import style from "../ms.module.scss"
 
 export default function MSMain(props) {

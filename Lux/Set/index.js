@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button } from "../../../Buttons/Buttons"
+import { Button } from "../../../lt-modules/Buttons"
 import style from "../lux.module.scss"
 
 export default function LuxSet(props) {

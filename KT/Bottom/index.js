@@ -1,6 +1,6 @@
 import style from "../smart.module.scss"
 import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText/BlockIconText"
+import { BlockIconText } from "../../BlockIconText"
 import { Fade } from "react-awesome-reveal"
 import { useInView } from "react-hook-inview"
 
