@@ -38,6 +38,7 @@ export default function LuxMain(props) {
           {luxLogo}
         </animated.div>
         <div className={style.main_content__bottom}>
+          <h1 style={{ opacity: "0", width: "0", height: "0" }}>Falcon lux</h1>
           <p className={style.main__text}>
             {props.text}
           </p>
