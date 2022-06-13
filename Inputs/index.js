@@ -236,7 +236,6 @@ export function InputsWName(props) {
               onAgreementChange={onAgreementChange}
               agreement={formik.values.agreement}
               error={formik.errors.agreement}
-              en={props.en}
             />
             <FillButton
               style={props.theme == "light" ? "bigBlue" : "blueWhite"}

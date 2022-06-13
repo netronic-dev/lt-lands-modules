@@ -27,11 +27,11 @@ export default function MCHowWorks(props) {
         </div>
       </div>
       <div className={`${style.button} zoom-animation`}>
-        {props.en ? (<VideoButton
+        <VideoButton
           text={props.buttonText}
           style="blueBlack"
           link={props.videoLink}
-        />) : null}
+        />
       </div>
     </section>
   )

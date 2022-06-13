@@ -1,61 +1,51 @@
 import Image from "next/image"
 import { useState } from "react"
+import { useModals } from "../../../context/ModalsProvider"
 import { VideoPopUp } from "../../../lt-modules/Video"
 import style from "../style.module.scss"
 
 export default function MCWhatIs(props) {
-  const [isVideoActive, changeVideoView] = useState(false)
 
-  function onVideoViewChange() {
-    changeVideoView(!isVideoActive)
-    isVideoActive
-      ? (document.body.className = "")
-      : (document.body.className = "popUp");
-  }
-
+  const modals = useModals()
   return (
-    <>
-      {isVideoActive ?
-        <VideoPopUp
-          link={props.videoLink}
-          onClick={onVideoViewChange}
-        /> : null}
-      <section
-        className={`${style.what_is} fade-up-animation`}
+    <section
+      className={`${style.what_is} fade-up-animation`}
+    >
+      <div className={style.text_block}>
+        <h2 className={style.title}>
+          {props.title}
+        </h2>
+        <p className={style.text}>
+          {props.text}
+        </p>
+      </div>
+      <div
+        className={style.image}
+        onClick={() => modals.VideoModalOpen(props.videoLink)}
       >
-        <div className={style.text_block}>
-          <h2 className={style.title}>
-            {props.title}
-          </h2>
-          <p className={style.text}>
-            {props.text}
-          </p>
+        <div className="desktop">
+          <Image
+            src="/mobileClub/video.jpg"
+            layout="responsive"
+            width={595}
+            height={335}
+            priority
+            quality={90}
+          />
         </div>
-        <div className={style.image} onClick={onVideoViewChange}>
-          <div className="desktop">
-            <Image
-              src={props.en ? "/mobileClub/video.jpg" : "/mobileClub/video-ru.jpg"}
-              layout="responsive"
-              width={595}
-              height={335}
-              priority
-              quality={90}
-            />
-          </div>
-          <div className="mobile">
-            <Image
-              src={props.en ? "/mobileClub/video-mob.jpg" : "/mobileClub/video-mob-ru.jpg"}
-              layout="responsive"
-              width={302}
-              height={312}
-              priority
-              quality={90}
-            />
-          </div>
-          <div className={style.play_button}>{playBtn}</div>
+        <div className="mobile">
+          <Image
+            src="/mobileClub/video-mob.jpg"
+            layout="responsive"
+            width={302}
+            height={312}
+            priority
+            quality={90}
+          />
         </div>
-      </section>
-    </>
+        <div className={style.play_button}>{playBtn}</div>
+      </div>
+    </section>
   )
 }
 const playBtn = (

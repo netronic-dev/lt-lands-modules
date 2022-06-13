@@ -96,7 +96,7 @@ export default function MCAllFor(props) {
             <div className={`${style.cell} zoom-animation animated-fourth`} key={isGridVisible ? "all_for_cell_4" : 4}>
               <div className={style.cell_image}>
                 <Image
-                  src={props.en ? "/mobileClub/start-4-en.png" : "/mobileClub/start-4.png"}
+                  src="/mobileClub/start-4-en.png"
                   layout="responsive"
                   width={307}
                   height={203}

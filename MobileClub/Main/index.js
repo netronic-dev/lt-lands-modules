@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useInView } from "react-hook-inview";
 import { BUTTON } from "../../../lt-modules/Buttons";
 import style from "../style.module.scss"
 import { useSpring, animated } from 'react-spring'
@@ -10,7 +9,10 @@ const trans1 = (x, y) => `translate3d(${x / 150}px,${y / 150}px,0)`
 export default function MCMain(props) {
   const [springProps, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   return (
-    <section className={`${style.main}`} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+    <section
+      className={`${style.main}`}
+      onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+    >
       <div className="background fade-animation">
         <Image
           src="/mobileClub/main-back.jpg"
@@ -52,12 +54,11 @@ export default function MCMain(props) {
           {props.title}
         </h1>
         <BUTTON
-          type="catalog"
+          type={props.buttonType}
           text={props.buttonText}
-          en={props.en}
-          id={props.en ? "mobLT-popup-main-en" : "mobLT-popup-main"}
-          emailFormID="MOBLT-PU-main-"
-          phoneFormID="MOBLT-PU-main-"
+          id={props.buttonID}
+          emailFormID={props.inputEmailID}
+          phoneFormID={props.inputPhoneID}
           formTitle={props.formTitle}
           formSubtitle={props.formSubtitle}
         />
