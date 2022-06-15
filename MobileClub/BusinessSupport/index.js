@@ -18,7 +18,7 @@ export default function MCBusinessSupport(props) {
       className={style.bis_sup} >
       <h2
         className={`${style.title} fade-up-animation`}
-        key={isVisible ? "bis_sup_title" : 0}
+        key={isVisible ? "bis_sup_title-inview" : "bis_sup_title"}
         ref={ref}
       >
         {props.title}
@@ -28,7 +28,7 @@ export default function MCBusinessSupport(props) {
         <div
           className={`${style.cell} ${style.first} zoom-animation`}
 
-          key={isVisible ? "bis_sup_1" : null}
+          key={isVisible ? "bis_sup_1-inview" : "bis_sup_1"}
         >
           <img
             className={style.cell__icon}
@@ -41,7 +41,7 @@ export default function MCBusinessSupport(props) {
         </div>
         <div
           className={`${style.cell} ${style.second} zoom-animation animated-second`}
-          key={isVisible ? "bis_sup_2" : null}
+          key={isVisible ? "bis_sup_2-inview" : "bis_sup_2"}
         >
           <img
             className={style.cell__icon}
@@ -54,7 +54,7 @@ export default function MCBusinessSupport(props) {
         </div>
         <div
           className={`${style.cell} ${style.third} zoom-animation animated-third`}
-          key={isVisible ? "bis_sup_3" : null}
+          key={isVisible ? "bis_sup_3-iview" : "bis_sup_3"}
         >
           <img
             className={style.cell__icon}
@@ -71,7 +71,7 @@ export default function MCBusinessSupport(props) {
         </div>
         <div
           className={`${style.cell} ${style.fourth} zoom-animation animated-fourth`}
-          key={isVisible ? "bis_sup_4" : null}>
+          key={isVisible ? "bis_sup_4-inview" : "bis_sup_4"}>
           <img
             className={style.cell__icon}
             src={props.cell2Image}
@@ -83,7 +83,7 @@ export default function MCBusinessSupport(props) {
         </div>
         <div
           className={`${style.long_cell} ${style.long} zoom-animation animated-fivth`}
-          key={isVisible ? "bis_sup_4" : null}
+          key={isVisible ? "bis_sup_5-inview" : "bis_sup_5"}
         >
           <div
             className={style.long_cell__content}>
@@ -111,7 +111,7 @@ export default function MCBusinessSupport(props) {
       </div>
       <div
         className={`${style.cta} zoom-animation`} ref={cellRef}
-        key={isCellVisible ? "cta" : null}>
+        key={isCellVisible ? "cta-inview" : "cta"}>
         <div
           className={style.cta__text_block}>
           <h3
