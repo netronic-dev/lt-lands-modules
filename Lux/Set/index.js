@@ -6,44 +6,6 @@ export default function LuxSet(props) {
 
   const [activeCell, changeActiveCell] = useState(0)
 
-  const cellsData = [
-    {
-      title: "Base",
-      firstCell: true,
-      secondCell: false,
-      thirdCell: false,
-      fourthCell: false,
-      fivthCell: false,
-      sixthCell: false,
-    },
-    {
-      title: "Standart",
-      firstCell: true,
-      secondCell: true,
-      thirdCell: true,
-      fourthCell: true,
-      fivthCell: false,
-      sixthCell: false,
-    },
-    {
-      title: "Premium",
-      firstCell: true,
-      secondCell: true,
-      thirdCell: true,
-      fourthCell: true,
-      fivthCell: true,
-      sixthCell: false,
-    },
-    {
-      title: "Tactical Pro",
-      firstCell: true,
-      secondCell: true,
-      thirdCell: true,
-      fourthCell: true,
-      fivthCell: true,
-      sixthCell: true,
-    },
-  ]
   function onChangeActiveCell(id) {
     changeActiveCell(id)
   }
@@ -55,7 +17,7 @@ export default function LuxSet(props) {
         <span className={style.dark_blue_gradient}>LUX</span>
       </h2>
       <div className={style.table_buttons}>
-        {cellsData.map((item, index) => (
+        {props.data.map((item, index) => (
           (
             <div
               className={`${style.table_buttons__button} ${activeCell === index ? style.active : null}`}
@@ -73,7 +35,7 @@ export default function LuxSet(props) {
             {props.tabTitleOne}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].firstCell ? "+" : ""}
+            {props.data[activeCell].firstCell ? "+" : ""}
           </td>
         </tr>
         <tr>
@@ -81,7 +43,7 @@ export default function LuxSet(props) {
             {props.tabTitleTwo}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].secondCell ? "+" : ""}
+            {props.data[activeCell].secondCell ? "+" : ""}
           </td>
         </tr>
         <tr>
@@ -89,7 +51,7 @@ export default function LuxSet(props) {
             {props.tabTitleThree}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].thirdCell ? "+" : ""}
+            {props.data[activeCell].thirdCell ? "+" : ""}
           </td>
         </tr>
         <tr>
@@ -97,7 +59,7 @@ export default function LuxSet(props) {
             {props.tabTitleFour}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].fourthCell ? "+" : ""}
+            {props.data[activeCell].fourthCell ? "+" : ""}
           </td>
         </tr>
         <tr>
@@ -105,7 +67,7 @@ export default function LuxSet(props) {
             {props.tabTitleFive}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].fivthCell ? "+" : ""}
+            {props.data[activeCell].fivthCell ? "+" : ""}
           </td>
         </tr>
         <tr>
@@ -113,7 +75,7 @@ export default function LuxSet(props) {
             {props.tabTitleSix}
           </td>
           <td className={style.plus_blue}>
-            {cellsData[activeCell].sixthCell ? "+" : ""}
+            {props.data[activeCell].sixthCell ? "+" : ""}
           </td>
         </tr>
       </table>
@@ -123,16 +85,16 @@ export default function LuxSet(props) {
             <th>
             </th>
             <th>
-              Base
+              {props.data[0].title}
             </th>
             <th>
-              Standart
+              {props.data[1].title}
             </th>
             <th>
-              Premium
+              {props.data[2].title}
             </th>
             <th>
-              Tactical Pro
+              {props.data[3].title}
             </th>
           </tr>
         </thead>

@@ -6,7 +6,7 @@ export default function LuxNetronicFeatures(props) {
     <section className={style.lux_netronic}>
       <div className={style.lux_netronic_head}>
         <Image
-          src={props.en ? "/lux/netronic-en.jpg" : "/lux/netronic.jpg"}
+          src="/lux/netronic-en.jpg"
           layout="responsive"
           width={940}
           height={500}
@@ -16,7 +16,7 @@ export default function LuxNetronicFeatures(props) {
       </div>
       <div className={`${style.lux_netronic_body} desktop`}>
         <Image
-          src={props.en ? "/lux/netronic-features-en.jpg" : "/lux/netronic-features.jpg"}
+          src="/lux/netronic-features-en.jpg"
           layout="responsive"
           width={1475}
           height={830}
@@ -26,7 +26,7 @@ export default function LuxNetronicFeatures(props) {
       </div>
       <div className={`${style.lux_netronic_body} mobile`}>
         <Image
-          src={props.en ? "/lux/netronic-features-mob-en.jpg" : "/lux/netronic-features-mob.jpg"}
+          src="/lux/netronic-features-mob-en.jpg"
           layout="responsive"
           width={375}
           height={732}

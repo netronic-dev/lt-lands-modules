@@ -174,9 +174,9 @@ export function InputsWName(props) {
             className="form_submit_land"
           >
             <div className={style.content}>
-              <h2 className={style.title}>{props.title || "Получи каталог"}</h2>
+              <h2 className={style.title}>{props.title}</h2>
               <p className={style.text}>
-                {props.text || "С готовыми комплектациями для открытия бизнеса!"}
+                {props.text}
               </p>
               <div className={style.input_out__outer}>
                 <div className={style.input_out}>
@@ -238,7 +238,7 @@ export function InputsWName(props) {
               error={formik.errors.agreement}
             />
             <FillButton
-              style={props.theme == "light" ? "bigBlue" : "blueWhite"}
+              style={props.theme === "light" ? "bigBlue" : "blueWhite"}
               id={
                 Object.keys(formik.errors).length == 0 ? id : null
               }
