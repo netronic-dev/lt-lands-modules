@@ -37,7 +37,7 @@ export default function MainMain(props) {
           </div> : ""}
         <div className={`${style.content} ${contentTheme[props.theme ? props.theme : "light"]}`}>
           <Fade direction="left" delay={800} triggerOnce>
-            <h1 className={style.title}>
+            <h1 className={style.title} style={{ whiteSpace: "pre-line" }}>
               {props.title}
             </h1>
             <p className={style.text}>
