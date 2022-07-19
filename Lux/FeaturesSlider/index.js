@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import style from "../lux.module.scss"
 
-export default function LuxFeaturesSlider(props) {
+export default function FeaturesSlider(props) {
 
   const [activeCellNumber, changeActiveCellNumber] = useState(1)
   const [activeImage, changeActiveImage] = useState(props.data[1].image)

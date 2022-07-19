@@ -7,7 +7,7 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 150}px,${y / 150}px,0)`
 
-export default function LuxMain(props) {
+export default function Main(props) {
 
   const [springProps, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
 

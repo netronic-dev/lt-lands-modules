@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useInView } from "react-hook-inview"
 
-export default function HeadBandImage(props) {
+export default function ImagePage(props) {
   const [ref, isVisible] = useInView(
     {
       unobserveOnEnter: true

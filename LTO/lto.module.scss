@@ -51,6 +51,7 @@ $grey: #8e8e8e;
 
 .screen {
 	background-color: #000000;
+	padding: 1px 0;
 	h2 {
 		margin: 200px auto 70px auto;
 		width: 1170px;
@@ -420,20 +421,45 @@ $grey: #8e8e8e;
 		padding: 0 50px;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
-	.phones_first {
-		transform: translateY(0);
+	@keyframes phone-1-animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(0);
+		}
 	}
-	.phones_second {
-		transform: translateY(0);
+	@keyframes phone-2-animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(0);
+		}
 	}
-	.phones_third {
-		transform: translateY(0);
+	@keyframes phone-3-animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(0);
+		}
 	}
-	.phones_fours {
-		transform: translateY(0);
+	@keyframes phone-4-animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(0);
+		}
 	}
-	.phones_fives {
-		transform: translateY(0);
+	@keyframes phone-5-animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(0);
+		}
 	}
 	.grid_fastLearning {
 		grid-template-columns: 1fr;

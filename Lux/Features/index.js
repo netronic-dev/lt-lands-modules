@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "../lux.module.scss"
 
-export default function LuxFeatures(props) {
+export default function Features(props) {
   return (
     <section className={style.features}>
       <div className="background desktop">

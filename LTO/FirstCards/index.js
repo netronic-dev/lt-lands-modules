@@ -2,7 +2,7 @@ import style from "../lto.module.scss"
 import Image from "next/image"
 import { useInView } from "react-hook-inview"
 
-export default function LTOFirstCards(props) {
+export default function FirstCards(props) {
   const [titleRef, titleIsVisible] = useInView(
     {
       unobserveOnEnter: true
@@ -34,7 +34,7 @@ export default function LTOFirstCards(props) {
     }
   )
   return (
-    <section>
+    <section className={style.screen}>
       <div
         ref={titleRef}
         key={titleIsVisible ? "lto-title-inview" : "lto-title"}

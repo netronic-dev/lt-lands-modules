@@ -1,7 +1,7 @@
 import Image from "next/image"
 import style from "../lux.module.scss"
 
-export default function LuxNetronicFeatures(props) {
+export default function NetronicFeatures(props) {
   return (
     <section className={style.lux_netronic}>
       <div className={style.lux_netronic_head}>

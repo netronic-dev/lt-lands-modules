@@ -4,7 +4,7 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 import { Button } from "../../../lt-modules/Buttons"
 import { useInView } from "react-hook-inview"
 
-export default function HeadBandMain(props) {
+export default function Main(props) {
   const [ref, refVisible] = useInView(
     {
       unobserveOnEnter: true
@@ -23,10 +23,11 @@ export default function HeadBandMain(props) {
           priority={true}
         />
       </div>
-      <BreadCrumbs
-        color="anotherWhite"
-        breadcrumbData={props.breadcrumbData}
-      />
+      {props.breadcrumbData &&
+        <BreadCrumbs
+          color="anotherWhite"
+          breadcrumbData={props.breadcrumbData}
+        />}
       <section
         className={`${style.inside_general} fade-up-animation`}
         key={refVisible ? "text" : "text-inview"}

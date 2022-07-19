@@ -3,7 +3,7 @@ import { useInView } from "react-hook-inview";
 import { ColumnsSvgText } from "../../ColumnsSvgText";
 import style from "../headband.module.scss"
 
-export default function HeadBandControl(props) {
+export default function Control(props) {
   const [title, titleIsVisible] = useInView(
     {
       unobserveOnEnter: true

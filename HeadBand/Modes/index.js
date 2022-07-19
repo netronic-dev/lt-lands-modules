@@ -2,7 +2,7 @@ import { useInView } from "react-hook-inview"
 import { BlockIconText } from "../../BlockIconText"
 import style from "../headband.module.scss"
 
-export default function HeadBandModes(props) {
+export default function Modes(props) {
   const [ref, isVisible] = useInView(
     {
       unobserveOnEnter: true

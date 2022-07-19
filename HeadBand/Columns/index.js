@@ -1,7 +1,7 @@
 import { ColumnsSvgText } from "../../ColumnsSvgText"
 import style from "../headband.module.scss"
 
-export default function HeadBandColumns(props) {
+export default function Columns(props) {
   return (
     <div className={style.columnsvgBN}>
       <ColumnsSvgText

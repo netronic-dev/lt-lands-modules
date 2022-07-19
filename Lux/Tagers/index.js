@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useInView } from "react-hook-inview"
 import style from "../lux.module.scss"
 
-export default function LuxTagers(props) {
+export default function Tagers(props) {
 
   const firstPicActive = "/lux/lux-tagers-4.png"
   const secondPicActive = "/lux/lux-tagers-2.png"

@@ -2,7 +2,7 @@ import Image from "next/image"
 import style from "../lux.module.scss"
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
-export default function LuxShockproof(props) {
+export default function Shockproof(props) {
   return (
     <section className={style.shockproof}
     >

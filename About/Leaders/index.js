@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Fade } from "react-awesome-reveal"
 import CountUp from "react-countup"
 import { useInView } from "react-hook-inview"
 import { SliderLeaders } from "../../../lt-modules/Slider/SliderLeaders"
 import style from "../about.module.scss"
 
 export default function AboutLeaders(props) {
+
   const [cellFirstView, changeCellFirstView] = useState(false)
   const [cellSecondView, changeCellSecondView] = useState(false)
   const [cellThirdView, changeCellThirdView] = useState(false)
@@ -46,27 +46,31 @@ export default function AboutLeaders(props) {
   })
   return (
     <div className={style.leaders}>
-      <Fade direction="up" triggerOnce>
-        <h2 className={style.title}>
-          {props.title}
-        </h2>
-      </Fade>
-      <div ref={sliderRef} key={sliderIsVisible ? 1 : 0} className={style.leaders_slider}>
+      <h2 className={`${style.title} fade-up-animation`}>
+        {props.title}
+      </h2>
+      <div
+        ref={sliderRef}
+        key={sliderIsVisible ? "slider-inview" : "slider"}
+        className={style.leaders_slider}
+      >
         <SliderLeaders
           slidesToShow={props.slidesToShow}
           data={props.sliderData}
         />
       </div>
       <div className={style.believe}>
-        <Fade direction="up" triggerOnce>
-          <h2 className={style.title}>
-            {props.secondTitle}
-          </h2>
-          <p className={style.subtitle}>
-            {props.textTwo}
-          </p>
-        </Fade>
-        <div className={style.believe_cells} ref={cellsRef} key={cellsIsVisible ? 1 : 2}>
+        <h2 className={`${style.title} fade-up-animation`}>
+          {props.secondTitle}
+        </h2>
+        <p className={`${style.subtitle} fade-up-animation`}>
+          {props.textTwo}
+        </p>
+        <div
+          className={style.believe_cells}
+          ref={cellsRef}
+          key={cellsIsVisible ? "cell-inview" : "cell"}
+        >
           <div
             className={`${cellFirstView ? style.cell_active : style.cell} zoom-animation`}
             onClick={onFirstCellCLick}
@@ -138,6 +142,7 @@ export default function AboutLeaders(props) {
     </div>
   )
 }
+
 function PlusIcon() {
   return (
     <svg

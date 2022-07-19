@@ -2,7 +2,7 @@ import { useInView } from "react-hook-inview"
 import VideoBlock from "../../../lt-modules/VideoBlock"
 import style from "../headband.module.scss"
 
-export default function HeadBandVideo(props) {
+export default function Video(props) {
   const [ref, refVisible] = useInView(
     {
       unobserveOnEnter: true

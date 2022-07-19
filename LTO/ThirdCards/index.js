@@ -3,7 +3,7 @@ import Image from "next/image"
 import { BlockIconText } from "../../BlockIconText"
 import { useInView } from "react-hook-inview"
 
-export default function LTOThirdCards(props) {
+export default function ThirdCards(props) {
   const [titleRef, titleIsVisible] = useInView(
     {
       unobserveOnEnter: true
@@ -30,7 +30,7 @@ export default function LTOThirdCards(props) {
     }
   )
   return (
-    <>
+    <div className={style.screen}>
       <h2
         className={`${style.lo__title} fade-up-animation`}
         ref={titleRef}
@@ -154,6 +154,6 @@ export default function LTOThirdCards(props) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

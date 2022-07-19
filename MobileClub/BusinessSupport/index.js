@@ -99,7 +99,7 @@ export default function MCBusinessSupport(props) {
           <div
             className={style.long_cell__image}>
             <Image
-              src={props.en ? "/mobileClub/kyle.png" : "/mobileClub/urum.png"}
+              src="/mobileClub/kyle.png"
               layout="responsive"
               width={455}
               height={335}
@@ -126,9 +126,7 @@ export default function MCBusinessSupport(props) {
             text={props.buttonText}
             style="bigBlack"
             type="nameEmail"
-            en={props.en}
-            id={props.en ? "mobLT-popup-name-email-en" : "mobLT-popup-name-email"
-            }
+            id="mobLT-popup-name-email-en"
             title={props.formTitle}
             subTitle={props.formSubTitle}
             buttonText={props.formButtonText}

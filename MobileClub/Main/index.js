@@ -56,11 +56,6 @@ export default function MCMain(props) {
         <BUTTON
           type={props.buttonType}
           text={props.buttonText}
-          id={props.buttonID}
-          emailFormID={props.inputEmailID}
-          phoneFormID={props.inputPhoneID}
-          formTitle={props.formTitle}
-          formSubtitle={props.formSubtitle}
         />
       </div>
     </section>

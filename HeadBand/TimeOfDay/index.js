@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useInView } from "react-hook-inview";
 import style from "../headband.module.scss"
 
-export default function HeadBandTimeOfDay(props) {
+export default function TimeOfDay(props) {
   const [ref, isVisible] = useInView(
     {
       unobserveOnEnter: true

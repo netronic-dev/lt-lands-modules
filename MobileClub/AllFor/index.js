@@ -122,11 +122,10 @@ export default function MCAllFor(props) {
             </p>
             <ThemeFormAll
               formTheme="mobile"
-              en={props.en}
               theme="whiteFill"
               buttonTheme="bigBlack"
               buttonActiveTheme="bigBlack"
-              id={props.en ? "all-for-static-en" : "all-for-static"}
+              id="all-for-static-en"
               formID="MOBLT-all-for-"
               buttonText={props.buttonText}
             />

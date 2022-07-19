@@ -66,6 +66,10 @@ $font: "Montserrat", sans-serif;
 		margin: 0 20px 70px;
 	}
 }
+.static_form {
+	background-color: #0d0d0d;
+	padding: 1px 0 100px;
+}
 .features {
 	height: 2343px;
 	position: relative;
@@ -107,6 +111,8 @@ $font: "Montserrat", sans-serif;
 	}
 }
 .shockproof {
+	background-color: #0d0d0d;
+	padding: 1px 0;
 	.shockproof__title {
 		font-family: $font;
 		font-weight: bold;
@@ -132,7 +138,8 @@ $font: "Montserrat", sans-serif;
 	}
 }
 .features_slider {
-	margin-bottom: 150px;
+	background-color: #0d0d0d;
+	padding: 1px 0 150px;
 	.title {
 		font-family: $font;
 		font-weight: bold;
@@ -225,6 +232,10 @@ $font: "Montserrat", sans-serif;
 		overflow: hidden;
 		transition: all 1s ease-in-out;
 	}
+}
+.lux_set_out {
+	background-color: #0d0d0d;
+	padding: 1px 0 50px;
 }
 .lux_set {
 	background-color: #151516;
@@ -375,6 +386,8 @@ $font: "Montserrat", sans-serif;
 	}
 }
 .tagers {
+	background-color: #0d0d0d;
+	padding: 1px 0;
 	.content {
 		margin: 130px 20px 60px;
 		position: relative;
@@ -406,7 +419,8 @@ $font: "Montserrat", sans-serif;
 }
 
 .lux_netronic {
-	margin-bottom: 75px;
+	background-color: #0d0d0d;
+	padding: 1px 0 75px;
 	.lux_netronic_head {
 		width: 935px;
 		margin: 0 auto;
@@ -453,7 +467,6 @@ $font: "Montserrat", sans-serif;
 		}
 	}
 	.features_slider {
-		margin-bottom: 150px;
 		.slider {
 			width: auto;
 			margin: 0 50px;
@@ -481,7 +494,6 @@ $font: "Montserrat", sans-serif;
 		}
 	}
 	.features_slider {
-		margin-bottom: 150px;
 		.slider {
 			grid-template-columns: 1fr;
 		}
@@ -567,7 +579,7 @@ $font: "Montserrat", sans-serif;
 		}
 	}
 	.features_slider {
-		margin-bottom: 50px;
+		padding-bottom: 50px;
 		.title {
 			width: 80%;
 			font-size: 24px;

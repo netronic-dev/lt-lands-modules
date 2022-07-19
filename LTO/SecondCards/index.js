@@ -2,7 +2,7 @@ import style from "../lto.module.scss"
 import Image from "next/image"
 import { useInView } from "react-hook-inview"
 
-export default function LTOSecondCards(props) {
+export default function SecondCards(props) {
   const [titleRef, titleIsVisible] = useInView(
     {
       unobserveOnEnter: true
@@ -24,7 +24,7 @@ export default function LTOSecondCards(props) {
     }
   )
   return (
-    <section>
+    <section className={style.screen}>
       <h2
         className={`${style.lo__title} fade-up-animation`}
         ref={titleRef}
