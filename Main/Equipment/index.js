@@ -39,10 +39,8 @@ export default function MainEquipment(props) {
         </Fade>
         <div className={style.equipment_menu}>
           <Link
-            href={props.en ?
-              "/mobile-laser-tag-equipment"
-              : "/lazertag-biznes/mobilniy-lasertag-business"
-            }>
+            href="/mobile-laser-tag-equipment"
+          >
             <div className={
               firstCellIsActive ? style.cellActive : style.cell
             }
@@ -66,14 +64,10 @@ export default function MainEquipment(props) {
                 </p>
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
-                    <Link href={props.en ?
-                      "/mobile-laser-tag-equipment"
-                      : "/lazertag-biznes/mobilniy-lasertag-business"
-                    }>
+                    <Link href="/mobile-laser-tag-equipment">
                       <a>
                         <ButtonDetails
                           theme="White"
-                          en={props.en}
                         />
                       </a></Link>
                   </Fade>
@@ -82,9 +76,7 @@ export default function MainEquipment(props) {
 
             </div>
           </Link>
-          <Link href={props.en ?
-            "/outdoor-laser-tag" : "/vnearennoe-lasertag-oborudovanie"
-          }>
+          <Link href="/outdoor-laser-tag">
             <div className={secondCellIsActive ? style.cellActive : style.cell
             }
               onMouseOver={onSecondCellChange}
@@ -107,13 +99,10 @@ export default function MainEquipment(props) {
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
                     <Link
-                      href={props.en ?
-                        "/outdoor-laser-tag" : "/vnearennoe-lasertag-oborudovanie"
-                      }>
+                      href="/outdoor-laser-tag">
                       <a>
                         <ButtonDetails
                           theme="White"
-                          en={props.en}
                         />
                       </a></Link>
                   </Fade>
@@ -122,10 +111,7 @@ export default function MainEquipment(props) {
             </div>
           </Link>
           <Link
-            href={props.en ?
-              "/indoor-laser-tag-equipment"
-              : "/arennoe-lasertag-oborudovanie"
-            }>
+            href="/indoor-laser-tag-equipment">
             <div className={
               thirdCellIsActive ? style.cellActive : style.cell
             }
@@ -149,13 +135,9 @@ export default function MainEquipment(props) {
                 <div className={style.cell_button}>
                   <Fade direction="up" duration={500} triggerOnce>
                     <Link
-                      href={props.en ?
-                        "/indoor-laser-tag-equipment"
-                        : "/arennoe-lasertag-oborudovanie"
-                      }><a>
+                      href="/indoor-laser-tag-equipment"><a>
                         <ButtonDetails
                           theme="White"
-                          en={props.en}
                         />
                       </a></Link>
                   </Fade>
@@ -174,14 +156,14 @@ export default function MainEquipment(props) {
             </p>
             <div className={style.individual_form}>
               <ThemeForm
-                en={props.en}
+                destinationURL={props.destinationURL}
+                orderName={props.orderName}
+                lang={props.lang}
                 theme="whiteFill"
                 buttonTheme="black"
                 buttonActiveTheme="black"
                 name
                 phone
-                formID="land-"
-                id={props.en ? "land-submit-button-en" : "land-submit-button"}
                 buttonText={props.buttonText}
               />
             </div>

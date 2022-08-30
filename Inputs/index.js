@@ -6,6 +6,8 @@ import { icons } from "../../lt-modules/InputForms/icons/icons"
 import { useInView } from "react-hook-inview";
 import { FillButton } from "../../lt-modules/Buttons";
 import Link from "next/link"
+import { useValidation } from "../../context/ValidationProvider";
+import { postData } from "../../lt-modules/functions/postData";
 
 const inputsLandTheme = {
   "default": style.input_land,
@@ -13,27 +15,19 @@ const inputsLandTheme = {
 }
 
 export function Inputs(props) {
+  const validate = useValidation()
   const router = useRouter();
-
-  let id
-  if (props.id) {
-    id = props.id
-  } else {
-    id = "land_form_submit_en"
-  }
 
   const formik = useFormik({
     initialValues: {
-      phoneNumber: "",
+      phone: "",
       email: "",
       agreement: ""
     },
     validate,
     onSubmit: (values) => {
-      setTimeout(() => {
-        router.push("/thanks-catalog").then(() => router.reload());
-        document.body.style.overflowY = "scroll";
-      }, 400);
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query)
+      router.push("/thanks-catalog").then(() => router.reload());
     },
 
   });
@@ -54,7 +48,6 @@ export function Inputs(props) {
       >
         <div className={style.left}>
           <form
-            id="form-catalog-land"
             onSubmit={formik.handleSubmit}
             className="form_submit_land"
           >
@@ -68,18 +61,17 @@ export function Inputs(props) {
                   <input
                     className={style.input}
                     type="tel"
-                    id="phoneNumberLand"
-                    name="phoneNumber"
+                    name="phone"
                     maxLength="30"
                     onChange={formik.handleChange}
-                    value={formik.values.phoneNumber}
+                    value={formik.values.phone}
                     placeholder="Phone number"
                   />
                   <div className={style.error_icon}>
-                    {formik.errors.phoneNumber ? icons.error : formik.values.phoneNumber === "" ? null : icons.agree}
+                    {formik.errors.phone ? icons.error : formik.values.phone === "" ? null : icons.agree}
                   </div>
                 </div>
-                <div className={style.error}>{formik.errors.phoneNumber}</div>
+                <div className={style.error}>{formik.errors.phone}</div>
               </div>
               <div className={style.input_out__outer}>
                 <div className={style.input_out}>
@@ -88,7 +80,6 @@ export function Inputs(props) {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     maxLength="40"
-                    id="emailLand"
                     name="email"
                     type="email"
                     placeholder="Email"
@@ -108,9 +99,6 @@ export function Inputs(props) {
             />
             <FillButton
               style="blueWhite"
-              id={
-                Object.keys(formik.errors).length == 0 ? id : null
-              }
               submit
               text={props.buttonText}
             />
@@ -131,23 +119,21 @@ export function Inputs(props) {
 }
 
 export function InputsWName(props) {
+  const validate = useValidation()
   const image = props.image ? props.image : "/index/catalogs.png"
   const router = useRouter();
-  let id = props.id || "landwname_form_submit_en"
 
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
-      phoneNumber: "",
+      phone: "",
       agreement: ""
     },
     validate,
     onSubmit: (values) => {
-      setTimeout(() => {
-        router.push("/thanks-catalog").then(() => router.reload());
-        document.body.style.overflowY = "scroll";
-      }, 400);
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query)
+      router.push("/thanks-catalog").then(() => router.reload());
     },
 
   });
@@ -169,7 +155,6 @@ export function InputsWName(props) {
       >
         <div className={style.left}>
           <form
-            id="form-catalog-land"
             onSubmit={formik.handleSubmit}
             className="form_submit_land"
           >
@@ -182,7 +167,6 @@ export function InputsWName(props) {
                 <div className={style.input_out}>
                   <input
                     className={style.input}
-                    id="nameLand"
                     name="name"
                     maxLength="30"
                     onChange={formik.handleChange}
@@ -202,7 +186,6 @@ export function InputsWName(props) {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     maxLength="40"
-                    id="emailLand"
                     name="email"
                     type="email"
                     placeholder="Email"
@@ -218,18 +201,17 @@ export function InputsWName(props) {
                   <input
                     className={style.input}
                     type="tel"
-                    id="phoneNumberLand"
-                    name="phoneNumber"
+                    name="phone"
                     maxLength="30"
                     onChange={formik.handleChange}
-                    value={formik.values.phoneNumber}
+                    value={formik.values.phone}
                     placeholder="Phone number"
                   />
                   <div className={style.error_icon}>
-                    {formik.errors.phoneNumber ? icons.error : formik.values.phoneNumber === "" ? null : icons.agree}
+                    {formik.errors.phone ? icons.error : formik.values.phone === "" ? null : icons.agree}
                   </div>
                 </div>
-                <div className={style.error}>{formik.errors.phoneNumber}</div>
+                <div className={style.error}>{formik.errors.phone}</div>
               </div>
             </div>
             <Agreement
@@ -239,9 +221,6 @@ export function InputsWName(props) {
             />
             <FillButton
               style={props.theme === "light" ? "bigBlue" : "blueWhite"}
-              id={
-                Object.keys(formik.errors).length == 0 ? id : null
-              }
               submit={Object.keys(formik.errors).length == 0 ? true : null}
               text={props.buttonText}
             />
@@ -260,6 +239,7 @@ export function InputsWName(props) {
     </div>
   );
 }
+
 function Agreement(props) {
   return (
     <div className={style.input_out__outer}>
@@ -291,40 +271,6 @@ function Agreement(props) {
   )
 }
 
-export const validate = (values) => {
-
-  const errors = {};
-
-  if (values.name !== undefined) {
-    if (values.name === "") {
-      errors.name = "Required";
-    }
-  }
-  if (values.email !== undefined) {
-    if (values.email === "") {
-      errors.email = "Required";
-    }
-    if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = "Wrong email";
-    }
-  }
-  if (values.phoneNumber !== undefined) {
-    if (values.phoneNumber === "") {
-      errors.phoneNumber = "Required";
-    }
-    if (!/^[\+]?[(]?[0-9]{1,3}[)]?[(]?[0-9]{1,3}[)]?[-\s\.]?[0-9]{1,3}[-\s\.]?[0-9]{1,13}$/im.test(values.phoneNumber)) {
-      errors.phoneNumber = "Wrong phone number";
-    }
-  }
-  if (values.agreement !== undefined) {
-    if (!values.agreement) {
-      errors.agreement = "Required";
-    }
-  }
-  return errors;
-};
 const dotIcon = (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
     <circle cx="10" cy="10" r="10" fill="#212121" />
