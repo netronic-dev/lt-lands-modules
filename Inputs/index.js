@@ -26,8 +26,8 @@ export function Inputs(props) {
     },
     validate,
     onSubmit: (values) => {
-      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query)
-      router.push("/thanks-catalog").then(() => router.reload());
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query).then(
+        router.push("/thanks-catalog"))
     },
 
   });
@@ -52,9 +52,9 @@ export function Inputs(props) {
             className="form_submit_land"
           >
             <div className={style.content}>
-              <h2 className={style.title}>{props.title || "Получи каталог"}</h2>
+              <h2 className={style.title}>{props.title}</h2>
               <p className={style.text}>
-                {props.text || "С готовыми комплектациями для открытия бизнеса!"}
+                {props.text}
               </p>
               <div className={style.input_out__outer}>
                 <div className={style.input_out}>
@@ -95,7 +95,6 @@ export function Inputs(props) {
               onAgreementChange={onAgreementChange}
               agreement={formik.values.agreement}
               error={formik.errors.agreement}
-              en
             />
             <FillButton
               style="blueWhite"
@@ -132,10 +131,10 @@ export function InputsWName(props) {
     },
     validate,
     onSubmit: (values) => {
-      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query)
-      router.push("/thanks-catalog").then(() => router.reload());
-    },
-
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query).then(
+        router.push("/thanks-catalog")
+      )
+    }
   });
 
   function onAgreementChange() {
@@ -221,7 +220,7 @@ export function InputsWName(props) {
             />
             <FillButton
               style={props.theme === "light" ? "bigBlue" : "blueWhite"}
-              submit={Object.keys(formik.errors).length == 0 ? true : null}
+              submit
               text={props.buttonText}
             />
           </form>
