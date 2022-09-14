@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
+import { FillButton } from "../../lt-modules/Buttons";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
-import LPButton from "../LP/Button";
 import style from "./style.module.scss"
 
 export function EventForm(props) {
@@ -286,15 +286,11 @@ function Form(props) {
         value={formik.values.comments}
         error={formik.errors.comments}
       />
-      <LPButton
+      <FillButton
         id="iaapa-event-form-submit"
         submit
-        style={style.submit_button}
-        hover="white"
-        bgcolor="#0090FF"
-      >
-        Send
-      </LPButton>
+        text="Send"
+      />
     </form>
   )
 }
