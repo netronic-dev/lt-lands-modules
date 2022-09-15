@@ -51,13 +51,13 @@ function Form(props) {
     validate,
     onSubmit: (values) => {
       postEventData({ values, equipmentTypeValue, modelValue })
-      //   .then(
-      //   formik.resetForm()
-      // ).then(
-      //   window.scroll({ top: 0 })
-      // ).then(
-      //   props.thankYou()
-      // )
+        .then(
+          formik.resetForm()
+        ).then(
+          window.scroll({ top: 0 })
+        ).then(
+          props.thankYou()
+        )
     }
   })
 
