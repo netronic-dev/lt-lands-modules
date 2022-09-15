@@ -2,6 +2,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { FillButton } from "../../lt-modules/Buttons";
+import { postData } from "../../lt-modules/functions/postData";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
 import style from "./style.module.scss"
 
@@ -27,6 +28,7 @@ export function EventForm(props) {
 }
 
 function Form(props) {
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -48,28 +50,14 @@ function Form(props) {
     },
     validate,
     onSubmit: (values) => {
-      axios.post('https://sheet.best/api/sheets/dcf57c62-c756-459d-b106-5bb6b2b45545',
-        {
-          name: formik.values.name,
-          email: formik.values.email,
-          phone: formik.values.phone,
-          country: formik.values.country,
-          current_business: formik.values.current_business,
-          business_to_open: formik.values.business_to_open,
-          equipment_type: equipmentTypeValue,
-          model: modelValue,
-          quantity: formik.values.quantity,
-          comments: formik.values.comments,
-        }
-      ).then(response => {
-        console.log(response);
-      }).then(
-        formik.resetForm()
-      ).then(
-        window.scroll({ top: 0 })
-      ).then(
-        props.thankYou()
-      )
+      postEventData({ values, equipmentTypeValue, modelValue })
+      //   .then(
+      //   formik.resetForm()
+      // ).then(
+      //   window.scroll({ top: 0 })
+      // ).then(
+      //   props.thankYou()
+      // )
     }
   })
 
@@ -100,15 +88,8 @@ function Form(props) {
 
   let equipmentTypeValue = `${formik.values.isOutdoor ? "Outdoor " : ""}${formik.values.isIndoor ? "Indoor " : ""}${formik.values.isVR ? "VR " : ""}${formik.values.isBunkers ? "Bunkers " : ""}`
 
-  let modelValue = `Model:${formik.values.isBasic ? "Basic " : ""}${formik.values.isStandard ? "Standard " : ""}${formik.values.isPremium ? "Premium " : ""}${formik.values.isPro ? "Pro " : ""}`
+  let modelValue = `${formik.values.isBasic ? "Basic " : ""}${formik.values.isStandard ? "Standard " : ""}${formik.values.isPremium ? "Premium " : ""}${formik.values.isPro ? "Pro " : ""}`
 
-  let unionOfValuesForRoistat = `
-  ${formik.values.current_business ? "current_business: " + formik.values.current_business : ""}
-  ${formik.values.business_to_open ? "business_to_open: " + formik.values.business_to_open : ""}
-  ${modelValue}
-  ${formik.values.quantity ? "quantity: " + formik.values.quantity : ""}
-  ${formik.values.comments ? "comments: " + formik.values.comments : ""}
-  `
 
   return (
     <form
@@ -123,7 +104,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="name"
         anotherPlace="Name"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -135,7 +115,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="email"
         anotherPlace="Email"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -147,7 +126,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="phone"
         anotherPlace="Phone number"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -159,7 +137,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="country"
         anotherPlace="Country"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -171,7 +148,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="current_business"
         anotherPlace="Current business"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -183,7 +159,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="business_to_open"
         anotherPlace="Business to open"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -194,32 +169,23 @@ function Form(props) {
         Equipment type
       </h2>
       <div className={style.checkboxes}>
-        <input
-          className={style.hidden_input}
-          id="equipment_type"
-          value={equipmentTypeValue}
-        />
         <CheckBox
           title="Indoor"
-          id="Indoor_"
           active={formik.values.isIndoor}
           onClick={onIndoorChange}
         />
         <CheckBox
           title="Outdoor"
-          id="Outdoor_"
           active={formik.values.isOutdoor}
           onClick={onOutdoorChange}
         />
         <CheckBox
           title="VR"
-          id="VR_"
           active={formik.values.isVR}
           onClick={onVRChange}
         />
         <CheckBox
           title="Bunkers"
-          id="Bunkers_"
           active={formik.values.isBunkers}
           onClick={onBunkersChange}
         />
@@ -228,37 +194,23 @@ function Form(props) {
         Model
       </h2>
       <div className={style.checkboxes}>
-        <input
-          className={style.hidden_input}
-          id="model"
-          value={modelValue}
-        />
-        <input
-          className={style.hidden_input}
-          id="union"
-          value={unionOfValuesForRoistat}
-        />
         <CheckBox
           title="Basic"
-          id="basic_"
           active={formik.values.isBasic}
           onClick={onBasicChange}
         />
         <CheckBox
           title="Standard"
-          id="Standard_"
           active={formik.values.isStandard}
           onClick={onStandardChange}
         />
         <CheckBox
           title="Premium"
-          id="Premium_"
           active={formik.values.isPremium}
           onClick={onPremiumChange}
         />
         <CheckBox
           title="Pro"
-          id="Pro_"
           active={formik.values.isPro}
           onClick={onProChange}
         />
@@ -268,7 +220,6 @@ function Form(props) {
         type="text"
         theme="bottomBordered"
         noIcons
-        id="quantity"
         anotherPlace="Quantity"
         errorTheme="flat"
         onChange={formik.handleChange}
@@ -287,7 +238,6 @@ function Form(props) {
         error={formik.errors.comments}
       />
       <FillButton
-        id="iaapa-event-form-submit"
         submit
         text="Send"
       />
@@ -312,3 +262,59 @@ const validate = (values) => {
   }
   return errors;
 };
+async function postEventData(data) {
+  postData(
+    data.values,
+    "lasertag.net/event-form",
+    "London IAAPA Managers Form",
+    "us",
+    "lasertag.net",
+    false,
+    [
+      {
+        name: "Model",
+        value: data.modelValue
+      },
+      {
+        name: "Country",
+        value: data.values.country
+      },
+      {
+        name: "Current business",
+        value: data.values.current_business
+      },
+      {
+        name: "Business to open",
+        value: data.values.business_to_open
+      },
+      {
+        name: "Equipment type",
+        value: data.equipmentTypeValue
+      },
+      {
+        name: "Quantity",
+        value: data.values.quantity
+      },
+      {
+        name: "Comments",
+        value: data.values.comments
+      },
+    ],
+  )
+  axios.post('https://sheet.best/api/sheets/a029e18d-160e-4ece-8e2e-8c8ac93d67ce',
+    {
+      name: data.values.name,
+      email: data.values.email,
+      phone: data.values.phone,
+      country: data.values.country,
+      current_business: data.values.current_business,
+      business_to_open: data.values.business_to_open,
+      equipment_type: data.equipmentTypeValue,
+      model: data.modelValue,
+      quantity: data.values.quantity,
+      comments: data.values.comments,
+    }
+  ).then((res) => {
+    console.log(res)
+  })
+}
