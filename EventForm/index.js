@@ -265,7 +265,7 @@ const validate = (values) => {
 async function postEventData(data) {
   postData(
     data.values,
-    "lasertag.net/event-form",
+    "https://dev.lasertag.net/forms",
     "London IAAPA Managers Form",
     "us",
     "lasertag.net",
