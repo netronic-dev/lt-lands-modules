@@ -1,0 +1,64 @@
+%margin {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.main {
+    position: relative;
+    height: 570px;
+    padding-top: 50px;
+
+    .content {
+        @extend %margin;
+        position: relative;
+        z-index: 2;
+    }
+
+    .title {
+        font-family: "NuberNext", sans-serif;
+        width: 679px;
+        font-size: 80px;
+        line-height: 76px;
+        color: #0090FF;
+        margin-top: 30px;
+    }
+
+    .text {
+        width: 350px;
+        font-family: "Inter", sans-serif;
+        font-weight: normal;
+        font-weight: 500;
+        font-size: 33px;
+        line-height: 37px;
+        color: #2F2F2D;;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    %title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .main {
+        height: 650px;
+        padding-top: 40px;
+
+        .title {
+            width: auto;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            max-width: 300px;
+            color: #000000;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 40px;
+        }
+    }
+}
