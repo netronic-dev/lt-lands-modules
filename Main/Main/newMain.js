@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
 import style from "./style.module.scss"
 
 const contentTheme = {
@@ -16,7 +15,7 @@ export default function NewMainMain(props) {
                     <Image
                         src={props.image}
                         layout="fill"
-                        objectFit="fill"
+                        objectFit="cover"
                         objectPosition={props.image_objectPosition}
                         quality={90}
                         priority={true}
@@ -34,23 +33,16 @@ export default function NewMainMain(props) {
                     />
                 </div> : ""}
             <div className={`${style.content} ${contentTheme[props.theme ? props.theme : "light"]}`}>
-                <Fade direction="left" delay={800} triggerOnce>
-                    <h1 className={style.title} style={{ whiteSpace: "pre-line" }}>
-                        {props.title}
-                    </h1>
-                    <p className={style.text}>
-                        {props.text}
-                    </p>
-                </Fade>
-                {props.logo ?
-                    <div className={style.logo}>
-                        <Image
-                            src={props.logo}
-                            layout="fill"
-                            objectFit="contain"
-                        />
-                    </div>
-                    : ""}
+                {/* <Fade direction="right" delay={800} triggerOnce> */}
+                {/* <div className={style.content_align_right}> */}
+                <h1 className={`${style.title} fade-right-animation`} style={{ whiteSpace: "pre-line" }}>
+                    {props.title}
+                </h1>
+                <p className={style.text}>
+                    {props.text}
+                </p>
+                {/* </div> */}
+                {/* </Fade> */}
             </div>
         </section>
     )
