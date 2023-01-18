@@ -6,6 +6,7 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
 export default function SiriusMain(props) {
   return (
     <div className={style.section_general}>
+      <h1 className="hidden">{props.hiddenTitle}</h1>
       <div className={`${style.section_general_bg} desktop`}>
         <Image
           src="/sirius/sirius-home.jpg"
@@ -24,11 +25,11 @@ export default function SiriusMain(props) {
       </div>
       <div className={style.inside_general}>
         <div className={style.breadCrumbs}>
-          <BreadCrumbs breadcrumbData={props.breadcrumbData} color="grey" />
+          <BreadCrumbs breadcrumbData={props.breadcrumbData} color="white" />
         </div>
-        <h1 className={style.title}>
+        <p className={style.title}>
           {props.title}
-        </h1>
+        </p>
         {logoSirius}
         <Button
           type="catalog"

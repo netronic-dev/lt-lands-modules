@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import style from './style.module.scss';
@@ -6,6 +7,18 @@ import { icons } from '../../lt-modules/InputForms/icons/icons';
 import { useInView } from 'react-hook-inview';
 import { FillButton } from '../../lt-modules/Buttons';
 import Link from 'next/link';
+=======
+import { useFormik } from "formik";
+import { useRouter } from "next/router";
+import style from "./style.module.scss";
+import Image from "next/image"
+import { icons } from "../../lt-modules/InputForms/icons/icons"
+import { useInView } from "react-hook-inview";
+import { FillButton } from "../../lt-modules/Buttons";
+import Link from "next/link"
+import { useValidation } from "../../context/ValidationProvider";
+import { postData } from "../../lt-modules/functions/postData";
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -13,6 +26,7 @@ const inputsLandTheme = {
 };
 
 export function Inputs(props) {
+<<<<<<< HEAD
     const router = useRouter();
 
     let id;
@@ -139,13 +153,102 @@ export function Inputs(props) {
                         priority={true}
                         quality={90}
                     />
+=======
+  const validate = useValidation()
+  const router = useRouter();
+
+  const formik = useFormik({
+    initialValues: {
+      phone: "",
+      email: "",
+      agreement: ""
+    },
+    validate,
+    onSubmit: (values) => {
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query).then(
+        router.push("/thanks-catalog"))
+    },
+
+  });
+  function onAgreementChange() {
+    formik.setFieldValue("agreement", !formik.values.agreement)
+  }
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true
+  })
+
+
+  return (
+    <div className={style.input_land_out}>
+      <div
+        ref={ref}
+        key={isVisible ? 1 : 2}
+        className={`${style.input_land} swipe-right-animation`}
+      >
+        <div className={style.left}>
+          <form
+            onSubmit={formik.handleSubmit}
+            className="form_submit_land"
+          >
+            <div className={style.content}>
+              <h2 className={style.title}>{props.title}</h2>
+              <p className={style.text}>
+                {props.text}
+              </p>
+              <div className={style.input_out__outer}>
+                <div className={style.input_out}>
+                  <input
+                    className={style.input}
+                    type="tel"
+                    name="phone"
+                    maxLength="30"
+                    onChange={formik.handleChange}
+                    value={formik.values.phone}
+                    placeholder="Phone number"
+                  />
+                  <div className={style.error_icon}>
+                    {formik.errors.phone ? icons.error : formik.values.phone === "" ? null : icons.agree}
+                  </div>
+                </div>
+                <div className={style.error}>{formik.errors.phone}</div>
+              </div>
+              <div className={style.input_out__outer}>
+                <div className={style.input_out}>
+                  <input
+                    className={style.input}
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    maxLength="40"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                  />
+                  <div className={style.error_icon}>
+                    {formik.errors.email ? icons.error : formik.values.email === "" ? null : icons.agree}
+                  </div>
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            <Agreement
+              onAgreementChange={onAgreementChange}
+              agreement={formik.values.agreement}
+              error={formik.errors.agreement}
+            />
+            <FillButton
+              style="blueWhite"
+              submit
+              text={props.buttonText}
+            />
+          </form>
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
         </div>
     );
 }
 
 export function InputsWName(props) {
+<<<<<<< HEAD
     const image = props.image ? props.image : '/index/catalogs.png';
     const router = useRouter();
     let id = props.id || 'landwname_form_submit_en';
@@ -169,11 +272,32 @@ export function InputsWName(props) {
     function onAgreementChange() {
         formik.setFieldValue('agreement', !formik.values.agreement);
     }
+=======
+  const validate = useValidation()
+  const image = props.image ? props.image : "/index/catalogs.png"
+  const router = useRouter();
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      agreement: ""
+    },
+    validate,
+    onSubmit: (values) => {
+      postData(values, props.destinationURL, props.orderName, props.lang, window.location.hostname, router.query).then(
+        router.push("/thanks-catalog")
+      )
+    }
+  });
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
 
     const [ref, isVisible] = useInView({
         unobserveOnEnter: true,
     });
 
+<<<<<<< HEAD
     return (
         <div className={style.input_land_out}>
             <div
@@ -301,9 +425,95 @@ export function InputsWName(props) {
                     />
                 </div>
             </div>
+=======
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true
+  })
+
+  return (
+    <div className={style.input_land_out}>
+      <div
+        ref={ref}
+        key={isVisible ? 1 : 2}
+        className={`${inputsLandTheme[props.theme ? props.theme : "default"]} swipe-right-animation`}
+      >
+        <div className={style.left}>
+          <form
+            onSubmit={formik.handleSubmit}
+            className="form_submit_land"
+          >
+            <div className={style.content}>
+              <h2 className={style.title}>{props.title}</h2>
+              <p className={style.text}>
+                {props.text}
+              </p>
+              <div className={style.input_out__outer}>
+                <div className={style.input_out}>
+                  <input
+                    className={style.input}
+                    name="name"
+                    maxLength="30"
+                    onChange={formik.handleChange}
+                    value={formik.values.name}
+                    placeholder="Name"
+                  />
+                  <div className={style.error_icon}>
+                    {formik.errors.name ? icons.error : formik.values.name === "" ? null : icons.agree}
+                  </div>
+                </div>
+                <div className={style.error}>{formik.errors.name}</div>
+              </div>
+              <div className={style.input_out__outer}>
+                <div className={style.input_out}>
+                  <input
+                    className={style.input}
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    maxLength="40"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                  />
+                  <div className={style.error_icon}>
+                    {formik.errors.email ? icons.error : formik.values.email === "" ? null : icons.agree}
+                  </div>
+                </div>
+                <div className={style.error}>{formik.errors.email}</div>
+              </div>
+              <div className={style.input_out__outer}>
+                <div className={style.input_out}>
+                  <input
+                    className={style.input}
+                    type="tel"
+                    name="phone"
+                    maxLength="30"
+                    onChange={formik.handleChange}
+                    value={formik.values.phone}
+                    placeholder="Phone number"
+                  />
+                  <div className={style.error_icon}>
+                    {formik.errors.phone ? icons.error : formik.values.phone === "" ? null : icons.agree}
+                  </div>
+                </div>
+                <div className={style.error}>{formik.errors.phone}</div>
+              </div>
+            </div>
+            <Agreement
+              onAgreementChange={onAgreementChange}
+              agreement={formik.values.agreement}
+              error={formik.errors.agreement}
+            />
+            <FillButton
+              style={props.theme === "light" ? "bigBlue" : "blueWhite"}
+              submit
+              text={props.buttonText}
+            />
+          </form>
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
         </div>
     );
 }
+
 function Agreement(props) {
     return (
         <div className={style.input_out__outer}>
@@ -336,6 +546,7 @@ function Agreement(props) {
     );
 }
 
+<<<<<<< HEAD
 export const validate = (values) => {
     const errors = {};
 
@@ -371,6 +582,8 @@ export const validate = (values) => {
     }
     return errors;
 };
+=======
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
 const dotIcon = (
     <svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
         <circle cx='10' cy='10' r='10' fill='#212121' />

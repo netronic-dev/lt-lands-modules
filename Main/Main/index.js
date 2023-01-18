@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 import { FillButton, Button } from '../../../lt-modules/Buttons';
@@ -109,3 +110,6 @@ export default function MainMain(props) {
         </>
     );
 }
+=======
+export { default } from './newMain';
+>>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
