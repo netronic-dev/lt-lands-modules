@@ -12,6 +12,8 @@ function Form(props) {
         title={props.title}
         text={props.text}
         buttonText={props.buttonText}
+        checkboxText={props.checkboxText}
+        checkboxSpanText={props.checkboxSpanText}
       />
     </div>
   );
