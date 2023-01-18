@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 import { FillButton, Button } from '../../../lt-modules/Buttons';
@@ -23,7 +22,6 @@ export default function MainMain(props) {
                             objectPosition={props.image_objectPosition}
                             quality={90}
                             priority={true}
-                            alt={props.altImage}
                         />
                     </div>
                 ) : (
@@ -40,7 +38,6 @@ export default function MainMain(props) {
                             }
                             quality={90}
                             priority={true}
-                            alt={props.altImage}
                         />
                     </div>
                 ) : (
@@ -99,7 +96,6 @@ export default function MainMain(props) {
                                 src={props.logo}
                                 layout='fill'
                                 objectFit='contain'
-                                alt='logo'
                             />
                         </div>
                     ) : (
@@ -110,6 +106,3 @@ export default function MainMain(props) {
         </>
     );
 }
-=======
-export { default } from './newMain';
->>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7

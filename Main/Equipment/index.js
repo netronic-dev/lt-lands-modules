@@ -23,7 +23,6 @@ export default function MainEquipment(props) {
         changeThirdCellView(false);
     }
 
-<<<<<<< HEAD
     function onThirdCellChange() {
         changeFirstCellView(false);
         changeSecondCellView(false);
@@ -36,13 +35,7 @@ export default function MainEquipment(props) {
                     <h2 className={style.title}>{props.title}</h2>
                 </Fade>
                 <div className={style.equipment_menu}>
-                    <Link
-                        href={
-                            props.en
-                                ? '/mobile-laser-tag-equipment'
-                                : '/lazertag-biznes/mobilniy-lasertag-business'
-                        }
-                    >
+                    <Link href='/mobile-laser-tag-equipment'>
                         <div
                             className={
                                 firstCellIsActive
@@ -72,19 +65,9 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link
-                                            href={
-                                                props.en
-                                                    ? '/mobile-laser-tag-equipment'
-                                                    : '/lazertag-biznes/mobilniy-lasertag-business'
-                                            }
-                                        >
+                                        <Link href='/mobile-laser-tag-equipment'>
                                             <a>
-                                                <ButtonDetails
-                                                    theme='White'
-                                                    en={props.en}
-                                                    text='En savoir plus'
-                                                />
+                                                <ButtonDetails theme='White' />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -92,13 +75,7 @@ export default function MainEquipment(props) {
                             </div>
                         </div>
                     </Link>
-                    <Link
-                        href={
-                            props.en
-                                ? '/outdoor-laser-tag'
-                                : '/vnearennoe-lasertag-oborudovanie'
-                        }
-                    >
+                    <Link href='/outdoor-laser-tag'>
                         <div
                             className={
                                 secondCellIsActive
@@ -128,19 +105,9 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link
-                                            href={
-                                                props.en
-                                                    ? '/outdoor-laser-tag'
-                                                    : '/vnearennoe-lasertag-oborudovanie'
-                                            }
-                                        >
+                                        <Link href='/outdoor-laser-tag'>
                                             <a>
-                                                <ButtonDetails
-                                                    theme='White'
-                                                    en={props.en}
-                                                    text='En savoir plus'
-                                                />
+                                                <ButtonDetails theme='White' />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -148,13 +115,7 @@ export default function MainEquipment(props) {
                             </div>
                         </div>
                     </Link>
-                    <Link
-                        href={
-                            props.en
-                                ? '/indoor-laser-tag-equipment'
-                                : '/arennoe-lasertag-oborudovanie'
-                        }
-                    >
+                    <Link href='/indoor-laser-tag-equipment'>
                         <div
                             className={
                                 thirdCellIsActive
@@ -184,19 +145,9 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link
-                                            href={
-                                                props.en
-                                                    ? '/indoor-laser-tag-equipment'
-                                                    : '/arennoe-lasertag-oborudovanie'
-                                            }
-                                        >
+                                        <Link href='/indoor-laser-tag-equipment'>
                                             <a>
-                                                <ButtonDetails
-                                                    theme='White'
-                                                    en={props.en}
-                                                    text='En savoir plus'
-                                                />
+                                                <ButtonDetails theme='White' />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -215,18 +166,14 @@ export default function MainEquipment(props) {
                         </p>
                         <div className={style.individual_form}>
                             <ThemeForm
-                                en={props.en}
+                                destinationURL={props.destinationURL}
+                                orderName={props.orderName}
+                                lang={props.lang}
                                 theme='whiteFill'
                                 buttonTheme='black'
                                 buttonActiveTheme='black'
                                 name
                                 phone
-                                formID='land-'
-                                id={
-                                    props.en
-                                        ? 'land-submit-button-en'
-                                        : 'land-submit-button'
-                                }
                                 buttonText={props.buttonText}
                             />
                         </div>
@@ -236,160 +183,3 @@ export default function MainEquipment(props) {
         </>
     );
 }
-=======
-  function onSecondCellChange() {
-    changeFirstCellView(false)
-    changeSecondCellView(true)
-    changeThirdCellView(false)
-  }
-
-  function onThirdCellChange() {
-    changeFirstCellView(false)
-    changeSecondCellView(false)
-    changeThirdCellView(true)
-  }
-  return (
-    <>
-      <section className={style.equipment}>
-        <Fade direction="up" duration={300} triggerOnce>
-          <h2 className={style.title}>
-            {props.title}
-          </h2>
-        </Fade>
-        <div className={style.equipment_menu}>
-          <Link
-            href="/mobile-laser-tag-equipment"
-          >
-            <div className={
-              firstCellIsActive ? style.cellActive : style.cell
-            }
-              onMouseOver={onFirstCellChange}
-            >
-
-              <div className="background">
-                <Image
-                  src="/index/mobile-equipment.jpg"
-                  layout="fill"
-                  objectFit="cover"
-                  priority={true}
-                />
-              </div>
-              <div className={style.cell_content}>
-                <h3 className={style.cell_title}>
-                  {props.firstCellTitle}
-                </h3>
-                <p className={style.cell_text}>
-                  {props.firstCellText}
-                </p>
-                <div className={style.cell_button}>
-                  <Fade direction="up" duration={500} triggerOnce>
-                    <Link href="/mobile-laser-tag-equipment">
-                      <a>
-                        <ButtonDetails
-                          theme="White"
-                        />
-                      </a></Link>
-                  </Fade>
-                </div>
-              </div>
-
-            </div>
-          </Link>
-          <Link href="/outdoor-laser-tag">
-            <div className={secondCellIsActive ? style.cellActive : style.cell
-            }
-              onMouseOver={onSecondCellChange}
-            >
-              <div className="background">
-                <Image
-                  src="/index/outdoor-equipment.jpg"
-                  layout="fill"
-                  objectFit="cover"
-                  priority={true}
-                />
-              </div>
-              <div className={style.cell_content}>
-                <h3 className={style.cell_title}>
-                  {props.secondCellTitle}
-                </h3>
-                <p className={style.cell_text}>
-                  {props.secondCellText}
-                </p>
-                <div className={style.cell_button}>
-                  <Fade direction="up" duration={500} triggerOnce>
-                    <Link
-                      href="/outdoor-laser-tag">
-                      <a>
-                        <ButtonDetails
-                          theme="White"
-                        />
-                      </a></Link>
-                  </Fade>
-                </div>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/indoor-laser-tag-equipment">
-            <div className={
-              thirdCellIsActive ? style.cellActive : style.cell
-            }
-              onMouseOver={onThirdCellChange}
-            >
-              <div className="background">
-                <Image
-                  src="/index/indoor-equipment.jpg"
-                  layout="fill"
-                  objectFit="cover"
-                  priority={true}
-                />
-              </div>
-              <div className={style.cell_content}>
-                <h3 className={style.cell_title}>
-                  {props.thirdCellTitle}
-                </h3>
-                <p className={style.cell_text}>
-                  {props.thirdCellText}
-                </p>
-                <div className={style.cell_button}>
-                  <Fade direction="up" duration={500} triggerOnce>
-                    <Link
-                      href="/indoor-laser-tag-equipment"><a>
-                        <ButtonDetails
-                          theme="White"
-                        />
-                      </a></Link>
-                  </Fade>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <Fade direction="up" duration={800} triggerOnce>
-          <div className={style.individual}>
-            <h2 className={style.individual_title}>
-              {props.formTitle}
-            </h2>
-            <p className={style.individual_text}>
-              {props.formText}
-            </p>
-            <div className={style.individual_form}>
-              <ThemeForm
-                destinationURL={props.destinationURL}
-                orderName={props.orderName}
-                lang={props.lang}
-                theme="whiteFill"
-                buttonTheme="black"
-                buttonActiveTheme="black"
-                name
-                phone
-                buttonText={props.buttonText}
-              />
-            </div>
-          </div>
-        </Fade>
-      </section>
-    </>
-  )
-}
->>>>>>> 176c22edf7eb42d141038bf7ec72384ab13f97d7
