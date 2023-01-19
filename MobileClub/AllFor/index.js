@@ -161,6 +161,9 @@ export default function MCAllFor(props) {
                             }
                             formID='MOBLT-all-for-'
                             buttonText={props.buttonText}
+                            placeholderName={props.placeholderName}
+                            placeholderEmail={props.placeholderEmail}
+                            placeholderCall={props.placeholderCall}
                         />
                     </div>
                 </div>

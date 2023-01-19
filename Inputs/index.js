@@ -7,7 +7,7 @@ import { useInView } from 'react-hook-inview';
 import { FillButton } from '../../lt-modules/Buttons';
 import Link from 'next/link';
 import { useValidation } from '../../context/ValidationProvider';
-import { postData } from '../../lt-modules/functions/postData';
+import { postData } from '../../lt-modules/functions/postData.ts';
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -189,7 +189,9 @@ export function InputsWName(props) {
                                         maxLength='30'
                                         onChange={formik.handleChange}
                                         value={formik.values.name}
-                                        placeholder='Name'
+                                        placeholder={
+                                            props.namePlaceholder || 'Name *'
+                                        }
                                     />
                                     <div className={style.error_icon}>
                                         {formik.errors.name
@@ -212,7 +214,9 @@ export function InputsWName(props) {
                                         maxLength='40'
                                         name='email'
                                         type='email'
-                                        placeholder='Email'
+                                        placeholder={
+                                            props.placeholder || 'Email *'
+                                        }
                                     />
                                     <div className={style.error_icon}>
                                         {formik.errors.email
@@ -235,7 +239,10 @@ export function InputsWName(props) {
                                         maxLength='30'
                                         onChange={formik.handleChange}
                                         value={formik.values.phone}
-                                        placeholder='Phone number'
+                                        placeholder={
+                                            props.callPlaceholder ||
+                                            'Phone number *'
+                                        }
                                     />
                                     <div className={style.error_icon}>
                                         {formik.errors.phone
@@ -254,6 +261,8 @@ export function InputsWName(props) {
                             onAgreementChange={onAgreementChange}
                             agreement={formik.values.agreement}
                             error={formik.errors.agreement}
+                            agreementText={props.agreementText}
+                            agreementSpanText={props.agreementSpanText}
                         />
                         <FillButton
                             style={
@@ -296,11 +305,13 @@ function Agreement(props) {
                 </div>
                 <p className={style.agreement__text}>
                     <span onClick={props.onAgreementChange}>
-                        I agree with conditions of the processing and use of my
-                        personal data
+                        {props.agreementText ||
+                            'I agree with conditions of the processing and use'}
                     </span>{' '}
                     <Link href='/privacy-policy'>
-                        <a>of my personal data</a>
+                        <a>
+                            {props.agreementSpanText || 'of my personal data'}
+                        </a>
                     </Link>
                 </p>
             </div>

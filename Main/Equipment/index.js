@@ -65,9 +65,17 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link href='/mobile-laser-tag-equipment'>
+                                        <Link
+                                            href={
+                                                props.linkFirstActiveCell ||
+                                                '/mobile-laser-tag-equipment'
+                                            }
+                                        >
                                             <a>
-                                                <ButtonDetails theme='White' />
+                                                <ButtonDetails
+                                                    theme='White'
+                                                    text={props.buttonText}
+                                                />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -105,9 +113,17 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link href='/outdoor-laser-tag'>
+                                        <Link
+                                            href={
+                                                props.linkSecondActiveCell ||
+                                                '/outdoor-laser-tag'
+                                            }
+                                        >
                                             <a>
-                                                <ButtonDetails theme='White' />
+                                                <ButtonDetails
+                                                    theme='White'
+                                                    text={props.buttonText}
+                                                />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -145,9 +161,17 @@ export default function MainEquipment(props) {
                                         duration={500}
                                         triggerOnce
                                     >
-                                        <Link href='/indoor-laser-tag-equipment'>
+                                        <Link
+                                            href={
+                                                props.linkThirdActiveCell ||
+                                                '/indoor-laser-tag-equipment'
+                                            }
+                                        >
                                             <a>
-                                                <ButtonDetails theme='White' />
+                                                <ButtonDetails
+                                                    theme='White'
+                                                    text={props.buttonText}
+                                                />
                                             </a>
                                         </Link>
                                     </Fade>
@@ -175,6 +199,8 @@ export default function MainEquipment(props) {
                                 name
                                 phone
                                 buttonText={props.buttonText}
+                                namePlaceholder={props.namePlaceholder}
+                                callPlaceholder={props.callPlaceholder}
                             />
                         </div>
                     </div>

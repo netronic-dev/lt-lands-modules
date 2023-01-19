@@ -11,6 +11,11 @@ function Form(props) {
                 text={props.text}
                 buttonText={props.buttonText}
                 en
+                namePlaceholder={props.namePlaceholder}
+                emailPlaceholder={props.emailPlaceholder}
+                callePlaceholder={props.callePlaceholder}
+                agreementText={props.agreementText}
+                agreementSpanText={props.agreementSpanText}
             />
         </div>
     );
