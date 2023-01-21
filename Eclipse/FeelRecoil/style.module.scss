@@ -1,0 +1,41 @@
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.feels_recoil {
+    position: relative;
+}
+
+.title {
+    margin-top: 150px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #0090FF;
+}
+
+.has_text_centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    margin-top: 38px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(196, 196, 196, 0.8);
+    max-width: 775px;
+}
+
+.video {
+    margin-top: 73px;
+}

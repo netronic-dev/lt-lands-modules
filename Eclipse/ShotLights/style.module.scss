@@ -2,19 +2,18 @@
     width: 1170px;
     margin: 0 auto;
 }
+
 .shotlight {
     position: relative;
-    height: 867px;
-    z-index: 0;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     z-index: 2;
     text-align: center;
+    height: 867px;
 }
 
 .title {
@@ -27,6 +26,7 @@
     color: #8e8e8e;
     z-index: 2;
     max-width: 450px;
+
     .span_blue {
         color: #0090ff;
     }
