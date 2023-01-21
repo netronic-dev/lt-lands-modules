@@ -1,0 +1,43 @@
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.dignitys {
+    padding-bottom: 167px;
+}
+
+.title {
+    margin: 0;
+    margin-top: 46px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.text {
+    margin-top: 21px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #4f4f4f;
+    text-align: center;
+}
+.columns {
+    display: grid;
+    grid: 1fr 1fr / 1fr 1fr;
+    gap: 20px;
+}
+.cell {
+    background: #101010;
+    border-radius: 5px;
+    padding: 52px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 312px;
+}

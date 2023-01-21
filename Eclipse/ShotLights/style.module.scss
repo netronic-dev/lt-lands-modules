@@ -1,0 +1,45 @@
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.shotlight {
+    position: relative;
+    height: 867px;
+    z-index: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+}
+
+.title {
+    margin-top: 257px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    color: #8e8e8e;
+    z-index: 2;
+    max-width: 450px;
+    .span_blue {
+        color: #0090ff;
+    }
+}
+
+.text {
+    margin-top: 52px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #8e8e8e;
+    z-index: 2;
+    max-width: 400px;
+}

@@ -1,0 +1,40 @@
+%margins {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.main {
+    padding-bottom: 102px;
+}
+
+.container {
+	@extend %margins;
+}
+
+.offset_top {
+    z-index: 2;
+    text-align: center;
+    margin-top: -35%;
+    margin-bottom: 2.625rem;
+}
+
+.has_text_white {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46.8px;
+}
+
+.main_text_wrapp {
+    margin-bottom: 4.25rem;
+}
+
+.general__buttons {
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 5;
+	.buttons_price {
+		margin-right: 50px;
+	}
+}

@@ -1,601 +1,608 @@
 %margins {
-	width: 1170px;
-	margin: 0 auto;
+    width: 1170px;
+    margin: 0 auto;
 }
 %title {
-	font-weight: 500;
-	font-size: 48px;
-	line-height: 60px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
 }
 %flex_columns {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .title_white {
-	@extend %title;
-	color: #fff;
-	span {
-		color: #8e8e8e;
-	}
+    @extend %title;
+    color: #fff;
+    span {
+        color: #8e8e8e;
+    }
 }
 .title_black {
-	@extend %title;
-	color: #212121;
-	span {
-		color: #8e8e8e;
-	}
+    @extend %title;
+    color: #212121;
+    span {
+        color: #8e8e8e;
+    }
 }
 .section {
-	@extend %margins;
-	h2 {
-		margin-bottom: 35px;
-	}
+    @extend %margins;
+    h2 {
+        margin-bottom: 35px;
+    }
 }
 .general__buttons {
-	display: flex;
-	align-items: center;
-	position: relative;
-	z-index: 5;
-	.buttons_price {
-		margin-right: 50px;
-	}
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    .buttons_price {
+        margin-right: 50px;
+    }
 }
 .section_general {
-	height: 1030px;
-	@extend %flex_columns;
-	position: relative;
+    height: 1030px;
+    @extend %flex_columns;
+    position: relative;
 }
 .section_general_bg {
-	position: absolute;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 .empty {
-	flex: 1;
+    flex: 1;
 }
 .inside_general {
-	position: relative;
-	z-index: 5;
-	margin-bottom: -35px;
-	height: 720px;
-	background: rgb(12, 12, 12);
-	background: linear-gradient(
-		0deg,
-		rgba(12, 12, 12, 1) 0%,
-		rgba(12, 12, 12, 1) 16%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	@extend %flex_columns;
-	align-items: center;
-	justify-content: flex-end;
-	.title {
-		margin: 0 auto 20px auto;
-		width: max-content;
-		text-align: center;
-		font-size: 24px;
-		line-height: 28px;
-		font-weight: 400;
-		color: #fff;
-	}
-	.text {
-		font-weight: 500;
-		font-size: 18px;
-		line-height: 30px;
-		text-align: center;
-		color: #8e8e8e;
-		width: 775px;
-		margin-bottom: 50px;
-	}
-	.inside_general__logo {
-		margin-bottom: 60px;
-	}
+    position: relative;
+    z-index: 5;
+    margin-bottom: -35px;
+    height: 720px;
+    background: rgb(12, 12, 12);
+    background: linear-gradient(
+        0deg,
+        rgba(12, 12, 12, 1) 0%,
+        rgba(12, 12, 12, 1) 16%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    @extend %flex_columns;
+    align-items: center;
+    justify-content: flex-end;
+    .title {
+        margin: 0 auto 20px auto;
+        width: max-content;
+        text-align: center;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #fff;
+    }
+    .text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        color: #8e8e8e;
+        width: 775px;
+        margin-bottom: 50px;
+    }
+    .inside_general__logo {
+        margin-bottom: 60px;
+    }
 }
 .falconModifications {
-	position: relative;
-	z-index: 2;
-	padding: 100px 0;
-	background-color: #0c0c0c;
+    position: relative;
+    z-index: 2;
+    padding: 100px 0;
+    background-color: #0c0c0c;
 }
 .falcon270 {
-	width: 100%;
-	margin-bottom: -5px;
+    width: 100%;
+    margin-bottom: -5px;
 }
 .twoModifications {
-	background-color: #0c0c0c;
-	.title {
-		text-align: center;
-		margin-bottom: 150px;
-	}
+    background-color: #0c0c0c;
+    .title {
+        text-align: center;
+        margin-bottom: 150px;
+    }
+}
+.twoModifications_black {
+    background-color: #000;
+    .title {
+        text-align: center;
+        margin-bottom: 150px;
+    }
 }
 .activeExploitation_out {
-	background-color: #000;
+    background-color: #000;
 }
 .activeExploitation {
-	@extend %margins;
-	padding: 100px 0;
-	.activeExploitation_content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		h2 {
-			width: 400px;
-			text-align: center;
-			margin-bottom: 35px;
-		}
-		.subtitle {
-			margin: 0 auto;
-			width: 575px;
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 24px;
-			text-align: center;
-			color: #8e8e8e;
-			margin-bottom: 35px;
-		}
-	}
+    @extend %margins;
+    padding: 100px 0;
+    .activeExploitation_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            width: 400px;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .subtitle {
+            margin: 0 auto;
+            width: 575px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+            color: #8e8e8e;
+            margin-bottom: 35px;
+        }
+    }
 
-	.activeExploitation_img {
-		position: relative;
-	}
+    .activeExploitation_img {
+        position: relative;
+    }
 }
 .activeExploitation_grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	.grid_cell {
-		background-color: #101010;
-		padding: 30px 30px 45px 40px;
-		border-radius: 5px;
-		img {
-			margin-bottom: 45px;
-		}
-		p {
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 24px;
-			color: #8e8e8e;
-		}
-	}
-	.second_cell {
-		animation-delay: 300ms;
-	}
-	.third_cell {
-		animation-delay: 500ms;
-	}
-	.fourth_cell {
-		animation-delay: 700ms;
-	}
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    .grid_cell {
+        background-color: #101010;
+        padding: 30px 30px 45px 40px;
+        border-radius: 5px;
+        img {
+            margin-bottom: 45px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #8e8e8e;
+        }
+    }
+    .second_cell {
+        animation-delay: 300ms;
+    }
+    .third_cell {
+        animation-delay: 500ms;
+    }
+    .fourth_cell {
+        animation-delay: 700ms;
+    }
 }
 .impulseSimulation {
-	background-color: #fff;
-	@extend %flex_columns;
-	align-items: center;
-	padding: 100px 0 50px 0;
-	h2 {
-		width: 850px;
-		color: #212121;
-	}
-	p {
-		width: 850px;
-	}
-	.impulseSimulation_image {
-		@extend %margins;
-	}
+    background-color: #fff;
+    @extend %flex_columns;
+    align-items: center;
+    padding: 100px 0 50px 0;
+    h2 {
+        width: 850px;
+        color: #212121;
+    }
+    p {
+        width: 850px;
+    }
+    .impulseSimulation_image {
+        @extend %margins;
+    }
 }
 .safety_sensors_image {
-	@extend %margins;
+    @extend %margins;
 }
 .defeat_sensors {
-	width: 100%;
-	margin-top: 100px;
-	.section {
-		margin-bottom: 15px;
-		p {
-			width: 915px;
-		}
-	}
+    width: 100%;
+    margin-top: 100px;
+    .section {
+        margin-bottom: 15px;
+        p {
+            width: 915px;
+        }
+    }
 }
 .colourfulDisplay_outer {
-	background-color: #0c0c0c;
+    background-color: #0c0c0c;
 }
 .colourfulDisplay {
-	padding: 100px 0;
-	@extend %margins;
-	h2 {
-		margin: 0 0 100px 30px;
-	}
+    padding: 100px 0;
+    @extend %margins;
+    h2 {
+        margin: 0 0 100px 30px;
+    }
 }
 .tenInOne {
-	height: 1015px;
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-	.section {
-		margin-top: 150px;
-		position: relative;
-		z-index: 3;
-		p {
-			width: 650px;
-		}
-	}
+    height: 1015px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .section {
+        margin-top: 150px;
+        position: relative;
+        z-index: 3;
+        p {
+            width: 650px;
+        }
+    }
 }
 .tenInOne_bg {
-	position: absolute;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
 }
 .tenInOne__img {
-	display: none;
-	position: relative;
-	overflow: hidden;
-	width: 100%;
+    display: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 .safety_sensors {
-	background-color: #000;
-	padding: 100px 0 0;
-	@extend %flex_columns;
-	align-items: center;
-	h2 {
-		width: 650px;
-	}
+    background-color: #000;
+    padding: 100px 0 0;
+    @extend %flex_columns;
+    align-items: center;
+    h2 {
+        width: 650px;
+    }
 }
 .remotePowerOff {
-	padding-top: 100px;
-	background-color: #101010;
-	@extend %flex_columns;
-	align-items: center;
-	p {
-		width: 850px;
-		margin-bottom: 70px;
-	}
+    padding-top: 100px;
+    background-color: #101010;
+    @extend %flex_columns;
+    align-items: center;
+    p {
+        width: 850px;
+        margin-bottom: 70px;
+    }
 }
 .tagerModifications {
-	background-color: #000;
-	padding: 100px 0;
-	@extend %flex_columns;
-	align-items: center;
-	h2 {
-		margin-bottom: 75px;
-	}
+    background-color: #000;
+    padding: 100px 0;
+    @extend %flex_columns;
+    align-items: center;
+    h2 {
+        margin-bottom: 75px;
+    }
 }
 .table {
-	width: 675px;
-	margin: 0 auto;
-	border-spacing: 0px;
-	border-bottom: 1px solid #4f4f4f;
+    width: 675px;
+    margin: 0 auto;
+    border-spacing: 0px;
+    border-bottom: 1px solid #4f4f4f;
 }
 .table_title {
-	font-weight: 500;
-	font-size: 36px;
-	line-height: 42px;
-	text-align: center;
-	color: #ffffff;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #ffffff;
 }
 .table_head {
-	font-size: 18px;
-	line-height: 20px;
-	font-weight: 600;
-	color: #ffffff;
-	text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
 }
 .table_sets_head {
-	color: #000;
+    color: #000;
 }
 .table_body {
-	font-size: 18px;
-	line-height: 20px;
-	font-weight: 400;
-	color: #ffffff;
-	text-align: left;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
 }
 .table_sets_body {
-	color: #000;
+    color: #000;
 }
 .table_body th {
-	font-weight: 400;
+    font-weight: 400;
 }
 .table_body td {
-	color: #0090ff;
-	text-align: center;
+    color: #0090ff;
+    text-align: center;
 }
 .table td {
-	padding: 15px 25px;
-	border-top: 1px solid #4f4f4f;
+    padding: 15px 25px;
+    border-top: 1px solid #4f4f4f;
 }
 .table th {
-	border-top: 1px solid #4f4f4f;
+    border-top: 1px solid #4f4f4f;
 }
 .tableAddon {
-	background-color: #070707;
-	color: #fff;
-	width: 675px;
-	margin: 50px auto 100px auto;
-	border-radius: 5px;
-	.tableAddon_line {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		border-bottom: 1px solid #4f4f4f;
-		p {
-			padding: 20px;
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 24px;
-			color: #ffffff;
-		}
-	}
-	.tableAddon_line:last-child {
-		border-bottom: 0;
-	}
+    background-color: #070707;
+    color: #fff;
+    width: 675px;
+    margin: 50px auto 100px auto;
+    border-radius: 5px;
+    .tableAddon_line {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #4f4f4f;
+        p {
+            padding: 20px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #ffffff;
+        }
+    }
+    .tableAddon_line:last-child {
+        border-bottom: 0;
+    }
 }
 
 @media (max-width: 1200px) {
-	.section_general {
-		height: 800px;
-	}
-	.safety_sensors {
-		padding: 100px 20px 0;
-	}
-	%margins {
-		width: auto;
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-	.tenInOne {
-		height: auto;
-		background-color: #000;
-		padding-bottom: 0 !important;
-		.section {
-			margin-bottom: 50px;
-		}
-	}
-	.tenInOne_bg {
-		display: none;
-	}
-	.tenInOne__img {
-		display: block;
-		margin: 0 0px -5px;
-		img {
-			width: 100%;
-		}
-	}
+    .section_general {
+        height: 800px;
+    }
+    .safety_sensors {
+        padding: 100px 20px 0;
+    }
+    %margins {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .tenInOne {
+        height: auto;
+        background-color: #000;
+        padding-bottom: 0 !important;
+        .section {
+            margin-bottom: 50px;
+        }
+    }
+    .tenInOne_bg {
+        display: none;
+    }
+    .tenInOne__img {
+        display: block;
+        margin: 0 0px -5px;
+        img {
+            width: 100%;
+        }
+    }
 
-	.colourfulDisplay {
-		h2 {
-			margin: 0 0 50px 30px;
-		}
-	}
+    .colourfulDisplay {
+        h2 {
+            margin: 0 0 50px 30px;
+        }
+    }
 }
 @media (max-width: 992px) {
-	.section_general {
-		height: 600px;
-		@extend %flex_columns;
-	}
-	.empty {
-		flex: 0;
-		display: none;
-	}
-	.inside_general {
-		height: 100%;
-		.inside_general__logo {
-			width: 300px;
-			margin-bottom: 30px;
-		}
-	}
-	.defeat_sensors {
-		margin-top: 100px;
-		.section {
-			margin-left: 0;
-			margin-right: 0;
-			p {
-				width: auto;
-			}
-		}
-	}
-	.activeExploitation {
-		padding: 100px 0;
-	}
-	.activeExploitation_grid {
-		grid-template-columns: 1fr 1fr;
-		grid-row-gap: 20px;
-	}
-	.impulseSimulation {
-		align-items: normal;
-		padding: 50px 0;
-		h2 {
-			width: auto;
-		}
-		p {
-			width: auto;
-		}
-		.impulseSimulation_image {
-			margin: 0 20px;
-		}
-	}
-	.remotePowerOff {
-		h2 {
-			margin-bottom: 35px !important;
-		}
-		p {
-			width: auto;
-			margin-bottom: 50px;
-		}
-	}
-	.tenInOne {
-		height: auto;
-		padding: 100px 0;
-		.section {
-			margin-left: 20px;
-			margin-right: 20px;
-			p {
-				width: 100%;
-			}
-		}
-	}
+    .section_general {
+        height: 600px;
+        @extend %flex_columns;
+    }
+    .empty {
+        flex: 0;
+        display: none;
+    }
+    .inside_general {
+        height: 100%;
+        .inside_general__logo {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+    }
+    .defeat_sensors {
+        margin-top: 100px;
+        .section {
+            margin-left: 0;
+            margin-right: 0;
+            p {
+                width: auto;
+            }
+        }
+    }
+    .activeExploitation {
+        padding: 100px 0;
+    }
+    .activeExploitation_grid {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+    .impulseSimulation {
+        align-items: normal;
+        padding: 50px 0;
+        h2 {
+            width: auto;
+        }
+        p {
+            width: auto;
+        }
+        .impulseSimulation_image {
+            margin: 0 20px;
+        }
+    }
+    .remotePowerOff {
+        h2 {
+            margin-bottom: 35px !important;
+        }
+        p {
+            width: auto;
+            margin-bottom: 50px;
+        }
+    }
+    .tenInOne {
+        height: auto;
+        padding: 100px 0;
+        .section {
+            margin-left: 20px;
+            margin-right: 20px;
+            p {
+                width: 100%;
+            }
+        }
+    }
 }
 @media (max-width: 768px) {
-	%title {
-		font-weight: 500;
-		font-size: 36px;
-		line-height: 46px;
-	}
-	.section_general {
-		height: 490px;
-	}
-	.inside_general {
-		.text {
-			width: auto;
-			margin: 0 50px 50px;
-		}
-	}
-	.tagerModifications {
-		padding: 100px 20px;
-		h2 {
-			margin-bottom: 50px;
-		}
-	}
-	.activeExploitation_grid {
-		grid-template-columns: 1fr;
-	}
-	.table {
-		width: auto;
-		padding: 0 0px;
-	}
-	.tableAddon {
-		width: 100%;
-		padding: 0 20px;
-		margin: 50px 0 100px 0;
-	}
-	.safety_sensors {
-		padding: 100px 20px 0;
-		h2 {
-			width: auto;
-		}
-	}
-	.remotePowerOff {
-		padding-top: 100px;
-	}
-	.activeExploitation {
-		.activeExploitation_content {
-			.subtitle {
-				width: auto;
-				margin-bottom: 50px;
-			}
-		}
-	}
+    %title {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 46px;
+    }
+    .section_general {
+        height: 490px;
+    }
+    .inside_general {
+        .text {
+            width: auto;
+            margin: 0 50px 50px;
+        }
+    }
+    .tagerModifications {
+        padding: 100px 20px;
+        h2 {
+            margin-bottom: 50px;
+        }
+    }
+    .activeExploitation_grid {
+        grid-template-columns: 1fr;
+    }
+    .table {
+        width: auto;
+        padding: 0 0px;
+    }
+    .tableAddon {
+        width: 100%;
+        padding: 0 20px;
+        margin: 50px 0 100px 0;
+    }
+    .safety_sensors {
+        padding: 100px 20px 0;
+        h2 {
+            width: auto;
+        }
+    }
+    .remotePowerOff {
+        padding-top: 100px;
+    }
+    .activeExploitation {
+        .activeExploitation_content {
+            .subtitle {
+                width: auto;
+                margin-bottom: 50px;
+            }
+        }
+    }
 }
 @media (max-width: 576px) {
-	.columnsFalcon {
-		padding: 0 20px;
-	}
-	.impulseSimulation {
-		section {
-			margin-bottom: 75px;
-		}
-		.impulseSimulation_image {
-			margin: 0;
-		}
-	}
-	.twoModifications {
-		padding-bottom: 100px;
-		h2 {
-			margin-left: 20px;
-			margin-right: 20px;
-		}
-	}
-	.activeExploitation {
-		h2 {
-			width: auto;
-		}
-	}
-	.inside_general {
-		margin-top: 150px;
-		padding: 0 20px;
-		height: auto;
-		.title {
-			margin: 0 auto;
-			font-size: 20px;
-		}
-		.text {
-			width: auto;
-			margin: 0 20px 50px;
-		}
-		.inside_general__logo {
-			padding: 0 20px;
-			width: 70% !important;
-			margin-bottom: 20px;
-		}
-	}
-	.falconModifications {
-		padding-top: 200px;
-	}
-	.activeExploitation {
-		.activeExploitation_content {
-			h2 {
-				width: auto;
-			}
-		}
-	}
-	.tagerModifications {
-		padding: 100px 20px;
-	}
-	.safety_sensors {
-		padding: 50px 20px 0;
-		h2 {
-			margin-bottom: 50px !important;
-		}
-	}
-	.section {
-		h2 {
-			margin-bottom: 20px;
-		}
-	}
-	.colourfulDisplay {
-		padding: 100px 0 50px 0;
-		h2 {
-			margin: 0 0 50px 20px;
-		}
-	}
-	.remotePowerOff {
-		padding-top: 100px;
-	}
-	.screen {
-		h2 {
-			font-size: 36px;
-			line-height: auto;
-		}
-	}
+    .columnsFalcon {
+        padding: 0 20px;
+    }
+    .impulseSimulation {
+        section {
+            margin-bottom: 75px;
+        }
+        .impulseSimulation_image {
+            margin: 0;
+        }
+    }
+    .twoModifications {
+        padding-bottom: 100px;
+        h2 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+    .activeExploitation {
+        h2 {
+            width: auto;
+        }
+    }
+    .inside_general {
+        margin-top: 150px;
+        padding: 0 20px;
+        height: auto;
+        .title {
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        .text {
+            width: auto;
+            margin: 0 20px 50px;
+        }
+        .inside_general__logo {
+            padding: 0 20px;
+            width: 70% !important;
+            margin-bottom: 20px;
+        }
+    }
+    .falconModifications {
+        padding-top: 200px;
+    }
+    .activeExploitation {
+        .activeExploitation_content {
+            h2 {
+                width: auto;
+            }
+        }
+    }
+    .tagerModifications {
+        padding: 100px 20px;
+    }
+    .safety_sensors {
+        padding: 50px 20px 0;
+        h2 {
+            margin-bottom: 50px !important;
+        }
+    }
+    .section {
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+    .colourfulDisplay {
+        padding: 100px 0 50px 0;
+        h2 {
+            margin: 0 0 50px 20px;
+        }
+    }
+    .remotePowerOff {
+        padding-top: 100px;
+    }
+    .screen {
+        h2 {
+            font-size: 36px;
+            line-height: auto;
+        }
+    }
 
-	.table_title {
-		font-size: 24px;
-		line-height: 35px;
-	}
-	.table_head {
-		font-size: 14px;
-		line-height: 20px;
-	}
-	.table_body {
-		font-size: 14px;
-		line-height: 20px;
-	}
-	.table td {
-		padding: 20px 10px;
-	}
-	.tableAddon {
-		padding: 0;
-		margin: 25px 20px 50px 20px;
-		p {
-			font-size: 14px;
-		}
-	}
-	.general__buttons {
-		flex-direction: column;
-		.buttons_price {
-			margin: 0 0 50px 0;
-		}
-	}
+    .table_title {
+        font-size: 24px;
+        line-height: 35px;
+    }
+    .table_head {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .table_body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .table td {
+        padding: 20px 10px;
+    }
+    .tableAddon {
+        padding: 0;
+        margin: 25px 20px 50px 20px;
+        p {
+            font-size: 14px;
+        }
+    }
+    .general__buttons {
+        flex-direction: column;
+        .buttons_price {
+            margin: 0 0 50px 0;
+        }
+    }
 }
