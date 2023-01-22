@@ -17,8 +17,9 @@ export default function FalconModifications(props) {
                         {props.title}
                     </h2>
                 </Fade>
-                <Fade triggerOnce>
+                <Fade direction='up' triggerOnce>
                     <SliderTwoButtons
+                        downButtons={props.downButtons}
                         sliderData={props.sliderData}
                         listofTitles={
                             props.listTitle || ['Falcon F1', 'Falcon F2']

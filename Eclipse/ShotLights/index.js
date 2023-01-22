@@ -7,7 +7,7 @@ const ShotLight = (props) => {
         <section className={styles.shotlight}>
             <div className={styles.container}>
                 <div className={props.image}>
-                    <Fade flash triggerOnce>
+                    <Fade flash delay={300} triggerOnce>
                         <Image
                             layout='fill'
                             src={props.image}
@@ -19,7 +19,7 @@ const ShotLight = (props) => {
                     </Fade>
                 </div>
                 <div className={styles.content}>
-                    <Fade direction='up' triggerOnce>
+                    <Fade direction='up' delay={500} triggerOnce>
                         <h2 className={styles.title}>
                             {props.title1Row}
                             <span className={styles.span_blue}>
@@ -29,7 +29,7 @@ const ShotLight = (props) => {
                             {props.title2Row}
                         </h2>
                     </Fade>
-                    <Fade direction='up' delay={200} triggerOnce>
+                    <Fade direction='up' delay={800} triggerOnce>
                         <p className={styles.text}>{props.text}</p>
                     </Fade>
                 </div>

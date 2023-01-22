@@ -7,19 +7,24 @@ const EclipseMain = (props) => {
     return (
         <section className={styles.main}>
             <div className={styles.container}>
-                <Image
-                    src={props.mainBgImg}
-                    alt={props.mainBgImgAlt}
-                    width={props.mainBgImgWidth}
-                    height={props.mainBgImgHeight}
-                />
-                <div className={styles.offset_top}>
+                <Fade flash triggerOnce>
                     <Image
-                        src={props.secongImg}
-                        alt={props.secondImgAlt}
-                        width={props.secondImgWidth}
-                        height={props.secondImgHeight}
+                        src={props.mainBgImg}
+                        alt={props.mainBgImgAlt}
+                        width={props.mainBgImgWidth}
+                        height={props.mainBgImgHeight}
                     />
+                </Fade>
+
+                <div className={styles.offset_top}>
+                    <Fade direction='up' delay={300} triggerOnce>
+                        <Image
+                            src={props.secongImg}
+                            alt={props.secondImgAlt}
+                            width={props.secondImgWidth}
+                            height={props.secondImgHeight}
+                        />
+                    </Fade>
                 </div>
                 <Fade direction='up' triggerOnce>
                     <div className={`${styles.main_text_wrapp}`}>

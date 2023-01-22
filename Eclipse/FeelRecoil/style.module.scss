@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.feels_recoil_black {
+    background-color: #000;
+}
+
 .title {
     margin-top: 150px;
     font-family: 'Roboto';
@@ -15,7 +19,7 @@
     font-size: 48px;
     line-height: 60px;
     text-align: center;
-    color: #0090FF;
+    color: #0090ff;
 }
 
 .has_text_centered {
@@ -38,4 +42,25 @@
 
 .video {
     margin-top: 73px;
+}
+
+.title_white {
+    margin-top: 150px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+}
+
+.blue {
+    color: #0090ff;
+}
+
+.image {
+    margin-top: 80px;
+    position: relative;
+    height: 787px;
 }

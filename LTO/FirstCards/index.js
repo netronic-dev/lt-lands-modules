@@ -126,7 +126,7 @@ export default function FirstCards(props) {
                     </div>
                 </div>
             </div>
-            <div className={style.grid_fastLearning}>
+            {/* <div className={style.grid_fastLearning}>
                 <div
                     className={style.grid_card_left}
                     ref={refCard3}
@@ -170,7 +170,7 @@ export default function FirstCards(props) {
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 }
