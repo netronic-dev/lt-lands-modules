@@ -1,0 +1,47 @@
+.superpower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 126px;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+.blue {
+    color: #0090ff;
+}
+
+.text {
+    margin-top: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(196, 196, 196, 0.8);
+    max-width: 574px;
+}
+
+.image {
+    position: relative;
+    height: 523px;
+    margin-top: 88px;
+    width: 642px;
+}
+
+.slider {
+    margin-top: 85px;
+    background-color: #141414;
+    height: 311px;
+    width: 100vw;
+    gap: 10px;
+}

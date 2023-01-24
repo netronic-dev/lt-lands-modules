@@ -1,0 +1,66 @@
+.steps_black {
+    padding-top: 146px;
+    background-color: #000000;
+}
+.steps {
+    padding-top: 146px;
+    background-color: #070707;
+}
+
+.has_text_centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+.blue {
+    color: #0090ff;
+}
+
+.text {
+    margin-top: 52px;
+    max-width: 798px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(196, 196, 196, 0.8);
+}
+
+.icon_step {
+    margin-top: 82px;
+}
+
+.image_cont {
+    margin-top: 69px;
+    position: relative;
+    width: 100%;
+}
+.image_cont_large {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    position: relative;
+    height: 528px;
+    // width: 100%;
+}
+
+.image_large {
+    position: relative;
+    height: 906px;
+}

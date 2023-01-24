@@ -1,23 +1,46 @@
 .h2 {
-	color: white;
-	text-align: center;
-	margin-bottom: 70px;
+    color: white;
+    text-align: center;
+    margin-bottom: 70px;
 }
 .toWatchSlider {
-	background-color: #101010;
-	padding: 100px 0;
-	.title {
-		font-weight: normal;
-		font-size: 48px;
-		line-height: 54px;
-		text-align: center;
-		color: #ffffff;
-		text-align: center;
-		margin: 0 auto 70px auto;
-	}
+    background-color: #101010;
+    padding: 100px 0;
+    .title {
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 54px;
+        text-align: center;
+        color: #ffffff;
+        text-align: center;
+        margin: 0 auto 70px auto;
+    }
+    .blue {
+        color: #0090ff;
+    }
+}
+
+.toWatchSlider_dark {
+    background-color: #070707;
+    padding: 100px 0;
+    .title {
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 54px;
+        text-align: center;
+        color: #ffffff;
+        text-align: center;
+        margin: 0 auto 70px auto;
+    }
+    .blue {
+        color: #0090ff;
+    }
 }
 @media (max-width: 576px) {
-	.toWatchSlider {
-		padding: 100px 0;
-	}
+    .toWatchSlider {
+        padding: 100px 0;
+    }
+    .toWatchSlider_dark {
+        padding: 100px 0;
+    }
 }
