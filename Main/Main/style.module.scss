@@ -8,47 +8,50 @@
 	height: 660px;
 	padding-top: 30px;
 
-	.content {
-		@extend %margin;
-		position: relative;
+
+}
+
+.content {
+	@extend %margin;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	.title {
+		font-family: "NuberNext";
+		font-style: normal;
+		font-weight: 400;
+		text-align: right;
+		font-size: 80px;
+		line-height: 76px;
+		color: #0090ff;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: -0.05em;
+		white-space: "pre-line";
+	}
+
+	.text {
+		font-family: "Inter";
+		font-weight: normal;
+		font-weight: 550;
+		font-size: 33px;
+		line-height: 1.1em;
+		color: #2f2f2d;
+		margin-top: 32px;
+		text-align: right;
+	}
+
+	.buttons {
 		display: flex;
-		flex-direction: column;
 		justify-content: flex-end;
+		gap: 25px;
+		margin-top: 32px;
+	}
 
-		.title {
-			font-family: "NuberNext";
-			font-style: normal;
-			font-weight: 400;
-			text-align: right;
-			font-size: 80px;
-			line-height: 76px;
-			color: #0090ff;
-			margin: 0;
-			text-transform: uppercase;
-			letter-spacing: -0.05em;
-			white-space: "pre-line";
-		}
-
-		.text {
-			font-family: "Inter";
-			font-weight: normal;
-			font-weight: 550;
-			font-size: 33px;
-			line-height: 1.1em;
-			color: #2f2f2d;
-			margin-top: 32px;
-			text-align: right;
-		}
-
-		.buttons {
-			display: flex;
-			justify-content: flex-end;
-			gap: 25px;
-			margin-top: 32px;
-		}
-		.event_button {
-			animation: radial-pulse 1s infinite;
-		}
+	.event_button {
+		animation: radial-pulse 1s infinite;
 	}
 }
 
