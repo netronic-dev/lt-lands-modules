@@ -5,7 +5,7 @@ import { Fade } from 'react-awesome-reveal';
 const Dignitys = (props) => {
     return (
         <section className={styles.dignitys}>
-            <div className={styles.container}>
+            <div className='container'>
                 <div className={styles.columns}>
                     <Fade flash triggerOnce>
                         <div className={styles.cell}>

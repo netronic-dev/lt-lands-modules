@@ -1,6 +1,6 @@
 %margins {
-	width: 1170px;
-	margin: 0 auto;
+    width: 1170px;
+    margin: 0 auto;
 }
 
 .main {
@@ -8,7 +8,7 @@
 }
 
 .container {
-	@extend %margins;
+    @extend %margins;
 }
 
 .offset_top {
@@ -30,11 +30,43 @@
 }
 
 .general__buttons {
-	display: flex;
-	align-items: center;
-	position: relative;
-	z-index: 5;
-	.buttons_price {
-		margin-right: 50px;
-	}
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    .buttons_price {
+        margin-right: 50px;
+    }
+}
+@media (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+    .bg_image {
+        padding: 0 20px;
+        width: 100%;
+        height: auto;
+    }
+    .main_text_wrapp {
+        padding: 30px;
+    }
+    .general__buttons {
+        padding: 0 30px;
+    }
+}
+@media (max-width: 768px) {
+    .has_text_white {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 575px) {
+    .general__buttons {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .buttons_price {
+        margin-right: 0 !important;
+        margin-bottom: 2.125rem;
+    }
 }

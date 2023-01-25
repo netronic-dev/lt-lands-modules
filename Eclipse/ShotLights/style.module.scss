@@ -1,19 +1,18 @@
-.container {
-    width: 1170px;
-    margin: 0 auto;
-}
-
 .shotlight {
-    position: relative;
+    // position: relative;
 }
 
-.content {
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 2;
     text-align: center;
     height: 867px;
+    // position: relative;
+}
+
+.content {
+    z-index: 2;
 }
 
 .title {
@@ -32,6 +31,12 @@
     }
 }
 
+.image {
+    // display: block;
+    position: relative;
+    // height: 867px;
+}
+
 .text {
     margin-top: 52px;
     font-family: 'Roboto';
@@ -42,4 +47,18 @@
     color: #8e8e8e;
     z-index: 2;
     max-width: 400px;
+}
+
+@media (max-width: 992px) {
+    .shotlight {
+        height: 580px;
+    }
+    .title {
+        margin-top: 157px;
+        max-width: 400px;
+
+        .span_blue {
+            color: #0090ff;
+        }
+    }
 }

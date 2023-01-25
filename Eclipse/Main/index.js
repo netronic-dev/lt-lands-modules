@@ -7,15 +7,16 @@ const EclipseMain = (props) => {
     return (
         <section className={styles.main}>
             <div className={styles.container}>
-                <Fade flash triggerOnce>
-                    <Image
-                        src={props.mainBgImg}
-                        alt={props.mainBgImgAlt}
-                        width={props.mainBgImgWidth}
-                        height={props.mainBgImgHeight}
-                    />
-                </Fade>
-
+                <div className={styles.bg_image}>
+                    <Fade flash triggerOnce>
+                        <Image
+                            src={props.mainBgImg}
+                            alt={props.mainBgImgAlt}
+                            width={props.mainBgImgWidth}
+                            height={props.mainBgImgHeight}
+                        />
+                    </Fade>
+                </div>
                 <div className={styles.offset_top}>
                     <Fade direction='up' delay={300} triggerOnce>
                         <Image
@@ -26,15 +27,13 @@ const EclipseMain = (props) => {
                         />
                     </Fade>
                 </div>
-                <Fade direction='up' triggerOnce>
-                    <div className={`${styles.main_text_wrapp}`}>
-                        <p
-                            className={`is-size-5-mobile is-size-2-tablet has-text-weight-medium ${styles.has_text_white}`}
-                        >
-                            {props.text}
-                        </p>
-                    </div>
-                </Fade>
+
+                <div className={styles.main_text_wrapp}>
+                    <Fade direction='up' triggerOnce>
+                        <p className={styles.has_text_white}>{props.text}</p>
+                    </Fade>
+                </div>
+
                 <div className={styles.general__buttons}>
                     <Fade direction='up' delay={300} triggerOnce>
                         <div className={styles.buttons_price}>
