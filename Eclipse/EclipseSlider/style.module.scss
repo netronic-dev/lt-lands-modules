@@ -10,7 +10,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 60px;
+    line-height: 1.25em;
     text-align: center;
     color: #8e8e8e;
 }
@@ -25,7 +25,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 1.66em;
     text-align: center;
     color: rgba(196, 196, 196, 0.8);
     max-width: 574px;
@@ -35,7 +35,7 @@
     position: relative;
     height: 523px;
     margin-top: 88px;
-    width: 642px;
+    width: 100%;
 }
 
 .slider {
@@ -44,4 +44,35 @@
     height: 311px;
     width: 100vw;
     gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    .superpower {
+        padding: 126px 20px 0 20px;
+    }
+}
+@media (max-width: 768px) {
+    .superpower {
+        padding: 80px 20px 0 20px;
+    }
+    .image {
+        height: 400px;
+        margin-top: 50px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .text {
+        font-size: 16px;
+    }
+}
+@media (max-width: 575px) {
+    .superpower {
+        padding: 80px 20px 0 20px;
+    }
+    .image {
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
 }

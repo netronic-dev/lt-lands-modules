@@ -12,7 +12,7 @@ const Materials = (props) => {
                         layout='fill'
                         quality={90}
                         objectFit='cover'
-                        objectPosition='50% 0%'
+                        objectPosition='50% 50%'
                         alt='bg img'
                     />
                 </div>
@@ -27,7 +27,9 @@ const Materials = (props) => {
                 <div className={styles.first_grid_card}>
                     <Fade direction='up' delay={200} triggerOnce>
                         <div className={styles.first_card}>
-                            <div className={styles.content}>
+                            <div
+                                className={`${styles.content} ${styles.content_mob}`}
+                            >
                                 <h3 className={styles.card_title}>
                                     {props.firstCardTitle}
                                 </h3>
@@ -40,7 +42,7 @@ const Materials = (props) => {
                                 layout='fill'
                                 quality={90}
                                 objectFit='cover'
-                                objectPosition='50% 0%'
+                                objectPosition='50% 50%'
                                 alt='bg img'
                             />
                         </div>
@@ -61,7 +63,7 @@ const Materials = (props) => {
                                     layout='fill'
                                     quality={90}
                                     objectFit='cover'
-                                    objectPosition='50% 0%'
+                                    objectPosition='50% 50%'
                                     alt='bg img'
                                 />
                             </div>
@@ -93,7 +95,9 @@ const Materials = (props) => {
                     </Fade>
                     <Fade direction='up' delay={500} triggerOnce>
                         <div className={styles.second_card}>
-                            <div className={styles.content}>
+                            <div
+                                className={`${styles.content} ${styles.content_mob}`}
+                            >
                                 <h3 className={styles.card_title}>
                                     {props.fourthCardTitle}
                                 </h3>

@@ -7,7 +7,7 @@ export default function Vest(props) {
     return (
         <>
             <section className={styles.vest}>
-                <div className={styles.container}>
+                <div className='container'>
                     <Fade direction='up' triggerOnce>
                         <h2 className={styles.title}>
                             {props.title}{' '}

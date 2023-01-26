@@ -5,9 +5,9 @@ import Image from 'next/image';
 const Display = (props) => {
     return (
         <section className={styles.display}>
-            <div className={styles.container}>
+            <div className='container'>
                 <Fade flash delay={300} triggerOnce>
-                    <h2 className={styles.title} data-aos='fade-in'>
+                    <h2 className={styles.title}>
                         <span className={styles.blue}>{props.spanTitle}</span>
                         <br />
                         {props.title}
@@ -15,7 +15,7 @@ const Display = (props) => {
                 </Fade>
                 <div className={styles.columns}>
                     <div className={styles.two_column}>
-                        <Fade direction='up' delay={300} triggerOnce>
+                        <Fade direction='left' delay={300} triggerOnce>
                             <div className={styles.infoCell}>
                                 <div className={styles.info_block}>
                                     <div className='mb-1_25'>
@@ -85,47 +85,45 @@ const Display = (props) => {
                                 </div>
                             </div>
                         </Fade>
-                        <Fade direction='up' delay={300} triggerOnce>
+                        <Fade direction='right' delay={300} triggerOnce>
                             <div className={styles.right_cell_image}>
                                 <Image
                                     src={props.rightCellImage}
                                     layout='fill'
                                     quality={90}
                                     objectFit='cover'
-                                    objectPosition='0% 0%'
+                                    objectPosition='50% 50%'
                                     alt='bg img'
                                     className={styles.img_br}
                                 />
                             </div>
                         </Fade>
                     </div>
-                    <div>
-                        <Fade direction='up' delay={300} triggerOnce>
-                            <div className={styles.one_column}>
-                                <div className={styles.one_column_content}>
-                                    <h2 className={styles.one_column_title}>
-                                        <span className={styles.blue}>
-                                            {props.downCellTitleSpan}
-                                        </span>{' '}
-                                        {props.downCellTitle}
-                                    </h2>
-                                    <p className={styles.one_culumn_text}>
-                                        {props.downCellText}
-                                    </p>
-                                </div>
-                                <div className={styles.one_cell_image}>
-                                    <Image
-                                        src={props.downCellImage}
-                                        layout='fill'
-                                        quality={90}
-                                        objectFit='cover'
-                                        objectPosition='0% 0%'
-                                        alt='bg img'
-                                    />
-                                </div>
+                    <Fade direction='up' delay={300} triggerOnce>
+                        <div className={styles.one_column}>
+                            <div className={styles.one_column_content}>
+                                <h2 className={styles.one_column_title}>
+                                    <span className={styles.blue}>
+                                        {props.downCellTitleSpan}
+                                    </span>{' '}
+                                    {props.downCellTitle}
+                                </h2>
+                                <p className={styles.one_culumn_text}>
+                                    {props.downCellText}
+                                </p>
                             </div>
-                        </Fade>
-                    </div>
+                            <div className={styles.one_cell_image}>
+                                <Image
+                                    src={props.downCellImage}
+                                    layout='fill'
+                                    quality={90}
+                                    objectFit='cover'
+                                    objectPosition='50% 50%'
+                                    alt='bg img'
+                                />
+                            </div>
+                        </div>
+                    </Fade>
                 </div>
             </div>
         </section>

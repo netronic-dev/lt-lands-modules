@@ -9,7 +9,7 @@ const FeelRecoil = (props) => {
                 props.black ? styles.feels_recoil_black : styles.feels_recoil
             }
         >
-            <div className={styles.container}>
+            <div className='container'>
                 <div className={styles.has_text_centered}>
                     <Fade flash delay={300} triggerOnce>
                         {props.span ? (

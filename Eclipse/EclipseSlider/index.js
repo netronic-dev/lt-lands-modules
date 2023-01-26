@@ -17,19 +17,15 @@ const EclipseSlider = (props) => {
                 <Fade direction='up' triggerOnce>
                     <p className={styles.text}>{props.text}</p>
                 </Fade>
-                <div className={styles.image2}>
-                    {/* <Fade direction='up' triggerOnce> */}
-                    <div className={styles.image}>
-                        <Image
-                            src={props.image}
-                            layout='fill'
-                            quality={90}
-                            objectFit='contain'
-                            objectPosition='50% 0%'
-                            alt='bg img'
-                        />
-                    </div>
-                    {/* </Fade> */}
+                <div className={styles.image}>
+                    <Image
+                        src={props.image}
+                        layout='fill'
+                        quality={90}
+                        objectFit='contain'
+                        objectPosition='50% 0%'
+                        alt='bg img'
+                    />
                 </div>
 
                 <div className={styles.slider}>

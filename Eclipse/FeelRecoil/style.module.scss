@@ -1,8 +1,3 @@
-.container {
-    width: 1170px;
-    margin: 0 auto;
-}
-
 .feels_recoil {
     position: relative;
 }
@@ -17,7 +12,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 60px;
+    line-height: 1.25em;
     text-align: center;
     color: #0090ff;
 }
@@ -34,7 +29,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 1.66em;
     text-align: center;
     color: rgba(196, 196, 196, 0.8);
     max-width: 775px;
@@ -42,6 +37,7 @@
 
 .video {
     margin-top: 73px;
+    width: 100%;
 }
 
 .title_white {
@@ -50,7 +46,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 60px;
+    line-height: 1.25em;
     text-align: center;
     color: #fff;
 }
@@ -63,4 +59,43 @@
     margin-top: 80px;
     position: relative;
     height: 787px;
+}
+@media (max-width: 992px) {
+    .image {
+        margin-top: 80px;
+        position: relative;
+        height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .has_text_centered {
+        padding: 0 20px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .title {
+        margin-top: 50px;
+        font-size: 28px;
+    }
+    .title_white {
+        margin-top: 50px;
+        font-size: 28px;
+    }
+    .video {
+        margin-top: 52px;
+    }
+    .image {
+        margin-top: 80px;
+        position: relative;
+        height: 400px;
+    }
+}
+@media (max-width: 992px) {
+    .image {
+        margin-top: 80px;
+        position: relative;
+        height: 280px;
+    }
 }
