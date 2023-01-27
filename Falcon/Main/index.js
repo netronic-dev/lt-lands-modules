@@ -12,10 +12,18 @@ export default function FalconMain(props) {
     return (
         <>
             <div className={style.section_general}>
-                <BreadCrumbs
-                    color='white'
-                    breadcrumbData={props.breadcrumbData}
-                />
+                {props.breadcrumbData ? (
+                    <div className={style.breadcrumbs}>
+                        <div className={style.breadcrumbs_inner}>
+                            <BreadCrumbs
+                                color='another_black'
+                                breadcrumbData={props.breadcrumbData}
+                            />
+                        </div>
+                    </div>
+                ) : (
+                    ''
+                )}
                 <div className={`${style.section_general_bg}`}>
                     <Image
                         src='/falcon/falcon.jpg'

@@ -22,7 +22,7 @@ const ShotLight = (props) => {
                             </p>
                         </Fade>
                     </div>
-                    <Fade flash delay={300} triggerOnce>
+                    <Fade flash triggerOnce>
                         <div className={`${styles.image} fade-up-animation`}>
                             <Image
                                 layout='fill'

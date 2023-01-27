@@ -5,6 +5,9 @@ function Form(props) {
     return (
         <div className={style.static_form}>
             <InputsWName
+                destinationURL={props.destinationURL}
+                orderName={props.orderName}
+                lang={props.lang}
                 image={props.image}
                 objectFit={props.objectFit}
                 title={props.title}

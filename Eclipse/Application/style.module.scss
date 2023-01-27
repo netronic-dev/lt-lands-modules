@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 60px;
+    line-height: 1.25em;
     text-align: center;
     color: #8e8e8e;
 }
@@ -26,7 +26,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 1.66em;
     text-align: center;
     color: rgba(196, 196, 196, 0.8);
     max-width: 575px;
@@ -107,4 +107,60 @@
 
 .grid_cell_row_2_side {
     padding-top: 420px;
+}
+
+@media (max-width: 1200px) {
+    .application {
+        padding: 72px 20px 0;
+    }
+    .grid_cell_row1_side {
+        padding-top: 140%;
+    }
+    .grid_cell_row_2_side {
+        padding-top: 140%;
+    }
+    .image {
+        height: 500px;
+    }
+    .icons {
+        height: 250px;
+    }
+}
+@media (max-width: 992px) {
+    .grid_cell_row_2 {
+        transform: translateY(-450px);
+    }
+}
+@media (max-width: 768px) {
+    .image {
+        height: 440px;
+    }
+    .image_large {
+        height: 220px;
+    }
+    .grid_cell_row1_side {
+        padding-top: 20px;
+    }
+    .grid_cell_row_2_side {
+        padding-top: 20px;
+    }
+    .grid_row_1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 21px;
+    }
+    .grid_row_2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 21px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .grid_cell_row_2 {
+        transform: translateY(0);
+    }
 }

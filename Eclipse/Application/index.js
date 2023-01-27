@@ -1,5 +1,6 @@
 import styles from './style.module.scss';
 import Image from 'next/image';
+import { Fade } from 'react-awesome-reveal';
 
 const Application = (props) => {
     return (
@@ -16,42 +17,52 @@ const Application = (props) => {
                 <div className={styles.grid_container}>
                     <div className={styles.grid_row_1}>
                         <div className={styles.grid_cell_row1_side}>
-                            <div className={styles.image}>
-                                <Image
-                                    src={props.image2}
-                                    layout='fill'
-                                    quality={90}
-                                    objectFit='contain'
-                                    objectPosition='50% 0%'
-                                    alt='bg img'
-                                />
-                            </div>
-                            <p className={styles.cell_text}>{props.text2}</p>
+                            <Fade direction='down' delay={200} triggerOnce>
+                                <div className={styles.image}>
+                                    <Image
+                                        src={props.image2}
+                                        layout='fill'
+                                        quality={90}
+                                        objectFit='contain'
+                                        objectPosition='50% 0%'
+                                        alt='bg img'
+                                    />
+                                </div>
+                                <p className={styles.cell_text}>
+                                    {props.text2}
+                                </p>
+                            </Fade>
                         </div>
                         <div className={styles.grid_cell_row1_center}>
-                            <div className={styles.image}>
-                                <Image
-                                    src={props.image1}
-                                    layout='fill'
-                                    quality={90}
-                                    objectFit='contain'
-                                    objectPosition='50% 0%'
-                                    alt='bg img'
-                                />
-                            </div>
+                            <Fade direction='up' delay={200} triggerOnce>
+                                <div className={styles.image}>
+                                    <Image
+                                        src={props.image1}
+                                        layout='fill'
+                                        quality={90}
+                                        objectFit='contain'
+                                        objectPosition='50% 0%'
+                                        alt='bg img'
+                                    />
+                                </div>
+                            </Fade>
                         </div>
                         <div className={styles.grid_cell_row1_side}>
-                            <div className={styles.image}>
-                                <Image
-                                    src={props.image3}
-                                    layout='fill'
-                                    quality={90}
-                                    objectFit='contain'
-                                    objectPosition='50% 0%'
-                                    alt='bg img'
-                                />
-                            </div>
-                            <p className={styles.cell_text}>{props.text3}</p>
+                            <Fade direction='down' delay={200} triggerOnce>
+                                <div className={styles.image}>
+                                    <Image
+                                        src={props.image3}
+                                        layout='fill'
+                                        quality={90}
+                                        objectFit='contain'
+                                        objectPosition='50% 0%'
+                                        alt='bg img'
+                                    />
+                                </div>
+                                <p className={styles.cell_text}>
+                                    {props.text3}
+                                </p>
+                            </Fade>
                         </div>
                     </div>
                     <div className={styles.grid_row_2}>

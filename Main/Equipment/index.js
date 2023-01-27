@@ -35,7 +35,12 @@ export default function MainEquipment(props) {
                     <h2 className={style.title}>{props.title}</h2>
                 </Fade>
                 <div className={style.equipment_menu}>
-                    <Link href='/mobile-laser-tag-equipment'>
+                    <Link
+                        href={
+                            props.linkFirstActiveCell ||
+                            '/mobile-laser-tag-equipment'
+                        }
+                    >
                         <div
                             className={
                                 firstCellIsActive
@@ -68,7 +73,7 @@ export default function MainEquipment(props) {
                                         <Link
                                             href={
                                                 props.linkFirstActiveCell ||
-                                                '/mobile-laser-tag-equipment'
+                                                '/mobile-business'
                                             }
                                         >
                                             <a>
@@ -83,7 +88,11 @@ export default function MainEquipment(props) {
                             </div>
                         </div>
                     </Link>
-                    <Link href='/outdoor-laser-tag'>
+                    <Link
+                        href={
+                            props.linkSecondActiveCell || '/outdoor-laser-tag'
+                        }
+                    >
                         <div
                             className={
                                 secondCellIsActive
@@ -131,7 +140,12 @@ export default function MainEquipment(props) {
                             </div>
                         </div>
                     </Link>
-                    <Link href='/indoor-laser-tag-equipment'>
+                    <Link
+                        href={
+                            props.linkThirdActiveCell ||
+                            '/indoor-laser-tag-equipment'
+                        }
+                    >
                         <div
                             className={
                                 thirdCellIsActive
@@ -164,7 +178,7 @@ export default function MainEquipment(props) {
                                         <Link
                                             href={
                                                 props.linkThirdActiveCell ||
-                                                '/indoor-laser-tag-equipment'
+                                                '/equipment/galaxy-eclipse'
                                             }
                                         >
                                             <a>

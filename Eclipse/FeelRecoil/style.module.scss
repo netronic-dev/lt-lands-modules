@@ -96,6 +96,16 @@
     .image {
         margin-top: 80px;
         position: relative;
-        height: 280px;
+        height: 700px;
+    }
+}
+@media (max-width: 768px) {
+    .image {
+        height: 500px;
+    }
+}
+@media (max-width: 575px) {
+    .image {
+        height: 340px;
     }
 }

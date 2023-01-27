@@ -164,6 +164,9 @@ export default function MCAllFor(props) {
                             placeholderName={props.placeholderName}
                             placeholderEmail={props.placeholderEmail}
                             placeholderCall={props.placeholderCall}
+                            destinationURL={props.destinationURL}
+                            orderName={props.orderName}
+                            lang={props.lang}
                         />
                     </div>
                 </div>

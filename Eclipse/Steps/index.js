@@ -16,18 +16,20 @@ const Steps = (props) => {
                             {props.title}
                         </h2>
                     </Fade>
-                    <Fade direction='up' delay={500}>
+                    <Fade direction='up' delay={300}>
                         <p className={styles.text}>{props.text}</p>
                     </Fade>
                     {props.icon ? (
-                        <div className={styles.icon_step}>
-                            <Image
-                                src={props.iconSrc}
-                                alt='icon'
-                                width={68}
-                                height={68}
-                            />
-                        </div>
+                        <Fade flash triggerOnce>
+                            <div className={styles.icon_step}>
+                                <Image
+                                    src={props.iconSrc}
+                                    alt='icon'
+                                    width={68}
+                                    height={68}
+                                />
+                            </div>
+                        </Fade>
                     ) : (
                         ''
                     )}
@@ -39,7 +41,7 @@ const Steps = (props) => {
                                         src={props.image}
                                         layout='fill'
                                         quality={90}
-                                        objectFit='contain'
+                                        objectFit='cover'
                                         objectPosition='50% 0%'
                                         alt='bg img'
                                     />
@@ -54,7 +56,7 @@ const Steps = (props) => {
                                         src={props.image}
                                         layout='fill'
                                         quality={90}
-                                        objectFit='contain'
+                                        objectFit='cover'
                                         objectPosition='50% 0%'
                                         alt='bg img'
                                     />

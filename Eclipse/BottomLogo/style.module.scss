@@ -11,3 +11,14 @@
 .buttons_price {
     margin-top: 24px;
 }
+
+@media (max-width: 768px) {
+    .bottom_logo {
+        padding: 90px 0 90px 0;
+    }
+}
+@media (max-width: 575px) {
+    .bottom_logo {
+        padding: 40px 20px;
+    }
+}

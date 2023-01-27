@@ -2,11 +2,24 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 import { Button, VideoButton } from '../../../lt-modules/Buttons';
+import { BreadCrumbs } from '../../../lt-modules/BreadCrumbs';
 
 const EclipseMain = (props) => {
     return (
         <section className={styles.main}>
-            <div className={styles.container}>
+            {props.breadcrumbData ? (
+                <div className={styles.breadcrumbs}>
+                    <div className={styles.breadcrumbs_inner}>
+                        <BreadCrumbs
+                            color='white'
+                            breadcrumbData={props.breadcrumbData}
+                        />
+                    </div>
+                </div>
+            ) : (
+                ''
+            )}
+            <div className='container'>
                 <div className={styles.bg_image}>
                     <Fade flash triggerOnce>
                         <Image
