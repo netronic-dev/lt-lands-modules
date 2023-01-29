@@ -13,7 +13,6 @@ export function FalconTableEn(props) {
         >
           <tr>
             <td></td>
-            <td>Basic</td>
             <td>Standard</td>
             <td>Premium</td>
           </tr>
@@ -26,29 +25,29 @@ export function FalconTableEn(props) {
             <th>Shockproof body</th>
             <td>+</td>
             <td>+</td>
-            <td>+</td>
           </tr>
           <tr>
             <th>Protective bumper</th>
             <td>+</td>
             <td>+</td>
-            <td>+</td>
           </tr>
           <tr>
             <th>Color IPS screen</th>
-            <td>{cross}</td>
             <td>+</td>
             <td>+</td>
           </tr>
           <tr>
             <th>Built-in hit sensors</th>
-            <td>{cross}</td>
             <td>+</td>
             <td>+</td>
           </tr>
           <tr>
             <th>Impulse recoil</th>
             <td>{cross}</td>
+            <td>+</td>
+          </tr>
+          <tr>
+            <th>Capacitive hand sensor</th>
             <td>{cross}</td>
             <td>+</td>
           </tr>
@@ -63,12 +62,12 @@ export function FalconTableEn(props) {
           <p>Red dot sight</p>
           <p>Optional</p>
         </div>
-        <div className={style.text_line}>
+        {/* <div className={style.text_line}>
           <p>
             Capacitive hand sensor
           </p>
           <p>Optional</p>
-        </div>
+        </div> */}
       </div>
     </>
   );
