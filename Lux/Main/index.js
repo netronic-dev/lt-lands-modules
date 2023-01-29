@@ -19,7 +19,7 @@ export default function Main(props) {
       {props.breadcrumbData ?
         <div className={style.breadcrumbs}>
           <div className={style.breadcrumbs_inner}>
-            <BreadCrumbs color="another_black" breadcrumbData={props.breadcrumbData} />
+            <BreadCrumbs color="white" breadcrumbData={props.breadcrumbData} />
           </div>
         </div>
         : ""}
