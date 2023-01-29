@@ -16,7 +16,7 @@ export default function FalconMain(props) {
                     <div className={style.breadcrumbs}>
                         <div className={style.breadcrumbs_inner}>
                             <BreadCrumbs
-                                color='another_black'
+                                color='white'
                                 breadcrumbData={props.breadcrumbData}
                             />
                         </div>
