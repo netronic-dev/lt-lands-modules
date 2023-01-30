@@ -714,8 +714,9 @@ $mainColor: #0090ff;
 		grid-gap: 50px;
 		grid-template-columns: 1fr;
 	}
-	.safety {
+	.safety { 
 		.image {
+			padding-top: 5px;
 			width: 100%;
 		}
 	}
