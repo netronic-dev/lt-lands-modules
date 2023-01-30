@@ -34,6 +34,7 @@ const EclipseSlider = (props) => {
                             sliderData={props.sliderData}
                             width={140}
                             height={111}
+                            eclipse="1"
                         />
                     </Fade>
                 </div>
