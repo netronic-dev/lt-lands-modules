@@ -15,7 +15,7 @@ export default function SiriusPhone(props) {
           </p>
         </section>
         <div className={style.onlinePhone__image}>
-          <Image src="/sirius/phone-laptop.jpg" layout="responsive" width={1170} height={665} />
+          <Image src="/sirius/phone-remote-controle.png" layout="responsive" width={1170} height={665} />
         </div>
       </div>
       <div className={style.flexibleSettings}>
