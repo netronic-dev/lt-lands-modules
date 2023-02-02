@@ -12,7 +12,7 @@ export default function TVTable(props) {
       </Fade>
       <div className={style.alldevices_img}>
         <Fade direction="up" triggerOnce>
-          <Image src="/tvOut/devices-new.png" alt="devices" layout="responsive" width={1170} height={760} />
+          <Image src="/tvOut/devices-new.jpg" alt="devices" layout="responsive" width={1170} height={760} />
         </Fade>
       </div>
       <Fade direction="up" triggerOnce>
