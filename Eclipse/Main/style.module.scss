@@ -1,11 +1,7 @@
-%margins {
-    width: 1170px;
-    margin: 0 auto;
-}
-
 .main {
     position: relative;
     padding-bottom: 102px;
+    background-color: #070707;
 }
 
 .breadcrumbs {
@@ -18,10 +14,6 @@
 .breadcrumbs_inner {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.container {
-    @extend %margins;
 }
 
 .offset_top {
@@ -52,9 +44,6 @@
     }
 }
 @media (max-width: 1200px) {
-    .container {
-        width: 100%;
-    }
     .bg_image {
         padding: 0 20px;
         width: 100%;

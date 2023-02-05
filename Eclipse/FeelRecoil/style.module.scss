@@ -1,5 +1,6 @@
 .feels_recoil {
     position: relative;
+    background-color: #070707;
 }
 
 .feels_recoil_black {
@@ -56,14 +57,13 @@
 }
 
 .image {
+    padding: 0 20px;
     margin-top: 80px;
     position: relative;
-    height: 787px;
+    height: 600px;
 }
 @media (max-width: 992px) {
     .image {
-        margin-top: 80px;
-        position: relative;
         height: 600px;
     }
 }

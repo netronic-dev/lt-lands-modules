@@ -1,5 +1,6 @@
 .display {
-    margin-top: 211px;
+    padding-top: 211px;
+    background-color: #070707;
 }
 
 .title {
@@ -100,7 +101,7 @@
 
 @media (max-width: 1200px) {
     .display {
-        padding: 0 20px;
+        padding: 211px 20px 0;
     }
     .one_column {
         height: 400px;
@@ -122,10 +123,10 @@
 }
 @media (max-width: 992px) {
     .one_column {
-        height: 300px;
+        height: 330px;
     }
     .one_cell_image {
-        height: 300px;
+        height: 330px;
         width: 50%;
     }
     .info_block_title {
@@ -135,14 +136,16 @@
 
 @media (max-width: 768px) {
     .display {
-        margin-top: 60px;
+        padding-top: 60px;
     }
 
     .columns {
-        margin-top: 40px;
+        padding-top: 40px;
+        margin-top: 0;
     }
     .title {
         font-size: 28px;
+        margin-left: 0;
     }
     .two_column {
         grid-template-columns: 1fr;

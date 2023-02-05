@@ -37,7 +37,7 @@ const FeelRecoil = (props) => {
                                 src={props.imageSrc}
                                 layout='fill'
                                 quality={90}
-                                objectFit='cover'
+                                objectFit='contain'
                                 objectPosition='50% 0%'
                                 alt='bg img'
                             />

@@ -34,6 +34,7 @@ export default function Vest(props) {
                             listofTitles={
                                 props.listTitle || ['Front view', 'Back view']
                             }
+                            vest={props.vest}
                         />
                     </Fade>
                 </div>

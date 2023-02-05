@@ -1,6 +1,11 @@
+.materials {
+    background-color: #070707;
+}
+
 .title_image {
     position: relative;
     height: 682px;
+    
 }
 .title_content {
     position: relative;
@@ -128,12 +133,6 @@
 
     .second_grid_card {
         grid: 1fr / 1fr;
-    }
-    .first_card {
-        height: 100%;
-    }
-    .second_card {
-        height: 100%;
     }
     .subtitle {
         font-size: 24px;

@@ -1,5 +1,6 @@
 .vest {
-    padding: 216px 0 68px;
+    padding: 216px 0 0;
+    background-color: #070707;
 }
 .title {
     font-family: 'Roboto';
@@ -20,7 +21,7 @@
 }
 @media (max-width: 1200px) {
     .vest {
-        padding: 216px 20px 68px;
+        padding: 216px 20px 0;
     }
 }
 @media (max-width: 768px) {

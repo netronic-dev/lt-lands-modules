@@ -41,7 +41,7 @@ const Steps = (props) => {
                                         src={props.image}
                                         layout='fill'
                                         quality={90}
-                                        objectFit='cover'
+                                        objectFit='contain'
                                         objectPosition='50% 0%'
                                         alt='bg img'
                                     />
@@ -56,7 +56,7 @@ const Steps = (props) => {
                                         src={props.image}
                                         layout='fill'
                                         quality={90}
-                                        objectFit='cover'
+                                        objectFit='contain'
                                         objectPosition='50% 0%'
                                         alt='bg img'
                                     />
