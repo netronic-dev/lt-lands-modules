@@ -42,7 +42,7 @@ export default function MainWhyUs(props) {
                         </div>
                     </Fade>
                 </div>
-                <MapSales/>
+                <MapSales fr='1' />
                 <SliderSmallPics data={props.sliderData} />
             </section>
         </>
