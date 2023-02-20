@@ -9,14 +9,25 @@ export default function Vest(props) {
             <section className={styles.vest}>
                 <div className='container'>
                     <Fade direction='up' triggerOnce>
-                        <h2 className={styles.title}>
-                            {props.title}{' '}
-                            <span className={styles.blue}>
-                                {props.titleSpan}
-                            </span>
-                            <br />
-                            {props.titleContinue}
-                        </h2>
+                        {props.en ? (
+                            <h2 className={styles.title}>
+                                <span className={styles.blue}>
+                                    {props.titleSpan}
+                                </span>{' '}
+                                {props.title}
+                                <br />
+                                {props.titleContinue}
+                            </h2>
+                        ) : (
+                            <h2 className={styles.title}>
+                                {props.title}{' '}
+                                <span className={styles.blue}>
+                                    {props.titleSpan}
+                                </span>
+                                <br />
+                                {props.titleContinue}
+                            </h2>
+                        )}
                     </Fade>
                     <Fade direction='up' delay={300} triggerOnce>
                         <div className={styles.buttons_price}>
