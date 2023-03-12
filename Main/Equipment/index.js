@@ -73,7 +73,7 @@ export default function MainEquipment(props) {
                                         <Link
                                             href={
                                                 props.linkFirstActiveCell ||
-                                                '/mobile-business'
+                                                '/mobile-laser-tag-equipment'
                                             }
                                         >
                                             <a>
@@ -178,7 +178,7 @@ export default function MainEquipment(props) {
                                         <Link
                                             href={
                                                 props.linkThirdActiveCell ||
-                                                '/equipment/galaxy-eclipse'
+                                                '/indoor-laser-tag-equipment'
                                             }
                                         >
                                             <a>
