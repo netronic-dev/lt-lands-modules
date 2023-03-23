@@ -2,39 +2,48 @@
 	width: 1170px;
 	margin: 0 auto;
 }
+
 %title {
 	font-weight: 500;
 	font-size: 48px;
 	line-height: 60px;
 	width: 100%;
 }
+
 .screen {
 	background-color: #000000;
+
 	h2 {
 		color: white;
 	}
+
 	p {
 		color: white;
 	}
+
 	span {
 		color: #8e8e8e;
 	}
+
 	a {
 		color: #0090ff;
-		text-decoration: underline;
 	}
+
 	a:hover {
 		color: #0061ac;
 		text-decoration: none;
 	}
 }
+
 .img {
 	position: relative;
 	overflow: hidden;
+
 	img {
 		width: 100%;
 	}
 }
+
 .section_general_bg {
 	position: absolute;
 	overflow: hidden;
@@ -42,6 +51,7 @@
 	height: 100%;
 	width: 100%;
 }
+
 .section_general {
 	position: relative;
 	overflow: hidden;
@@ -50,27 +60,33 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
+
 .title {
 	@extend %title;
 }
+
 .title_half {
 	@extend %title;
 	width: 55%;
 }
+
 .breadCrumbs {
 	margin-bottom: 80px;
 	width: 100% !important;
 }
+
 .video_block {
 	display: flex;
 	justify-content: center;
 }
+
 .inside_general {
 	position: relative;
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
 	.title {
 		margin: 0 auto 20px auto;
 		width: max-content;
@@ -79,14 +95,17 @@
 		font-weight: 400;
 		font-size: 30px;
 	}
+
 	.sirius_logo {
 		margin-bottom: 60px;
 	}
 }
+
 .video_button {
 	@extend %margins;
 	margin-bottom: 100px;
 }
+
 .head_par {
 	@extend %margins;
 	font-weight: 500;
@@ -94,6 +113,7 @@
 	line-height: 60px;
 	margin-bottom: 110px;
 }
+
 .cards {
 	@extend %margins;
 	margin-bottom: 100px;
@@ -102,54 +122,66 @@
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
+
 .cards__text_block {
 	background-color: #101010;
 	padding: 35px;
 	border-radius: 5px;
+
 	h2 {
 		font-weight: 500;
 		font-size: 30px;
 		line-height: 38px;
 		margin-bottom: 40px;
 	}
+
 	p {
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 30px;
 	}
 }
+
 .cards__image {
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
 }
+
 .cards_text p {
 	color: #8e8e8e;
 }
+
 .par_bold {
 	font-weight: 500;
 	color: #8e8e8e !important;
 }
+
 .section {
 	@extend %margins;
 	padding-left: 55px;
+
 	h2 {
 		margin: 0 0 35px 0;
 	}
+
 	p {
 		width: 925px;
 		margin-bottom: 70px;
 	}
 }
+
 .slider {
 	margin-bottom: 70px;
 }
+
 .block_icon_text {
 	@extend %margins;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
+
 	h3 {
 		color: white !important;
 		font-size: 30px;
@@ -157,26 +189,33 @@
 		font-weight: 400;
 	}
 }
+
 .bit_sirius_cell {
 	padding: 45px;
 	background-color: #000;
 }
+
 .onlinePhone {
 	margin-top: 200px;
 	margin-bottom: 220px;
+
 	.section {
 		margin-bottom: 110px;
+
 		p {
 			width: 800px;
 		}
 	}
+
 	.onlinePhone__image {
 		@extend %margins;
+
 		img {
 			width: 100%;
 		}
 	}
 }
+
 .strongBody {
 	background-color: #030305;
 	display: flex;
@@ -184,47 +223,57 @@
 	align-items: center;
 	padding: 100px 0 0;
 }
+
 .siriusDisassembled {
 	width: 1170px;
 	margin-bottom: 20px;
 	position: relative;
 	overflow: hidden;
 }
+
 .waterProtection {
 	padding: 100px 0 0;
 	position: relative;
 	overflow: hidden;
+
 	h2 {
 		width: 800px;
 		text-align: center;
 		margin: 0 auto 70px;
 	}
+
 	img {
 		width: 100%;
 		margin-bottom: -6px;
 	}
 }
+
 .sevenModes_block {
 	background-color: #101010;
 	padding: 110px 0 200px 0;
 }
+
 .deactivateSirius {
 	@extend %margins;
 	padding-top: 100px;
 }
+
 .block_half_outside {
 	background-color: #101010;
 }
+
 .block_half {
 	@extend %margins;
 	padding: 100px 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 20px;
+
 	h3 {
 		color: white;
 	}
-	h3 + p {
+
+	h3+p {
 		width: 375px;
 	}
 }
@@ -232,31 +281,37 @@
 .flexibleSettings {
 	margin: 200px 0 170px;
 }
+
 .battery {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 0;
+
 	.image {
 		width: 1240px;
 		margin: 0 auto;
 	}
+
 	.columns {
 		@extend %margins;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 20px;
 		grid-row-gap: 20px;
+
 		h3 {
 			color: white !important;
 		}
 	}
+
 	.cell {
 		border-radius: 5px;
 		background-color: #101010;
 	}
 }
+
 @media (max-width: 1300px) {
 	.battery {
 		.image {
@@ -264,58 +319,72 @@
 		}
 	}
 }
+
 @media (max-width: 1200px) {
 	%margins {
 		width: auto;
 		margin-right: 20px;
 		margin-left: 20px;
 	}
+
 	.newTechnologies {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+
 	.head_par {
 		margin-left: 0;
 		margin-right: 0;
 	}
+
 	.cards {
 		margin: 0;
 	}
+
 	.section_general {
 		height: 880px;
 	}
+
 	.img {
 		img {
 			margin-left: -8%;
 			width: 120%;
 		}
 	}
+
 	.strongBody {
 		margin-bottom: 100px;
 	}
+
 	.video_button {
 		width: auto;
 		transform: translateY(50px);
 	}
+
 	.siriusDisassembled {
 		width: 100%;
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+
 	.title_half {
 		width: 80%;
 	}
+
 	.section {
 		padding: 0;
+
 		p {
 			width: 100%;
 			margin-bottom: 40px;
 		}
 	}
+
 	.block_half {
 		padding: 100px 20px;
 	}
 }
+
 @media (max-width: 992px) {
 	.waterProtection {
 		h2 {
@@ -324,45 +393,56 @@
 			margin-right: 20px;
 		}
 	}
+
 	.flexibleSettings {
 		margin: 80px 0;
 	}
+
 	.img {
 		img {
 			margin-left: -25%;
 			width: 150%;
 		}
 	}
+
 	.title_half {
 		width: auto;
 	}
+
 	.block_icon_text {
 		grid-template-columns: 1fr 1fr;
 	}
+
 	.cards {
 		grid-template-columns: 1fr;
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+
 	.onlinePhone {
 		margin-top: 100px;
 		margin-bottom: 80px;
+
 		.section {
 			margin-bottom: 10px;
+
 			p {
 				width: auto;
 			}
 		}
 	}
+
 	.block_half {
 		padding: 100px 20px;
 		grid-template-columns: 1fr;
 		grid-column-gap: 0;
 		grid-row-gap: 50px;
-		h3 + p {
+
+		h3+p {
 			width: auto;
 		}
 	}
+
 	.battery {
 		.columns {
 			grid-template-columns: 1fr;
@@ -370,36 +450,44 @@
 		}
 	}
 }
+
 @media (max-width: 768px) {
 	.strongBody {
 		margin-bottom: 50px;
+
 		.cards {
 			margin-left: 20px;
 			margin-right: 20px;
 		}
 	}
+
 	.head_par {
 		font-size: 40px;
 		line-height: 50px;
 		margin-bottom: 100px;
 	}
+
 	.battery {
 		.cell {
 			margin-bottom: 50px;
 		}
 	}
+
 	.section_general {
 		height: 780px;
 	}
+
 	%title {
 		font-size: 36px;
 		line-height: 42px;
 	}
+
 	.block_icon_text {
 		padding: 0;
 		grid-template-columns: 1fr;
 	}
 }
+
 @media (max-width: 576px) {
 	.cards__text_block {
 		h2 {
@@ -407,40 +495,48 @@
 			line-height: 35px;
 		}
 	}
+
 	.breadCrumbs {
 		margin-bottom: 20px;
 	}
+
 	.waterProtection {
 		img {
 			width: 175%;
 			margin-left: -38%;
 		}
 	}
+
 	.img {
 		img {
 			margin-left: -50%;
 			width: 200%;
 		}
 	}
+
 	.section {
 		h2 {
 			margin: 0 0 35px 0;
 			font-size: 25px;
 			line-height: 35px;
 		}
+
 		p {
 			margin-bottom: 70px;
 		}
 	}
+
 	.head_par {
 		margin: 80px 0;
 		font-weight: 600;
 		font-size: 36px;
 		line-height: 44px;
 	}
+
 	.section_general {
 		height: 650px;
 	}
+
 	.inside_general {
 		.title {
 			margin-bottom: 0px !important;
@@ -448,6 +544,7 @@
 			margin: 0 auto 20px auto;
 			font-size: 20px;
 		}
+
 		.sirius_logo {
 			margin-top: 0;
 			padding: 0 20px;
