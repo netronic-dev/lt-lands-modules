@@ -1,4 +1,113 @@
+%margins {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.fade_animation {
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    will-change: scale;
+}
+
+@keyframes fade_animation {
+    0% {
+        scale: 1;
+        top: 0;
+        right: 0;
+    }
+
+    50% {
+        scale: 1.5;
+        top: 120px;
+        right: 150px;
+    }
+
+    100% {
+        scale: 1;
+        top: 0;
+        right: 0;
+    }
+}
+
+.fade_animation_scale {
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_scale;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    will-change: scale;
+}
+
+@keyframes fade_animation_scale {
+    0% {
+        scale: 1;
+        left: 50%;
+    }
+
+    50% {
+        scale: 1.04;
+        left: 50.5%;
+    }
+
+    100% {
+        scale: 1;
+        left: 50%;
+    }
+}
+
+.fade_animation_scale_2 {
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_scale_2;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    will-change: scale;
+}
+
+@keyframes fade_animation_scale_2 {
+    0% {
+        scale: 1;
+        left: 50%;
+    }
+
+    50% {
+        scale: 1.1;
+        left: 51%;
+    }
+
+    100% {
+        scale: 1;
+        left: 50%;
+    }
+}
+
+.main {
+    position: relative;
+    height: 810px;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding-bottom: 81px;
+}
+
 .main_title {
+    margin-top: 50px;
+    text-align: center;
     font-family: 'Zen-Dots';
     font-style: normal;
     font-weight: 400;
@@ -6,4 +115,56 @@
     line-height: 211px;
     letter-spacing: 0.085em;
     text-transform: uppercase;
+    color: white;
+    filter: blur(0.25px);
+    z-index: 3;
+}
+
+.bg_granade {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    height: 445px;
+    width: 342px;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.bg_big_cloud {
+    position: absolute;
+    top: 382px;
+    left: 50%;
+    height: 342px;
+    width: 805px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.bg_two_clouds {
+    position: absolute;
+    top: 421px;
+    left: 50%;
+    height: 395px;
+    width: 955px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.bg_two_upper_cloud {
+    position: absolute;
+    top: 271px;
+    left: 50%;
+    height: 264px;
+    width: 583px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.bg_asteroid {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 63.24px;
+    width: 134.18px;
+    z-index: 2;
 }
