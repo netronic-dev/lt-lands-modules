@@ -1,0 +1,219 @@
+.main {
+    background-color: #000308;
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 93px 0 158px 0;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.16em;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 35px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    max-width: 807px;
+    text-align: center;
+}
+
+.cells_wrapper {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+
+    .cell {
+        display: flex;
+        flex-direction: column;
+        padding: 36px 32px 46px 32px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+        font-family: 'Roboto';
+        font-style: normal;
+
+        .cell_title {
+            margin: 0;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.16em;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+
+        .cell_text {
+            margin-top: 50px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+        }
+    }
+
+    .last_cell {
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .cell_icons {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .text_wrapper {
+                margin-top: 13px;
+
+                .count_wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+
+                span {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 1.16em;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    letter-spacing: 0.02em;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+.bg_eclipse {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 1103px;
+    height: 612px;
+}
+
+@media (max-width: 1250px) {
+    .content {
+        padding: 93px 20px 158px 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cells_wrapper {
+        margin-top: 84px;
+        grid-template-columns: 786px;
+        gap: 62px;
+
+        .last_cell {
+            justify-content: center;
+            gap: 93px;
+        }
+    }
+
+    .bg_eclipse {
+        position: absolute;
+        top: 0;
+        right: 10%;
+    }
+}
+
+@media (max-width: 992px) {
+    .content {
+        padding: 93px 20px 158px 20px;
+    }
+}
+
+@media (max-width: 830px) {
+    .cells_wrapper {
+        margin-top: 84px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .bg_eclipse {
+        top: 0;
+        right: -10%;
+    }
+}
+
+@media (max-width: 585px) {
+
+    .content {
+        padding: 69px 20px 60px 20px;
+    }
+
+    .bg_eclipse {
+        top: 0;
+        right: -40%;
+    }
+
+    .cells_wrapper {
+        margin-top: 77px;
+
+        .cell {
+            width: 100%;
+
+            .cell_title {
+                width: max-content;
+                font-size: 18px;
+            }
+
+            .cell_text {
+                font-size: 14px;
+            }
+        }
+
+        .last_cell {
+            .cell_icons {
+                .icon_wrapper {
+                    height: 72px;
+                    width: 50px;
+                }
+
+                .text_wrapper {
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

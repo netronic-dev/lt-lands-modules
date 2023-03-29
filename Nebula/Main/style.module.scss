@@ -4,7 +4,7 @@
 }
 
 .fade_animation {
-    animation-duration: 3000ms;
+    animation-duration: 7000ms;
     animation-timing-function: linear;
     animation-name: fade_animation;
     animation-direction: normal;
@@ -21,9 +21,9 @@
     }
 
     50% {
-        scale: 1.5;
-        top: 120px;
-        right: 150px;
+        scale: 2;
+        top: 35%;
+        right: 20%;
     }
 
     100% {
@@ -70,23 +70,21 @@
 @keyframes fade_animation_scale_2 {
     0% {
         scale: 1;
-        left: 50%;
     }
 
     50% {
         scale: 1.1;
-        left: 51%;
     }
 
     100% {
         scale: 1;
-        left: 50%;
     }
 }
 
 .main {
     position: relative;
     height: 810px;
+    display: flex;
 }
 
 
@@ -109,7 +107,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 176px;
-    line-height: 211px;
+    line-height: 1.2em;
     letter-spacing: 0.085em;
     text-transform: uppercase;
     color: white;
@@ -119,10 +117,10 @@
 
 .bg_granade {
     position: absolute;
-    top: 140px;
+    top: 110px;
     left: 50%;
-    height: 445px;
-    width: 342px;
+    height: 449px;
+    width: 441px;
     transform: translateX(-50%);
     z-index: 20;
 }
@@ -164,4 +162,75 @@
     height: 63.24px;
     width: 134.18px;
     z-index: 2;
+}
+
+@media (max-width: 1200px) {
+    .content {
+        padding: 0 20px 81px 20px;
+    }
+
+    .main_title {
+        font-size: 158px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main_title {
+        font-size: 128px;
+    }
+}
+
+@media (max-width: 800px) {
+    .main_title {
+        font-size: 100px;
+    }
+
+    .bg_granade {
+        top: 90px;
+    }
+}
+
+@media (max-width: 650px) {
+    .main_title {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .main {
+        height: 590px;
+    }
+
+    .content {
+        padding-bottom: 41px;
+    }
+
+    .main_title {
+        font-size: 54px;
+    }
+
+    .bg_granade {
+        top: 60px;
+        height: 361px;
+        width: 361px;
+    }
+
+    .bg_big_cloud {
+        top: 342px;
+        height: 160px;
+        width: 450px;
+    }
+
+    .bg_two_upper_cloud {
+        top: 271px;
+        height: 120px;
+        width: 350px;
+    }
+
+    .bg_two_clouds {
+        top: 341px;
+        height: 180px;
+        width: 450px;
+    }
 }
