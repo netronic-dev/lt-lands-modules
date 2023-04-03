@@ -47,6 +47,7 @@
     .cell {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         padding: 36px 32px 46px 32px;
         border: 2px solid #FFFFFF;
         border-radius: 30px;
@@ -72,6 +73,14 @@
             line-height: 150%;
             letter-spacing: 0.02em;
             color: #FFFFFF;
+        }
+
+        .last_cell_text {
+            margin-top: 6px;
+        }
+
+        .downstairs_text {
+            margin-top: 25px;
         }
     }
 
@@ -119,6 +128,10 @@
     right: 30%;
     width: 1103px;
     height: 612px;
+}
+
+.bg_eclipse_mob {
+    display: none;
 }
 
 @media (max-width: 1250px) {
@@ -182,30 +195,49 @@
 
     .bg_eclipse {
         top: 0;
-        right: -40%;
+        left: -70%;
     }
 
     .cells_wrapper {
         margin-top: 77px;
 
         .cell {
-            width: 100%;
+            justify-content: center;
+            gap: 20px;
+            padding: 36px 32px 46px 32px;
 
             .cell_title {
-                width: max-content;
                 font-size: 18px;
             }
 
             .cell_text {
+                margin-top: 0;
                 font-size: 14px;
+            }
+
+            .last_cell_text {
+                margin-top: 6px;
+            }
+
+            .downstairs_text {
+                margin-top: 0;
             }
         }
 
         .last_cell {
+            gap: 60px;
+            padding: 0;
             .cell_icons {
                 .icon_wrapper {
+                    display: flex;
+                    align-items: center;
                     height: 72px;
                     width: 50px;
+                }
+
+                .timer_icon {
+                    height: 72px;
+                    width: 64px;
                 }
 
                 .text_wrapper {
@@ -217,3 +249,87 @@
         }
     }
 }
+
+// .cells_wrapper {
+//     margin-top: 120px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 38px;
+
+//     .cell {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         padding: 36px 32px 46px 32px;
+//         border: 2px solid #FFFFFF;
+//         border-radius: 30px;
+//         font-family: 'Roboto';
+//         font-style: normal;
+
+//         .cell_title {
+//             margin: 0;
+//             font-weight: 500;
+//             font-size: 24px;
+//             line-height: 1.16em;
+//             display: flex;
+//             align-items: center;
+//             letter-spacing: 0.02em;
+//             text-transform: uppercase;
+//             color: #FFFFFF;
+//         }
+
+//         .cell_text {
+//             margin-top: 50px;
+//             font-weight: 400;
+//             font-size: 18px;
+//             line-height: 150%;
+//             letter-spacing: 0.02em;
+//             color: #FFFFFF;
+//         }
+
+//         .last_cell_text {
+//             margin-top: 6px;
+//         }
+
+//         .downstairs_text {
+//             margin-top: 25px;
+//         }
+//     }
+
+//     .last_cell {
+//         border: none;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//         align-items: center;
+
+//         .cell_icons {
+//             display: flex;
+//             align-items: center;
+//             flex-direction: column;
+
+//             .text_wrapper {
+//                 margin-top: 13px;
+
+//                 .count_wrapper {
+//                     display: flex;
+//                     align-items: center;
+//                     gap: 15px;
+//                 }
+
+//                 span {
+//                     font-family: 'Roboto';
+//                     font-style: normal;
+//                     font-weight: 700;
+//                     font-size: 36px;
+//                     line-height: 1.16em;
+//                     display: flex;
+//                     align-items: center;
+//                     text-align: center;
+//                     letter-spacing: 0.02em;
+//                     color: #FFFFFF;
+//                 }
+//             }
+//         }
+//     }
+// }

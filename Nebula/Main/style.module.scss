@@ -178,6 +178,10 @@
     .main_title {
         font-size: 128px;
     }
+
+    .bg_asteroid {
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -188,6 +192,8 @@
     .bg_granade {
         top: 90px;
     }
+
+    
 }
 
 @media (max-width: 650px) {

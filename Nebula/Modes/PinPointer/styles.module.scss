@@ -1,0 +1,134 @@
+.line {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle {
+    stroke-width: 0px;
+    fill: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    position: absolute;
+    top: -28px;
+    right: 120px;
+
+    .icons {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .pin {
+            transform: rotate(-15deg);
+        }
+
+        .pointer {
+            position: absolute;
+            top: 50px;
+            left: 70px;
+        }
+    }
+}
+
+.content_laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: -228px;
+    right: -90px;
+
+    .icons {
+        order: 2;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .pin {
+            order: 2;
+        }
+
+        .pointer {
+            transform: rotate(-180deg);
+            order: 1;
+        }
+    }
+
+    .block_descr {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 330px;
+        padding: 20px 20px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+
+        .block_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.16em;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.content_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    top: -258px;
+    right: 50%;
+    transform: translateX(62%);
+
+    .icons {
+        order: 2;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 80px;
+
+        .pin {
+            order: 1;
+        }
+
+        .pointer {
+            order: 2;
+        }
+    }
+}
+
+.block_descr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    padding: 20px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+
+
+    .block_text {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.16em;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}

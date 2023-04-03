@@ -1,0 +1,300 @@
+.advantages {
+    padding: 152px 0 187px 0;
+    background-color: #000308;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.17em;
+    letter-spacing: 0.02em;
+    color: #fff;
+    text-align: center;
+}
+
+.content {
+    position: relative;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs_list {
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12.5px 36px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 1.16em;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: all .4s ease;
+
+        &:hover {
+            transition: all .4s ease;
+            border: 2px solid #0090FF;
+            background: #0090FF;
+            box-shadow: 0px 0px 10px #087AD2;
+        }
+    }
+
+    .active_tab {
+        border: 2px solid #0090FF;
+        background: #0090FF;
+
+        transition: all .4s ease;
+
+        &:hover {
+            box-shadow: 0px 0px 10px #087AD2;
+        }
+    }
+}
+
+.tabs_description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 66px;
+    gap: 22px;
+
+    .description_row {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+
+        .description_icon {
+            position: relative;
+            width: 97px;
+            height: 97px;
+        }
+
+        .tab_content {
+            width: 711px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            padding: 17px 45px;
+
+            .description_text {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 150%;
+                letter-spacing: 0.02em;
+                color: #FFFFFF;
+            }
+        }
+
+        .active_tab_content {
+            border: 2px solid #0090FF
+        }
+    }
+}
+
+.svg_icon {
+    fill: #fff;
+    stroke: #fff;
+
+    path {
+        fill: #fff;
+    }
+}
+
+.active_svg_icon {
+    fill: #0090FF;
+    stroke: #0090FF;
+
+    path {
+        fill: #0090FF;
+    }
+}
+
+.bg_image {
+    position: absolute;
+    top: -440px;
+    right: 50%;
+    z-index: 1;
+    width: 1000px;
+    transform: translateX(86%);
+}
+
+.content_mobile {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    .advantages {
+        padding: 90px 20px 116px 20px;
+    }
+
+    .tabs_list {
+        .tab {
+            padding: 12.5px 24px;
+            font-size: 28px;
+        }
+    }
+
+    .bg_image {
+        top: -420px;
+        left: 50%;
+        width: 1000px;
+        transform: translateX(-12%);
+    }
+
+    .tabs_description {
+        .description_row {
+            .tab_content {
+                width: 600px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .tabs_list {
+        .tab {
+            font-size: 22px;
+        }
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .content {
+        margin-top: 50px;
+    }
+
+    .bg_image {
+        top: -400px;
+        transform: translateX(-20%);
+    }
+
+    .tabs_description {
+        .description_row {
+            .tab_content {
+                width: 450px;
+            }
+
+            .description_icon {
+                width: 70px;
+                height: 70px;
+
+                svg {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        display: none;
+    }
+
+    .bg_image {
+        display: none;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .content_mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 55px;
+        margin-top: 50px;
+    }
+
+    .tabs_row {
+        display: flex;
+        justify-content: space-between;
+
+        .tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 30px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.16em;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: all .4s ease;
+
+            &:hover {
+                transition: all .4s ease;
+                border: 2px solid #0090FF;
+                background: #0090FF;
+                box-shadow: 0px 0px 10px #087AD2;
+            }
+        }
+
+        .active_tab {
+            border: 2px solid #0090FF;
+            background: #0090FF;
+
+            transition: all .4s ease;
+
+            &:hover {
+                box-shadow: 0px 0px 10px #087AD2;
+            }
+        }
+
+        .description_icon {
+            width: 46px;
+            height: 46px;
+
+            svg {
+                width: 46px;
+                height: 46px;
+            }
+        }
+    }
+
+    .tab_content {
+        margin-top: 30px;
+        width: 100%;
+        border: 2px solid #fff;
+        border-radius: 30px;
+        padding: 17px 45px;
+
+        .description_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+        }
+    }
+
+    .active_tab_content {
+        border: 2px solid #0090FF
+    }
+}

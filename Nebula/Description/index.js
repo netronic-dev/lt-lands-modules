@@ -1,5 +1,6 @@
-import style from './style.module.scss';
 import Image from 'next/image';
+
+import style from './style.module.scss';
 import CountUp from 'react-countup';
 
 const Description = (props) => {
@@ -12,42 +13,72 @@ const Description = (props) => {
                     <div className={style.cells_wrapper}>
                         <div className={style.cell}>
                             <h3 className={style.cell_title}>
-                                {props.cell_title}
+                                {props.cell1_title}
                             </h3>
-                            <p className={style.cell_text}>{props.cell_text}</p>
+                            <p className={style.cell_text}>
+                                {props.cell1_text}
+                            </p>
                         </div>
                         <div className={style.cell}>
                             <h3 className={style.cell_title}>
-                                {props.cell_title}
+                                {props.cell2_title}
                             </h3>
-                            <p className={style.cell_text}>{props.cell_text}</p>
+                            <p className={style.cell_text}>
+                                {props.cell2_text}
+                            </p>
                         </div>
                         <div className={style.cell}>
-                            <h3 className={style.cell_title}>
-                                {props.cell_title}
-                            </h3>
-                            <p className={style.cell_text}>{props.cell_text}</p>
+                            <div>
+                                <h3 className={style.cell_title}>
+                                    {props.cell3_title}
+                                </h3>
+                                <p
+                                    className={`${style.cell_text} ${style.last_cell_text}`}
+                                >
+                                    {props.cell3_text}
+                                </p>
+                            </div>
+                            <div className={style.downstairs_text}>
+                                <h3 className={style.cell_title}>
+                                    {props.cell3_2_title}
+                                </h3>
+                                <p
+                                    className={`${style.cell_text} ${style.last_cell_text}`}
+                                >
+                                    {props.cell3_2_text}
+                                </p>
+                            </div>
                         </div>
                         <div className={`${style.cell} ${style.last_cell}`}>
                             <div className={style.cell_icons}>
-                                <div className={style.icon_wrapper}>
+                                <div
+                                    className={`${style.icon_wrapper} ${style.timer_icon}`}
+                                >
                                     <Image src={props.timer_icon} alt='icon' />
                                 </div>
                                 <div className={style.text_wrapper}>
                                     <div className={style.count_wrapper}>
-                                        <CountUp
-                                            start={0}
-                                            end={props.hoursNumber}
-                                            duration={3}
-                                        />
+                                        {props.hoursNumber ? (
+                                            <CountUp
+                                                start={0}
+                                                end={props.hoursNumber}
+                                                duration={3}
+                                            />
+                                        ) : (
+                                            props.hoursNumber
+                                        )}
                                         <span>hours</span>
                                     </div>
                                     <div className={style.count_wrapper}>
-                                        <CountUp
-                                            start={0}
-                                            end={props.timesNumber}
-                                            duration={3}
-                                        />
+                                        {props.timesNumber ? (
+                                            <CountUp
+                                                start={0}
+                                                end={props.timesNumber}
+                                                duration={3}
+                                            />
+                                        ) : (
+                                            props.timesNumber
+                                        )}
                                         <span>times</span>
                                     </div>
                                 </div>
@@ -61,19 +92,27 @@ const Description = (props) => {
                                 </div>
                                 <div className={style.text_wrapper}>
                                     <div className={style.count_wrapper}>
-                                        <CountUp
-                                            start={0}
-                                            end={props.gramsNumber}
-                                            duration={3}
-                                        />
+                                        {props.gramsNumber ? (
+                                            <CountUp
+                                                start={0}
+                                                end={props.gramsNumber}
+                                                duration={3}
+                                            />
+                                        ) : (
+                                            props.gramsNumber
+                                        )}
                                         <span>grams</span>
                                     </div>
                                     <div className={style.count_wrapper}>
-                                        <CountUp
-                                            start={0}
-                                            end={props.throwsNumber}
-                                            duration={3}
-                                        />{' '}
+                                        {props.throwsNumber ? (
+                                            <CountUp
+                                                start={0}
+                                                end={props.throwsNumber}
+                                                duration={3}
+                                            />
+                                        ) : (
+                                            props.throwsNumber
+                                        )}
                                         <span>throws</span>
                                     </div>
                                 </div>
