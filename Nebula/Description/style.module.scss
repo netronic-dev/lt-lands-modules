@@ -134,6 +134,26 @@
     display: none;
 }
 
+.fade_animation_right {
+    animation-duration: 2000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_right;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    will-change: scale;
+}
+
+@keyframes fade_animation_right {
+    0% {
+        right: 30%;
+    }
+
+    100% {
+        right: -30%;
+    }
+}
+
 @media (max-width: 1250px) {
     .content {
         padding: 93px 20px 158px 20px;

@@ -17,7 +17,7 @@ const Main = (props) => {
                 <div className={style.content}>
                     <h1 className={style.main_title}>Nebula</h1>
                     <div
-                        className={`${style.bg_granade} ${style.fade_animation_scale}`}
+                        className={`${style.bg_granade}`}
                     >
                         <Image
                             src={props.bg_granade}

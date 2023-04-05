@@ -50,7 +50,7 @@
 
     .description_granade {
         position: absolute;
-        top: 0;
+        top: 50px;
         left: 47%;
         height: 680px;
         width: 570px;
@@ -60,14 +60,14 @@
 
 .button_pointer {
     position: absolute;
-    top: 150px;
+    top: 230px;
     left: 64%;
     transform: translateX(-50%);
 }
 
 .pin_pointer {
     position: absolute;
-    top: 60px;
+    top: 100px;
     left: 30.5%;
     transform: translateX(-50%);
 }
@@ -91,12 +91,22 @@
 }
 
 .fade_animation {
-    animation-duration: 4000ms;
+    animation-duration: 6000ms;
     animation-timing-function: ease;
     animation-name: fade_animation;
     animation-direction: normal;
     animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
+}
+
+@keyframes fade_animation {
+    0% {
+        scale: 1;
+    }
+
+    100% {
+        scale: 1.2;
+    }
 }
 
 .ellipse_stars_bg_laptop {
@@ -123,19 +133,7 @@
     display: none;
 }
 
-@keyframes fade_animation {
-    0% {
-        scale: 1;
-    }
 
-    50% {
-        scale: 1.2;
-    }
-
-    100% {
-        scale: 1;
-    }
-}
 
 @media (max-width: 1200px) {
     .ellipse_stars_bg {

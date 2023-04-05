@@ -1,9 +1,14 @@
 import Image from 'next/image';
+import { InView, useInView } from 'react-intersection-observer';
 
 import style from './style.module.scss';
 import CountUp from 'react-countup';
+import { useState } from 'react';
 
 const Description = (props) => {
+    const [inView, setInView] = useState(false);
+    const [inViewCount, setInViewCount] = useState(false);
+
     return (
         <section className={style.main}>
             <div className={`container ${style.container}`}>
@@ -12,9 +17,13 @@ const Description = (props) => {
                     <p className={style.subtitle}>{props.subtitle}</p>
                     <div className={style.cells_wrapper}>
                         <div className={style.cell}>
-                            <h3 className={style.cell_title}>
-                                {props.cell1_title}
-                            </h3>
+                            <InView onChange={setInView} triggerOnce>
+                                {({ ref, inView }) => (
+                                    <h3 className={style.cell_title} ref={ref}>
+                                        {props.cell1_title}
+                                    </h3>
+                                )}
+                            </InView>
                             <p className={style.cell_text}>
                                 {props.cell1_text}
                             </p>
@@ -57,27 +66,47 @@ const Description = (props) => {
                                     <Image src={props.timer_icon} alt='icon' />
                                 </div>
                                 <div className={style.text_wrapper}>
-                                    <div className={style.count_wrapper}>
-                                        {props.hoursNumber ? (
-                                            <CountUp
-                                                start={0}
-                                                end={props.hoursNumber}
-                                                duration={3}
-                                            />
-                                        ) : (
-                                            props.hoursNumber
+                                    <InView
+                                        onChange={setInViewCount}
+                                        triggerOnce
+                                    >
+                                        {({ ref, inView }) => (
+                                            <div
+                                                className={style.count_wrapper}
+                                                ref={ref}
+                                            >
+                                                {inViewCount ? (
+                                                    props.hoursNumber ? (
+                                                        <CountUp
+                                                            start={0}
+                                                            end={
+                                                                props.hoursNumber
+                                                            }
+                                                            duration={3}
+                                                        />
+                                                    ) : (
+                                                        props.hoursNumber
+                                                    )
+                                                ) : (
+                                                    ''
+                                                )}
+                                                <span>hours</span>
+                                            </div>
                                         )}
-                                        <span>hours</span>
-                                    </div>
+                                    </InView>
                                     <div className={style.count_wrapper}>
-                                        {props.timesNumber ? (
-                                            <CountUp
-                                                start={0}
-                                                end={props.timesNumber}
-                                                duration={3}
-                                            />
+                                        {inViewCount ? (
+                                            props.timesNumber ? (
+                                                <CountUp
+                                                    start={0}
+                                                    end={props.timesNumber}
+                                                    duration={3}
+                                                />
+                                            ) : (
+                                                props.timesNumber
+                                            )
                                         ) : (
-                                            props.timesNumber
+                                            ''
                                         )}
                                         <span>times</span>
                                     </div>
@@ -92,26 +121,34 @@ const Description = (props) => {
                                 </div>
                                 <div className={style.text_wrapper}>
                                     <div className={style.count_wrapper}>
-                                        {props.gramsNumber ? (
-                                            <CountUp
-                                                start={0}
-                                                end={props.gramsNumber}
-                                                duration={3}
-                                            />
+                                        {inViewCount ? (
+                                            props.gramsNumber ? (
+                                                <CountUp
+                                                    start={0}
+                                                    end={props.gramsNumber}
+                                                    duration={3}
+                                                />
+                                            ) : (
+                                                props.gramsNumber
+                                            )
                                         ) : (
-                                            props.gramsNumber
+                                            ''
                                         )}
                                         <span>grams</span>
                                     </div>
                                     <div className={style.count_wrapper}>
-                                        {props.throwsNumber ? (
-                                            <CountUp
-                                                start={0}
-                                                end={props.throwsNumber}
-                                                duration={3}
-                                            />
+                                        {inViewCount ? (
+                                            props.throwsNumber ? (
+                                                <CountUp
+                                                    start={0}
+                                                    end={props.throwsNumber}
+                                                    duration={3}
+                                                />
+                                            ) : (
+                                                props.throwsNumber
+                                            )
                                         ) : (
-                                            props.throwsNumber
+                                            ''
                                         )}
                                         <span>throws</span>
                                     </div>
@@ -120,7 +157,13 @@ const Description = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className={style.bg_eclipse}>
+                <div
+                    className={
+                        inView
+                            ? `${style.bg_eclipse} ${style.fade_animation_right}`
+                            : style.bg_eclipse
+                    }
+                >
                     <Image src={props.back} alt='bacground eclipse swadow' />
                 </div>
             </div>

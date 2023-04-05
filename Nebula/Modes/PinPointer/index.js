@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
 
-import pin from '../../../../public/accessories/nebula/Mask group.png';
+import pin from '../../../../public/accessories/nebula/Pin.png';
 import pointer from '../../../../public/accessories/nebula/pointer.svg';
 import pointer_reverse from '../../../../public/accessories/nebula/pointer_reverse.svg';
 
@@ -82,7 +82,7 @@ const PinPointer = () => {
                         <Image src={pin} alt='pin' className={style.pin} />
                         <div className={style.pointer}>
                             <Image
-                                src={pointer_reverse}
+                                src={pointer}
                                 alt='pointer'
                                 width='77px'
                                 height='77px'

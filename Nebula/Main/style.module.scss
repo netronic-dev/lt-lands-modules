@@ -4,42 +4,34 @@
 }
 
 .fade_animation {
-    animation-duration: 7000ms;
+    animation-duration: 15000ms;
     animation-timing-function: linear;
     animation-name: fade_animation;
     animation-direction: normal;
     animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     will-change: scale;
 }
 
 @keyframes fade_animation {
     0% {
-        scale: 1;
         top: 0;
         right: 0;
-    }
-
-    50% {
-        scale: 2;
-        top: 35%;
-        right: 20%;
     }
 
     100% {
-        scale: 1;
-        top: 0;
-        right: 0;
+        top: 18%;
+        right: 18%;
     }
 }
 
 .fade_animation_scale {
-    animation-duration: 3000ms;
+    animation-duration: 5000ms;
     animation-timing-function: linear;
     animation-name: fade_animation_scale;
     animation-direction: normal;
     animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     will-change: scale;
 }
 
@@ -48,22 +40,18 @@
         scale: 1;
     }
 
-    50% {
-        scale: 1.04;
-    }
-
     100% {
-        scale: 1;
+        scale: 1.04;
     }
 }
 
 .fade_animation_scale_2 {
-    animation-duration: 3000ms;
+    animation-duration: 5000ms;
     animation-timing-function: linear;
     animation-name: fade_animation_scale_2;
     animation-direction: normal;
     animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     will-change: scale;
 }
 
@@ -72,12 +60,8 @@
         scale: 1;
     }
 
-    50% {
-        scale: 1.1;
-    }
-
     100% {
-        scale: 1;
+        scale: 1.1;
     }
 }
 
@@ -217,14 +201,14 @@
     }
 
     .bg_granade {
-        top: 60px;
+        top: 90px;
         height: 361px;
         width: 361px;
     }
 
     .bg_big_cloud {
-        top: 342px;
-        height: 160px;
+        top: 262px;
+        height: 260px;
         width: 450px;
     }
 

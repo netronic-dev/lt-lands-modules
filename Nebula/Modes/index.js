@@ -3,7 +3,11 @@ import { InView } from 'react-intersection-observer';
 import { useState } from 'react';
 
 import style from './style.module.scss';
-import { ButtonPointer, ButtonPointerLaptop, ButtonPointerMobile } from './ButtonPointer';
+import {
+    ButtonPointer,
+    ButtonPointerLaptop,
+    ButtonPointerMobile,
+} from './ButtonPointer';
 import { PinPointer, PinPointerLaptop, PinPointerMobile } from './PinPointer';
 import stars from '../../../public/accessories/nebula/stars.png';
 import ellipse_stars_bg from '../../../public/accessories/nebula/ellipse_stars_bg.png';
@@ -12,6 +16,7 @@ import ellipse_stars_bg_mob from '../../../public/accessories/nebula/ellipse_sta
 
 const Modes = (props) => {
     const [inView, setInView] = useState(false);
+    const [inViewStars, setInViewStars] = useState(false);
 
     return (
         <section className={style.modes}>
@@ -27,13 +32,18 @@ const Modes = (props) => {
                         <p className={style.mode_text}>{props.mode2_text}</p>
                     </div>
                 </di>
+
                 <div className={style.work_description}>
-                    <div className={style.description_bg}>
-                        <Image
-                            src={props.description_bg}
-                            alt='description background'
-                        />
-                    </div>
+                    <InView onChange={setInViewStars} triggerOnce>
+                        {({ ref, inView }) => (
+                            <div className={style.description_bg} ref={ref}>
+                                <Image
+                                    src={props.description_bg}
+                                    alt='description background'
+                                />
+                            </div>
+                        )}
+                    </InView>
                     <div className={style.description_granade}>
                         <Image
                             src={props.description_granade}
@@ -125,7 +135,14 @@ const Modes = (props) => {
                         </InView>
                     </div>
                 </div>
-                <div className={`${style.stars} ${style.fade_animation}`}>
+
+                <div
+                    className={
+                        inViewStars
+                            ? `${style.stars} ${style.fade_animation}`
+                            : style.stars
+                    }
+                >
                     <div className={style.background_stars}>
                         <Image src={stars} alt='stars' />
                     </div>
