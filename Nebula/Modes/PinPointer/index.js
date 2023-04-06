@@ -6,7 +6,6 @@ import Image from 'next/image';
 
 import pin from '../../../../public/accessories/nebula/Pin.png';
 import pointer from '../../../../public/accessories/nebula/pointer.svg';
-import pointer_reverse from '../../../../public/accessories/nebula/pointer_reverse.svg';
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -193,46 +192,46 @@ const PinPointerMobile = () => {
     return (
         <>
             <motion.svg
-                width='50'
+                width='30'
                 height='100'
-                viewBox='0 0 50 100'
+                viewBox='0 0 30 100'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
-                    className={style.circle}
-                    cx='8'
+                    className={style.circle_mob}
+                    cx='26'
                     cy='92'
-                    r='8'
+                    r='4'
                     stroke='white'
                     variants={draw}
                     custom={0}
                 />
                 <motion.line
-                    className={style.line}
-                    x1='8'
+                    className={style.line_mob}
+                    x1='26'
                     y1='92'
-                    x2='8'
-                    y2='8'
+                    x2='26'
+                    y2='4'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
-                    className={style.line}
-                    x1='8'
-                    y1='8'
-                    x2='42'
-                    y2='8'
+                    className={style.line_mob}
+                    x1='4'
+                    y1='4'
+                    x2='26'
+                    y2='4'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
-                    className={style.circle}
-                    cx='42'
-                    cy='8'
-                    r='8'
+                    className={style.circle_mob}
+                    cx='4'
+                    cy='4'
+                    r='4'
                     stroke='white'
                     variants={draw}
                     custom={2.5}

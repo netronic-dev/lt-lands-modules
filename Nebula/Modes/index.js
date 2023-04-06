@@ -22,28 +22,27 @@ const Modes = (props) => {
         <section className={style.modes}>
             <div className='container'>
                 <h2 className={style.title}>{props.title}</h2>
-                <di className={style.modes_row}>
-                    <div className={style.mode_cell}>
-                        <div className={style.mode_number}>{one} </div>
-                        <p className={style.mode_text}>{props.mode1_text}</p>
-                    </div>
-                    <div className={style.mode_cell}>
-                        <div className={style.mode_number}>{two}</div>
-                        <p className={style.mode_text}>{props.mode2_text}</p>
-                    </div>
-                </di>
-
-                <div className={style.work_description}>
-                    <InView onChange={setInViewStars} triggerOnce>
-                        {({ ref, inView }) => (
-                            <div className={style.description_bg} ref={ref}>
-                                <Image
-                                    src={props.description_bg}
-                                    alt='description background'
-                                />
+                <InView onChange={setInViewStars} triggerOnce>
+                    {({ ref, inView }) => (
+                        <di className={style.modes_row} ref={ref}>
+                            <div className={style.mode_cell}>
+                                <div className={style.mode_number}>{one} </div>
+                                <p className={style.mode_text}>{props.mode1_text}</p>
                             </div>
-                        )}
-                    </InView>
+                            <div className={style.mode_cell}>
+                                <div className={style.mode_number}>{two}</div>
+                                <p className={style.mode_text}>{props.mode2_text}</p>
+                            </div>
+                        </di>
+                    )}
+                </InView>
+                <div className={style.work_description}>
+                    <div className={style.description_bg} >
+                        <Image
+                            src={props.description_bg}
+                            alt='description background'
+                        />
+                    </div>
                     <div className={style.description_granade}>
                         <Image
                             src={props.description_granade}
@@ -135,17 +134,20 @@ const Modes = (props) => {
                         </InView>
                     </div>
                 </div>
-
-                <div
-                    className={
-                        inViewStars
-                            ? `${style.stars} ${style.fade_animation}`
-                            : style.stars
-                    }
-                >
-                    <div className={style.background_stars}>
-                        <Image src={stars} alt='stars' />
-                    </div>
+                <div className={inViewStars
+                    ? `${style.stars} ${style.fade_animation}`
+                    : style.stars}>
+                    <Image src={stars} alt='stars' />
+                </div>
+                <div className={inViewStars
+                    ? `${style.stars_laptop} ${style.fade_animation}`
+                    : style.stars_laptop}>
+                    <Image src={stars} alt='stars' />
+                </div>
+                <div className={inViewStars
+                    ? `${style.stars_mobile} ${style.fade_animation}`
+                    : style.stars_mobile}>
+                    <Image src={stars} alt='stars' />
                 </div>
                 <div className={style.ellipse_stars_bg}>
                     <Image src={ellipse_stars_bg} alt='stars' />

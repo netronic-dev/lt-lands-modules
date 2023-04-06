@@ -25,6 +25,86 @@
     }
 }
 
+.fade_animation_left {
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_left;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    will-change: scale;
+}
+
+@keyframes fade_animation_left {
+    0% {
+        left: 50%;
+    }
+
+    100% {
+        left: 54%;
+    }
+}
+
+.fade_animation_right_mob {
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_right_mob;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    will-change: scale;
+}
+
+@keyframes fade_animation_right_mob {
+    0% {
+        left: 50%;
+    }
+
+    100% {
+        left: 54%;
+    }
+}
+
+.fade_animation_left_mob {
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_left_mob;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    will-change: scale;
+
+}
+
+@keyframes fade_animation_left_mob {
+    0% {
+        left: 50%;
+    }
+
+    100% {
+        left: 44%;
+    }
+}
+
+.fade_animation_right {
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-name: fade_animation_right;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+@keyframes fade_animation_right {
+    0% {
+        left: 50%;
+    }
+
+    100% {
+        left: 44%;
+    }
+}
+
 .fade_animation_scale {
     animation-duration: 5000ms;
     animation-timing-function: linear;
@@ -111,10 +191,10 @@
 
 .bg_big_cloud {
     position: absolute;
-    top: 382px;
+    top: 280px;
     left: 50%;
-    height: 342px;
-    width: 805px;
+    height: 427px;
+    width: 827px;
     transform: translateX(-50%);
     z-index: 10;
 }
@@ -126,17 +206,35 @@
     height: 395px;
     width: 955px;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 12;
 }
 
-.bg_two_upper_cloud {
+.right_upper_cloud {
     position: absolute;
-    top: 271px;
+    top: 300px;
     left: 50%;
-    height: 264px;
-    width: 583px;
-    transform: translateX(-50%);
-    z-index: 10;
+    height: 143px;
+    width: 272px;
+    transform: translateX(-80%);
+    z-index: 12;
+}
+
+.left_upper_cloud {
+    position: absolute;
+    top: 300px;
+    right: 50%;
+    height: 160px;
+    width: 230px;
+    transform: translateX(10%);
+    z-index: 12;
+}
+
+.left_upper_cloud_mob {
+    display: none;
+}
+
+.right_upper_cloud_mob {
+    display: none;
 }
 
 .bg_asteroid {
@@ -177,7 +275,7 @@
         top: 90px;
     }
 
-    
+
 }
 
 @media (max-width: 650px) {
@@ -201,21 +299,44 @@
     }
 
     .bg_granade {
-        top: 90px;
-        height: 361px;
-        width: 361px;
+        top: 120px;
+        height: 300px;
+        width: 290px;
     }
 
     .bg_big_cloud {
-        top: 262px;
+        top: 242px;
         height: 260px;
-        width: 450px;
+        width: 500px;
     }
 
-    .bg_two_upper_cloud {
-        top: 271px;
-        height: 120px;
-        width: 350px;
+    .right_upper_cloud {
+        display: none;
+    }
+
+    .right_upper_cloud_mob {
+        display: block;
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        height: 90px;
+        width: 130px;
+        transform: translateX(20%);
+    }
+
+    .left_upper_cloud {
+        display: none;
+    }
+
+    .left_upper_cloud_mob {
+        display: block;
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        height: 90px;
+        width: 170px;
+        transform: translateX(-100%);
+        z-index: 12;
     }
 
     .bg_two_clouds {

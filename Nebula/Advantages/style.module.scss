@@ -29,82 +29,86 @@
     display: flex;
     justify-content: space-between;
     z-index: 2;
+}
 
-    .tab {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 12.5px 36px;
-        border: 2px solid #FFFFFF;
-        border-radius: 30px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 36px;
-        line-height: 1.16em;
-        letter-spacing: 0.02em;
-        color: #FFFFFF;
-        cursor: pointer;
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12.5px 36px;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.16em;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all .4s ease;
+
+    &:hover {
         transition: all .4s ease;
-
-        &:hover {
-            transition: all .4s ease;
-            border: 2px solid #0090FF;
-            background: #0090FF;
-            box-shadow: 0px 0px 10px #087AD2;
-        }
-    }
-
-    .active_tab {
         border: 2px solid #0090FF;
         background: #0090FF;
+        box-shadow: 0px 0px 10px #087AD2;
+    }
+}
 
-        transition: all .4s ease;
+.active_tab {
+    border: 2px solid #0090FF;
+    background: #0090FF;
 
-        &:hover {
-            box-shadow: 0px 0px 10px #087AD2;
-        }
+    transition: all .4s ease;
+
+    &:hover {
+        box-shadow: 0px 0px 10px #087AD2;
     }
 }
 
 .tabs_description {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 66px;
     gap: 22px;
+}
 
-    .description_row {
-        display: flex;
-        align-items: flex-start;
-        gap: 30px;
+.description_row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
 
-        .description_icon {
-            position: relative;
-            width: 97px;
-            height: 97px;
-        }
+.description_icon {
+    position: relative;
+    width: 97px;
+    height: 97px;
+}
 
-        .tab_content {
-            width: 711px;
-            border: 2px solid #fff;
-            border-radius: 30px;
-            padding: 17px 45px;
+.tab_content {
+    position: relative;
+    width: 711px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 17px 45px;
+}
 
-            .description_text {
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 24px;
-                line-height: 150%;
-                letter-spacing: 0.02em;
-                color: #FFFFFF;
-            }
-        }
+.description_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    z-index: 20;
+}
 
-        .active_tab_content {
-            border: 2px solid #0090FF
-        }
-    }
+.active_tab_content {
+    border: 2px solid #0090FF
 }
 
 .svg_icon {
@@ -129,7 +133,7 @@
     position: absolute;
     top: -440px;
     right: 50%;
-    z-index: 1;
+    z-index: 0;
     width: 1000px;
     transform: translateX(86%);
 }
@@ -143,11 +147,9 @@
         padding: 90px 20px 116px 20px;
     }
 
-    .tabs_list {
-        .tab {
-            padding: 12.5px 24px;
-            font-size: 28px;
-        }
+    .tab {
+        padding: 12.5px 24px;
+        font-size: 28px;
     }
 
     .bg_image {
@@ -157,20 +159,16 @@
         transform: translateX(-12%);
     }
 
-    .tabs_description {
-        .description_row {
-            .tab_content {
-                width: 600px;
-            }
-        }
+    .tab_content {
+        width: 600px;
     }
 }
 
 @media (max-width: 992px) {
-    .tabs_list {
-        .tab {
-            font-size: 22px;
-        }
+
+    .tab {
+        font-size: 22px;
+
     }
 
     .title {
@@ -186,21 +184,17 @@
         transform: translateX(-20%);
     }
 
-    .tabs_description {
-        .description_row {
-            .tab_content {
-                width: 450px;
-            }
+    .tab_content {
+        width: 450px;
+    }
 
-            .description_icon {
-                width: 70px;
-                height: 70px;
+    .description_icon {
+        width: 70px;
+        height: 70px;
 
-                svg {
-                    width: 70px;
-                    height: 70px;
-                }
-            }
+        svg {
+            width: 70px;
+            height: 70px;
         }
     }
 }
@@ -228,51 +222,51 @@
     .tabs_row {
         display: flex;
         justify-content: space-between;
+    }
 
-        .tab {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 20px;
-            border: 2px solid #FFFFFF;
-            border-radius: 30px;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 1.16em;
-            letter-spacing: 0.02em;
-            color: #FFFFFF;
-            cursor: pointer;
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.16em;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: all .4s ease;
+
+        &:hover {
             transition: all .4s ease;
-
-            &:hover {
-                transition: all .4s ease;
-                border: 2px solid #0090FF;
-                background: #0090FF;
-                box-shadow: 0px 0px 10px #087AD2;
-            }
-        }
-
-        .active_tab {
             border: 2px solid #0090FF;
             background: #0090FF;
-
-            transition: all .4s ease;
-
-            &:hover {
-                box-shadow: 0px 0px 10px #087AD2;
-            }
+            box-shadow: 0px 0px 10px #087AD2;
         }
+    }
 
-        .description_icon {
+    .active_tab {
+        border: 2px solid #0090FF;
+        background: #0090FF;
+
+        transition: all .4s ease;
+
+        &:hover {
+            box-shadow: 0px 0px 10px #087AD2;
+        }
+    }
+
+    .description_icon {
+        width: 46px;
+        height: 46px;
+
+        svg {
             width: 46px;
             height: 46px;
-
-            svg {
-                width: 46px;
-                height: 46px;
-            }
         }
     }
 

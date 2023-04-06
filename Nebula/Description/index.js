@@ -166,6 +166,15 @@ const Description = (props) => {
                 >
                     <Image src={props.back} alt='bacground eclipse swadow' />
                 </div>
+                <div
+                    className={
+                        inView
+                            ? `${style.bg_eclipse_mob} ${style.fade_animation_right_mob}`
+                            : style.bg_eclipse_mob
+                    }
+                >
+                    <Image src={props.back} alt='bacground eclipse swadow' />
+                </div>
             </div>
         </section>
     );

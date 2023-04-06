@@ -175,46 +175,46 @@ const ButtonPointerMobile = () => {
     return (
         <>
             <motion.svg
-                width='100'
+                width='80'
                 height='150'
-                viewBox='0 0 100 150'
+                viewBox='0 0 80 150'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
-                    className={style.circle}
-                    cx='8'
-                    cy='8'
-                    r='8'
+                    className={style.circle_mob}
+                    cx='4'
+                    cy='4'
+                    r='4'
                     stroke='white'
                     variants={draw}
                     custom={0}
                 />
                 <motion.line
-                    className={style.line}
-                    x1='8'
-                    y1='8'
-                    x2='92'
-                    y2='8'
+                    className={style.line_mob}
+                    x1='4'
+                    y1='4'
+                    x2='76'
+                    y2='4'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
-                    className={style.line}
-                    x1='92'
-                    y1='8'
-                    x2='92'
+                    className={style.line_mob}
+                    x1='76'
+                    y1='4'
+                    x2='76'
                     y2='142'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
-                    className={style.circle}
-                    cx='92'
+                    className={style.circle_mob}
+                    cx='76'
                     cy='142'
-                    r='8'
+                    r='4'
                     stroke='white'
                     variants={draw}
                     custom={2.5}

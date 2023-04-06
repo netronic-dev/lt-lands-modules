@@ -9,6 +9,17 @@
     fill: white;
 }
 
+.line_mob {
+    stroke-width: 1px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle_mob {
+    stroke-width: 0px;
+    fill: white;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -25,7 +36,7 @@
     align-items: center;
     gap: 35px;
     position: absolute;
-    top: 95px;
+    top: 105px;
     right: -180px;
 }
 
@@ -37,7 +48,7 @@
     position: absolute;
     top: 120px;
     right: 50%;
-    transform: translateX(30%);
+    transform: translateX(40%);
     width: 300px;
 }
 

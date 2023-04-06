@@ -47,16 +47,45 @@ const Main = (props) => {
                         />
                     </div>
                     <div
-                        className={`${style.bg_two_upper_cloud} ${style.fade_animation_scale_2}`}
+                        className={`${style.right_upper_cloud} ${style.fade_animation_right}`}
                     >
                         <Image
-                            src={props.two_upper_cloud}
+                            src={props.right_upper_cloud}
                             alt='bg_main_img'
                             objectFit='cover'
                             layout='fill'
                         />
                     </div>
-
+                    <div
+                        className={`${style.right_upper_cloud_mob} ${style.fade_animation_right_mob}`}
+                    >
+                        <Image
+                            src={props.right_upper_cloud}
+                            alt='bg_main_img'
+                            objectFit='cover'
+                            layout='fill'
+                        />
+                    </div>
+                    <div
+                        className={`${style.left_upper_cloud} ${style.fade_animation_left}`}
+                    >
+                        <Image
+                            src={props.left_upper_cloud}
+                            alt='bg_main_img'
+                            objectFit='cover'
+                            layout='fill'
+                        />
+                    </div>
+                    <div
+                        className={`${style.left_upper_cloud_mob} ${style.fade_animation_left_mob}`}
+                    >
+                        <Image
+                            src={props.left_upper_cloud}
+                            alt='bg_main_img'
+                            objectFit='cover'
+                            layout='fill'
+                        />
+                    </div>
                     <Button
                         style='transparentGranade'
                         type='catalog'
