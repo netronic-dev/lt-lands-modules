@@ -132,21 +132,6 @@ const Advantages = (props) => {
                             </li>
                         ))}
                     </ul>
-                    <ul className={style.tabs_list_mob}>
-                        {props.data.map((item, index) => (
-                            <li
-                                className={`${style.tab} ${activeTab === item.tab
-                                    ? style.active_tab
-                                    : ''
-                                    }`}
-                                id={item.tab}
-                                onClick={handleChangeActiveTab}
-                                key={index}
-                            >
-                                {item.tab}
-                            </li>
-                        ))}
-                    </ul>
                     <div className={style.tabs_description}>
                         {props.data.map((item, index) => (
                             <div
