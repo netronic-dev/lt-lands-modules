@@ -4,7 +4,7 @@
 }
 
 .fade_animation {
-    animation-duration: 15000ms;
+    animation-duration: 8000ms;
     animation-timing-function: linear;
     animation-name: fade_animation;
     animation-direction: normal;
@@ -17,11 +17,13 @@
     0% {
         top: 0;
         right: 0;
+        scale: 1;
     }
 
     100% {
         top: 18%;
         right: 18%;
+        scale: 1.5;
     }
 }
 
@@ -106,7 +108,7 @@
 }
 
 .fade_animation_scale {
-    animation-duration: 5000ms;
+    animation-duration: 4000ms;
     animation-timing-function: linear;
     animation-name: fade_animation_scale;
     animation-direction: normal;
@@ -117,11 +119,13 @@
 
 @keyframes fade_animation_scale {
     0% {
+        left: 50%;
         scale: 1;
     }
 
     100% {
-        scale: 1.04;
+        scale: 1.1;
+        left: 52%;
     }
 }
 
