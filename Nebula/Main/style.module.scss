@@ -119,13 +119,13 @@
 
 @keyframes fade_animation_scale {
     0% {
-        left: 50%;
         scale: 1;
+        left: 50%;
     }
 
     100% {
-        scale: 1.1;
-        left: 52%;
+        scale: 1.2;
+        left: 55%;
     }
 }
 
@@ -168,7 +168,7 @@
     padding-bottom: 81px;
 }
 
-.main_title {
+.main_title { 
     margin-top: 50px;
     text-align: center;
     font-family: 'Zen-Dots';
@@ -187,8 +187,8 @@
     position: absolute;
     top: 110px;
     left: 50%;
-    height: 449px;
-    width: 441px;
+    height: 425px;
+    width: 254px;
     transform: translateX(-50%);
     z-index: 20;
 }
@@ -198,7 +198,7 @@
     top: 280px;
     left: 50%;
     height: 427px;
-    width: 827px;
+    width: 807px;
     transform: translateX(-50%);
     z-index: 10;
 }
@@ -258,6 +258,10 @@
     .main_title {
         font-size: 158px;
     }
+
+    .bg_asteroid {
+        display: none;
+    }
 }
 
 @media (max-width: 992px) {
@@ -278,8 +282,6 @@
     .bg_granade {
         top: 90px;
     }
-
-
 }
 
 @media (max-width: 650px) {

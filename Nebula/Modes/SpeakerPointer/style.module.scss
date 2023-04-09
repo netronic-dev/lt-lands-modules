@@ -1,0 +1,68 @@
+.line {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle {
+    stroke-width: 0px;
+    fill: white;
+}
+
+.line_mob {
+    stroke-width: 1px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle_mob {
+    stroke-width: 0px;
+    fill: white;
+}
+
+.content {
+    position: absolute;
+    top: 85px;
+    right: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    .block_descr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 330px;
+        padding: 15px 22.5px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+
+        .block_text {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.16em;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.content_laptop {
+    position: absolute;
+    top: 45px;
+    right: 180px;
+    gap: 35px;
+    height: 72px;
+    width: 72px;
+}
+
+.content_mobile {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    gap: 35px;
+    height: 50px;
+    width: 50px;
+}

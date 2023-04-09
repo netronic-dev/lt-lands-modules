@@ -1,10 +1,10 @@
-import style from './styles.module.scss';
+import style from './style.module.scss';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
 
-import dot from '../../../../public/accessories/nebula/dot.svg';
+import speaker from '../../../../public/accessories/nebula/speaker.svg';
 import Link from 'next/link';
 
 const draw = {
@@ -22,26 +22,24 @@ const draw = {
     },
 };
 
-const ButtonPointer = () => {
+const SpeakerPointer = () => {
     const [content, setContent] = useState(false);
-
     setTimeout(() => {
         setContent(true);
     }, 2000);
-
     return (
         <>
             <motion.svg
-                width='330'
-                height='330'
-                viewBox='0 0 330 150'
+                width='230'
+                height='130'
+                viewBox='0 0 230 130'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle}
-                    cx='6'
-                    cy='150'
+                    cx='224'
+                    cy='6'
                     r='6'
                     stroke='white'
                     variants={draw}
@@ -49,28 +47,28 @@ const ButtonPointer = () => {
                 />
                 <motion.line
                     className={style.line}
-                    x1='6'
-                    y1='150'
-                    x2='220'
-                    y2='0'
+                    x1='224'
+                    y1='6'
+                    x2='110'
+                    y2='124'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
                     className={style.line}
-                    x1='220'
-                    y1='0'
-                    x2='322'
-                    y2='0'
+                    x1='110'
+                    y1='124'
+                    x2='6'
+                    y2='124'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle}
-                    cx='320'
-                    cy='0'
+                    cx='6'
+                    cy='124'
                     r='6'
                     stroke='white'
                     variants={draw}
@@ -79,9 +77,16 @@ const ButtonPointer = () => {
             </motion.svg>
             {content ? (
                 <div className={style.content}>
-                    <Image src={dot} alt='dot' />
+                    <div className={style.pointer}>
+                        <Image
+                            src={speaker}
+                            alt='pointer'
+                            width='77px'
+                            height='77px'
+                        />
+                    </div>
                     <div className={style.block_descr}>
-                        <p className={style.block_text}>FUNCTIONAL BUTTON</p>
+                        <p className={style.block_text}>SPEAKER</p>
                     </div>
                 </div>
             ) : (
@@ -91,26 +96,24 @@ const ButtonPointer = () => {
     );
 };
 
-const ButtonPointerLaptop = () => {
+const SpeakerPointerLaptop = () => {
     const [content, setContent] = useState(false);
-
     setTimeout(() => {
         setContent(true);
     }, 2000);
-
     return (
         <>
             <motion.svg
-                width='220'
-                height='130'
-                viewBox='0 0 220 130'
+                width='160'
+                height='90'
+                viewBox='0 0 160 90'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle}
-                    cx='6'
-                    cy='124'
+                    cx='154'
+                    cy='6'
                     r='6'
                     stroke='white'
                     variants={draw}
@@ -118,28 +121,28 @@ const ButtonPointerLaptop = () => {
                 />
                 <motion.line
                     className={style.line}
-                    x1='6'
-                    y1='124'
-                    x2='140'
-                    y2='6'
+                    x1='154'
+                    y1='6'
+                    x2='76'
+                    y2='84'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
                     className={style.line}
-                    x1='140'
-                    y1='6'
-                    x2='214'
-                    y2='6'
+                    x1='76'
+                    y1='84'
+                    x2='6'
+                    y2='84'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle}
-                    cx='214'
-                    cy='6'
+                    cx='6'
+                    cy='84'
                     r='6'
                     stroke='white'
                     variants={draw}
@@ -147,12 +150,19 @@ const ButtonPointerLaptop = () => {
                 />
             </motion.svg>
             {content ? (
-                <div className={style.content_laptop_laptop}>
+                <div className={style.content_laptop}>
                     <Link
-                        href='/equipment/accessories/lasertag-grenade-nebula#button'
+                        href='/equipment/accessories/lasertag-grenade-nebula#speaker'
                         scroll={false}
                     >
-                        <Image src={dot} alt='dot' width={69} height={69} />
+                        <div className={style.pointer}>
+                            <Image
+                                src={speaker}
+                                alt='pointer'
+                                width='77px'
+                                height='77px'
+                            />
+                        </div>
                     </Link>
                 </div>
             ) : (
@@ -162,26 +172,24 @@ const ButtonPointerLaptop = () => {
     );
 };
 
-const ButtonPointerMobile = () => {
+const SpeakerPointerMobile = () => {
     const [content, setContent] = useState(false);
-
     setTimeout(() => {
         setContent(true);
     }, 2000);
-
     return (
         <>
             <motion.svg
-                width='100'
-                height='80'
-                viewBox='0 0 100 80'
+                width='52'
+                height='48'
+                viewBox='0 0 52 48'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle_mob}
-                    cx='4'
-                    cy='76'
+                    cx='48'
+                    cy='4'
                     r='4'
                     stroke='white'
                     variants={draw}
@@ -189,28 +197,28 @@ const ButtonPointerMobile = () => {
                 />
                 <motion.line
                     className={style.line_mob}
-                    x1='4'
-                    y1='76'
-                    x2='70'
-                    y2='4'
+                    x1='48'
+                    y1='4'
+                    x2='26'
+                    y2='44'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
                     className={style.line_mob}
-                    x1='70'
-                    y1='4'
-                    x2='94'
-                    y2='4'
+                    x1='26'
+                    y1='44'
+                    x2='4'
+                    y2='44'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle_mob}
-                    cx='94'
-                    cy='4'
+                    cx='4'
+                    cy='44'
                     r='4'
                     stroke='white'
                     variants={draw}
@@ -220,10 +228,17 @@ const ButtonPointerMobile = () => {
             {content ? (
                 <div className={style.content_mobile}>
                     <Link
-                        href='/equipment/accessories/lasertag-grenade-nebula#button'
+                        href='/equipment/accessories/lasertag-grenade-nebula#speaker'
                         scroll={false}
                     >
-                        <Image src={dot} alt='dot' width={50} height={50} />
+                        <div className={style.pointer}>
+                            <Image
+                                src={speaker}
+                                alt='pointer'
+                                width='77px'
+                                height='77px'
+                            />
+                        </div>
                     </Link>
                 </div>
             ) : (
@@ -233,4 +248,4 @@ const ButtonPointerMobile = () => {
     );
 };
 
-export { ButtonPointer, ButtonPointerLaptop, ButtonPointerMobile };
+export { SpeakerPointer, SpeakerPointerLaptop, SpeakerPointerMobile };

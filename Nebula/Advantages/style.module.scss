@@ -73,6 +73,7 @@
     flex-direction: column;
     margin-top: 66px;
     gap: 22px;
+    z-index: 2;
 }
 
 .description_row {
@@ -131,11 +132,22 @@
 
 .bg_image {
     position: absolute;
-    top: -440px;
+    top: 266px;
     right: 50%;
     z-index: 0;
     width: 1000px;
-    transform: translateX(86%);
+    transform: translateX(122%);
+    z-index: 3;
+}
+
+.advantage_bg_image {
+    position: absolute;
+    top: -450px;
+    right: 50%;
+    z-index: 0;
+    width: 1000px;
+    transform: translateX(84%);
+    z-index: 1;
 }
 
 .content_mobile {
@@ -144,7 +156,7 @@
 
 @media (max-width: 1250px) {
     .advantages {
-        padding: 90px 20px 116px 20px;
+        padding: 144px 20px 116px 20px;
     }
 
     .tab {
@@ -153,10 +165,9 @@
     }
 
     .bg_image {
-        top: -420px;
-        left: 50%;
-        width: 1000px;
-        transform: translateX(-12%);
+        top: 320px;
+        right: 50%;
+        transform: translateX();
     }
 
     .tab_content {
@@ -180,8 +191,8 @@
     }
 
     .bg_image {
-        top: -400px;
-        transform: translateX(-20%);
+        top: 300px;
+        transform: translateX(115%);
     }
 
     .tab_content {
@@ -229,7 +240,8 @@
         justify-content: center;
         align-items: center;
         padding: 10px 20px;
-        border: 2px solid #FFFFFF;
+        border: 2px solid #0090FF;
+        background: #0090FF;
         border-radius: 30px;
         font-family: 'Roboto';
         font-style: normal;

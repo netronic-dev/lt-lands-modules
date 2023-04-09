@@ -169,6 +169,9 @@ const Advantages = (props) => {
                     <div className={style.bg_image}>
                         <Image src={props.image} alt='bg_granade' />
                     </div>
+                    <div className={style.advantage_bg_image}>
+                        <Image src={props.advantage_bg_image} alt='advantage_bg_image' />
+                    </div>
                 </div>
                 <div className={style.content_mobile}>
                     {props.data.map((item, index) => (

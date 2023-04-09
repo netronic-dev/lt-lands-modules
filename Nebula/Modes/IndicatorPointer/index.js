@@ -1,11 +1,11 @@
-import style from './styles.module.scss';
+import style from './style.module.scss';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
 
-import pin from '../../../../public/accessories/nebula/Pin.png';
-import pointer from '../../../../public/accessories/nebula/pointer.svg';
+import indicator from '../../../../public/accessories/nebula/indicator.svg';
+import Link from 'next/link';
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -22,7 +22,7 @@ const draw = {
     },
 };
 
-const PinPointer = () => {
+const IndicatorPointer = () => {
     const [content, setContent] = useState(false);
     setTimeout(() => {
         setContent(true);
@@ -40,7 +40,7 @@ const PinPointer = () => {
                     className={style.circle}
                     cx='220'
                     cy='120'
-                    r='8'
+                    r='6'
                     stroke='white'
                     variants={draw}
                     custom={0}
@@ -50,7 +50,7 @@ const PinPointer = () => {
                     x1='220'
                     y1='120'
                     x2='110'
-                    y2='10'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
@@ -58,18 +58,18 @@ const PinPointer = () => {
                 <motion.line
                     className={style.line}
                     x1='110'
-                    y1='10'
+                    y1='6'
                     x2='0'
-                    y2='10'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle}
-                    cx='8'
-                    cy='10'
-                    r='8'
+                    cx='6'
+                    cy='6'
+                    r='6'
                     stroke='white'
                     variants={draw}
                     custom={2.5}
@@ -77,22 +77,16 @@ const PinPointer = () => {
             </motion.svg>
             {content ? (
                 <div className={style.content}>
-                    <div className={style.icons}>
-                        <Image src={pin} alt='pin' className={style.pin} />
-                        <div className={style.pointer}>
-                            <Image
-                                src={pointer}
-                                alt='pointer'
-                                width='77px'
-                                height='77px'
-                            />
-                        </div>
+                    <div className={style.pointer}>
+                        <Image
+                            src={indicator}
+                            alt='pointer'
+                            width='77px'
+                            height='77px'
+                        />
                     </div>
                     <div className={style.block_descr}>
-                        <p className={style.block_text}>
-                            This grenade is supplied witha pin. By pulling it
-                            you startthe timer before the supposed "explosion".
-                        </p>
+                        <p className={style.block_text}>LIGHT INDICATION.</p>
                     </div>
                 </div>
             ) : (
@@ -102,7 +96,7 @@ const PinPointer = () => {
     );
 };
 
-const PinPointerLaptop = () => {
+const IndicatorPointerLaptop = () => {
     const [content, setContent] = useState(false);
     setTimeout(() => {
         setContent(true);
@@ -110,46 +104,46 @@ const PinPointerLaptop = () => {
     return (
         <>
             <motion.svg
-                width='100'
-                height='100'
-                viewBox='0 0 100 100'
+                width='190'
+                height='90'
+                viewBox='0 0 190 90'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle}
-                    cx='92'
-                    cy='92'
-                    r='8'
+                    cx='184'
+                    cy='84'
+                    r='6'
                     stroke='white'
                     variants={draw}
                     custom={0}
                 />
                 <motion.line
                     className={style.line}
-                    x1='92'
-                    y1='92'
-                    x2='60'
-                    y2='8'
+                    x1='184'
+                    y1='84'
+                    x2='70'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
                     className={style.line}
-                    x1='60'
-                    y1='8'
-                    x2='8'
-                    y2='8'
+                    x1='70'
+                    y1='6'
+                    x2='6'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle}
-                    cx='8'
-                    cy='10'
-                    r='8'
+                    cx='6'
+                    cy='6'
+                    r='6'
                     stroke='white'
                     variants={draw}
                     custom={2.5}
@@ -157,25 +151,19 @@ const PinPointerLaptop = () => {
             </motion.svg>
             {content ? (
                 <div className={style.content_laptop}>
-                    <div className={style.icons}>
-                        <div className={style.pin}>
-                            <Image src={pin} alt='pin' />
-                        </div>
+                    <Link
+                        href='/equipment/accessories/lasertag-grenade-nebula#indicator'
+                        scroll={false}
+                    >
                         <div className={style.pointer}>
                             <Image
-                                src={pointer}
+                                src={indicator}
                                 alt='pointer'
                                 width='77px'
                                 height='77px'
                             />
                         </div>
-                    </div>
-                    <div className={style.block_descr}>
-                        <p className={style.block_text}>
-                            This grenade is supplied witha pin. By pulling it
-                            you startthe timer before the supposed "explosion".
-                        </p>
-                    </div>
+                    </Link>
                 </div>
             ) : (
                 ''
@@ -184,7 +172,7 @@ const PinPointerLaptop = () => {
     );
 };
 
-const PinPointerMobile = () => {
+const IndicatorPointerMobile = () => {
     const [content, setContent] = useState(false);
     setTimeout(() => {
         setContent(true);
@@ -192,16 +180,16 @@ const PinPointerMobile = () => {
     return (
         <>
             <motion.svg
-                width='30'
-                height='100'
-                viewBox='0 0 30 100'
+                width='95'
+                height='50'
+                viewBox='0 0 95 50'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle_mob}
-                    cx='26'
-                    cy='92'
+                    cx='91'
+                    cy='46'
                     r='4'
                     stroke='white'
                     variants={draw}
@@ -209,9 +197,9 @@ const PinPointerMobile = () => {
                 />
                 <motion.line
                     className={style.line_mob}
-                    x1='26'
-                    y1='92'
-                    x2='26'
+                    x1='91'
+                    y1='46'
+                    x2='40'
                     y2='4'
                     stroke='white'
                     variants={draw}
@@ -219,9 +207,9 @@ const PinPointerMobile = () => {
                 />
                 <motion.line
                     className={style.line_mob}
-                    x1='4'
+                    x1='40'
                     y1='4'
-                    x2='26'
+                    x2='4'
                     y2='4'
                     stroke='white'
                     variants={draw}
@@ -239,25 +227,19 @@ const PinPointerMobile = () => {
             </motion.svg>
             {content ? (
                 <div className={style.content_mobile}>
-                    <div className={style.icons}>
-                        <div className={style.pin}>
-                            <Image src={pin} alt='pin' />
-                        </div>
+                    <Link
+                        href='/equipment/accessories/lasertag-grenade-nebula#light indicator'
+                        scroll={false}
+                    >
                         <div className={style.pointer}>
                             <Image
-                                src={pointer}
+                                src={indicator}
                                 alt='pointer'
                                 width='77px'
                                 height='77px'
                             />
                         </div>
-                    </div>
-                    <div className={style.block_descr}>
-                        <p className={style.block_text}>
-                            This grenade is supplied witha pin. By pulling it
-                            you startthe timer before the supposed "explosion".
-                        </p>
-                    </div>
+                    </Link>
                 </div>
             ) : (
                 ''
@@ -266,4 +248,4 @@ const PinPointerMobile = () => {
     );
 };
 
-export { PinPointer, PinPointerLaptop, PinPointerMobile };
+export { IndicatorPointer, IndicatorPointerLaptop, IndicatorPointerMobile };

@@ -22,7 +22,7 @@ const Main = (props) => {
                         <Image
                             src={props.bg_granade}
                             alt='bg_main_img'
-                            objectFit='cover'
+                            objectFit='contain'
                             layout='fill'
                         />
                     </div>

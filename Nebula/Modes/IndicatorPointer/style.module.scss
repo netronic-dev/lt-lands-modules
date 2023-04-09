@@ -1,0 +1,90 @@
+.line {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle {
+    stroke-width: 0px;
+    fill: white;
+}
+
+.line_mob {
+    stroke-width: 1px;
+    stroke-linecap: round;
+    fill: white;
+}
+
+.circle_mob {
+    stroke-width: 0px;
+    fill: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: -28px;
+    right: 150px;
+
+    .icons {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .pin {
+            width: 150px;
+            height: 32px;
+        }
+
+        .pointer {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .block_descr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 22.5px;
+        border: 2px solid #FFFFFF;
+        border-radius: 30px;
+        width: 265px;
+
+        .block_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.16em;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.content_laptop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: -30px;
+    left: -90px;
+}
+
+.content_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    top: -20px;
+    right: 50%;
+    transform: translateX(-60px);
+}

@@ -8,11 +8,20 @@ import {
     ButtonPointerLaptop,
     ButtonPointerMobile,
 } from './ButtonPointer';
-import { PinPointer, PinPointerLaptop, PinPointerMobile } from './PinPointer';
+import {
+    IndicatorPointer,
+    IndicatorPointerLaptop,
+    IndicatorPointerMobile,
+} from './IndicatorPointer';
 import stars from '../../../public/accessories/nebula/stars.png';
 import ellipse_stars_bg from '../../../public/accessories/nebula/ellipse_stars_bg.png';
 import ellipse_stars_bg_laptop from '../../../public/accessories/nebula/ellipse_stars_bg_laptop.png';
 import ellipse_stars_bg_mob from '../../../public/accessories/nebula/ellipse_stars_bg_mob.png';
+import {
+    SpeakerPointer,
+    SpeakerPointerLaptop,
+    SpeakerPointerMobile,
+} from './SpeakerPointer';
 
 const Modes = (props) => {
     const [inView, setInView] = useState(false);
@@ -24,20 +33,36 @@ const Modes = (props) => {
                 <h2 className={style.title}>{props.title}</h2>
                 <InView onChange={setInViewStars} triggerOnce>
                     {({ ref, inView }) => (
-                        <di className={style.modes_row} ref={ref}>
-                            <div className={style.mode_cell}>
-                                <div className={style.mode_number}>{one} </div>
-                                <p className={style.mode_text}>{props.mode1_text}</p>
-                            </div>
-                            <div className={style.mode_cell}>
-                                <div className={style.mode_number}>{two}</div>
-                                <p className={style.mode_text}>{props.mode2_text}</p>
-                            </div>
+                        <di className={style.elements_content} ref={ref}>
+                            {props.data.map((item, index) => (
+                                <div
+                                    className={style.elements_cell}
+                                    key={index}
+                                    id={item.id}
+                                >
+                                    <h3 className={style.cell_title}>
+                                        {item.title}
+                                    </h3>
+                                    <div className={style.cell_content}>
+                                        <div className={style.cell_icon}>
+                                            <Image
+                                                src={item.icon}
+                                                alt={item.title}
+                                                layout='fill'
+                                                objectFit='contain'
+                                            />
+                                        </div>
+                                        <p className={style.cell_text}>
+                                            {item.text}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
                         </di>
                     )}
                 </InView>
                 <div className={style.work_description}>
-                    <div className={style.description_bg} >
+                    <div className={style.description_bg}>
                         <Image
                             src={props.description_bg}
                             alt='description background'
@@ -91,6 +116,48 @@ const Modes = (props) => {
                             )}
                         </InView>
                     </div>
+                    <div className={style.speaker_pointer_wrap}>
+                        <InView onChange={setInView} triggerOnce>
+                            {({ ref, inView }) => (
+                                <>
+                                    <div
+                                        className={style.speaker_pointer}
+                                        ref={ref}
+                                    >
+                                        {inView ? <SpeakerPointer /> : ''}
+                                    </div>
+                                </>
+                            )}
+                        </InView>
+                    </div>
+                    <div className={style.speaker_pointer_wrap_laptop}>
+                        <InView onChange={setInView} triggerOnce>
+                            {({ ref, inView }) => (
+                                <>
+                                    <div
+                                        className={style.speaker_pointer}
+                                        ref={ref}
+                                    >
+                                        {inView ? <SpeakerPointerLaptop /> : ''}
+                                    </div>
+                                </>
+                            )}
+                        </InView>
+                    </div>
+                    <div className={style.speaker_pointer_wrap_mobile}>
+                        <InView onChange={setInView} triggerOnce>
+                            {({ ref, inView }) => (
+                                <>
+                                    <div
+                                        className={style.speaker_pointer}
+                                        ref={ref}
+                                    >
+                                        {inView ? <SpeakerPointerMobile /> : ''}
+                                    </div>
+                                </>
+                            )}
+                        </InView>
+                    </div>
                     <div className={style.pin_pointer_wrap}>
                         <InView onChange={setInView} triggerOnce>
                             {({ ref, inView }) => (
@@ -99,7 +166,7 @@ const Modes = (props) => {
                                         className={style.pin_pointer}
                                         ref={ref}
                                     >
-                                        {inView ? <PinPointer /> : ''}
+                                        {inView ? <IndicatorPointer /> : ''}
                                     </div>
                                 </>
                             )}
@@ -113,7 +180,11 @@ const Modes = (props) => {
                                         className={style.pin_pointer}
                                         ref={ref}
                                     >
-                                        {inView ? <PinPointerMobile /> : ''}
+                                        {inView ? (
+                                            <IndicatorPointerMobile />
+                                        ) : (
+                                            ''
+                                        )}
                                     </div>
                                 </>
                             )}
@@ -127,26 +198,42 @@ const Modes = (props) => {
                                         className={style.pin_pointer}
                                         ref={ref}
                                     >
-                                        {inView ? <PinPointerLaptop /> : ''}
+                                        {inView ? (
+                                            <IndicatorPointerLaptop />
+                                        ) : (
+                                            ''
+                                        )}
                                     </div>
                                 </>
                             )}
                         </InView>
                     </div>
                 </div>
-                <div className={inViewStars
-                    ? `${style.stars} ${style.fade_animation}`
-                    : style.stars}>
+                <div
+                    className={
+                        inViewStars
+                            ? `${style.stars} ${style.fade_animation}`
+                            : style.stars
+                    }
+                >
                     <Image src={stars} alt='stars' />
                 </div>
-                <div className={inViewStars
-                    ? `${style.stars_laptop} ${style.fade_animation}`
-                    : style.stars_laptop}>
+                <div
+                    className={
+                        inViewStars
+                            ? `${style.stars_laptop} ${style.fade_animation}`
+                            : style.stars_laptop
+                    }
+                >
                     <Image src={stars} alt='stars' />
                 </div>
-                <div className={inViewStars
-                    ? `${style.stars_mobile} ${style.fade_animation}`
-                    : style.stars_mobile}>
+                <div
+                    className={
+                        inViewStars
+                            ? `${style.stars_mobile} ${style.fade_animation}`
+                            : style.stars_mobile
+                    }
+                >
                     <Image src={stars} alt='stars' />
                 </div>
                 <div className={style.ellipse_stars_bg}>
