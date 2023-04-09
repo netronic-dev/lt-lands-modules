@@ -146,11 +146,12 @@
 
 @keyframes fade_animation_right {
     0% {
-        right: 30%;
+        transform: translateX(0);
     }
 
     100% {
-        right: -30%;
+        // right: -30%;
+        transform: translateX(60%);
     }
 }
 
@@ -200,7 +201,7 @@
     .bg_eclipse {
         position: absolute;
         top: 0;
-        right: 10%;
+        right: 30%;
     }
 }
 
@@ -228,7 +229,7 @@
 
     .bg_eclipse {
         top: 0;
-        right: -10%;
+        right: 20%;
     }
 
     .cells_wrapper {

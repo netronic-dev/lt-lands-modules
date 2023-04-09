@@ -228,7 +228,7 @@ const IndicatorPointerMobile = () => {
             {content ? (
                 <div className={style.content_mobile}>
                     <Link
-                        href='/equipment/accessories/lasertag-grenade-nebula#light indicator'
+                        href='/equipment/accessories/lasertag-grenade-nebula#indicator'
                         scroll={false}
                     >
                         <div className={style.pointer}>

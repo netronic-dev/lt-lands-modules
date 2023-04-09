@@ -108,7 +108,7 @@
 }
 
 .fade_animation_scale {
-    animation-duration: 4000ms;
+    animation-duration: 3000ms;
     animation-timing-function: linear;
     animation-name: fade_animation_scale;
     animation-direction: normal;
@@ -124,8 +124,8 @@
     }
 
     100% {
-        scale: 1.2;
-        left: 55%;
+        scale: 1.1;
+        left: 53%;
     }
 }
 
@@ -195,7 +195,7 @@
 
 .bg_big_cloud {
     position: absolute;
-    top: 280px;
+    top: 250px;
     left: 50%;
     height: 427px;
     width: 807px;
@@ -215,7 +215,7 @@
 
 .right_upper_cloud {
     position: absolute;
-    top: 300px;
+    top: 280px;
     left: 50%;
     height: 143px;
     width: 272px;
@@ -225,11 +225,11 @@
 
 .left_upper_cloud {
     position: absolute;
-    top: 300px;
+    top: 280px;
     right: 50%;
     height: 160px;
     width: 230px;
-    transform: translateX(10%);
+    transform: translateX(5%);
     z-index: 12;
 }
 
@@ -272,6 +272,10 @@
     .bg_asteroid {
         display: none;
     }
+
+    .bg_big_cloud {
+        transform: translateX(-49%);
+    }
 }
 
 @media (max-width: 800px) {
@@ -287,6 +291,10 @@
 @media (max-width: 650px) {
     .main_title {
         font-size: 80px;
+    }
+
+    .bg_big_cloud {
+        transform: translateX(-48%);
     }
 }
 
