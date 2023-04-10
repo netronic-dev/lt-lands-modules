@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { InView, useInView } from 'react-intersection-observer';
+import { InView } from 'react-intersection-observer';
 
 import style from './style.module.scss';
 import CountUp from 'react-countup';
@@ -181,63 +181,3 @@ const Description = (props) => {
 };
 
 export default Description;
-
-// const back = (
-//     <svg
-//         width='1103'
-//         height='612'
-//         viewBox='0 0 1103 612'
-//         fill='none'
-//         xmlns='http://www.w3.org/2000/svg'
-//     >
-//         <g filter='url(#filter0_f_380_454)'>
-//             <ellipse
-//                 cx='551.594'
-//                 cy='164.984'
-//                 rx='107.193'
-//                 ry='232.925'
-//                 transform='rotate(-73.7812 551.594 164.984)'
-//                 fill='url(#paint0_linear_380_454)'
-//             />
-//         </g>
-//         <defs>
-//             <filter
-//                 id='filter0_f_380_454'
-//                 x='0.917969'
-//                 y='-281.795'
-//                 width='1101.35'
-//                 height='893.559'
-//                 filterUnits='userSpaceOnUse'
-//                 color-interpolation-filters='sRGB'
-//             >
-//                 <feFlood flood-opacity='0' result='BackgroundImageFix' />
-//                 <feBlend
-//                     mode='normal'
-//                     in='SourceGraphic'
-//                     in2='BackgroundImageFix'
-//                     result='shape'
-//                 />
-//                 <feGaussianBlur
-//                     stdDeviation='162.5'
-//                     result='effect1_foregroundBlur_380_454'
-//                 />
-//             </filter>
-//             <linearGradient
-//                 id='paint0_linear_380_454'
-//                 x1='551.594'
-//                 y1='-67.9407'
-//                 x2='551.594'
-//                 y2='397.909'
-//                 gradientUnits='userSpaceOnUse'
-//             >
-//                 <stop stop-color='#0090FF' />
-//                 <stop
-//                     offset='0.523958'
-//                     stop-color='#1B97F7'
-//                     stop-opacity='0.41'
-//                 />
-//                 <stop offset='1' stop-color='#0090FF' stop-opacity='0.04' />
-//             </linearGradient>
-//         </defs>
-//     </svg>
-// );
