@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '../../../lt-modules/Buttons';
 import style from './style.module.scss';
+import { BreadCrumbs } from '../../../lt-modules/BreadCrumbs';
 
 const Main = (props) => {
     return (
@@ -14,7 +15,14 @@ const Main = (props) => {
                         layout='fill'
                     />
                 </div>
+
                 <div className={style.content}>
+                    <div className={style.breadcrumb}>
+                        <BreadCrumbs
+                            breadcrumbData={breadcrumbData}
+                            color='white'
+                        />
+                    </div>
                     <h1 className={style.main_title}>Nebula</h1>
                     <div
                         className={`${style.bg_granade}`}
@@ -91,6 +99,7 @@ const Main = (props) => {
                         type='catalog'
                         text={props.buttonText}
                     />
+
                 </div>
             </div>
             <div className={`${style.bg_asteroid} ${style.fade_animation}`}>
@@ -106,3 +115,30 @@ const Main = (props) => {
 };
 
 export default Main;
+
+const breadcrumbData = [
+    {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "/",
+    },
+    {
+        "@type": "ListItem",
+        position: 2,
+        name: "Equipment",
+        item: "/equipment",
+    },
+    {
+        "@type": "ListItem",
+        position: 3,
+        name: "Accessories",
+        item: "/equipment/accessories",
+    },
+    {
+        "@type": "ListItem",
+        position: 4,
+        name: "Nebula",
+        item: "",
+    },
+]

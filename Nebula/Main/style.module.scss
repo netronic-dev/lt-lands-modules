@@ -168,6 +168,12 @@
     padding-bottom: 81px;
 }
 
+.breadcrumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .main_title { 
     margin-top: 50px;
     text-align: center;
@@ -187,8 +193,8 @@
     position: absolute;
     top: 110px;
     left: 50%;
-    height: 425px;
-    width: 254px;
+    height: 500px;
+    width: 334px;
     transform: translateX(-50%);
     z-index: 20;
 }
@@ -261,6 +267,11 @@
 
     .bg_asteroid {
         display: none;
+    }
+
+    .bg_granade {
+        height: 450px;
+        width: 280px;
     }
 }
 
