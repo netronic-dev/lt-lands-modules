@@ -33,7 +33,7 @@ const Modes = (props) => {
                 <h2 className={style.title}>{props.title}</h2>
                 <InView onChange={setInViewStars} triggerOnce>
                     {({ ref, inView }) => (
-                        <di className={style.elements_content} ref={ref}>
+                        <div className={style.elements_content} ref={ref}>
                             {props.data.map((item, index) => (
                                 <div
                                     className={style.elements_cell}
@@ -58,7 +58,7 @@ const Modes = (props) => {
                                     </div>
                                 </div>
                             ))}
-                        </di>
+                        </div>
                     )}
                 </InView>
                 <div className={style.work_description}>
