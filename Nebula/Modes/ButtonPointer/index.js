@@ -172,9 +172,9 @@ const ButtonPointerMobile = () => {
     return (
         <>
             <motion.svg
-                width='100'
+                width='80'
                 height='80'
-                viewBox='0 0 100 80'
+                viewBox='0 0 80 80'
                 initial='hidden'
                 animate='visible'
             >
@@ -191,7 +191,7 @@ const ButtonPointerMobile = () => {
                     className={style.line_mob}
                     x1='4'
                     y1='76'
-                    x2='70'
+                    x2='55'
                     y2='4'
                     stroke='white'
                     variants={draw}
@@ -199,9 +199,9 @@ const ButtonPointerMobile = () => {
                 />
                 <motion.line
                     className={style.line_mob}
-                    x1='70'
+                    x1='55'
                     y1='4'
-                    x2='94'
+                    x2='74'
                     y2='4'
                     stroke='white'
                     variants={draw}
@@ -209,7 +209,7 @@ const ButtonPointerMobile = () => {
                 />
                 <motion.circle
                     className={style.circle_mob}
-                    cx='94'
+                    cx='74'
                     cy='4'
                     r='4'
                     stroke='white'

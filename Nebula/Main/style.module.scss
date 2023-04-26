@@ -174,7 +174,7 @@
     left: 0;
 }
 
-.main_title { 
+.main_title {
     margin-top: 50px;
     text-align: center;
     font-family: 'Zen-Dots';
@@ -191,10 +191,10 @@
 
 .bg_granade {
     position: absolute;
-    top: 110px;
+    top: 130px;
     left: 50%;
-    height: 500px;
-    width: 334px;
+    height: 430px;
+    width: 430px;
     transform: translateX(-50%);
     z-index: 20;
 }
@@ -270,14 +270,21 @@
     }
 
     .bg_granade {
-        height: 450px;
-        width: 280px;
+        top: 110px;
+        height: 430px;
+        width: 430px;
     }
 }
 
 @media (max-width: 992px) {
     .main_title {
         font-size: 128px;
+    }
+
+    .bg_granade {
+        top: 100px;
+        height: 380px;
+        width: 380px;
     }
 
     .bg_asteroid {
@@ -295,7 +302,7 @@
     }
 
     .bg_granade {
-        top: 90px;
+        top: 80px;
     }
 }
 

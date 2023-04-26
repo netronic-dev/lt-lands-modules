@@ -73,7 +73,7 @@
         top: 140px;
         left: 50%;
         height: 520px;
-        width: 323px;
+        width: 500px;
         transform: translateX(-50%);
     }
 }
@@ -82,21 +82,21 @@
     position: absolute;
     top: 200px;
     left: 50%;
-    transform: translateX(-4%);
+    transform: translateX(12%);
 }
 
 .pin_pointer {
     position: absolute;
-    top: 180px;
+    top: 200px;
     left: 39%;
-    transform: translateX(-50%);
+    transform: translateX(-35%);
 }
 
 .speaker_pointer_wrap {
     position: absolute;
-    top: 520px;
+    top: 540px;
     left: 50%;
-    transform: translateX(-100%);
+    transform: translateX(-95%);
 }
 
 .stars {
@@ -213,9 +213,9 @@
     .button_pointer_wrap_laptop {
         display: block;
         position: absolute;
-        top: 150px;
+        top: 130px;
         left: 50%;
-        transform: translateX(100px);
+        transform: translateX(120px);
     }
 
     .pin_pointer_wrap_laptop {
@@ -229,9 +229,9 @@
     .speaker_pointer_wrap_laptop {
         display: block;
         position: absolute;
-        top: 520px;
+        top: 540px;
         left: 50%;
-        transform: translateX(-160px);
+        transform: translateX(-140px);
     }
 
     .elements_content {
@@ -352,25 +352,25 @@
     .button_pointer_wrap_mobile {
         display: flex;
         position: absolute;
-        top: -30px;
+        top: -80px;
         left: 50%;
-        transform: translateX(42px);
+        transform: translateX(45px);
     }
 
     .pin_pointer_wrap_mobile {
         display: block;
         position: absolute;
-        top: -105px;
+        top: -125px;
         left: 50%;
-        transform: translateX(-45px);
+        transform: translateX(-55px);
     }
 
     .speaker_pointer_wrap_mobile {
         display: block;
         position: absolute;
-        top: 285px;
+        top: 255px;
         left: 50%;
-        transform: translateX(-55px);
+        transform: translateX(-45px);
     }
 
     .work_description {
@@ -381,15 +381,15 @@
         align-items: center;
 
         .description_bg {
-            width: 736px;
+            width: 650px;
         }
 
         .description_granade {
             position: absolute;
             top: 20px;
             left: 50%;
-            height: 268px;
-            width: 220px;
+            height: 285px;
+            width: 285px;
             transform: translateX(-50%);
         }
     }
