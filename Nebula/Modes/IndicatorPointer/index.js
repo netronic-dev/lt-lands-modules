@@ -81,12 +81,12 @@ const IndicatorPointer = () => {
                         <Image
                             src={indicator}
                             alt='pointer'
-                            width='77px'
-                            height='77px'
+                            width={70}
+                            height={70}
                         />
                     </div>
                     <div className={style.block_descr}>
-                        <p className={style.block_text}>LIGHT INDICATION.</p>
+                        <p className={style.block_text}>LIGHT INDICATION</p>
                     </div>
                 </div>
             ) : (
@@ -159,8 +159,8 @@ const IndicatorPointerLaptop = () => {
                             <Image
                                 src={indicator}
                                 alt='pointer'
-                                width='77px'
-                                height='77px'
+                                width={70}
+                                height={70}
                             />
                         </div>
                     </Link>
@@ -235,8 +235,8 @@ const IndicatorPointerMobile = () => {
                             <Image
                                 src={indicator}
                                 alt='pointer'
-                                width='77px'
-                                height='77px'
+                                width={50}
+                                height={50}
                             />
                         </div>
                     </Link>

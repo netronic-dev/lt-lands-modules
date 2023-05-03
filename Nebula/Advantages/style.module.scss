@@ -85,6 +85,8 @@
 
 .description_icon {
     position: relative;
+    display: flex;
+    justify-content: center;
     width: 97px;
     height: 97px;
 }

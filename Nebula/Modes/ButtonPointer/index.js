@@ -79,7 +79,7 @@ const ButtonPointer = () => {
             </motion.svg>
             {content ? (
                 <div className={style.content}>
-                    <Image src={dot} alt='dot' />
+                    <Image src={dot} alt='dot' width={70} height={70}/>
                     <div className={style.block_descr}>
                         <p className={style.block_text}>FUNCTIONAL BUTTON</p>
                     </div>
@@ -152,7 +152,7 @@ const ButtonPointerLaptop = () => {
                         href='/equipment/accessories/lasertag-grenade-nebula#button'
                         scroll={false}
                     >
-                        <Image src={dot} alt='dot' width={69} height={69} />
+                        <Image src={dot} alt='dot' width={70} height={70} />
                     </Link>
                 </div>
             ) : (

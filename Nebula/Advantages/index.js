@@ -18,10 +18,11 @@ const Advantages = (props) => {
             viewBox='0 0 96 96'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className={`${activeTab === 'Lightweight'
-                ? style.active_svg_icon
-                : style.svg_icon
-                } `}
+            className={`${
+                activeTab === 'Lightweight'
+                    ? style.active_svg_icon
+                    : style.svg_icon
+            } `}
             onClick={handleChangeActiveTab}
             id='Lightweight'
         >
@@ -50,15 +51,16 @@ const Advantages = (props) => {
 
     const rectangle_icon = (
         <svg
-            width='86'
-            height='86'
-            viewBox='0 0 86 86'
+            width='85'
+            height='85'
+            viewBox='0 0 85 85'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className={`${activeTab === 'Robustness'
-                ? style.active_svg_icon
-                : style.svg_icon
-                } `}
+            className={`${
+                activeTab === 'Robustness'
+                    ? style.active_svg_icon
+                    : style.svg_icon
+            } `}
             onClick={handleChangeActiveTab}
             id='Robustness'
         >
@@ -76,14 +78,16 @@ const Advantages = (props) => {
             viewBox='0 0 74 82'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className={`${activeTab === 'Safety' ? style.active_svg_icon : style.svg_icon
-                } `}
+            className={`${
+                activeTab === 'Safety' ? style.active_svg_icon : style.svg_icon
+            } `}
             onClick={handleChangeActiveTab}
             id='Safety'
         >
             <path
                 d='M32.8066 48.6938V58.25C32.8066 59.4149 33.2171 60.4051 34.0381 61.2206C34.8591 62.036 35.8559 62.4438 37.0287 62.4438C38.2015 62.4438 39.2118 62.036 40.0598 61.2206C40.9077 60.4051 41.3316 59.4149 41.3316 58.25V48.6938H50.7504C51.9535 48.6938 52.9762 48.2833 53.8183 47.4623C54.6605 46.6414 55.0816 45.6445 55.0816 44.4717C55.0816 43.2989 54.6605 42.2886 53.8183 41.4407C52.9762 40.5927 51.9535 40.1688 50.7504 40.1688H41.3316V30.75C41.3316 29.5469 40.9117 28.5243 40.0719 27.6821C39.232 26.8399 38.2122 26.4188 37.0125 26.4188C35.8128 26.4188 34.8119 26.8399 34.0098 27.6821C33.2077 28.5243 32.8066 29.5469 32.8066 30.75V40.1688H23.2504C22.0855 40.1688 21.0953 40.5887 20.2798 41.4285C19.4644 42.2683 19.0566 43.2881 19.0566 44.4879C19.0566 45.6877 19.4644 46.6886 20.2798 47.4907C21.0953 48.2927 22.0855 48.6938 23.2504 48.6938H32.8066ZM7.57539 81.35C5.60456 81.35 3.87435 80.6052 2.38477 79.1157C0.895182 77.6261 0.150391 75.8959 0.150391 73.925V29.7188C0.150391 28.464 0.380979 27.3411 0.842154 26.35C1.30333 25.3589 2.08107 24.511 3.17539 23.8063L32.6004 1.60002C33.8617 0.591691 35.3229 0.0875244 36.9839 0.0875244C38.6449 0.0875244 40.1171 0.591691 41.4004 1.60002L70.8254 23.8063C71.9197 24.511 72.6975 25.3589 73.1586 26.35C73.6198 27.3411 73.8504 28.464 73.8504 29.7188V73.925C73.8504 75.8959 73.1056 77.6261 71.616 79.1157C70.1264 80.6052 68.3962 81.35 66.4254 81.35H7.57539ZM7.57539 78.325H66.4254C67.7087 78.325 68.7629 77.9125 69.5879 77.0875C70.4129 76.2625 70.8254 75.2084 70.8254 73.925V29.65C70.8254 28.9167 70.665 28.2292 70.3441 27.5875C70.0233 26.9459 69.5879 26.4417 69.0379 26.075L39.6129 4.21252C38.8796 3.57086 38.0087 3.25002 37.0004 3.25002C35.9921 3.25002 35.1212 3.57086 34.3879 4.21252L4.96289 26.0292C4.41289 26.3959 3.97747 26.9001 3.65664 27.5417C3.33581 28.1834 3.17539 28.8709 3.17539 29.6042V73.925C3.17539 75.2084 3.58789 76.2625 4.41289 77.0875C5.23789 77.9125 6.29206 78.325 7.57539 78.325Z'
                 fill='white'
+                style={{ alignItems: 'right' }}
             />
         </svg>
     );
@@ -91,14 +95,15 @@ const Advantages = (props) => {
     const lamp_icon = (
         <svg
             width='96'
-            height='70'
+            height='96'
             viewBox='0 0 96 70'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
-            className={`${activeTab === 'Convenience'
-                ? style.active_svg_icon
-                : style.svg_icon
-                } `}
+            className={`${
+                activeTab === 'Convenience'
+                    ? style.active_svg_icon
+                    : style.svg_icon
+            } `}
             onClick={handleChangeActiveTab}
             id='Convenience'
         >
@@ -120,10 +125,11 @@ const Advantages = (props) => {
                     <ul className={style.tabs_list}>
                         {props.data.map((item, index) => (
                             <li
-                                className={`${style.tab} ${activeTab === item.tab
-                                    ? style.active_tab
-                                    : ''
-                                    }`}
+                                className={`${style.tab} ${
+                                    activeTab === item.tab
+                                        ? style.active_tab
+                                        : ''
+                                }`}
                                 id={item.tab}
                                 onClick={handleChangeActiveTab}
                                 key={index}
@@ -148,10 +154,11 @@ const Advantages = (props) => {
                                     {iconArr[index]}
                                 </div>
                                 <div
-                                    className={`${style.tab_content} ${activeTab === item.tab
-                                        ? style.active_tab_content
-                                        : ''
-                                        }`}
+                                    className={`${style.tab_content} ${
+                                        activeTab === item.tab
+                                            ? style.active_tab_content
+                                            : ''
+                                    }`}
                                 >
                                     <p
                                         onClick={handleChangeActiveTab}
@@ -170,25 +177,22 @@ const Advantages = (props) => {
                         <Image src={props.image} alt='bg_granade' />
                     </div>
                     <div className={style.advantage_bg_image}>
-                        <Image src={props.advantage_bg_image} alt='advantage_bg_image' />
+                        <Image
+                            src={props.advantage_bg_image}
+                            alt='advantage_bg_image'
+                        />
                     </div>
                 </div>
                 <div className={style.content_mobile}>
                     {props.data.map((item, index) => (
                         <div className={style.content_wrapper} key={index}>
                             <div className={style.tabs_row}>
-                                <span
-                                    className={style.tab}
-                                >
-                                    {item.tab}
-                                </span>
+                                <span className={style.tab}>{item.tab}</span>
                                 <div className={style.description_icon}>
                                     {iconArr_mob[index]}
                                 </div>
                             </div>
-                            <div
-                                className={style.tab_content}
-                            >
+                            <div className={style.tab_content}>
                                 <p className={style.description_text}>
                                     {item.text}
                                 </p>
