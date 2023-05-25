@@ -15,7 +15,6 @@ const Main = (props) => {
                         layout='fill'
                     />
                 </div>
-
                 <div className={style.content}>
                     <div className={style.breadcrumb}>
                         <BreadCrumbs

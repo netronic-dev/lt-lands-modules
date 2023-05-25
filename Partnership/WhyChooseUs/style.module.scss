@@ -1,0 +1,183 @@
+.main {
+    padding: 120px 0 60px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.36em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.text {
+    margin-top: 25px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.35em;
+    text-align: center;
+    color: #000000;
+    max-width: 675px;
+}
+
+.image {
+    margin-top: 45px;
+    position: relative;
+    height: 310px;
+    width: 100%;
+}
+
+.icon_image {
+    width: 100%;
+    height: 100%;
+}
+
+.image_res {
+    display: none;
+}
+
+.advantages {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.cell {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 150px;
+    height: 150px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-family: 'Manrope';
+    font-style: normal;
+    max-width: 300px;
+
+}
+
+.upper_text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.count_wrapper {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 40px;
+    color: #0090FF;
+}
+
+.bottom_text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+@media (max-width: 1200px) {
+    .content {
+        padding: 0 20px;
+    }
+
+    .advantages {
+        gap: 65px;
+    }
+
+    .upper_text {
+        font-size: 20px;
+    }
+
+    .count_wrapper {
+        font-size: 30px;
+    }
+
+    .bottom_text {
+        font-size: 20px;
+    }
+
+    .icon {
+        flex: 0 0 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .advantages {
+        gap: 35px;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .advantages {
+        margin-top: 42px;
+        align-items: start;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .image_res {
+        display: block;
+        margin-top: 45px;
+        position: relative;
+        height: 310px;
+        width: 100%;
+    }
+
+    .advantages {
+        margin-top: 42px;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .text {
+        margin-top: 20px;
+    }
+
+    .icon {
+        flex: 0 0 80px;
+        height: 80px;
+    }
+
+}

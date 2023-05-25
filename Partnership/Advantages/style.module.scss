@@ -1,0 +1,85 @@
+.main {
+    padding: 120px 0 120px;
+    background-color: #F5F5F5;
+}
+
+.title {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.36em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1D1D1D;
+}
+
+.advantages {
+    margin-top: 63px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    height: 96px;
+}
+
+.text {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.35em;
+    text-align: center;
+    color: #000000;
+    text-align: center;
+    max-width: 380px;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        padding: 120px 20px 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .advantages {
+        flex-wrap: wrap;
+        gap: 100px;
+    }
+
+    .cell {
+        flex: 0 0 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 120px 20px 80px;
+    }
+
+    .advantages {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cell {
+        flex: 0 0 100%;
+
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+}
