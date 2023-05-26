@@ -74,19 +74,13 @@ const breadcrumbData = [
 	{
 		'@type': 'ListItem',
 		position: 2,
-		name: 'Equipment',
-		item: '/equipment',
+		name: 'Laser tag business',
+		item: '/laser-tag-business/',
 	},
 	{
 		'@type': 'ListItem',
 		position: 3,
-		name: 'Accessories',
-		item: '/equipment/accessories',
-	},
-	{
-		'@type': 'ListItem',
-		position: 4,
-		name: 'Nebula',
+		name: 'Partnerships',
 		item: '',
 	},
 ];
