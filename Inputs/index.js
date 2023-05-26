@@ -56,8 +56,6 @@ export function Inputs(props) {
                         className='form_submit_land'
                     >
                         <div className={style.content}>
-                            <h2 className={style.title}>{props.title}</h2>
-                            <p className={style.text}>{props.text}</p>
                             <div className={style.input_out__outer}>
                                 <div className={style.input_out}>
                                     <input

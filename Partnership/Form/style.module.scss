@@ -1,0 +1,219 @@
+.main {
+    padding: 116px 0 90px 0;
+    background: #F1F4F6;
+    border-radius: 20px;
+}
+
+.content_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .content_info {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        font-family: 'Manrope';
+        font-style: normal;
+
+        .title {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.36em;
+            text-transform: uppercase;
+            color: #1D1D1D;
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.35em;
+            max-width: 480px;
+        }
+
+        .contact_us {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            .hightlight_text {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1.35em;
+            }
+
+            .contants_wrapper {
+                display: flex;
+                gap: 60px;
+
+                .contact_cell {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: 'Roboto';
+                    font-style: normal;
+
+                    .contanct_title {
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 1.16em;
+                        color: #8E8E8E;
+                    }
+
+                    a {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 1.18em;
+                        text-decoration-line: underline;
+                        color: #0090FF;
+                    }
+
+                    .links_union {
+                        display: flex;
+                        gap: 13px;
+                    }
+                }
+
+                .phone_link {
+                    a {
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: #000000;
+                        text-decoration: none;
+                    }
+                }
+
+                .icons {
+                    a {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.contact_us_mob {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        padding: 116px 20px 90px 20px;
+    }
+
+    .content_wrapper {
+
+        .content_info {
+            padding-right: 20px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    .content_wrapper {
+        grid-template-columns: 1fr;
+
+        .content_info {
+            padding-right: 0;
+
+            .title {
+                text-align: center;
+            }
+
+            .text {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .contact_us {
+                display: none;
+            }
+        }
+    }
+
+    .contact_us_mob {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .hightlight_text {
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.35em;
+        }
+
+        .contants_wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+
+            .contact_cell {
+                display: flex;
+                flex-direction: column;
+                font-family: 'Roboto';
+                font-style: normal;
+
+                .contanct_title {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 1.16em;
+                    color: #8E8E8E;
+                }
+
+                a {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 1.18em;
+                    text-decoration-line: underline;
+                    color: #0090FF;
+                }
+
+                .links_union {
+                    display: flex;
+                    gap: 13px;
+                }
+            }
+
+            .phone_link {
+                a {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #000000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .contact_us_mob {
+        .contants_wrapper {
+            gap: 20px;
+
+            .contact_cell {
+
+                a {
+                    font-size: 14px;
+                }
+            }
+
+            .phone_link {
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}

@@ -27,19 +27,11 @@ const PartnershipBasedOn = (props) => {
                                 src={props.image}
                                 alt={props.alt}
                                 layout='fill'
-                                objectFit='static'
+                                objectFit='cover'
                                 objectPosition='0 50%'
                             />
                         </div>
                     </div>
-                    {/* <div className={style.image_front}>
-                        <Image
-                            src={props.image_front}
-                            alt={props.alt}
-                            layout='fill'
-                            objectFit='cover'
-                        />
-                    </div> */}
                 </div>
             </div>
         </section>
