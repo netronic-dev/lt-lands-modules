@@ -4,7 +4,7 @@ import { InputsWName } from '../Form/Inputs';
 
 const PartnershipForm = (props) => {
 	return (
-		<section className={style.main} id='partnership'>
+		<section className={style.main} id='become_a_partner'>
 			<div className='container'>
 				<div className={style.content_wrapper}>
 					<div className={style.content_info}>
