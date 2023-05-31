@@ -74,8 +74,8 @@ const breadcrumbData = [
 	{
 		'@type': 'ListItem',
 		position: 2,
-		name: 'Laser tag business',
-		item: '/laser-tag-business/',
+		name: 'About us',
+		item: '/about-us/',
 	},
 	{
 		'@type': 'ListItem',

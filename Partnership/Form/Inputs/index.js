@@ -164,7 +164,7 @@ function Agreement(props) {
 
 const dotIcon = (
     <svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
-        <circle cx='10' cy='10' r='10' fill='#212121' />
-        <circle className={style.dot} cx='10' cy='10' r='6' fill='#0090FF' />
+        <circle cx='10' cy='10' r='10' fill='#383838' />
+        <circle className={style.dot} cx='10' cy='10' r='8' fill='#F1F4F6' />
     </svg>
 );

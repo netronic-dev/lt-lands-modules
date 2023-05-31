@@ -32,18 +32,12 @@ const PartnershipForm = (props) => {
 									</span>
 									<PhoneWithLinks
 										phone_number={props.phone_number1}
-										whatsapp={props.whatsapp}
+										whatsapp={props.whatsapp1}
 									/>
-									<span className={style.phone_link}>
-										<Link
-											target='_blank'
-											href={`tel:${props.phone_number2}`}
-										>
-											{formatPhoneNumber(
-												props.phone_number2,
-											)}
-										</Link>
-									</span>
+									<PhoneWithLinks
+										phone_number={props.phone_number2}
+										whatsapp={props.whatsapp2}
+									/>
 								</div>
 							</div>
 						</div>
@@ -81,14 +75,10 @@ const PartnershipForm = (props) => {
 									phone_number={props.phone_number1}
 									whatsapp={props.whatsapp}
 								/>
-								<span className={style.phone_link}>
-									<Link
-										target='_blank'
-										href={`tel:${props.phone_number2}`}
-									>
-										{formatPhoneNumber(props.phone_number2)}
-									</Link>
-								</span>
+								<PhoneWithLinks
+									phone_number={props.phone_number2}
+									whatsapp={props.whatsapp2}
+								/>
 							</div>
 						</div>
 					</div>
