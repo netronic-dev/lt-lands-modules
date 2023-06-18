@@ -9,6 +9,7 @@ import { setUserData } from '../../../../store/actions/userData';
 
 import { useValidation } from '../../../../context/ValidationProvider';
 import { postData } from '../../../../lt-modules/functions/postData.ts';
+import { useGAEvents } from '../../../../context/GAEventsProvider';
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -18,7 +19,8 @@ const inputsLandTheme = {
 export function InputsWName(props) {
     const validate = useValidation();
     const router = useRouter();
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const GAEvents = useGAEvents();
 
     const formik = useFormik({
         initialValues: {
@@ -37,7 +39,7 @@ export function InputsWName(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(gaEvents.sentRequest("", "", true)).then(router.push('/thanks-call'));
+            ).then(GAEvents.sentRequest("", "", true)).then(router.push('/thanks-call'));
         },
     });
 
