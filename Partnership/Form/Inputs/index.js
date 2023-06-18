@@ -37,7 +37,7 @@ export function InputsWName(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(router.push('/thanks-call'));
+            ).then(gaEvents.sentRequest("", "", true)).then(router.push('/thanks-call'));
         },
     });
 

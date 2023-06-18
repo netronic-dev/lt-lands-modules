@@ -33,7 +33,7 @@ export function Inputs(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(router.push('/thanks-catalog'));
+            ).then(gaEvents.sentRequest("", "", true)).then(router.push('/thanks-catalog'));
         },
     });
     function onAgreementChange() {
@@ -71,8 +71,8 @@ export function Inputs(props) {
                                         {formik.errors.phone
                                             ? icons.error
                                             : formik.values.phone === ''
-                                            ? null
-                                            : icons.agree}
+                                                ? null
+                                                : icons.agree}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -94,8 +94,8 @@ export function Inputs(props) {
                                         {formik.errors.email
                                             ? icons.error
                                             : formik.values.email === ''
-                                            ? null
-                                            : icons.agree}
+                                                ? null
+                                                : icons.agree}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -150,7 +150,7 @@ export function InputsWName(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(router.push('/thanks-catalog'));
+            ).then(gaEvents.sentRequest("", "", true)).then(router.push('/thanks-catalog'));
         },
     });
 
@@ -167,9 +167,8 @@ export function InputsWName(props) {
             <div
                 ref={ref}
                 key={isVisible ? 1 : 2}
-                className={`${
-                    inputsLandTheme[props.theme ? props.theme : 'default']
-                } swipe-right-animation`}
+                className={`${inputsLandTheme[props.theme ? props.theme : 'default']
+                    } swipe-right-animation`}
             >
                 <div className={style.left}>
                     <form
@@ -195,8 +194,8 @@ export function InputsWName(props) {
                                         {formik.errors.name
                                             ? icons.error
                                             : formik.values.name === ''
-                                            ? null
-                                            : icons.agree}
+                                                ? null
+                                                : icons.agree}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -220,8 +219,8 @@ export function InputsWName(props) {
                                         {formik.errors.email
                                             ? icons.error
                                             : formik.values.email === ''
-                                            ? null
-                                            : icons.agree}
+                                                ? null
+                                                : icons.agree}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -246,8 +245,8 @@ export function InputsWName(props) {
                                         {formik.errors.phone
                                             ? icons.error
                                             : formik.values.phone === ''
-                                            ? null
-                                            : icons.agree}
+                                                ? null
+                                                : icons.agree}
                                     </div>
                                 </div>
                                 <div className={style.error}>
