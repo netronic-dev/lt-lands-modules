@@ -1,5 +1,5 @@
 .modes {
-    padding: 126px 0 70px 0;
+    padding: 137px 0 70px 0;
     background-color: #000308;
     position: relative;
 }
@@ -29,7 +29,7 @@
         font-size: 24px;
         line-height: 1.16em;
         letter-spacing: 0.02em;
-        color: #0090FF;
+        color: #0090ff;
         text-transform: uppercase;
     }
 
@@ -52,7 +52,7 @@
             font-size: 24px;
             line-height: 1.16em;
             letter-spacing: 0.02em;
-            color: #FFFFFF;
+            color: #ffffff;
         }
     }
 }
@@ -184,7 +184,6 @@
     }
 }
 
-
 @media (max-width: 1200px) {
     .modes {
         padding: 108px 20px 0 20px;
@@ -238,7 +237,6 @@
         max-width: 637px;
 
         .cell_content {
-
             .cell_icon {
                 flex: 0 0 46px;
                 height: 46px;
@@ -408,5 +406,6 @@
         transform: translateX(25%);
     }
 
-    .elements_content {}
+    .elements_content {
+    }
 }

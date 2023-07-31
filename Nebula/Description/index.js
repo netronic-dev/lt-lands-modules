@@ -16,27 +16,51 @@ const Description = (props) => {
                     <h2 className={style.title}>{props.title}</h2>
                     <p className={style.subtitle}>{props.subtitle}</p>
                     <div className={style.advantages_top}>
-                        <div className="background">
-                            <Image src={props.advantageImage} alt="" layout='fill' />
-
-                        </div>
-                        <div className={style.cotent}>
-                            <h2 className={style.sectionTitle}>{props.sectionTitle}</h2>
+                        <div className={style.advantages_top_content}>
+                            <h2 className={style.sectionTitle}>
+                                {props.sectionTitle}
+                            </h2>
+                            <div className={style.top_cell_wrapper}>
+                                {props.data.top.map((item, index) => (
+                                    <div className={style.top_cell} key={index}>
+                                        <span className={style.top_cell_number}>
+                                            {item.number}
+                                        </span>
+                                        <p
+                                            className={
+                                                style.top_cell_number_text
+                                            }
+                                        >
+                                            {item.text}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className={style.bacground_granade}>
+                                <Image
+                                    src={props.advantageImage}
+                                    alt=''
+                                    layout='fill'
+                                />
+                            </div>
                         </div>
                     </div>
-                    {/* <div className={style.cells_wrapper}>
+                    <div className={style.cells_wrapper}>
                         {props.data.bottom.map((item, index) => (
                             <div className={style.cell} key={index}>
-                                <Image src={item.icon} alt="" width={item.width} height={item.height} />
+                                <Image
+                                    src={item.icon}
+                                    alt=''
+                                    width={item.width}
+                                    height={item.height}
+                                />
                                 <h3 className={style.cell_title}>
                                     {item.title}
                                 </h3>
-                                <p className={style.cell_text}>
-                                    {item.text}
-                                </p>
+                                <p className={style.cell_text}>{item.text}</p>
                             </div>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
                 <div
                     className={
