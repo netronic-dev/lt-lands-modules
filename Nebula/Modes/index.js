@@ -210,29 +210,25 @@ const Modes = (props) => {
                     </div>
                 </div>
                 <div
-                    className={style.stars
-                        // inViewStars
-                        //     ? `${style.stars} ${style.fade_animation}`
-                        //     : style.stars
-                    }
+                    className={`${style.stars} ${inViewStars
+                        ? `${style.stars} ${style.fade_animation}`
+                        : style.stars}
+                    `}
                 >
                     <Image src={stars} alt='stars' />
                 </div>
                 <div
-                    className={style.stars_laptop
-                        // inViewStars
-                        //     ? `${style.stars_laptop} ${style.fade_animation}`
-                        //     : style.stars_laptop
-                    }
+                    className={`${style.stars_laptop} ${inViewStars
+                        ? `${style.stars_laptop} ${style.fade_animation}`
+                        : style.stars_laptop}
+                    `}
                 >
                     <Image src={stars} alt='stars' />
                 </div>
                 <div
-                    className={style.stars_mobile
-                        // inViewStars
-                        //     ? `${style.stars_mobile} ${style.fade_animation}`
-                        //     : style.stars_mobile
-                    }
+                    className={`${style.stars_mobile} ${inViewStars ? `${style.stars_mobile} ${style.fade_animation}`
+                        : style.stars_mobile
+                        }`}
                 >
                     <Image src={stars} alt='stars' />
                 </div>
@@ -246,7 +242,7 @@ const Modes = (props) => {
                     <Image src={ellipse_stars_bg_mob} alt='stars' />
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

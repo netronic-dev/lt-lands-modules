@@ -17,9 +17,13 @@ const Description = (props) => {
                     <p className={style.subtitle}>{props.subtitle}</p>
                     <div className={style.advantages_top}>
                         <div className={style.advantages_top_content}>
-                            <h2 className={style.sectionTitle}>
-                                {props.sectionTitle}
-                            </h2>
+                            <InView onChange={setInView} triggerOnce>
+                                {({ ref, inView }) => (
+                                    <h2 className={style.sectionTitle} ref={ref}>
+                                        {props.sectionTitle}
+                                    </h2>
+                                )}
+                            </InView>
                             <div className={style.top_cell_wrapper}>
                                 {props.data.top.map((item, index) => (
                                     <div className={style.top_cell} key={index}>

@@ -32,16 +32,16 @@ const ButtonPointer = () => {
     return (
         <>
             <motion.svg
-                width='330'
-                height='330'
-                viewBox='0 0 330 150'
+                width='230'
+                height='150'
+                viewBox='0 0 230 150'
                 initial='hidden'
                 animate='visible'
             >
                 <motion.circle
                     className={style.circle}
                     cx='6'
-                    cy='150'
+                    cy='144'
                     r='6'
                     stroke='white'
                     variants={draw}
@@ -50,27 +50,27 @@ const ButtonPointer = () => {
                 <motion.line
                     className={style.line}
                     x1='6'
-                    y1='150'
-                    x2='220'
-                    y2='0'
+                    y1='144'
+                    x2='120'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={0.2}
                 />
                 <motion.line
                     className={style.line}
-                    x1='220'
-                    y1='0'
-                    x2='322'
-                    y2='0'
+                    x1='120'
+                    y1='6'
+                    x2='224'
+                    y2='6'
                     stroke='white'
                     variants={draw}
                     custom={1.5}
                 />
                 <motion.circle
                     className={style.circle}
-                    cx='320'
-                    cy='0'
+                    cx='224'
+                    cy='6'
                     r='6'
                     stroke='white'
                     variants={draw}
