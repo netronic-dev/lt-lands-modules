@@ -1,4 +1,5 @@
 import style from './style.module.scss';
+import ReactGA from 'react-ga4';
 
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
@@ -39,7 +40,12 @@ export function InputsWName(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(GAEvents.sentRequest("", "", true)).then(router.push('/thanks-call'));
+            ).then(
+                ReactGA.event('generate_lead', {
+                    event_category: 'button',
+                    event_label: 'generate_lead',
+                })
+            ).then(router.push('/thanks-call'));
         },
     });
 

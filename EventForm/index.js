@@ -5,6 +5,7 @@ import { FillButton } from "../../lt-modules/Buttons";
 import { postData } from "../../lt-modules/functions/postData";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
 import style from "./style.module.scss"
+import ReactGA from 'react-ga4';
 
 export function EventForm(props) {
 
@@ -51,6 +52,12 @@ function Form(props) {
     validate,
     onSubmit: (values) => {
       postEventData({ values, equipmentTypeValue, modelValue })
+        .then(
+          ReactGA.event('generate_lead', {
+            event_category: 'button',
+            event_label: 'generate_lead',
+          })
+        )
         .then(
           formik.resetForm()
         ).then(

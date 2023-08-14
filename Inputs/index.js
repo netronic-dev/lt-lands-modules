@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useValidation } from '../../context/ValidationProvider';
 import { postData } from '../../lt-modules/functions/postData.ts';
 import { useGAEvents } from '../../context/GAEventsProvider'
+import ReactGA from 'react-ga4';
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -35,7 +36,12 @@ export function Inputs(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(GAEvents.sentRequest("", "", true)).then(router.push('/thanks-catalog'));
+            ).then(
+                ReactGA.event('generate_lead', {
+                    event_category: 'button',
+                    event_label: 'generate_lead',
+                })
+            ).then(router.push('/thanks-catalog'));
         },
     });
     function onAgreementChange() {
@@ -153,7 +159,12 @@ export function InputsWName(props) {
                 props.lang,
                 window.location.hostname,
                 router.query
-            ).then(GAEvents.sentRequest("", "", true)).then(router.push('/thanks-catalog'));
+            ).then(
+                ReactGA.event('generate_lead', {
+                    event_category: 'button',
+                    event_label: 'generate_lead',
+                })
+            ).then(router.push('/thanks-catalog'));
         },
     });
 
