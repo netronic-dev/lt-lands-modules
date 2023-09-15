@@ -52,7 +52,7 @@ export function Inputs(props) {
     });
 
     return (
-        <div className={style.input_land_out}>
+        <div className={style.input_land_out} id="test-drive">
             <div
                 ref={ref}
                 key={isVisible ? 1 : 2}
