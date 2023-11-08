@@ -10,8 +10,10 @@ import { useValidation } from '../../context/ValidationProvider';
 import { postData } from '../../lt-modules/functions/postData.ts';
 import { useGAEvents } from '../../context/GAEventsProvider';
 import ReactGA from 'react-ga4';
-import { useState } from 'react';
-import PhoneInput from 'react-phone-number-input';
+import { useEffect, useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import { useModals } from '../../context/ModalsProvider.js';
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -19,21 +21,46 @@ const inputsLandTheme = {
 };
 
 export function Inputs (props) {
-    const validate = useValidation();
+    // const validate = useValidation();
     const router = useRouter();
     const GAEvents = useGAEvents();
-    const [value, setValue] = useState('');
+    const [valid, setValid] = useState(null);
+    const [phone, setPhone] = useState(null);
+    const [regionCode, setRegionCode] = useState();
+    const modal = useModals();
+
+    const validate = (values) => {
+        const errors = {};
+
+        if (!values.phone) {
+            errors.phone = 'Required';
+        }
+
+        if (!values.email) {
+            errors.email = 'Required';
+        } else if (
+            !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(values.email)
+        ) {
+            errors.email = 'Invalid email address';
+        }
+
+        return errors;
+    };
 
     const formik = useFormik({
         initialValues: {
-            phone: '',
+            phone: false,
             email: '',
             agreement: '',
         },
         validate,
         onSubmit: (values) => {
+            const data = {
+                ...values,
+                phone: `+${phone}`,
+            };
             postData(
-                values,
+                data,
                 props.destinationURL,
                 props.orderName,
                 props.lang,
@@ -54,10 +81,10 @@ export function Inputs (props) {
         unobserveOnEnter: true,
     });
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
-        formik.setFieldValue('phone', newValue);
-    };
+    useEffect(() => {
+        console.log(modal?.region);
+        modal?.region ? setRegionCode(modal?.region.toLowerCase()) : setRegionCode('us');
+    }, [modal.region]);
 
     return (
         <div className={style.input_land_out} id="test-drive">
@@ -75,14 +102,29 @@ export function Inputs (props) {
                             <div className={style.input_out__outer}>
                                 <div className={`${style.phone__input_block} ${formik.errors.phone ? 'phone__input__error' : ''}`}>
                                     <PhoneInput
-                                        className='test-drive__input'
-                                        initialValueFormat='national'
-                                        international
-                                        placeholder={props.callPlaceholder || "Phone"}
-                                        value={value}
-                                        onChange={handleChange}
+                                        containerClass='catalog_input__phone_container'
+                                        inputClass={valid ? 'input__phone' : 'input__phone_error'}
+                                        buttonClass={valid ? 'drop_down' : 'drop_down_error'}
+                                        country={regionCode}
+                                        enableSearch
+                                        placeholder="Phone"
+                                        onChange={(value, country, e, formattedValue) => {
+                                            const { format, dialCode } = country;
+                                            setPhone(value);
+                                            if (
+                                                format?.length === formattedValue?.length &&
+                                                (value.startsWith(dialCode) || dialCode.startsWith(value))
+                                            ) {
+                                                formik.setFieldValue('phone', true);
+                                                setValid(true);
+                                            } else {
+                                                formik.setFieldValue('phone', false);
+                                                setValid(false);
+                                            }
+                                        }}
+                                        isValid
                                     />
-                                    {formik.errors.phone ? <span className={style.error__message}>{formik.errors.phone}</span> : null}
+                                    {!valid && <span className={style.error}>Invalid phone number</span>}
                                 </div>
                             </div>
                             <div className={style.input_out__outer}>
@@ -97,11 +139,11 @@ export function Inputs (props) {
                                         placeholder='Email'
                                     />
                                     <div className={style.error_icon}>
-                                        {formik.errors.email
+                                        {/* {formik.errors.email
                                             ? icons.error
                                             : formik.values.email === ''
                                                 ? null
-                                                : icons.agree}
+                                                : icons.agree} */}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -136,23 +178,56 @@ export function Inputs (props) {
 }
 
 export function InputsWName (props) {
-    const [value, setValue] = useState('');
-    const validate = useValidation();
+    const [valid, setValid] = useState(null);
+    const [phone, setPhone] = useState(null);
+    const [regionCode, setRegionCode] = useState();
+    // const validate = useValidation();
     const image = props.image ? props.image : '/index/catalogs.png';
     const router = useRouter();
     const GAEvents = useGAEvents();
+
+    const modal = useModals();
+
+    const validate = (values) => {
+        const errors = {};
+
+        if (!values.name) {
+            errors.name = 'Required';
+
+        } else if (values.name.length < 2) {
+            errors.name = 'The name must have at least 2 characters';
+        }
+
+        if (!values.phone) {
+            errors.phone = 'Required';
+        }
+
+        if (!values.email) {
+            errors.email = 'Required';
+        } else if (
+            !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i.test(values.email)
+        ) {
+            errors.email = 'Invalid email address';
+        }
+
+        return errors;
+    };
 
     const formik = useFormik({
         initialValues: {
             name: '',
             email: '',
-            phone: '',
+            phone: false,
             agreement: '',
         },
         validate,
         onSubmit: (values) => {
+            const data = {
+                ...values,
+                phone: `+${phone}`,
+            };
             postData(
-                values,
+                data,
                 props.destinationURL,
                 props.orderName,
                 props.lang,
@@ -175,10 +250,10 @@ export function InputsWName (props) {
         unobserveOnEnter: true,
     });
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
-        formik.setFieldValue('phone', newValue);
-    };
+    useEffect(() => {
+        console.log(modal?.region);
+        modal?.region ? setRegionCode(modal?.region.toLowerCase()) : setRegionCode('us');
+    }, [modal.region]);
 
     return (
         <div className={style.input_land_out}>
@@ -209,11 +284,11 @@ export function InputsWName (props) {
                                         }
                                     />
                                     <div className={style.error_icon}>
-                                        {formik.errors.name
+                                        {/* {formik.errors.name
                                             ? icons.error
                                             : formik.values.name === ''
                                                 ? null
-                                                : icons.agree}
+                                                : icons.agree} */}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -234,11 +309,11 @@ export function InputsWName (props) {
                                         }
                                     />
                                     <div className={style.error_icon}>
-                                        {formik.errors.email
+                                        {/* {formik.errors.email
                                             ? icons.error
                                             : formik.values.email === ''
                                                 ? null
-                                                : icons.agree}
+                                                : icons.agree} */}
                                     </div>
                                 </div>
                                 <div className={style.error}>
@@ -248,23 +323,32 @@ export function InputsWName (props) {
                             <div className={style.input_out__outer}>
                                 <div className={`${style.phone__input_block} ${formik.errors.phone ? 'phone__input__error' : ''}`}>
                                     <PhoneInput
-                                        className='mobile__input'
-                                        initialValueFormat='national'
-                                        international
-                                        placeholder={props.callPlaceholder || "Phone *"}
-                                        value={value}
-                                        onChange={handleChange}
+                                        containerClass='questions_input__phone_container'
+                                        inputClass={valid ? 'input__phone' : 'input__phone_error'}
+                                        buttonClass={valid ? 'drop_down' : 'drop_down_error'}
+                                        country={regionCode}
+                                        enableSearch
+                                        placeholder="Phone *"
+                                        onChange={(value, country, e, formattedValue) => {
+                                            const { format, dialCode } = country;
+                                            setPhone(value);
+                                            if (
+                                                format?.length === formattedValue?.length &&
+                                                (value.startsWith(dialCode) || dialCode.startsWith(value))
+                                            ) {
+                                                formik.setFieldValue('phone', true);
+                                                setValid(true);
+                                            } else {
+                                                formik.setFieldValue('phone', false);
+                                                setValid(false);
+                                            }
+                                        }}
+                                        isValid
                                     />
-                                    {/* {formik.errors.phone ? <span className={style.error__message}>{formik.errors.phone}</span> : null} */}
-                                    {formik.errors.phone ? <div className={style.error_icon}>
-                                        {icons.error}
-                                    </div> : value?.length >= 13 ? <div className={style.error_icon}>
-                                        {icons.agree}
-                                    </div> : null}
                                 </div>
-                                <div className={style.error}>
+                                {!valid && <div className={style.error}>
                                     {formik.errors.phone}
-                                </div>
+                                </div>}
                             </div>
                         </div>
                         <Agreement
