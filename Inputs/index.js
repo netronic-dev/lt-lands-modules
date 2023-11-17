@@ -107,6 +107,7 @@ export function Inputs (props) {
                                         buttonClass={valid ? 'drop_down' : 'drop_down_error'}
                                         country={regionCode}
                                         enableSearch
+                                        masks={phoneMasks}
                                         placeholder="Phone"
                                         onChange={(value, country, e, formattedValue) => {
                                             const { format, dialCode } = country;
@@ -328,6 +329,7 @@ export function InputsWName (props) {
                                         buttonClass={valid ? 'drop_down' : 'drop_down_error'}
                                         country={regionCode}
                                         enableSearch
+                                        masks={phoneMasks}
                                         placeholder="Phone *"
                                         onChange={(value, country, e, formattedValue) => {
                                             const { format, dialCode } = country;
