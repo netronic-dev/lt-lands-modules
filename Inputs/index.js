@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { useModals } from '../../context/ModalsProvider.js';
+import { phoneMasks } from '../../Data/phoneMasks.js';
 
 const inputsLandTheme = {
     default: style.input_land,
