@@ -1,13 +1,13 @@
-import { Fade } from "react-awesome-reveal"
-import { useInView } from "react-hook-inview"
-import { Button } from "../../../lt-modules/Buttons"
-import style from "../style.module.scss"
+import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-hook-inview";
+import { Button } from "../../../lt-modules/Buttons";
+import style from "../style.module.scss";
 
-export default function SupernovaScenarios(props) {
+export default function SupernovaScenarios (props) {
 
   const [ref, IsVisible] = useInView({
     unobserveOnEnter: true
-  })
+  });
 
   return (
     <section className={style.scenarios}>
@@ -19,7 +19,7 @@ export default function SupernovaScenarios(props) {
         </Fade>
         <Fade delay={300} triggerOnce>
           <div className={style.button}>
-            <Button style="black" text="Check the price" />
+            <Button style="black" text="Get catalog" />
           </div>
         </Fade>
       </div>
@@ -53,5 +53,5 @@ export default function SupernovaScenarios(props) {
         </div>
       </div>
     </section>
-  )
+  );
 }
