@@ -1,5 +1,6 @@
 import style from './style.module.scss';
 import ReactGA from 'react-ga4';
+import axios from 'axios';
 
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
@@ -17,7 +18,7 @@ const inputsLandTheme = {
     light: style.input_land_light,
 };
 
-export function InputsWName(props) {
+export function InputsWName (props) {
     const validate = useValidation();
     const router = useRouter();
     const dispatch = useDispatch();
@@ -33,23 +34,37 @@ export function InputsWName(props) {
         validate,
         onSubmit: (values) => {
             dispatch(setUserData(values.name));
-            postData(
-                values,
-                props.destinationURL,
-                props.orderName,
-                props.lang,
-                window.location.hostname,
-                router.query
-            ).then(
-                ReactGA.event('generate_lead', {
-                    event_category: 'button',
-                    event_label: 'generate_lead',
-                })
-            ).then(router.push('/thanks-call'));
+            const options = {
+                method: 'POST',
+                url: `https://api.netronic.net/send-email`,
+                headers: {
+                    'content-type': 'application/json',
+                },
+                data: { email: values.email, fromName: props.fromName, letterId: props.letterId },
+            };
+            axios
+                .request(options)
+                .then(console.log)
+                .then(
+                    postData(
+                        data,
+                        props.destinationURL,
+                        props.orderName,
+                        props.lang,
+                        window.location.href,
+                        router.query,
+                    ),
+                )
+                .then(router.push('/thanks-call'))
+                .catch(console.log);
+            ReactGA.event('generate_lead', {
+                category: 'form',
+                action: 'submit',
+            });
         },
     });
 
-    function onAgreementChange() {
+    function onAgreementChange () {
         formik.setFieldValue('agreement', !formik.values.agreement);
     }
 
@@ -139,7 +154,7 @@ export function InputsWName(props) {
     );
 }
 
-function Agreement(props) {
+function Agreement (props) {
     return (
         <div className={style.agreement__outer}>
             <div className={style.agreement}>

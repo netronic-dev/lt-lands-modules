@@ -6,24 +6,24 @@ import ButtonDetails from '../../../lt-modules/Buttons/ButtonDetails';
 import { ThemeForm } from '../../../lt-modules/InputForms/StaticForm';
 import style from '../main.module.scss';
 
-export default function MainEquipment(props) {
+export default function MainEquipment (props) {
     const [firstCellIsActive, changeFirstCellView] = useState(true);
     const [secondCellIsActive, changeSecondCellView] = useState(false);
     const [thirdCellIsActive, changeThirdCellView] = useState(false);
 
-    function onFirstCellChange() {
+    function onFirstCellChange () {
         changeFirstCellView(true);
         changeSecondCellView(false);
         changeThirdCellView(false);
     }
 
-    function onSecondCellChange() {
+    function onSecondCellChange () {
         changeFirstCellView(false);
         changeSecondCellView(true);
         changeThirdCellView(false);
     }
 
-    function onThirdCellChange() {
+    function onThirdCellChange () {
         changeFirstCellView(false);
         changeSecondCellView(false);
         changeThirdCellView(true);
@@ -210,6 +210,8 @@ export default function MainEquipment(props) {
                                 theme='whiteFill'
                                 buttonTheme='black'
                                 buttonActiveTheme='black'
+                                letterId={props.letterId}
+                                fromName={props.fromName}
                                 name
                                 phone
                                 buttonText={props.buttonText}

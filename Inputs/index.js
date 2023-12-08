@@ -2,11 +2,9 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import style from './style.module.scss';
 import Image from 'next/image';
-import { icons } from '../../lt-modules/InputForms/icons/icons';
 import { useInView } from 'react-hook-inview';
 import { FillButton } from '../../lt-modules/Buttons';
 import Link from 'next/link';
-import { useValidation } from '../../context/ValidationProvider';
 import { postData } from '../../lt-modules/functions/postData.ts';
 import { useGAEvents } from '../../context/GAEventsProvider';
 import ReactGA from 'react-ga4';
@@ -15,6 +13,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { useModals } from '../../context/ModalsProvider.js';
 import { phoneMasks } from '../../Data/phoneMasks.js';
+import axios from 'axios';
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -60,19 +59,34 @@ export function Inputs (props) {
                 ...values,
                 phone: `+${phone}`,
             };
-            postData(
-                data,
-                props.destinationURL,
-                props.orderName,
-                props.lang,
-                window.location.hostname,
-                router.query
-            ).then(
-                ReactGA.event('generate_lead', {
-                    event_category: 'button',
-                    event_label: 'generate_lead',
-                })
-            ).then(router.push('/thanks-catalog'));
+
+            const options = {
+                method: 'POST',
+                url: `https://api.netronic.net/send-email`,
+                headers: {
+                    'content-type': 'application/json',
+                },
+                data: { email: values.email, fromName: props.fromName, letterId: props.letterId },
+            };
+            axios
+                .request(options)
+                .then(console.log)
+                .then(
+                    postData(
+                        data,
+                        props.destinationURL,
+                        props.orderName,
+                        props.lang,
+                        window.location.href,
+                        router.query,
+                    ),
+                )
+                .then(router.push('/thanks-catalog'))
+                .catch(console.log);
+            ReactGA.event('generate_lead', {
+                category: 'form',
+                action: 'submit',
+            });
         },
     });
     function onAgreementChange () {
@@ -228,19 +242,33 @@ export function InputsWName (props) {
                 ...values,
                 phone: `+${phone}`,
             };
-            postData(
-                data,
-                props.destinationURL,
-                props.orderName,
-                props.lang,
-                window.location.hostname,
-                router.query
-            ).then(
-                ReactGA.event('generate_lead', {
-                    event_category: 'button',
-                    event_label: 'generate_lead',
-                })
-            ).then(router.push('/thanks-catalog'));
+            const options = {
+                method: 'POST',
+                url: `https://api.netronic.net/send-email`,
+                headers: {
+                    'content-type': 'application/json',
+                },
+                data: { email: values.email, fromName: props.fromName, letterId: props.letterId },
+            };
+            axios
+                .request(options)
+                .then(console.log)
+                .then(
+                    postData(
+                        data,
+                        props.destinationURL,
+                        props.orderName,
+                        props.lang,
+                        window.location.href,
+                        router.query,
+                    ),
+                )
+                .then(router.push('/thanks-catalog'))
+                .catch(console.log);
+            ReactGA.event('generate_lead', {
+                category: 'form',
+                action: 'submit',
+            });
         },
     });
 
