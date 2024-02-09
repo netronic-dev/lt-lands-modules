@@ -37,6 +37,13 @@ export function Inputs (props) {
     const validate = (values) => {
         const errors = {};
 
+        if (!values.name) {
+            errors.name = 'Required';
+
+        } else if (values.name.length < 2) {
+            errors.name = 'The name must have at least 2 characters';
+        }
+
         if (!values.phone) {
             errors.phone = 'Required';
         }
@@ -84,6 +91,7 @@ export function Inputs (props) {
 
     const formik = useFormik({
         initialValues: {
+            name: '',
             phone: false,
             email: '',
             agreement: '',
@@ -154,8 +162,28 @@ export function Inputs (props) {
                     >
                         <div className={style.content}>
                             <div className={style.grid}>
+
                                 <div className={style.grid_cell}>
                                     {/* <div className={style.input_out__outer}> */}
+                                    <div className={style.input_block_out}>
+                                        <div className={style.input_out}>
+                                            <input
+                                                className={style.input}
+                                                name='name'
+                                                maxLength='30'
+                                                onChange={formik.handleChange}
+                                                value={formik.values.name}
+                                                placeholder={
+                                                    props.namePlaceholder || 'Name *'
+                                                }
+                                            />
+                                            <div className={style.error_icon}>
+                                            </div>
+                                        </div>
+                                        <div className={style.error}>
+                                            {formik.errors.name}
+                                        </div>
+                                    </div>
                                     <div className={`${style.input_block_out} ${formik.errors.phone ? 'phone__input__error' : ''}`}>
                                         <PhoneInput
                                             containerClass='catalog_input__phone_container'
@@ -399,11 +427,6 @@ export function InputsWName (props) {
                                         }
                                     />
                                     <div className={style.error_icon}>
-                                        {/* {formik.errors.name
-                                            ? icons.error
-                                            : formik.values.name === ''
-                                                ? null
-                                                : icons.agree} */}
                                     </div>
                                 </div>
                                 <div className={style.error}>
