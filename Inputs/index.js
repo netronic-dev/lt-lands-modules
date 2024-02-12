@@ -22,7 +22,6 @@ const inputsLandTheme = {
 };
 
 export function Inputs (props) {
-    // const validate = useValidation();
     const router = useRouter();
     const GAEvents = useGAEvents();
     const [valid, setValid] = useState(null);
@@ -164,7 +163,6 @@ export function Inputs (props) {
                             <div className={style.grid}>
 
                                 <div className={style.grid_cell}>
-                                    {/* <div className={style.input_out__outer}> */}
                                     <div className={style.input_block_out}>
                                         <div className={style.input_out}>
                                             <input
@@ -211,7 +209,6 @@ export function Inputs (props) {
                                         />
                                         {!valid && <span className={style.error}>Invalid phone number</span>}
                                     </div>
-                                    {/* </div> */}
                                     <div className={style.input_block_out}>
                                         <div className={style.input_out}>
                                             <input
@@ -310,7 +307,6 @@ export function InputsWName (props) {
     const [valid, setValid] = useState(null);
     const [phone, setPhone] = useState(null);
     const [regionCode, setRegionCode] = useState();
-    // const validate = useValidation();
     const image = props.image ? props.image : '/index/catalogs.png';
     const router = useRouter();
     const GAEvents = useGAEvents();
@@ -447,11 +443,6 @@ export function InputsWName (props) {
                                         }
                                     />
                                     <div className={style.error_icon}>
-                                        {/* {formik.errors.email
-                                            ? icons.error
-                                            : formik.values.email === ''
-                                                ? null
-                                                : icons.agree} */}
                                     </div>
                                 </div>
                                 <div className={style.error}>
