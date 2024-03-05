@@ -1,6 +1,6 @@
 .main {
     padding: 116px 0 90px 0;
-    background: #F1F4F6;
+    background: #f1f4f6;
     border-radius: 20px;
 }
 
@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         gap: 32px;
-        font-family: 'Manrope';
+        font-family: "Manrope";
         font-style: normal;
 
         .title {
@@ -20,7 +20,7 @@
             font-size: 36px;
             line-height: 1.36em;
             text-transform: uppercase;
-            color: #1D1D1D;
+            color: #1d1d1d;
         }
 
         .text {
@@ -48,14 +48,14 @@
                 .contact_cell {
                     display: flex;
                     flex-direction: column;
-                    font-family: 'Roboto';
+                    font-family: "Roboto";
                     font-style: normal;
 
                     .contanct_title {
                         font-weight: 400;
                         font-size: 12px;
                         line-height: 1.16em;
-                        color: #8E8E8E;
+                        color: #8e8e8e;
                     }
 
                     a {
@@ -63,36 +63,17 @@
                         font-size: 16px;
                         line-height: 1.18em;
                         text-decoration-line: underline;
-                        color: #0090FF;
+                        color: #0090ff;
                     }
 
                     .links_union {
                         display: flex;
+                        justify-content: space-between;
                         gap: 13px;
-                    }
-                }
-
-                .phone_link {
-                    a {
-                        font-family: 'Roboto';
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 16px;
-                        line-height: 22px;
-                        color: #000000;
-                        text-decoration: none;
-                    }
-                }
-
-                .icons {
-                    a {
-                        cursor: pointer;
                     }
                 }
             }
         }
-
-
     }
 }
 
@@ -106,7 +87,6 @@
     }
 
     .content_wrapper {
-
         .content_info {
             padding-right: 20px;
         }
@@ -114,7 +94,6 @@
 }
 
 @media (max-width: 800px) {
-
     .content_wrapper {
         grid-template-columns: 1fr;
 
@@ -157,14 +136,14 @@
             .contact_cell {
                 display: flex;
                 flex-direction: column;
-                font-family: 'Roboto';
+                font-family: "Roboto";
                 font-style: normal;
 
                 .contanct_title {
                     font-weight: 400;
                     font-size: 12px;
                     line-height: 1.16em;
-                    color: #8E8E8E;
+                    color: #8e8e8e;
                 }
 
                 a {
@@ -172,7 +151,7 @@
                     font-size: 16px;
                     line-height: 1.18em;
                     text-decoration-line: underline;
-                    color: #0090FF;
+                    color: #0090ff;
                 }
 
                 .links_union {
@@ -183,7 +162,7 @@
 
             .phone_link {
                 a {
-                    font-family: 'Roboto';
+                    font-family: "Roboto";
                     font-style: normal;
                     font-weight: 500;
                     font-size: 16px;
@@ -202,7 +181,6 @@
             gap: 20px;
 
             .contact_cell {
-
                 a {
                     font-size: 14px;
                 }
@@ -215,5 +193,4 @@
             }
         }
     }
-
 }
