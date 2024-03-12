@@ -217,8 +217,9 @@ export function Inputs(props) {
                                             }
                                             country={regionCode}
                                             enableSearch
-                                            masks={phoneMasks}
-                                            placeholder="Phone"
+                                            excludeCountries={["ru"]}
+                                            autoFormat={false}
+                                            placeholder={props.phonePlaceholder}
                                             onChange={(
                                                 value,
                                                 country,
@@ -229,14 +230,8 @@ export function Inputs(props) {
                                                     country;
                                                 setPhone(value);
                                                 if (
-                                                    format?.length ===
-                                                        formattedValue?.length &&
-                                                    (value.startsWith(
-                                                        dialCode
-                                                    ) ||
-                                                        dialCode.startsWith(
-                                                            value
-                                                        ))
+                                                    value.length > 5 &&
+                                                    value.length < 20
                                                 ) {
                                                     formik.setFieldValue(
                                                         "phone",
@@ -251,7 +246,6 @@ export function Inputs(props) {
                                                     setValid(false);
                                                 }
                                             }}
-                                            isValid
                                         />
                                         {!valid && (
                                             <span className={style.error}>
@@ -554,8 +548,9 @@ export function InputsWName(props) {
                                         }
                                         country={regionCode}
                                         enableSearch
-                                        masks={phoneMasks}
-                                        placeholder="Phone *"
+                                        excludeCountries={["ru"]}
+                                        autoFormat={false}
+                                        placeholder={props.phonePlaceholder}
                                         onChange={(
                                             value,
                                             country,
@@ -566,10 +561,8 @@ export function InputsWName(props) {
                                                 country;
                                             setPhone(value);
                                             if (
-                                                format?.length ===
-                                                    formattedValue?.length &&
-                                                (value.startsWith(dialCode) ||
-                                                    dialCode.startsWith(value))
+                                                value.length > 5 &&
+                                                value.length < 20
                                             ) {
                                                 formik.setFieldValue(
                                                     "phone",
@@ -584,7 +577,6 @@ export function InputsWName(props) {
                                                 setValid(false);
                                             }
                                         }}
-                                        isValid
                                     />
                                 </div>
                                 {!valid && (
