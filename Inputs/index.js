@@ -57,7 +57,7 @@ export function Inputs(props) {
         }
 
         if (!values.contactMethod) errors.contactMethod = "Required";
-        if (!values.budget) errors.budget = "Required";
+        // if (!values.budget) errors.budget = "Required";
 
         return errors;
     };
@@ -102,9 +102,9 @@ export function Inputs(props) {
             email: "",
             agreement: "",
             contactMethod: "",
-            planToUse: "",
-            budget: "",
-            comment: "",
+            // planToUse: "",
+            // budget: "",
+            // comment: "",
         },
         validate,
         onSubmit: (values) => {
@@ -253,6 +253,29 @@ export function Inputs(props) {
                                             </span>
                                         )}
                                     </div>
+
+                                    {/* <div className={style.input_block_out}>
+                                        <Dropdown
+                                            className={`Dropdown-black_form  ${
+                                                formik.errors.budget
+                                                    ? "Dropdown-error"
+                                                    : ""
+                                            }`}
+                                            options={budgetRangeValues}
+                                            onChange={onSelectBudgetRange}
+                                            value={defaultBudgetRangeOption}
+                                            placeholder={
+                                                props.budgetPlaceholder
+                                            }
+                                        />
+                                        {formik.errors.budget && (
+                                            <span className={style.error}>
+                                                {formik.errors.budget}
+                                            </span>
+                                        )}
+                                    </div> */}
+                                </div>
+                                <div className={style.grid_cell}>
                                     <div className={style.input_block_out}>
                                         <div className={style.input_out}>
                                             <input
@@ -275,28 +298,6 @@ export function Inputs(props) {
                                     <div className={style.input_block_out}>
                                         <Dropdown
                                             className={`Dropdown-black_form  ${
-                                                formik.errors.budget
-                                                    ? "Dropdown-error"
-                                                    : ""
-                                            }`}
-                                            options={budgetRangeValues}
-                                            onChange={onSelectBudgetRange}
-                                            value={defaultBudgetRangeOption}
-                                            placeholder={
-                                                props.budgetPlaceholder
-                                            }
-                                        />
-                                        {formik.errors.budget && (
-                                            <span className={style.error}>
-                                                {formik.errors.budget}
-                                            </span>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className={style.grid_cell}>
-                                    <div className={style.input_block_out}>
-                                        <Dropdown
-                                            className={`Dropdown-black_form  ${
                                                 formik.errors.contactMethod
                                                     ? "Dropdown-error"
                                                     : ""
@@ -314,7 +315,7 @@ export function Inputs(props) {
                                             </span>
                                         )}
                                     </div>
-                                    <div className={style.input_block_out}>
+                                    {/* <div className={style.input_block_out}>
                                         <Dropdown
                                             className={`Dropdown-black_form  ${
                                                 formik.errors.planToUse
@@ -344,7 +345,7 @@ export function Inputs(props) {
                                             }
                                             name="comment"
                                         />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
