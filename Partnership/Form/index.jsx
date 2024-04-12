@@ -1,6 +1,12 @@
 import Link from "next/link";
 import style from "./style.module.scss";
-import { InputsWName } from "../Form/Inputs";
+
+import dynamic from "next/dynamic";
+
+const InputsWName = dynamic(
+    () => import("../Form/Inputs").then((mod) => mod.InputsWName),
+    { ssr: false }
+);
 
 const PartnershipForm = (props) => {
     return (

@@ -1,58 +1,66 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Fade } from 'react-awesome-reveal';
-import ButtonDetails from '../../../lt-modules/Buttons/ButtonDetails';
-import { ThemeForm } from '../../../lt-modules/InputForms/StaticForm';
-import style from '../main.module.scss';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
+import ButtonDetails from "../../../lt-modules/Buttons/ButtonDetails";
 
-export default function MainEquipment (props) {
+import style from "../main.module.scss";
+
+import dynamic from "next/dynamic";
+
+const ThemeForm = dynamic(
+    () =>
+        import("../../../lt-modules/InputForms/StaticForm").then(
+            (mod) => mod.ThemeForm
+        ),
+    { ssr: false }
+);
+
+export default function MainEquipment(props) {
     const [firstCellIsActive, changeFirstCellView] = useState(true);
     const [secondCellIsActive, changeSecondCellView] = useState(false);
     const [thirdCellIsActive, changeThirdCellView] = useState(false);
 
-    function onFirstCellChange () {
+    function onFirstCellChange() {
         changeFirstCellView(true);
         changeSecondCellView(false);
         changeThirdCellView(false);
     }
 
-    function onSecondCellChange () {
+    function onSecondCellChange() {
         changeFirstCellView(false);
         changeSecondCellView(true);
         changeThirdCellView(false);
     }
 
-    function onThirdCellChange () {
+    function onThirdCellChange() {
         changeFirstCellView(false);
         changeSecondCellView(false);
         changeThirdCellView(true);
     }
     return (
         <section className={style.equipment}>
-            <Fade direction='up' duration={300} triggerOnce>
+            <Fade direction="up" duration={300} triggerOnce>
                 <h2 className={style.title}>{props.title}</h2>
             </Fade>
             <div className={style.equipment_menu}>
                 <Link
                     href={
                         props.linkFirstActiveCell ||
-                        '/mobile-laser-tag-equipment'
+                        "/mobile-laser-tag-equipment"
                     }
                 >
                     <div
                         className={
-                            firstCellIsActive
-                                ? style.cellActive
-                                : style.cell
+                            firstCellIsActive ? style.cellActive : style.cell
                         }
                         onMouseOver={onFirstCellChange}
                     >
-                        <div className='background'>
+                        <div className="background">
                             <Image
-                                src='/index/mobile-equipment.jpg'
-                                layout='fill'
-                                objectFit='cover'
+                                src="/index/mobile-equipment.jpg"
+                                layout="fill"
+                                objectFit="cover"
                                 priority={true}
                             />
                         </div>
@@ -64,20 +72,16 @@ export default function MainEquipment (props) {
                                 {props.firstCellText}
                             </p>
                             <div className={style.cell_button}>
-                                <Fade
-                                    direction='up'
-                                    duration={500}
-                                    triggerOnce
-                                >
+                                <Fade direction="up" duration={500} triggerOnce>
                                     <Link
                                         href={
                                             props.linkFirstActiveCell ||
-                                            '/mobile-laser-tag-equipment'
+                                            "/mobile-laser-tag-equipment"
                                         }
                                     >
                                         <a>
                                             <ButtonDetails
-                                                theme='White'
+                                                theme="White"
                                                 text={props.buttonText}
                                             />
                                         </a>
@@ -87,24 +91,18 @@ export default function MainEquipment (props) {
                         </div>
                     </div>
                 </Link>
-                <Link
-                    href={
-                        props.linkSecondActiveCell || '/outdoor-laser-tag'
-                    }
-                >
+                <Link href={props.linkSecondActiveCell || "/outdoor-laser-tag"}>
                     <div
                         className={
-                            secondCellIsActive
-                                ? style.cellActive
-                                : style.cell
+                            secondCellIsActive ? style.cellActive : style.cell
                         }
                         onMouseOver={onSecondCellChange}
                     >
-                        <div className='background'>
+                        <div className="background">
                             <Image
-                                src='/index/outdoor-equipment.jpg'
-                                layout='fill'
-                                objectFit='cover'
+                                src="/index/outdoor-equipment.jpg"
+                                layout="fill"
+                                objectFit="cover"
                                 priority={true}
                             />
                         </div>
@@ -116,20 +114,16 @@ export default function MainEquipment (props) {
                                 {props.secondCellText}
                             </p>
                             <div className={style.cell_button}>
-                                <Fade
-                                    direction='up'
-                                    duration={500}
-                                    triggerOnce
-                                >
+                                <Fade direction="up" duration={500} triggerOnce>
                                     <Link
                                         href={
                                             props.linkSecondActiveCell ||
-                                            '/outdoor-laser-tag'
+                                            "/outdoor-laser-tag"
                                         }
                                     >
                                         <a>
                                             <ButtonDetails
-                                                theme='White'
+                                                theme="White"
                                                 text={props.buttonText}
                                             />
                                         </a>
@@ -142,22 +136,20 @@ export default function MainEquipment (props) {
                 <Link
                     href={
                         props.linkThirdActiveCell ||
-                        '/indoor-laser-tag-equipment'
+                        "/indoor-laser-tag-equipment"
                     }
                 >
                     <div
                         className={
-                            thirdCellIsActive
-                                ? style.cellActive
-                                : style.cell
+                            thirdCellIsActive ? style.cellActive : style.cell
                         }
                         onMouseOver={onThirdCellChange}
                     >
-                        <div className='background'>
+                        <div className="background">
                             <Image
-                                src='/index/indoor-equipment.jpg'
-                                layout='fill'
-                                objectFit='cover'
+                                src="/index/indoor-equipment.jpg"
+                                layout="fill"
+                                objectFit="cover"
                                 priority={true}
                             />
                         </div>
@@ -169,20 +161,16 @@ export default function MainEquipment (props) {
                                 {props.thirdCellText}
                             </p>
                             <div className={style.cell_button}>
-                                <Fade
-                                    direction='up'
-                                    duration={500}
-                                    triggerOnce
-                                >
+                                <Fade direction="up" duration={500} triggerOnce>
                                     <Link
                                         href={
                                             props.linkThirdActiveCell ||
-                                            '/indoor-laser-tag-equipment'
+                                            "/indoor-laser-tag-equipment"
                                         }
                                     >
                                         <a>
                                             <ButtonDetails
-                                                theme='White'
+                                                theme="White"
                                                 text={props.buttonText}
                                             />
                                         </a>
@@ -193,22 +181,20 @@ export default function MainEquipment (props) {
                     </div>
                 </Link>
             </div>
-            <Fade direction='up' duration={800} triggerOnce>
+            <Fade direction="up" duration={800} triggerOnce>
                 <div className={style.individual}>
                     <h2 className={style.individual_title}>
                         {props.formTitle}
                     </h2>
-                    <p className={style.individual_text}>
-                        {props.formText}
-                    </p>
+                    <p className={style.individual_text}>{props.formText}</p>
                     <div className={style.individual_form}>
                         <ThemeForm
                             destinationURL={props.destinationURL}
                             orderName={props.orderName}
                             lang={props.lang}
-                            theme='whiteFill'
-                            buttonTheme='black'
-                            buttonActiveTheme='black'
+                            theme="whiteFill"
+                            buttonTheme="black"
+                            buttonActiveTheme="black"
                             letterId={props.letterId}
                             fromName={props.fromName}
                             name
@@ -218,13 +204,14 @@ export default function MainEquipment (props) {
                             callPlaceholder={props.callPlaceholder}
                             commentPlaceholder={props.commentPlaceholder}
                             budgetPlaceholder={props.budgetPlaceholder}
-                            contactMethodPlaceholder={props.contactMethodPlaceholder}
+                            contactMethodPlaceholder={
+                                props.contactMethodPlaceholder
+                            }
                             planToUsePlaceholder={props.planToUsePlaceholder}
                         />
                     </div>
                 </div>
             </Fade>
         </section>
-
     );
 }

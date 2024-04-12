@@ -1,3 +1,5 @@
+"use client";
+
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import style from "./style.module.scss";
@@ -12,9 +14,9 @@ import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useModals } from "../../context/ModalsProvider.js";
-import { phoneMasks } from "../../Data/phoneMasks.js";
 import axios from "axios";
 import Dropdown from "react-dropdown";
+import ReactPixel from "react-facebook-pixel";
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -137,13 +139,17 @@ export function Inputs(props) {
                         window.location.href,
                         router.query
                     )
+                        .then(
+                            ReactGA.event("generate_lead", {
+                                category: "form",
+                                action: "submit",
+                            })
+                        )
+                        .then(ReactPixel.track("Lead"))
+                        .then(router.push("/thanks-catalog"))
+                        .catch(console.log)
                 )
-                .then(router.push("/thanks-catalog"))
                 .catch(console.log);
-            ReactGA.event("generate_lead", {
-                category: "form",
-                action: "submit",
-            });
         },
     });
     function onAgreementChange() {
@@ -154,7 +160,6 @@ export function Inputs(props) {
     });
 
     useEffect(() => {
-        console.log(modal?.region);
         modal?.region
             ? setRegionCode(modal?.region.toLowerCase())
             : setRegionCode("us");
@@ -448,13 +453,17 @@ export function InputsWName(props) {
                         window.location.href,
                         router.query
                     )
+                        .then(
+                            ReactGA.event("generate_lead", {
+                                category: "form",
+                                action: "submit",
+                            })
+                        )
+                        .then(ReactPixel.track("Lead"))
+                        .then(router.push("/thanks-catalog"))
+                        .catch(console.log)
                 )
-                .then(router.push("/thanks-catalog"))
                 .catch(console.log);
-            ReactGA.event("generate_lead", {
-                category: "form",
-                action: "submit",
-            });
         },
     });
 
@@ -467,7 +476,6 @@ export function InputsWName(props) {
     });
 
     useEffect(() => {
-        console.log(modal?.region);
         modal?.region
             ? setRegionCode(modal?.region.toLowerCase())
             : setRegionCode("us");

@@ -1,5 +1,14 @@
-import { InputsWName } from '../../../lt-lands-modules/Inputs/index';
-import style from '../lux.module.scss';
+import style from "../lux.module.scss";
+
+import dynamic from "next/dynamic";
+
+const InputsWName = dynamic(
+    () =>
+        import("../../../lt-lands-modules/Inputs/index").then(
+            (mod) => mod.Inputs
+        ),
+    { ssr: false }
+);
 
 function Form(props) {
     return (

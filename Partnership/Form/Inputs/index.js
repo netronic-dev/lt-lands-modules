@@ -1,6 +1,7 @@
 import style from "./style.module.scss";
 import ReactGA from "react-ga4";
 import axios from "axios";
+import ReactPixel from "react-facebook-pixel";
 
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
@@ -8,7 +9,6 @@ import { useInView } from "react-hook-inview";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../../../../store/actions/userData";
-
 import { useValidation } from "../../../../context/ValidationProvider";
 import { postData } from "../../../../lt-modules/functions/postData.ts";
 import { useGAEvents } from "../../../../context/GAEventsProvider";
@@ -58,13 +58,17 @@ export function InputsWName(props) {
                         window.location.href,
                         router.query
                     )
+                        .then(
+                            ReactGA.event("generate_lead", {
+                                category: "form",
+                                action: "submit",
+                            })
+                        )
+                        .then(ReactPixel.track("Lead"))
+                        .then(router.push("/thanks-call"))
+                        .catch(console.log)
                 )
                 .catch(console.log);
-            ReactGA.event("generate_lead", {
-                category: "form",
-                action: "submit",
-            });
-            router.push("/thanks-call");
         },
     });
 
