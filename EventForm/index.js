@@ -6,6 +6,9 @@ import { postData } from "../../lt-modules/functions/postData";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
 import style from "./style.module.scss";
 import ReactGA from "react-ga4";
+import { searchParams } from "../../store/searchParamsSlice";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 export function EventForm(props) {
     const [isThankYouActive, changeThankYouState] = useState(false);
@@ -28,6 +31,8 @@ export function EventForm(props) {
 }
 
 function Form(props) {
+    const queryParams = useSelector(searchParams);
+    const router = useRouter();
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -49,7 +54,12 @@ function Form(props) {
         },
         validate,
         onSubmit: (values) => {
-            postEventData({ values, equipmentTypeValue, modelValue })
+            postEventData({
+                values,
+                equipmentTypeValue,
+                modelValue,
+                query: queryParams || router.query,
+            })
                 .then(
                     ReactGA.event("generate_lead", {
                         event_category: "button",

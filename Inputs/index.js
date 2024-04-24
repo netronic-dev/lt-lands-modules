@@ -17,6 +17,8 @@ import { useModals } from "../../context/ModalsProvider.js";
 import axios from "axios";
 import Dropdown from "react-dropdown";
 import ReactPixel from "react-facebook-pixel";
+import { searchParams } from "../../store/searchParamsSlice.js";
+import { useSelector } from "react-redux";
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -34,6 +36,7 @@ export function Inputs(props) {
     const [planToUse, setPlanToUse] = useState(null);
     const [comment, setComment] = useState(null);
     const modal = useModals();
+    const queryParams = useSelector(searchParams);
 
     const validate = (values) => {
         const errors = {};
@@ -97,6 +100,12 @@ export function Inputs(props) {
         formik.setFieldValue("comment", e.target.value);
     };
 
+    useEffect(() => {
+        modal?.region
+            ? setRegionCode(modal?.region.toLowerCase())
+            : setRegionCode("us");
+    }, [modal.region]);
+
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -137,7 +146,7 @@ export function Inputs(props) {
                         props.orderName,
                         props.lang,
                         window.location.href,
-                        router.query
+                        queryParams || router.query
                     )
                         .then(
                             ReactGA.event("generate_lead", {
@@ -387,6 +396,7 @@ export function InputsWName(props) {
     const image = props.image ? props.image : "/index/catalogs.png";
     const router = useRouter();
     const GAEvents = useGAEvents();
+    const queryParams = useSelector(searchParams);
 
     const modal = useModals();
 
@@ -451,7 +461,7 @@ export function InputsWName(props) {
                         props.orderName,
                         props.lang,
                         window.location.href,
-                        router.query
+                        queryParams || router.query
                     )
                         .then(
                             ReactGA.event("generate_lead", {
