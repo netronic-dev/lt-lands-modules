@@ -1,17 +1,18 @@
-import style from "./style.module.scss";
-import ReactGA from "react-ga4";
 import axios from "axios";
 import ReactPixel from "react-facebook-pixel";
+import ReactGA from "react-ga4";
+import style from "./style.module.scss";
 
 import { useFormik } from "formik";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useInView } from "react-hook-inview";
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { setUserData } from "../../../../store/actions/userData";
+
+import { useGAEvents } from "../../../../context/GAEventsProvider";
 import { useValidation } from "../../../../context/ValidationProvider";
 import { postData } from "../../../../lt-modules/functions/postData.ts";
-import { useGAEvents } from "../../../../context/GAEventsProvider";
+import { setUserData } from "../../../../store/actions/userData";
 import { searchParams } from "../../../../store/searchParamsSlice.js";
 
 const inputsLandTheme = {
@@ -60,16 +61,18 @@ export function InputsWName(props) {
                         window.location.href,
                         queryParams || router.query
                     )
-                        .then(
+                        .then(() => {
+                            formik.resetForm();
                             ReactGA.event("generate_lead", {
                                 category: "form",
                                 action: "submit",
-                            })
-                        )
-                        .then(ReactPixel.track("Lead"))
-                        .then(router.push("/thanks-call"))
+                            });
+                            ReactPixel.track("Lead");
+                        })
+
                         .catch(console.log)
                 )
+                .then(router.push("/thanks-call"))
                 .catch(console.log);
         },
     });
@@ -154,8 +157,11 @@ export function InputsWName(props) {
                     id={props.id ? props.id : ""}
                     type="submit"
                     onClick={props.onClick}
+                    disabled={formik.isSubmitting}
                 >
-                    {props.buttonText}
+                    {formik.isSubmitting
+                        ? props.submittingText
+                        : props.buttonText}
                 </button>
             </form>
         </div>

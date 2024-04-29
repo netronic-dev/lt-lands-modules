@@ -178,6 +178,7 @@ export default function MCAllFor(props) {
                             lang={props.lang}
                             letterId={props.letterId}
                             fromName={props.fromName}
+                            submittingText={props.submittingText}
                         />
                     </div>
                 </div>

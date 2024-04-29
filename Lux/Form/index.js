@@ -22,6 +22,7 @@ function Form(props) {
                 title={props.title}
                 text={props.text}
                 buttonText={props.buttonText}
+                submittingText={props.submittingText}
                 en
                 namePlaceholder={props.namePlaceholder}
                 emailPlaceholder={props.emailPlaceholder}

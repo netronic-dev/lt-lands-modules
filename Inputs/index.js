@@ -148,16 +148,17 @@ export function Inputs(props) {
                         window.location.href,
                         queryParams || router.query
                     )
-                        .then(
+                        .then(() => {
+                            formik.resetForm();
                             ReactGA.event("generate_lead", {
                                 category: "form",
                                 action: "submit",
-                            })
-                        )
-                        .then(ReactPixel.track("Lead"))
-                        .then(router.push("/thanks-catalog"))
+                            });
+                            ReactPixel.track("Lead");
+                        })
                         .catch(console.log)
                 )
+                .then(router.push("/thanks-catalog"))
                 .catch(console.log);
         },
     });
@@ -371,7 +372,12 @@ export function Inputs(props) {
                         <FillButton
                             style="blueWhite"
                             submit
-                            text={props.buttonText}
+                            text={
+                                formik.isSubmitting
+                                    ? props.submittingText
+                                    : props.buttonText
+                            }
+                            disabled={formik.isSubmitting}
                         />
                     </form>
                 </div>
@@ -463,16 +469,17 @@ export function InputsWName(props) {
                         window.location.href,
                         queryParams || router.query
                     )
-                        .then(
+                        .then(() => {
+                            formik.resetForm();
                             ReactGA.event("generate_lead", {
                                 category: "form",
                                 action: "submit",
-                            })
-                        )
-                        .then(ReactPixel.track("Lead"))
-                        .then(router.push("/thanks-catalog"))
+                            });
+                            ReactPixel.track("Lead");
+                        })
                         .catch(console.log)
                 )
+                .then(router.push("/thanks-catalog"))
                 .catch(console.log);
         },
     });
@@ -619,7 +626,12 @@ export function InputsWName(props) {
                                     : "blueWhite"
                             }
                             submit
-                            text={props.buttonText}
+                            disabled={formik.isSubmitting}
+                            text={
+                                formik.isSubmitting
+                                    ? props.submittingText
+                                    : props.buttonText
+                            }
                         />
                     </form>
                 </div>

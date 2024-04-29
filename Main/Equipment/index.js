@@ -208,6 +208,7 @@ export default function MainEquipment(props) {
                                 props.contactMethodPlaceholder
                             }
                             planToUsePlaceholder={props.planToUsePlaceholder}
+                            submittingText={props.submittingText}
                         />
                     </div>
                 </div>

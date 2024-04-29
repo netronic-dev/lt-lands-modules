@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useFormik } from "formik";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import ReactPixel from "react-facebook-pixel";
+import ReactGA from "react-ga4";
+import { useSelector } from "react-redux";
 import { FillButton } from "../../lt-modules/Buttons";
 import { postData } from "../../lt-modules/functions/postData";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
-import style from "./style.module.scss";
-import ReactGA from "react-ga4";
 import { searchParams } from "../../store/searchParamsSlice";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
+import style from "./style.module.scss";
 
 export function EventForm(props) {
     const [isThankYouActive, changeThankYouState] = useState(false);
@@ -52,6 +53,7 @@ function Form(props) {
             quantity: "",
             comments: "",
         },
+
         validate,
         onSubmit: (values) => {
             postEventData({
@@ -60,15 +62,17 @@ function Form(props) {
                 modelValue,
                 query: queryParams || router.query,
             })
-                .then(
+                .then(() => {
+                    formik.resetForm();
                     ReactGA.event("generate_lead", {
                         event_category: "button",
                         event_label: "generate_lead",
-                    })
-                )
-                .then(formik.resetForm())
-                .then(window.scroll({ top: 0 }))
-                .then(props.thankYou());
+                    });
+                    ReactPixel.track("Lead");
+                    window.scroll({ top: 0 });
+                    props.thankYou();
+                })
+                .catch(console.log);
         },
     });
 
@@ -246,7 +250,11 @@ function Form(props) {
                 value={formik.values.comments}
                 error={formik.errors.comments}
             />
-            <FillButton submit text="Send" />
+            <FillButton
+                submit
+                text={formik.isSubmitting ? "Sending..." : "Send"}
+                disabled={formik.isSubmitting}
+            />
         </form>
     );
 }
