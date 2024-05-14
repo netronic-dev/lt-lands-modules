@@ -14,6 +14,7 @@ import { useValidation } from "../../../../context/ValidationProvider";
 import { postData } from "../../../../lt-modules/functions/postData.ts";
 import { setUserData } from "../../../../store/actions/userData";
 import { searchParams } from "../../../../store/searchParamsSlice.js";
+import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -68,6 +69,10 @@ export function InputsWName(props) {
                                 action: "submit",
                             });
                             ReactPixel.track("Lead");
+                            sendEventToConversionApi(
+                                window.location.href,
+                                "Lead"
+                            );
                         })
 
                         .catch(console.log)

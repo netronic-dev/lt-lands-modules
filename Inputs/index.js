@@ -19,6 +19,7 @@ import Dropdown from "react-dropdown";
 import ReactPixel from "react-facebook-pixel";
 import { searchParams } from "../../store/searchParamsSlice.js";
 import { useSelector } from "react-redux";
+import { sendEventToConversionApi } from "../../lt-modules/functions/sendFbPageView.js";
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -155,6 +156,10 @@ export function Inputs(props) {
                                 action: "submit",
                             });
                             ReactPixel.track("Lead");
+                            sendEventToConversionApi(
+                                window.location.href,
+                                "Lead"
+                            );
                         })
                         .catch(console.log)
                 )
@@ -475,6 +480,10 @@ export function InputsWName(props) {
                                 action: "submit",
                             });
                             ReactPixel.track("Lead");
+                            sendEventToConversionApi(
+                                window.location.href,
+                                "Lead"
+                            );
                         })
                         .catch(console.log)
                 )

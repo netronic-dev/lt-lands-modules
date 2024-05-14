@@ -10,6 +10,7 @@ import { postData } from "../../lt-modules/functions/postData";
 import { CheckBox, Input } from "../../lt-modules/InputForms/Inputs/Inputs";
 import { searchParams } from "../../store/searchParamsSlice";
 import style from "./style.module.scss";
+import { sendEventToConversionApi } from "../../lt-modules/functions/sendFbPageView";
 
 export function EventForm(props) {
     const [isThankYouActive, changeThankYouState] = useState(false);
@@ -69,6 +70,7 @@ function Form(props) {
                         event_label: "generate_lead",
                     });
                     ReactPixel.track("Lead");
+                    sendEventToConversionApi(window.location.href, "Lead");
                     window.scroll({ top: 0 });
                     props.thankYou();
                 })
