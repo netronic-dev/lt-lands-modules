@@ -62,8 +62,8 @@ export function Inputs(props) {
             errors.email = "Invalid email address";
         }
 
-        if (!values.contactMethod) errors.contactMethod = "Required";
-        if (!values.budget) errors.budget = "Required";
+        // if (!values.contactMethod) errors.contactMethod = "Required";
+        // if (!values.budget) errors.budget = "Required";
 
         return errors;
     };
@@ -113,9 +113,9 @@ export function Inputs(props) {
             phone: false,
             email: "",
             agreement: "",
-            contactMethod: "",
+            // contactMethod: "",
             // planToUse: "",
-            budget: "",
+            // budget: "",
             // comment: "",
         },
         validate,
@@ -293,7 +293,7 @@ export function Inputs(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={style.grid_cell}>
+                                {/* <div className={style.grid_cell}>
                                     <div className={style.input_block_out}>
                                         <Dropdown
                                             className={`Dropdown-black_form  ${
@@ -334,7 +334,7 @@ export function Inputs(props) {
                                             </span>
                                         )}
                                     </div>
-                                    {/* <div className={style.input_block_out}>
+                                    <div className={style.input_block_out}>
                                         <Dropdown
                                             className={`Dropdown-black_form  ${
                                                 formik.errors.planToUse
@@ -364,8 +364,8 @@ export function Inputs(props) {
                                             }
                                             name="comment"
                                         />
-                                    </div> */}
-                                </div>
+                                    </div>
+                                </div> */}
                             </div>
                         </div>
                         <Agreement
