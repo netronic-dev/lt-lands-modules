@@ -20,6 +20,14 @@ import ReactPixel from "react-facebook-pixel";
 import { searchParams } from "../../store/searchParamsSlice.js";
 import { useSelector } from "react-redux";
 import { sendEventToConversionApi } from "../../lt-modules/functions/sendFbPageView.js";
+import { authentication } from "../../firebase-config.js";
+import {
+    signInWithPopup,
+    GoogleAuthProvider,
+    signOut,
+    updateCurrentUser,
+} from "firebase/auth";
+import googleLogo from "../../public/icons/google__logo.png";
 
 const inputsLandTheme = {
     default: style.input_land,
@@ -36,8 +44,29 @@ export function Inputs(props) {
     const [contactMethod, setContactMethod] = useState(null);
     const [planToUse, setPlanToUse] = useState(null);
     const [comment, setComment] = useState(null);
+    const [loggedViaSocials, setLoggedSocials] = useState("");
+
     const modal = useModals();
     const queryParams = useSelector(searchParams);
+
+    const googleAuth = async () => {
+        await signOut(authentication);
+
+        const provider = new GoogleAuthProvider();
+        const { user } = await signInWithPopup(authentication, provider);
+        setLoggedSocials("Google");
+        await formik.setFieldValue("email", user.email);
+        await formik.setFieldValue("name", user.displayName);
+    };
+
+    const clearAuth = async () => {
+        await signOut(authentication);
+        setLoggedSocials("");
+        await formik.setFieldValue("email", "");
+        await formik.setFieldValue("name", "");
+        await formik.setFieldValue("contactMethod", "");
+        setContactMethod(null);
+    };
 
     const validate = (values) => {
         const errors = {};
@@ -100,6 +129,10 @@ export function Inputs(props) {
         setComment(e.target.value);
         formik.setFieldValue("comment", e.target.value);
     };
+
+    const orderName = loggedViaSocials
+        ? `(${loggedViaSocials}) ${props.orderName}`
+        : `(Noauthorization) ${props.orderName}`;
 
     useEffect(() => {
         modal?.region
@@ -173,6 +206,11 @@ export function Inputs(props) {
     const [ref, isVisible] = useInView({
         unobserveOnEnter: true,
     });
+
+    useEffect(() => {
+        if (formik.values.name || formik.values.email || formik.values.phone)
+            formik.validateForm();
+    }, [loggedViaSocials, formik.values]);
 
     useEffect(() => {
         modal?.region
