@@ -28,7 +28,6 @@ import { sendEventToConversionApi } from "../../lt-modules/functions/sendFbPageV
 import { selectOptions } from "../../constants/globalConstants";
 import googleLogo from "../../public/icons/google__logo.png";
 import { schema } from "../../Layouts/validate.js";
-import { dispatch } from "d3";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -196,7 +195,6 @@ export function Inputs(props) {
     : `(Noauthorization) ${props.orderName}`;
 
   const onSubmit = async (values) => {
-    dispatch(setUserData(values.name));
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
@@ -563,7 +561,6 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
-    dispatch(setUserData(values.name));
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
