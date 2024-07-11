@@ -26,6 +26,7 @@ function Form(props) {
                 fromName={props.fromName}
                 namePlaceholder={props.namePlaceholder}
                 callPlaceholder={props.callPlaceholder}
+                budgetPlaceholder={props.budgetPlaceholder}
             />
         </div>
     );

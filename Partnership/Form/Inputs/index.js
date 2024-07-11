@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useGAEvents } from "../../../../context/GAEventsProvider";
 import { useValidation } from "../../../../context/ValidationProvider";
-import { postData } from "../../../../lt-modules/functions/postData.ts";
+import { postData } from "../../../../lt-modules/functions/postData";
 import { setUserData } from "../../../../store/actions/userData";
 import { searchParams } from "../../../../store/searchParamsSlice.js";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
