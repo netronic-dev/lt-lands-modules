@@ -51,6 +51,7 @@ export function InputsWName(props) {
   const queryParams = useSelector(searchParams);
   const [loggedViaSocials, setLoggedSocials] = useState("");
   const [isDesktop, setIsDesktop] = useState(true);
+  const [regionCode, setRegionCode] = useState();
 
   const orderName = loggedViaSocials
     ? `(${loggedViaSocials}) ${props.orderName}`
@@ -59,6 +60,12 @@ export function InputsWName(props) {
   useEffect(() => {
     setIsDesktop(window.innerWidth >= 1200);
   }, [window.innerWidth]);
+
+    useEffect(() => {
+      modal?.region
+        ? setRegionCode(modal?.region.toLowerCase())
+        : setRegionCode("us");
+    }, [modal.region]);
 
   const {
     register,
@@ -270,7 +277,7 @@ export function InputsWName(props) {
                       borderBottomLeftRadius: "8px",
                       height: "60px",
                     }}
-                    country="ua"
+                    country={regionCode}
                     enableSearch
                     excludeCountries={["ru"]}
                     value={value}

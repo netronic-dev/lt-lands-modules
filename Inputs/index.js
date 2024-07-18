@@ -257,12 +257,6 @@ export function Inputs(props) {
     unobserveOnEnter: true,
   });
 
-  useEffect(() => {
-    modal?.region
-      ? setRegionCode(modal?.region.toLowerCase())
-      : setRegionCode("us");
-  }, [modal.region]);
-
   return (
     <div className={style.input_land_out} id="test-drive">
       <div
@@ -385,7 +379,7 @@ export function Inputs(props) {
                             borderStyle: "solid",
                             height: "55px",
                           }}
-                          country="ua"
+                          country={regionCode}
                           enableSearch
                           excludeCountries={["ru"]}
                           value={value}
@@ -711,10 +705,7 @@ export function InputsWName(props) {
         } swipe-right-animation`}
       >
         <div className={style.left}>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="form_submit_land"
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
             <div className={style.content}>
               <h2 className={style.title}>{props.title}</h2>
               <p className={style.text}>{props.text}</p>
@@ -836,7 +827,7 @@ export function InputsWName(props) {
                           borderColor: "red",
                         },
                       }}
-                      country="ua"
+                      country={regionCode}
                       enableSearch
                       excludeCountries={["ru"]}
                       value={value}
