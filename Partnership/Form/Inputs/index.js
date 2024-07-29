@@ -26,6 +26,7 @@ import { setUserData } from "../../../../store/actions/userData";
 import { searchParams } from "../../../../store/searchParamsSlice.js";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
 import { useEffect, useState } from "react";
+import { useModals } from "../../../../context/ModalsProvider.js";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -52,6 +53,7 @@ export function InputsWName(props) {
   const [loggedViaSocials, setLoggedSocials] = useState("");
   const [isDesktop, setIsDesktop] = useState(true);
   const [regionCode, setRegionCode] = useState();
+  const modal = useModals();
 
   const orderName = loggedViaSocials
     ? `(${loggedViaSocials}) ${props.orderName}`
@@ -61,11 +63,11 @@ export function InputsWName(props) {
     setIsDesktop(window.innerWidth >= 1200);
   }, [window.innerWidth]);
 
-    useEffect(() => {
-      modal?.region
-        ? setRegionCode(modal?.region.toLowerCase())
-        : setRegionCode("us");
-    }, [modal.region]);
+  useEffect(() => {
+    modal?.region
+      ? setRegionCode(modal?.region.toLowerCase())
+      : setRegionCode("us");
+  }, [modal.region]);
 
   const {
     register,
