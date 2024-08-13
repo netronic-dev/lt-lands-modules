@@ -8,7 +8,13 @@ import Image from "next/image";
 import { debounce } from "lodash";
 import "react-phone-input-2/lib/style.css";
 import ReactGA from "react-ga4";
-import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signOut,
+  linkWithCredential,
+} from "firebase/auth";
 import { authentication } from "../../../../firebase-config";
 import style from "./style.module.scss";
 import { schema } from "./validate";
@@ -27,6 +33,7 @@ import { searchParams } from "../../../../store/searchParamsSlice.js";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
 import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
+import { Icon } from "../../../../components/Icon";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -113,6 +120,42 @@ export function InputsWName(props) {
       email: user.email,
       name: user.displayName,
     });
+  };
+
+  const facebookAuth = async () => {
+    try {
+      const provider = new FacebookAuthProvider();
+      const { user } = await signInWithPopup(authentication, provider);
+
+      setLoggedSocials("Facebook");
+      reset({
+        email: user.email
+          ? user.email
+          : user.reloadUserInfo.providerUserInfo[0].email,
+        name: user.displayName,
+      });
+    } catch (error) {
+      if (error.code === "auth/popup-blocked") {
+        alert("Please allow pop-ups for this site.");
+      } else if (
+        error.code === "auth/account-exists-with-different-credential"
+      ) {
+        const pendingCred = FacebookAuthProvider.credentialFromError(error);
+        const googleProvider = new GoogleAuthProvider();
+        const googleUser = await signInWithPopup(
+          authentication,
+          googleProvider
+        );
+        const user = await linkWithCredential(googleUser.user, pendingCred);
+        reset({
+          email: user._tokenResponse.email,
+          name: user._tokenResponse.displayName,
+        });
+        setLoggedSocials("Facebook");
+      } else {
+        alert("Try again, please!");
+      }
+    }
   };
 
   const clearAuth = async () => {
@@ -205,6 +248,18 @@ export function InputsWName(props) {
                   />{" "}
                   Authorization via Google
                 </button>
+                <button
+                  className={style.facebook_button}
+                  onClick={facebookAuth}
+                >
+                  <Icon
+                    name="icon-facebook_logo"
+                    className={style.facebook_icon}
+                    width={15}
+                    height={15}
+                  />{" "}
+                  Authorization via Meta (Facebook)
+                </button>
               </>
             )}
           </div>
@@ -257,7 +312,7 @@ export function InputsWName(props) {
                     international
                     inputStyle={{
                       height: "60px",
-                      width: isDesktop ? "476px" : "100%",
+                      width: "100%",
                       boxSizing: "border-box",
                       borderRadius: "8px",
                       borderWidth: "1px",
