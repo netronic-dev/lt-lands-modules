@@ -195,6 +195,14 @@ export function Inputs(props) {
         name: user.displayName,
       });
     } catch (error) {
+      await axios.post(
+        "https://back.netronic.net/telegram/send-error-message",
+        {
+          message: `frontend error: ❌ ${window.location.hostname}: ${
+            error.code ? error.code : error
+          }`,
+        }
+      );
       if (error.code === "auth/popup-blocked") {
         alert("Please allow pop-ups for this site.");
       } else if (
@@ -214,6 +222,12 @@ export function Inputs(props) {
         setLoggedSocials("Facebook");
       } else {
         alert("Try again, please!");
+        await axios.post(
+          "https://back.netronic.net/telegram/send-error-message",
+          {
+            message: `frontend error: ❌ ${window.location.hostname}: Try again, please!`,
+          }
+        );
       }
     }
   };
@@ -596,41 +610,55 @@ export function InputsWName(props) {
     });
   };
 
-    const facebookAuth = async () => {
-      try {
-        const provider = new FacebookAuthProvider();
-        const { user } = await signInWithPopup(authentication, provider);
+  const facebookAuth = async () => {
+    try {
+      const provider = new FacebookAuthProvider();
+      const { user } = await signInWithPopup(authentication, provider);
 
-        setLoggedSocials("Facebook");
-        reset({
-          email: user.email
-            ? user.email
-            : user.reloadUserInfo.providerUserInfo[0].email,
-          name: user.displayName,
-        });
-      } catch (error) {
-        if (error.code === "auth/popup-blocked") {
-          alert("Please allow pop-ups for this site.");
-        } else if (
-          error.code === "auth/account-exists-with-different-credential"
-        ) {
-          const pendingCred = FacebookAuthProvider.credentialFromError(error);
-          const googleProvider = new GoogleAuthProvider();
-          const googleUser = await signInWithPopup(
-            authentication,
-            googleProvider
-          );
-          const user = await linkWithCredential(googleUser.user, pendingCred);
-          reset({
-            email: user._tokenResponse.email,
-            name: user._tokenResponse.displayName,
-          });
-          setLoggedSocials("Facebook");
-        } else {
-          alert("Try again, please!");
+      setLoggedSocials("Facebook");
+      reset({
+        email: user.email
+          ? user.email
+          : user.reloadUserInfo.providerUserInfo[0].email,
+        name: user.displayName,
+      });
+    } catch (error) {
+      await axios.post(
+        "https://back.netronic.net/telegram/send-error-message",
+        {
+          message: `frontend error: ❌ ${window.location.hostname}: ${
+            error.code ? error.code : error
+          }`,
         }
+      );
+      if (error.code === "auth/popup-blocked") {
+        alert("Please allow pop-ups for this site.");
+      } else if (
+        error.code === "auth/account-exists-with-different-credential"
+      ) {
+        const pendingCred = FacebookAuthProvider.credentialFromError(error);
+        const googleProvider = new GoogleAuthProvider();
+        const googleUser = await signInWithPopup(
+          authentication,
+          googleProvider
+        );
+        const user = await linkWithCredential(googleUser.user, pendingCred);
+        reset({
+          email: user._tokenResponse.email,
+          name: user._tokenResponse.displayName,
+        });
+        setLoggedSocials("Facebook");
+      } else {
+        alert("Try again, please!");
+        await axios.post(
+          "https://back.netronic.net/telegram/send-error-message",
+          {
+            message: `frontend error: ❌ ${window.location.hostname}: Try again, please!`,
+          }
+        );
       }
-    };
+    }
+  };
 
   const clearAuth = async () => {
     await signOut(authentication);
