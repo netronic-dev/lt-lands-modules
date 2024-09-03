@@ -190,7 +190,7 @@ export function InputsWName(props) {
 
     const options = {
       method: "POST",
-      url: `https://api.netronic.net/send-email`,
+      url: `https://back.netronic.net/send-email`,
       headers: {
         "content-type": "application/json",
       },
