@@ -1,12 +1,10 @@
-import Image from "next/image"
-import { useInView } from "react-hook-inview"
+import Image from "next/image";
+import { useInView } from "react-hook-inview";
 
 export default function ImagePage(props) {
-  const [ref, isVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
     <div ref={ref} key={isVisible ? "band-rainbow" : "band-rainbow-inview"}>
       <div className="desktop fade-up-animation">
@@ -17,6 +15,7 @@ export default function ImagePage(props) {
           height={1320}
           quality={90}
           priority={true}
+          alt="rainbow band"
         />
       </div>
       <div className="mobile">
@@ -27,8 +26,9 @@ export default function ImagePage(props) {
           height={335}
           quality={90}
           priority={true}
+          alt="rainbow band mobile"
         />
       </div>
     </div>
-  )
+  );
 }

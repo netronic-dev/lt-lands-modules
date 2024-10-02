@@ -1,23 +1,21 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
-import style from "../headband.module.scss"
+import style from "../headband.module.scss";
 
 export default function Collaps(props) {
-  const [ref, isVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
     <>
-      <div className={style.collaps_design_adaptive} ref={ref} key={isVisible ? "band-collaps" : "band-collaps-inview"}>
+      <div
+        className={style.collaps_design_adaptive}
+        ref={ref}
+        key={isVisible ? "band-collaps" : "band-collaps-inview"}
+      >
         <div className={`${style.adaptive__text} fade-up-animation`}>
-          <h2 className={style.h2}>
-            {props.title}
-          </h2>
-          <p className="paragraph">
-            {props.text}
-          </p>
+          <h2 className={style.h2}>{props.title}</h2>
+          <p className="paragraph">{props.text}</p>
         </div>
         <div className={`${style.adaptive__img} fade-animation`}>
           <Image
@@ -26,14 +24,22 @@ export default function Collaps(props) {
             width={992}
             height={505}
             priority={true}
+            alt="collapsibledesign"
           />
         </div>
       </div>
       <div className={style.collaps_design}>
         <div className={`${style.collaps_design_bg} fade-animation`}>
-          <Image src="/bandNetronic/collapsibledesign.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src="/bandNetronic/collapsibledesign.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="collapsibledesign"
+          />
         </div>
-        <section className={`${style.collaps_design_content} fade-up-animation`}>
+        <section
+          className={`${style.collaps_design_content} fade-up-animation`}
+        >
           <h2 className={`${style.collaps_design_title} ${style.h2}`}>
             {props.title}
           </h2>
@@ -43,5 +49,5 @@ export default function Collaps(props) {
         </section>
       </div>
     </>
-  )
+  );
 }

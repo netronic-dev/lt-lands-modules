@@ -1,18 +1,15 @@
-import { useInView } from "react-hook-inview"
-import { VideoButton } from "../../../lt-modules/Buttons"
-import style from "../style.module.scss"
+import { useInView } from "react-hook-inview";
+import { VideoButton } from "../../../lt-modules/Buttons";
+import style from "../style.module.scss";
 
 export default function MCHowWorks(props) {
-
   const [ref, isVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
 
   return (
     <section className={style.how_works} ref={ref} key={isVisible ? 4 : 5}>
-      <h2 className={`${style.title} fade-up-animation`}>
-        {props.title}
-      </h2>
+      <h2 className={`${style.title} fade-up-animation`}>{props.title}</h2>
       <div className={style.grid_out}>
         <div className={style.line}></div>
         <div className={style.grid}>
@@ -34,22 +31,32 @@ export default function MCHowWorks(props) {
         />
       </div>
     </section>
-  )
+  );
 }
 
 function Cell(props) {
-
-  const animationDelay = ((props.number + 1) * 100).toString() + "ms"
+  const animationDelay = ((props.number + 1) * 100).toString() + "ms";
 
   return (
     <div className={style.cell}>
-      <div style={{ animationDelay: animationDelay }} className={`${style.icon} zoom-animation`}>
-        <img src={props.icon} />
+      <div
+        style={{ animationDelay: animationDelay }}
+        className={`${style.icon} zoom-animation`}
+      >
+        <img src={props.icon} alt="Icon" />
       </div>
-      <p style={{ animationDelay: animationDelay }} className={`${style.numbers} fade-up-animation`}>0{props.number}</p>
-      <p style={{ animationDelay: animationDelay }} className={`${style.text} fade-up-animation`}>
+      <p
+        style={{ animationDelay: animationDelay }}
+        className={`${style.numbers} fade-up-animation`}
+      >
+        0{props.number}
+      </p>
+      <p
+        style={{ animationDelay: animationDelay }}
+        className={`${style.text} fade-up-animation`}
+      >
         {props.text}
       </p>
     </div>
-  )
+  );
 }

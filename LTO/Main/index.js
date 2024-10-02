@@ -1,16 +1,13 @@
-import style from "../lto.module.scss"
-import Image from "next/image"
-import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
-import { NetronicGalaxyLogos } from "../../NetronicGalaxyLogos"
-import { useInView } from "react-hook-inview"
+import style from "../lto.module.scss";
+import Image from "next/image";
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
+import { NetronicGalaxyLogos } from "../../NetronicGalaxyLogos";
+import { useInView } from "react-hook-inview";
 
 export default function Main(props) {
-
-  const [ref, cardsIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [ref, cardsIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
     <section className={style.screen}>
@@ -27,6 +24,7 @@ export default function Main(props) {
             quality={90}
             objectFit="contain"
             objectPosition="0% 0%"
+            alt="lasertagOperator"
           />
         </div>
         <div className={`${style.bg_first} mobile`}>
@@ -36,25 +34,27 @@ export default function Main(props) {
             quality={90}
             objectFit="contain"
             objectPosition="0% 0%"
+            alt="lasertagOperator mobile"
           />
         </div>
         <div className={style.inside_general}>
           <div className={`${style.general__phone} fade-up-animation`}>
             <Image
               layout="responsive"
-              src={props.phoneImage ? props.phoneImage : "/lasertagOperator/generalPhone.png"}
+              src={
+                props.phoneImage
+                  ? props.phoneImage
+                  : "/lasertagOperator/generalPhone.png"
+              }
               width={355}
               height={720}
               quality={90}
+              alt="generalPhone"
             />
           </div>
           <div className={`${style.general_content} fade-up-animation`}>
-            <h1>
-              {props.title}
-            </h1>
-            <p className="paragraph">
-              {props.text}
-            </p>
+            <h1>{props.title}</h1>
+            <p className="paragraph">{props.text}</p>
             <div className={style.logoButtons__logo}>
               <NetronicGalaxyLogos />
             </div>
@@ -62,5 +62,5 @@ export default function Main(props) {
         </div>
       </div>
     </section>
-  )
+  );
 }

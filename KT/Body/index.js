@@ -1,29 +1,27 @@
-import style from "../smart.module.scss"
-import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText"
-import { Fade } from "react-awesome-reveal"
-import { useInView } from "react-hook-inview"
-import CountUp from "react-countup"
+import style from "../smart.module.scss";
+import Image from "next/image";
+import { BlockIconText } from "../../BlockIconText";
+import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-hook-inview";
+import CountUp from "react-countup";
 
 export default function KTBody(props) {
   const [firstCardsRef, firstCardsIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   const [bigCardRef, bigCardIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   const [secondCardsRef, secondCardsIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   const [thirdCardsRef, thirdCardsIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   return (
     <div className={style.body_middle}>
       <Fade direction="up" triggerOnce>
-        <h2 className={style.title_center}>
-          {props.title}
-        </h2>
+        <h2 className={style.title_center}>{props.title}</h2>
       </Fade>
       <div
         className={style.cards}
@@ -31,20 +29,12 @@ export default function KTBody(props) {
         key={firstCardsIsVisible ? 0 : 1}
       >
         <div className={`${style.cards__cell} zoom-animation`}>
-          <h3>
-            {props.cellTitle}
-          </h3>
-          <p className="paragraph">
-            {props.cellText}
-          </p>
+          <h3>{props.cellTitle}</h3>
+          <p className="paragraph">{props.cellText}</p>
         </div>
         <div className={`${style.cards__cell} zoom-animation animated-second`}>
-          <h3>
-            {props.cellTitleTwo}
-          </h3>
-          <p className="paragraph">
-            {props.cellTextTwo}
-          </p>
+          <h3>{props.cellTitleTwo}</h3>
+          <p className="paragraph">{props.cellTextTwo}</p>
         </div>
       </div>
       <div
@@ -55,42 +45,54 @@ export default function KTBody(props) {
         <div className={style.middle_card__cells}>
           <div className={style.cell}>
             <p className={style.number}>
-              <CountUp delay={0.7} start={0} end={props.numCellNum} duration={1} />
+              <CountUp
+                delay={0.7}
+                start={0}
+                end={props.numCellNum}
+                duration={1}
+              />
             </p>
             <Fade direction="up" triggerOnce>
-              <p className={style.cell__text}>
-                {props.numCellText}
-              </p>
+              <p className={style.cell__text}>{props.numCellText}</p>
             </Fade>
           </div>
           <div className={style.cell}>
             <p className={style.number}>
-              <CountUp delay={0.7} start={0} end={props.numCellTwoNum} duration={1} />
+              <CountUp
+                delay={0.7}
+                start={0}
+                end={props.numCellTwoNum}
+                duration={1}
+              />
             </p>
             <Fade direction="up" triggerOnce>
-              <p className={style.cell__text}>
-                {props.numCellTwoText}
-              </p>
+              <p className={style.cell__text}>{props.numCellTwoText}</p>
             </Fade>
           </div>
           <div className={style.cell}>
             <p className={style.number}>
-              <CountUp delay={0.7} start={0} end={props.numCellThreeNum} duration={1} />
+              <CountUp
+                delay={0.7}
+                start={0}
+                end={props.numCellThreeNum}
+                duration={1}
+              />
             </p>
             <Fade direction="up" triggerOnce>
-              <p className={style.cell__text}>
-                {props.numCellThreeText}
-              </p>
+              <p className={style.cell__text}>{props.numCellThreeText}</p>
             </Fade>
           </div>
           <div className={style.cell}>
             <p className={style.number}>
-              <CountUp delay={0.7} start={0} end={props.numCellFourNum} duration={1} />
+              <CountUp
+                delay={0.7}
+                start={0}
+                end={props.numCellFourNum}
+                duration={1}
+              />
             </p>
             <Fade direction="up" triggerOnce>
-              <p className={style.cell__text}>
-                {props.numCellFourText}
-              </p>
+              <p className={style.cell__text}>{props.numCellFourText}</p>
             </Fade>
           </div>
         </div>
@@ -101,27 +103,22 @@ export default function KTBody(props) {
               layout="intrinsic"
               width={770}
               height={535}
+              alt="kt-top"
             />
           </Fade>
         </div>
         <div className={style.content}>
           <Fade direction="up" triggerOnce>
-            <h2 className={style.title_center}>
-              {props.bottomTitle}
-            </h2>
+            <h2 className={style.title_center}>{props.bottomTitle}</h2>
           </Fade>
           <Fade direction="up" triggerOnce>
-            <p className="paragraph">
-              {props.bottomtText}
-            </p>
+            <p className="paragraph">{props.bottomtText}</p>
           </Fade>
         </div>
       </div>
       <div className={style.BIT_cards}>
         <Fade direction="up" triggerOnce>
-          <h2 className={style.title_center}>
-            {props.cardsBlockTitle}
-          </h2>
+          <h2 className={style.title_center}>{props.cardsBlockTitle}</h2>
         </Fade>
         <div className={style.BIT_cards_grid}>
           <div
@@ -184,5 +181,5 @@ export default function KTBody(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

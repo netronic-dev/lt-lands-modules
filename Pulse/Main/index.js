@@ -1,21 +1,17 @@
-import style from "../galaxypulse.module.scss"
-import Image from "next/image"
-import { ColumnsSvgText } from "../../../lt-lands-modules/ColumnsSvgText"
-import { Button, VideoButton } from "../../../lt-modules/Buttons"
-import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
-import { useInView } from "react-hook-inview"
+import style from "../galaxypulse.module.scss";
+import Image from "next/image";
+import { ColumnsSvgText } from "../../../lt-lands-modules/ColumnsSvgText";
+import { Button, VideoButton } from "../../../lt-modules/Buttons";
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
+import { useInView } from "react-hook-inview";
 
 export default function PulseMain(props) {
-  const [imageRef, imageIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [titleRef, titleIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [imageRef, imageIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [titleRef, titleIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
     <div className={style.section_general}>
       <div className={style.bgLogo}></div>
@@ -32,23 +28,25 @@ export default function PulseMain(props) {
         key={imageIsVisible ? "main-img-inview" : "main-img"}
       >
         <div className={`${style.vest_img} fade-up-animation`}>
-          <Image objectFit="cover" src="/GalaxyPulse/vestngun.png" layout="responsive" width={1015} height={1205} quality={90} />
+          <Image
+            objectFit="cover"
+            src="/GalaxyPulse/vestngun.png"
+            layout="responsive"
+            width={1015}
+            height={1205}
+            quality={90}
+            alt="vest and gun"
+          />
         </div>
         <div
           className="fade-up-animation"
           ref={titleRef}
           key={titleIsVisible ? "main-title-inview" : "main-title"}
         >
-          <h1>
-            {props.title}
-          </h1>
+          <h1>{props.title}</h1>
           <div className={style.buttons}>
             <div className={style.price_button}>
-              <Button
-                type="catalog"
-                style="pulse"
-                text={props.buttonText}
-              />
+              <Button type="catalog" style="pulse" text={props.buttonText} />
             </div>
             <div className={style.video_button}>
               <VideoButton
@@ -134,5 +132,5 @@ export default function PulseMain(props) {
         />
       </div>
     </div>
-  )
+  );
 }

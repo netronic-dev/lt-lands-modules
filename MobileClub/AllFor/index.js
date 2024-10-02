@@ -56,6 +56,7 @@ export default function MCAllFor(props) {
                 src="/mobileClub/start-bg.png"
                 width={385}
                 height={416}
+                alt="start-bg"
               />
             </animated.div>
           </div>
@@ -71,6 +72,7 @@ export default function MCAllFor(props) {
                   width={307}
                   height={203}
                   priority
+                  alt="start-2"
                 />
               </div>
               <div className={style.cell_text_block}>
@@ -89,6 +91,7 @@ export default function MCAllFor(props) {
                   width={307}
                   height={203}
                   priority
+                  alt="start-3"
                 />
               </div>
               <div className={style.cell_text_block}>
@@ -107,6 +110,7 @@ export default function MCAllFor(props) {
                   width={307}
                   height={203}
                   priority
+                  alt="start-1"
                 />
               </div>
               <div className={style.cell_text_block}>
@@ -125,6 +129,7 @@ export default function MCAllFor(props) {
                   width={307}
                   height={203}
                   priority
+                  alt="start-4-en"
                 />
               </div>
               <div className={style.cell_text_block}>

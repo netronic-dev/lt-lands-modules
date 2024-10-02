@@ -1,21 +1,15 @@
-import style from "../sirius.module.scss"
-import Image from "next/image"
+import style from "../sirius.module.scss";
+import Image from "next/image";
 
 export default function SiriusTitleCards(props) {
   return (
     <>
       <div className={style.newTechnologies}>
-        <p className={style.head_par}>
-          {props.text}
-        </p>
+        <p className={style.head_par}>{props.text}</p>
         <div className={style.cards}>
           <div className={style.cards__text_block}>
-            <h2>
-              {props.title}
-            </h2>
-            <p>
-              {props.textTwo}
-            </p>
+            <h2>{props.title}</h2>
+            <p>{props.textTwo}</p>
           </div>
           <div className={style.cards__image}>
             <Image
@@ -23,6 +17,7 @@ export default function SiriusTitleCards(props) {
               layout="responsive"
               width={775}
               height={515}
+              alt="sirius hand up"
             />
           </div>
         </div>
@@ -33,6 +28,7 @@ export default function SiriusTitleCards(props) {
           layout="responsive"
           width={1920}
           height={825}
+          alt="sirius rainbow"
         />
       </div>
       <div className="mobile">
@@ -41,8 +37,9 @@ export default function SiriusTitleCards(props) {
           layout="responsive"
           width={470}
           height={555}
+          alt="sirius rainbow"
         />
       </div>
     </>
-  )
+  );
 }

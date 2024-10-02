@@ -1,16 +1,12 @@
-import style from "../galaxypulse.module.scss"
-import Image from "next/image"
+import style from "../galaxypulse.module.scss";
+import Image from "next/image";
 
 export default function PulseIndication(props) {
   return (
     <div className={style.light_indication}>
       <section className={style.cards_content}>
-        <h2>
-          {props.title}
-        </h2>
-        <p className="paragraph">
-          {props.text}
-        </p>
+        <h2>{props.title}</h2>
+        <p className="paragraph">{props.text}</p>
       </section>
       <div className={`${style.light_indication_image} desktop`}>
         <Image
@@ -19,6 +15,7 @@ export default function PulseIndication(props) {
           width={1920}
           height={975}
           quality={90}
+          alt="two people with sensors"
         />
       </div>
       <div className={`mobile`}>
@@ -29,8 +26,9 @@ export default function PulseIndication(props) {
           quality={90}
           width={475}
           height={970}
+          alt="two people with sensors"
         />
       </div>
     </div>
-  )
+  );
 }

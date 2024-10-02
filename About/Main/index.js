@@ -1,5 +1,5 @@
-import style from "../about.module.scss"
-import Image from "next/image"
+import style from "../about.module.scss";
+import Image from "next/image";
 
 export default function MainScreen(props) {
   return (
@@ -9,6 +9,7 @@ export default function MainScreen(props) {
           src="/about/main.jpg"
           layout="fill"
           objectFit="cover"
+          alt="main"
         />
       </div>
       <div className={style.content}>
@@ -20,5 +21,5 @@ export default function MainScreen(props) {
         </p>
       </div>
     </div>
-  )
+  );
 }

@@ -1,26 +1,18 @@
-import Image from "next/image"
-import style from "../sirius.module.scss"
+import Image from "next/image";
+import style from "../sirius.module.scss";
 
 export default function SiriusDeactivate(props) {
   return (
     <div className={style.deactivateSirius}>
       <section className={style.section}>
-        <h2>
-          {props.title}
-        </h2>
-        <p className="paragraph">
-          {props.text}
-        </p>
+        <h2>{props.title}</h2>
+        <p className="paragraph">{props.text}</p>
       </section>
       <div className={style.cards}>
         <div className={style.cards__text_block}>
-          <p className="paragraph">
-            {props.cardText}
-          </p>
+          <p className="paragraph">{props.cardText}</p>
           <br />
-          <p className="paragraph">
-            {props.cardTextTwo}
-          </p>
+          <p className="paragraph">{props.cardTextTwo}</p>
         </div>
         <div className={style.cards__image}>
           <Image
@@ -28,9 +20,10 @@ export default function SiriusDeactivate(props) {
             layout="fill"
             objectFit="cover"
             objectPosition="0% 100%"
+            alt="sirius target"
           />
         </div>
       </div>
     </div>
-  )
+  );
 }

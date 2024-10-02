@@ -1,14 +1,11 @@
-import style from "../lto.module.scss"
-import Image from "next/image"
-import { useInView } from "react-hook-inview"
+import style from "../lto.module.scss";
+import Image from "next/image";
+import { useInView } from "react-hook-inview";
 
 export default function Images(props) {
-
-  const [ref, IsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [ref, IsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
     <section className={style.screen}>
@@ -23,6 +20,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
+            alt="first image"
           />
         </div>
         <div className={style.phones_second}>
@@ -31,6 +29,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
+            alt="second image"
           />
         </div>
         <div className={style.phones_third}>
@@ -39,6 +38,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
+            alt="lastScreenGeneral"
           />
         </div>
         <div className={style.phones_fours}>
@@ -47,6 +47,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
+            alt="lastScreen3"
           />
         </div>
         <div className={style.phones_fives}>
@@ -55,9 +56,10 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
+            alt="lastScreen4"
           />
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -15,6 +15,7 @@ export default function KTMain(props) {
               layout="fill"
               objectFit="contain"
               objectPosition="0 0"
+              alt="two falcons"
             />
           </Fade>
         </div>

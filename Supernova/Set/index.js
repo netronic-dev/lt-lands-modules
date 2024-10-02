@@ -10,7 +10,7 @@ export default function SupernovaSet(props) {
   })
 
   return (
-    <section className={style.set} >
+    <section className={style.set}>
       <div className="background">
         <Image
           src="/supernova/bomb-set.jpg"
@@ -18,6 +18,7 @@ export default function SupernovaSet(props) {
           priority={true}
           quality={90}
           objectFit="cover"
+          alt="set"
         />
       </div>
       <div className={style.content}>
@@ -25,41 +26,45 @@ export default function SupernovaSet(props) {
           <Fade triggerOnce>
             <div className={style.logo}>
               {logo}
-              <span className={style.logo__text}>
-                Supernova
-            </span>
+              <span className={style.logo__text}>Supernova</span>
             </div>
           </Fade>
           <Fade triggerOnce>
-            <h2 className={style.title}>
-              {props.title}
-            </h2>
+            <h2 className={style.title}>{props.title}</h2>
           </Fade>
-          <div className={`${style.cell} ${isVisible ? "zoom-animation" : null}`}>
+          <div
+            className={`${style.cell} ${isVisible ? "zoom-animation" : null}`}
+          >
             <img
               className={style.cell__image}
               src="/supernova/vector/bomb-1.svg"
               alt={props.cell1Title}
             />
-            <h3 className={style.cell__title}>
-              {props.cell1Title}
-            </h3>
-            <p className={style.cell__text}>
-              {props.cell1Text}
-            </p>
+            <h3 className={style.cell__title}>{props.cell1Title}</h3>
+            <p className={style.cell__text}>{props.cell1Text}</p>
           </div>
-          <div className={`${style.cell} ${isVisible ? "zoom-animation animated-second" : null}`}>
-            <img className={style.cell__image} src="/supernova/vector/bomb-2.svg" alt={props.cell2Title} />
-            <h3 className={style.cell__title}>
-              {props.cell2Title}
-            </h3>
+          <div
+            className={`${style.cell} ${
+              isVisible ? "zoom-animation animated-second" : null
+            }`}
+          >
+            <img
+              className={style.cell__image}
+              src="/supernova/vector/bomb-2.svg"
+              alt={props.cell2Title}
+            />
+            <h3 className={style.cell__title}>{props.cell2Title}</h3>
             <p className={style.cell__text} ref={ref}>
               {props.cell2Text}
             </p>
           </div>
         </div>
         <div className={style.column}>
-          <div className={`${style.set_image_1} ${isVisible ? style.set_image_active : null}`}>
+          <div
+            className={`${style.set_image_1} ${
+              isVisible ? style.set_image_active : null
+            }`}
+          >
             <Image
               src="/supernova/bomb-set.png"
               layout="responsive"
@@ -76,14 +81,14 @@ export default function SupernovaSet(props) {
               width={950}
               height={672}
               priority={true}
+              alt="bomb-set bottom"
             />
           </div>
         </div>
       </div>
-      <div className={style.bottom_white}>
-      </div>
-    </section >
-  )
+      <div className={style.bottom_white}></div>
+    </section>
+  );
 }
 
 const logo = (

@@ -1,97 +1,96 @@
-import Image from "next/image"
-import { useState } from "react"
-import { useInView } from "react-hook-inview"
-import style from "../lux.module.scss"
+import Image from "next/image";
+import { useState } from "react";
+import { useInView } from "react-hook-inview";
+import style from "../lux.module.scss";
 
 export default function Tagers(props) {
+  const firstPicActive = "/lux/lux-tagers-4.png";
+  const secondPicActive = "/lux/lux-tagers-2.png";
+  const thirdPicActive = "/lux/lux-tagers-1.png";
+  const fourthPicActive = "/lux/lux-tagers-3.png";
 
-  const firstPicActive = "/lux/lux-tagers-4.png"
-  const secondPicActive = "/lux/lux-tagers-2.png"
-  const thirdPicActive = "/lux/lux-tagers-1.png"
-  const fourthPicActive = "/lux/lux-tagers-3.png"
+  const firstPic = "/lux/lux-tagers-dark.png";
+  const secondPic = "/lux/lux-tagers-2-dark.png";
+  const thirdPic = "/lux/lux-tagers-1-dark.png";
+  const fourthPic = "/lux/lux-tagers-dark.png";
 
-  const firstPic = "/lux/lux-tagers-dark.png"
-  const secondPic = "/lux/lux-tagers-2-dark.png"
-  const thirdPic = "/lux/lux-tagers-1-dark.png"
-  const fourthPic = "/lux/lux-tagers-dark.png"
-
-  const [firstImgActive, changeFirstImg] = useState(false)
-  const [secondImgActive, changeSecondImg] = useState(false)
-  const [thirdImgActive, changeThirdImg] = useState(false)
-  const [fourthImgActive, changeFourthImg] = useState(false)
+  const [firstImgActive, changeFirstImg] = useState(false);
+  const [secondImgActive, changeSecondImg] = useState(false);
+  const [thirdImgActive, changeThirdImg] = useState(false);
+  const [fourthImgActive, changeFourthImg] = useState(false);
   function lightOff() {
-    changeFirstImg(false)
-    changeSecondImg(false)
-    changeThirdImg(false)
-    changeFourthImg(false)
+    changeFirstImg(false);
+    changeSecondImg(false);
+    changeThirdImg(false);
+    changeFourthImg(false);
   }
   function lightning() {
     setTimeout(() => {
-      changeFirstImg(true)
+      changeFirstImg(true);
     }, 500);
     setTimeout(() => {
-      changeFirstImg(false)
+      changeFirstImg(false);
     }, 700);
     setTimeout(() => {
-      changeSecondImg(true)
+      changeSecondImg(true);
     }, 900);
     setTimeout(() => {
-      changeSecondImg(false)
+      changeSecondImg(false);
     }, 1100);
     setTimeout(() => {
-      changeThirdImg(true)
+      changeThirdImg(true);
     }, 1300);
     setTimeout(() => {
-      changeThirdImg(false)
+      changeThirdImg(false);
     }, 1500);
     setTimeout(() => {
-      changeFourthImg(true)
+      changeFourthImg(true);
     }, 1700);
     setTimeout(() => {
-      changeFourthImg(false)
+      changeFourthImg(false);
     }, 1900);
     setTimeout(() => {
-      changeFirstImg(true)
-      changeSecondImg(true)
-      changeThirdImg(true)
-      changeFourthImg(true)
+      changeFirstImg(true);
+      changeSecondImg(true);
+      changeThirdImg(true);
+      changeFourthImg(true);
     }, 2100);
     setTimeout(() => {
-      changeFirstImg(false)
-      changeSecondImg(false)
-      changeThirdImg(false)
-      changeFourthImg(false)
+      changeFirstImg(false);
+      changeSecondImg(false);
+      changeThirdImg(false);
+      changeFourthImg(false);
     }, 2300);
     setTimeout(() => {
-      changeFirstImg(true)
-      changeSecondImg(true)
-      changeThirdImg(true)
-      changeFourthImg(true)
+      changeFirstImg(true);
+      changeSecondImg(true);
+      changeThirdImg(true);
+      changeFourthImg(true);
     }, 2500);
   }
 
   const [ref, isVisible] = useInView({
-    onEnter: () => { lightning() },
-    unobserveOnEnter: true
-  })
+    onEnter: () => {
+      lightning();
+    },
+    unobserveOnEnter: true,
+  });
 
   return (
     <section className={style.tagers}>
       <div className={style.content}>
-        <h2 className={style.title}>
-          {props.title}
-        </h2>
-        <p className={style.text}>
-          {props.text}
-        </p>
+        <h2 className={style.title}>{props.title}</h2>
+        <p className={style.text}>{props.text}</p>
       </div>
       <div className={style.images_grid}>
         <div className={style.cell}>
           <div className={style.image}>
             <Image
               src={firstPic}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
           <div
@@ -100,8 +99,10 @@ export default function Tagers(props) {
           >
             <Image
               src={firstPicActive}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
         </div>
@@ -109,8 +110,10 @@ export default function Tagers(props) {
           <div className={style.image}>
             <Image
               src={secondPic}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
           <div
@@ -119,8 +122,10 @@ export default function Tagers(props) {
           >
             <Image
               src={secondPicActive}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
         </div>
@@ -128,8 +133,10 @@ export default function Tagers(props) {
           <div className={style.image}>
             <Image
               src={thirdPic}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
           <div
@@ -138,8 +145,10 @@ export default function Tagers(props) {
           >
             <Image
               src={thirdPicActive}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
         </div>
@@ -147,8 +156,10 @@ export default function Tagers(props) {
           <div className={style.image}>
             <Image
               src={fourthPic}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
           <div
@@ -157,12 +168,14 @@ export default function Tagers(props) {
           >
             <Image
               src={fourthPicActive}
-              layout="fill" objectFit="contain"
+              layout="fill"
+              objectFit="contain"
               priority={true}
+              alt="Tagers image"
             />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,43 +1,31 @@
-import style from "./style.module.scss"
-import Image from "next/image"
-import Link from "next/link"
+import style from "./style.module.scss";
+import Image from "next/image";
+import Link from "next/link";
 import { nanoid } from "nanoid";
 import { useInView } from "react-hook-inview";
 
 export default function Section(props) {
-
-  const [ref, isVisible] = useInView(
-    {
-      unobserveOnEnter: true,
-    }
-  )
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
-    <section
-      className={style.section}
-    >
+    <section className={style.section}>
       <div
         className={style.wrapper}
         ref={ref}
         key={isVisible ? "products-title-inview" : "products-title"}
       >
-        <h2 className={`${style.title} fade-up-animation`}>
-          {props.title}
-        </h2>
-        <p className={`${style.text} fade-up-animation`}>
-          {props.text}
-        </p>
+        <h2 className={`${style.title} fade-up-animation`}>{props.title}</h2>
+        <p className={`${style.text} fade-up-animation`}>{props.text}</p>
       </div>
       <div className={style.cells_content}>
-        {props.data ? props.data.map((item) => (
-          <CellsBlock
-            key={nanoid()}
-            title={item.title}
-            data={item.items}
-          />
-        )) : ""}
+        {props.data
+          ? props.data.map((item) => (
+              <CellsBlock key={nanoid()} title={item.title} data={item.items} />
+            ))
+          : ""}
       </div>
-
     </section>
   );
 }
@@ -46,54 +34,56 @@ function CellsBlock(props) {
     <div className={style.cells_block}>
       <div className={style.wrapper}>
         <h3 className={style.cells_block__title}>
-          {props.title}{arrow}
+          {props.title}
+          {arrow}
         </h3>
         <div className={style.grid}>
-          {props.data.map((item, index) => (
-            item.empty ?
-              <div className={style.empty_cell} key={nanoid()} /> :
+          {props.data.map((item, index) =>
+            item.empty ? (
+              <div className={style.empty_cell} key={nanoid()} />
+            ) : (
               <Cell
                 key={nanoid()}
                 text={item.text}
                 image={item.image}
                 index={index}
               />
-          ))}
+            )
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function Cell(props) {
-
-  const [ref, isVisible] = useInView(
-    {
-      unobserveOnEnter: true,
-    }
-  )
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
     <div
       className={`${style.cell} fade-up-animation`}
-      style={{ animationDuration: (props.index * 2) * 100 + 400 + "ms" }}
+      style={{ animationDuration: props.index * 2 * 100 + 400 + "ms" }}
       ref={ref}
       key={isVisible ? "cell-inview" : "cell"}
     >
-      <p className={style.cell__text}>
-        {props.text}
-      </p>
-      {props.image ?
+      <p className={style.cell__text}>{props.text}</p>
+      {props.image ? (
         <div className={style.cell__image}>
           <Image
             src={props.image}
             layout="fill"
             objectFit="cover"
             objectPosition={props.objectPosition}
+            alt="image"
           />
-        </div> : ""}
-    </div >
-  )
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
 }
 const arrow = (
   <svg
@@ -108,5 +98,4 @@ const arrow = (
       fill="#0090FF"
     />
   </svg>
-
-)
+);

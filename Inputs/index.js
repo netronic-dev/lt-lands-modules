@@ -198,9 +198,9 @@ export function Inputs(props) {
       await axios.post(
         "https://back.netronic.net/telegram/send-error-message",
         {
-          message: `frontend error: facebookAuth ❌ ${window.location.hostname}: ${
-            error.code ? error.code : error
-          }`,
+          message: `frontend error: facebookAuth ❌ ${
+            window.location.hostname
+          }: ${error.code ? error.code : error}`,
         }
       );
       if (error.code === "auth/popup-blocked") {
@@ -401,7 +401,7 @@ export function Inputs(props) {
                       style={{
                         borderColor: errors.name ? "#d22e2e" : "#000",
                       }}
-                      $error={errors.name ? "true" : "false"}
+                      error={errors.name ? "true" : "false"}
                       {...register("name", {
                         required: "Name is required",
                       })}
@@ -477,7 +477,7 @@ export function Inputs(props) {
                       style={{
                         borderColor: errors.email ? "#d22e2e" : "#000",
                       }}
-                      $error={errors.email ? "true" : "false"}
+                      error={errors.email ? "true" : "false"}
                       {...register("email")}
                       placeholder={
                         props.emailPlaceholder
@@ -543,6 +543,7 @@ export function Inputs(props) {
             objectFit={props.objectFit || "contain"}
             priority={true}
             quality={90}
+            alt="catalogs"
           />
         </div>
       </div>
@@ -906,7 +907,7 @@ export function InputsWName(props) {
                   style={{
                     borderColor: errors.name ? "#d22e2e" : "transparent",
                   }}
-                  $error={errors.name ? "true" : "false"}
+                  error={errors.name ? "true" : "false"}
                   {...register("name", {
                     required: "Name is required",
                   })}
@@ -984,7 +985,7 @@ export function InputsWName(props) {
                   style={{
                     borderColor: errors.email ? "#d22e2e" : "transparent",
                   }}
-                  $error={errors.email ? "true" : "false"}
+                  error={errors.email ? "true" : "false"}
                   {...register("email")}
                   placeholder={
                     props.emailPlaceholder ? props.emailPlaceholder : "Email*"
@@ -998,6 +999,7 @@ export function InputsWName(props) {
                   name="budget"
                   render={({ field }) => (
                     <Select
+                      aria-label="Change budget"
                       {...field}
                       placeholder={
                         props.budgetPlaceholder
@@ -1050,6 +1052,7 @@ export function InputsWName(props) {
             objectFit={props.objectFit || "contain"}
             quality={90}
             priority={true}
+            alt="image"
           />
         </div>
       </div>

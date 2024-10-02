@@ -1,34 +1,24 @@
-import style from "../lto.module.scss"
-import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText"
-import { useInView } from "react-hook-inview"
+import style from "../lto.module.scss";
+import Image from "next/image";
+import { BlockIconText } from "../../BlockIconText";
+import { useInView } from "react-hook-inview";
 
 export default function ThirdCards(props) {
-  const [titleRef, titleIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [card1Ref, card1IsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [card2Ref, card2IsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [card3Ref, card3IsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [card4Ref, card4IsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [titleRef, titleIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [card1Ref, card1IsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [card2Ref, card2IsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [card3Ref, card3IsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [card4Ref, card4IsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
     <div className={style.screen}>
       <h2
@@ -46,114 +36,173 @@ export default function ThirdCards(props) {
         >
           <section>
             <h3>{props.cardTitle}</h3>
-            <p className="paragraph">
-              {props.cardText}
-            </p>
+            <p className="paragraph">{props.cardText}</p>
           </section>
         </div>
-        <div className={`${style.card} zoom-animation animated-second`} ref={card2Ref} key={card2IsVisible ? "cards-3-card-2-inview" : "cards-3-card-2"}>
+        <div
+          className={`${style.card} zoom-animation animated-second`}
+          ref={card2Ref}
+          key={card2IsVisible ? "cards-3-card-2-inview" : "cards-3-card-2"}
+        >
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-1.svg" alt={props.characterName} />
+              <img
+                src="/lasertagOperator/svg/char-1.svg"
+                alt={props.characterName}
+              />
             </div>
             <p>{props.characterName}</p>
           </div>
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-2.svg" alt={props.characterTwoName} />
+              <img
+                src="/lasertagOperator/svg/char-2.svg"
+                alt={props.characterTwoName}
+              />
             </div>
             <p>{props.characterTwoName}</p>
           </div>
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-3.svg" alt={props.characterThreeName} />
+              <img
+                src="/lasertagOperator/svg/char-3.svg"
+                alt={props.characterThreeName}
+              />
             </div>
             <p>{props.characterThreeName}</p>
           </div>
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-4.svg" alt={props.characterFourName} />
+              <img
+                src="/lasertagOperator/svg/char-4.svg"
+                alt={props.characterFourName}
+              />
             </div>
             <p>{props.characterFourName}</p>
           </div>
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-5.svg" alt={props.characterFiveName} />
+              <img
+                src="/lasertagOperator/svg/char-5.svg"
+                alt={props.characterFiveName}
+              />
             </div>
             <p>{props.characterFiveName}</p>
           </div>
           <div>
             <div className={style.grid_ready_chars__img}>
-              <img src="/lasertagOperator/svg/char-6.svg" alt={props.characterSixName} />
+              <img
+                src="/lasertagOperator/svg/char-6.svg"
+                alt={props.characterSixName}
+              />
             </div>
             <p>{props.characterSixName}</p>
           </div>
         </div>
       </div>
       <div className={style.ready_chars}>
-        <div className={`${style.card_left} zoom-animation`} ref={card3Ref} key={card3IsVisible ? "cards-3-card-3-inview" : "cards-3-card-3"}>
+        <div
+          className={`${style.card_left} zoom-animation`}
+          ref={card3Ref}
+          key={card3IsVisible ? "cards-3-card-3-inview" : "cards-3-card-3"}
+        >
           <section>
             <h3>{props.cardTwoTitle}</h3>
-            <p className="paragraph">
-              {props.cardTwoText}
-            </p>
+            <p className="paragraph">{props.cardTwoText}</p>
           </section>
           <div className={style.ready_chars_bit_grid}>
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-1.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-1.svg"
+                  alt="char-constr-1"
+                />
+              }
               title={props.cellTitle}
               text={props.cellText}
             />
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-2.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-2.svg"
+                  alt="char-constr-2"
+                />
+              }
               title={props.cellTwoTitle}
               text={props.cellTwoText}
             />
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-3.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-3.svg"
+                  alt="char-constr-3"
+                />
+              }
               title={props.cellThreeTitle}
               text={props.cellThreeText}
             />
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-4.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-4.svg"
+                  alt="char-constr-4"
+                />
+              }
               title={props.cellFourTitle}
               text={props.cellFourText}
             />
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-6.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-6.svg"
+                  alt="char-constr-6"
+                />
+              }
               title={props.cellFiveTitle}
               text={props.cellFiveText}
             />
             <BlockIconText
               style="ltoBlack"
-              icon={<img src="/lasertagOperator/svg/char-constr-5.svg" />}
+              icon={
+                <img
+                  src="/lasertagOperator/svg/char-constr-5.svg"
+                  alt="char-constr-5"
+                />
+              }
               title={props.cellSixTitle}
               text={props.cellSixText}
             />
           </div>
         </div>
-        <div className={`${style.card} zoom-animation animated-second`} ref={card4Ref} key={card4IsVisible ? "cards-3-card-4-inview" : "cards-3-card-4"}>
+        <div
+          className={`${style.card} zoom-animation animated-second`}
+          ref={card4Ref}
+          key={card4IsVisible ? "cards-3-card-4-inview" : "cards-3-card-4"}
+        >
           <section>
             <h3>{props.cardThreeTitle}</h3>
-            <p className="paragraph">
-              {props.cardThreeText}
-            </p>
+            <p className="paragraph">{props.cardThreeText}</p>
           </section>
           <div className={style.ready_chars__img_long}>
             <Image
-              src={props.firstImage ? props.firstImage : "/lasertagOperator/accessToolbar.png"}
+              src={
+                props.firstImage
+                  ? props.firstImage
+                  : "/lasertagOperator/accessToolbar.png"
+              }
               layout="responsive"
               width={310}
               height={620}
+              alt="accessToolbar"
             />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

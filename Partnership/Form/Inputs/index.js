@@ -307,7 +307,7 @@ export function InputsWName(props) {
                 style={{
                   borderColor: errors.name ? "#d22e2e" : "#000",
                 }}
-                $error={errors.name ? "true" : "false"}
+                error={errors.name ? "true" : "false"}
                 {...register("name", {
                   required: "Name is required",
                 })}
@@ -378,7 +378,7 @@ export function InputsWName(props) {
                 style={{
                   borderColor: errors.email ? "#d22e2e" : "#000",
                 }}
-                $error={errors.email ? "true" : "false"}
+                error={errors.email ? "true" : "false"}
                 {...register("email")}
                 placeholder={props.placeholder || "Email*"}
               />

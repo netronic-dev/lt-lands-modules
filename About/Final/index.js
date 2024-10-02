@@ -13,6 +13,7 @@ export default function AboutFinal(props) {
               layout="responsive"
               width={780}
               height={575}
+              alt="final"
             />
           </Fade>
         </div>

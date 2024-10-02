@@ -1,5 +1,5 @@
 import Image from "next/image";
-import style from "../lux.module.scss"
+import style from "../lux.module.scss";
 
 export default function Features(props) {
   return (
@@ -12,6 +12,7 @@ export default function Features(props) {
           objectPosition="0% 0%"
           quality={90}
           priority={true}
+          alt="lux bright colors"
         />
       </div>
       <div className="background mobile">
@@ -22,6 +23,7 @@ export default function Features(props) {
           objectPosition="40% 0%"
           quality={90}
           priority={true}
+          alt="lux bright colors"
         />
       </div>
       <div className={style.content}>
@@ -29,19 +31,13 @@ export default function Features(props) {
           <h2 className={`${style.title} ${style.bright_title}`}>
             {props.title}
           </h2>
-          <p className={style.text}>
-            {props.text}
-          </p>
+          <p className={style.text}>{props.text}</p>
         </div>
         <div className={style.impulse_recoil_content}>
-          <h2 className={style.title}>
-            {props.recoilTitle}
-          </h2>
-          <p className={style.text}>
-            {props.recoilText}
-          </p>
+          <h2 className={style.title}>{props.recoilTitle}</h2>
+          <p className={style.text}>{props.recoilText}</p>
         </div>
       </div>
     </section>
-  )
+  );
 }

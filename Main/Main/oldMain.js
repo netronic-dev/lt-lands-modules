@@ -1,18 +1,18 @@
-import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
-import { FillButton, Button } from "../../../lt-modules/Buttons"
-import style from "../main.module.scss"
-import Link from "next/link"
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
+import { FillButton, Button } from "../../../lt-modules/Buttons";
+import style from "../main.module.scss";
+import Link from "next/link";
 
 const contentTheme = {
-  "light": style.content_light,
-  "dark": style.content_dark
-}
+  light: style.content_light,
+  dark: style.content_dark,
+};
 
 export default function Main(props) {
   return (
     <section className={style.main}>
-      {props.image ?
+      {props.image ? (
         <div className="background desktop">
           <Image
             src={props.image}
@@ -21,9 +21,13 @@ export default function Main(props) {
             objectPosition={props.image_objectPosition}
             quality={90}
             priority={true}
+            alt="image"
           />
-        </div> : ""}
-      {props.image_responsive ?
+        </div>
+      ) : (
+        ""
+      )}
+      {props.image_responsive ? (
         <div className="background mobile">
           <Image
             src={props.image_responsive}
@@ -32,30 +36,31 @@ export default function Main(props) {
             objectPosition={props.image_responsive_objectPosition}
             quality={90}
             priority={true}
+            alt="image"
           />
-        </div> : ""}
+        </div>
+      ) : (
+        ""
+      )}
       <div className={style.content}>
         <Fade direction="left" delay={800} triggerOnce>
           <h1 className={style.title} style={{ whiteSpace: "pre-line" }}>
             {props.title}
           </h1>
-          <p className={style.text}>
-            {props.text}
-          </p>
+          <p className={style.text}>{props.text}</p>
         </Fade>
         <div className={style.buttons}>
           <Fade delay={1200} triggerOnce>
             <div>
-              <Button
-                type="catalog"
-                text={props.buttonText}
-              />
+              <Button type="catalog" text={props.buttonText} />
             </div>
           </Fade>
-          {props.eventButtonLink ?
+          {props.eventButtonLink ? (
             <Fade delay={1500} triggerOnce>
               <div>
-                <Link href={props.eventButtonLink ? props.eventButtonLink : "/"}>
+                <Link
+                  href={props.eventButtonLink ? props.eventButtonLink : "/"}
+                >
                   <a>
                     <FillButton
                       className={style.event_button}
@@ -65,18 +70,24 @@ export default function Main(props) {
                   </a>
                 </Link>
               </div>
-            </Fade> : ""}
+            </Fade>
+          ) : (
+            ""
+          )}
         </div>
-        {props.logo ?
+        {props.logo ? (
           <div className={style.logo}>
             <Image
               src={props.logo}
               layout="fill"
               objectFit="contain"
+              alt="logo"
             />
           </div>
-          : ""}
+        ) : (
+          ""
+        )}
       </div>
     </section>
-  )
+  );
 }

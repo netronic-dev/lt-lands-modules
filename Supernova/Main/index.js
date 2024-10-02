@@ -16,6 +16,7 @@ export default function SupernovaMain() {
                             objectFit='cover'
                             priority={true}
                             quality={90}
+                            alt='supernova-main'
                         />
                     </div>
                     <div className='background mobile'>
@@ -25,6 +26,7 @@ export default function SupernovaMain() {
                             objectFit='cover'
                             priority={true}
                             quality={90}
+                            alt='main mob'
                         />
                     </div>
                 </Fade>

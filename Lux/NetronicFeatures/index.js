@@ -1,5 +1,5 @@
-import Image from "next/image"
-import style from "../lux.module.scss"
+import Image from "next/image";
+import style from "../lux.module.scss";
 
 export default function NetronicFeatures(props) {
   return (
@@ -12,6 +12,7 @@ export default function NetronicFeatures(props) {
           height={500}
           quality={90}
           priority={true}
+          alt="netronic-en"
         />
       </div>
       <div className={`${style.lux_netronic_body} desktop`}>
@@ -22,6 +23,7 @@ export default function NetronicFeatures(props) {
           height={830}
           quality={90}
           priority={true}
+          alt="netronic-features-en"
         />
       </div>
       <div className={`${style.lux_netronic_body} mobile`}>
@@ -32,8 +34,9 @@ export default function NetronicFeatures(props) {
           height={732}
           quality={90}
           priority={true}
+          alt="netronic-features-mob-en"
         />
       </div>
     </section>
-  )
+  );
 }

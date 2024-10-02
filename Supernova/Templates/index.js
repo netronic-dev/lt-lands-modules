@@ -1,29 +1,28 @@
-import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
-import { useInView } from "react-hook-inview"
-import style from "../style.module.scss"
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-hook-inview";
+import style from "../style.module.scss";
 
 export default function SupernovaTemplates(props) {
-
   const [ref, isVisible] = useInView({
     unobserveOnEnter: true,
-  })
+  });
 
   return (
     <section className={style.templates}>
       <div className="background">
-        <Image src="/supernova/bomb-set.jpg" layout="fill" priority={true} />
+        <Image
+          src="/supernova/bomb-set.jpg"
+          layout="fill"
+          priority={true}
+          alt="bomb-set"
+        />
       </div>
-      <div className={style.bottom_white}>
-      </div>
+      <div className={style.bottom_white}></div>
       <div className={style.text_block}>
         <Fade direction="up" triggerOnce>
-          <h2 className={style.title}>
-            {props.title}
-          </h2>
-          <p className={style.text}>
-            {props.text}
-          </p>
+          <h2 className={style.title}>{props.title}</h2>
+          <p className={style.text}>{props.text}</p>
         </Fade>
       </div>
       <div className={style.grid} ref={ref} key={isVisible ? 1 : 0}>
@@ -35,6 +34,7 @@ export default function SupernovaTemplates(props) {
           height={756}
           priority={true}
           quality={90}
+          alt="scenarios-en-1"
         />
         <Image
           src="/supernova/scenarios-en-3.png"
@@ -44,6 +44,7 @@ export default function SupernovaTemplates(props) {
           height={756}
           priority={true}
           quality={90}
+          alt="scenarios-en-3"
         />
         <Image
           src="/supernova/scenarios-en-2.png"
@@ -53,8 +54,9 @@ export default function SupernovaTemplates(props) {
           height={756}
           priority={true}
           quality={90}
+          alt="scenarios-en-2"
         />
       </div>
-    </section >
-  )
+    </section>
+  );
 }

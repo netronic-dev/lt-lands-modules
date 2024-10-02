@@ -1,34 +1,29 @@
-import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText"
-import style from "../sirius.module.scss"
+import Image from "next/image";
+import { BlockIconText } from "../../BlockIconText";
+import style from "../sirius.module.scss";
 
 export default function SiriusWaterProtection(props) {
   return (
     <>
       <div className={style.waterProtection}>
-        <h2>
-          {props.title}
-        </h2>
+        <h2>{props.title}</h2>
         <Image
           src="/sirius/sirius-water.jpg"
           layout="responsive"
           width={1920}
           height={910}
+          alt="sirius water"
         />
       </div>
       <div className={style.block_half_outside}>
         <div className={style.block_half}>
           <div>
             <h3>{props.cellTitle}</h3>
-            <p className="paragraph">
-              {props.cellText}
-            </p>
+            <p className="paragraph">{props.cellText}</p>
           </div>
           <div>
             <h3>{props.cellTwoTitle}</h3>
-            <p className="paragraph">
-              {props.cellTwoText}
-            </p>
+            <p className="paragraph">{props.cellTwoText}</p>
           </div>
         </div>
       </div>
@@ -39,15 +34,14 @@ export default function SiriusWaterProtection(props) {
             layout="responsive"
             width={1240}
             height={790}
+            alt="sirius charge"
           />
         </div>
         <div className={style.columns}>
           <div className={style.cell}>
             <BlockIconText
               icon={
-                <img
-                  src="/sirius/battery-charge.svg"
-                />
+                <img src="/sirius/battery-charge.svg" alt="battery-charge" />
               }
               title={props.bitTitle}
               text={props.bitText}
@@ -56,9 +50,7 @@ export default function SiriusWaterProtection(props) {
           </div>
           <div className={style.cell}>
             <BlockIconText
-              icon={
-                <img src="/sirius/phone.svg" />
-              }
+              icon={<img src="/sirius/phone.svg" alt="phone" />}
               title={props.bitTwoTitle}
               text={props.bitTwoText}
               style="45"
@@ -67,5 +59,5 @@ export default function SiriusWaterProtection(props) {
         </div>
       </div>
     </>
-  )
+  );
 }

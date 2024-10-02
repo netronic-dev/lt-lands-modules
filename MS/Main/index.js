@@ -1,17 +1,17 @@
-import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
-import { useInView } from "react-hook-inview"
-import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
-import { Button, VideoButton } from "../../../lt-modules/Buttons"
-import style from "../ms.module.scss"
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-hook-inview";
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
+import { Button, VideoButton } from "../../../lt-modules/Buttons";
+import style from "../ms.module.scss";
 
 export default function MSMain(props) {
   const [ref, isVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   return (
     <>
-      <div className={style.section_general} >
+      <div className={style.section_general}>
         <h1 className="hidden">{props.hiddenTitle}</h1>
         <div className="background_image">
           <Fade triggerOnce>
@@ -19,12 +19,17 @@ export default function MSMain(props) {
               src="/multistation/background.jpg"
               layout="fill"
               objectFit="cover"
+              alt="background"
             />
           </Fade>
         </div>
         <BreadCrumbs color="grey" breadcrumbData={props.breadcrumbData} />
         <div className={style.empty}></div>
-        <div ref={ref} key={isVisible ? 0 : 1} className={`${style.inside_general} fade-up-animation`}>
+        <div
+          ref={ref}
+          key={isVisible ? 0 : 1}
+          className={`${style.inside_general} fade-up-animation`}
+        >
           <p className={style.title}>{props.title}</p>
           {logoMS}
           <div className={style.buttons}>
@@ -37,13 +42,16 @@ export default function MSMain(props) {
               />
             </div>
             <div className={style.video_button}>
-              <VideoButton link={props.videoLink} text={props.buttonVideoText} />
+              <VideoButton
+                link={props.videoLink}
+                text={props.buttonVideoText}
+              />
             </div>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
 const logoMS = (
@@ -66,4 +74,4 @@ const logoMS = (
       </clipPath>
     </defs>
   </svg>
-)
+);

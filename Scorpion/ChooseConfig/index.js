@@ -1,6 +1,6 @@
-import style from "../scorpion.module.scss"
-import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
+import style from "../scorpion.module.scss";
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
 
 export default function ChooseConfig(props) {
   return (
@@ -9,9 +9,7 @@ export default function ChooseConfig(props) {
         <section>
           <Fade direction="up" triggerOnce>
             <h2 className={style.h2}>{props.title}</h2>
-            <p className="paragraph">
-              {props.text}
-            </p>
+            <p className="paragraph">{props.text}</p>
           </Fade>
         </section>
         <div className={style.choose_config_img}>
@@ -21,10 +19,11 @@ export default function ChooseConfig(props) {
               height={765}
               width={775}
               layout="responsive"
+              alt="vestnshockband"
             />
           </Fade>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,25 +1,26 @@
-import style from "../smart.module.scss"
-import Image from "next/image"
-import { BlockIconText } from "../../BlockIconText"
-import { Fade } from "react-awesome-reveal"
-import { useInView } from "react-hook-inview"
+import style from "../smart.module.scss";
+import Image from "next/image";
+import { BlockIconText } from "../../BlockIconText";
+import { Fade } from "react-awesome-reveal";
+import { useInView } from "react-hook-inview";
 
 export default function KTBottom(props) {
   const [firstCardsRef, firstCardsIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   const [secondCardsRef, secondCardsIsVisible] = useInView({
-    unobserveOnEnter: true
-  })
+    unobserveOnEnter: true,
+  });
   return (
-    <div className={style.body_bottom} >
-      <div className={style.body_bottom__image} >
+    <div className={style.body_bottom}>
+      <div className={style.body_bottom__image}>
         <Fade triggerOnce>
           <Image
             src="/smart/falcon-kt.jpg"
             layout="intrinsic"
             width={1920}
             height={1010}
+            alt="falcon-kt"
           />
         </Fade>
       </div>
@@ -72,5 +73,5 @@ export default function KTBottom(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

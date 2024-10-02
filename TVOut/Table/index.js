@@ -1,18 +1,22 @@
-import style from "../tvout.module.scss"
-import Image from "next/image"
-import { Fade } from "react-awesome-reveal"
+import style from "../tvout.module.scss";
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
 
 export default function TVTable(props) {
   return (
     <div className={style.statisticsTable}>
       <Fade direction="up" triggerOnce>
-        <h2 className={style.title}>
-          {props.title}
-        </h2>
+        <h2 className={style.title}>{props.title}</h2>
       </Fade>
       <div className={style.alldevices_img}>
         <Fade direction="up" triggerOnce>
-          <Image src="/tvOut/devices-new.jpg" alt="devices" layout="responsive" width={1170} height={760} />
+          <Image
+            src="/tvOut/devices-new.jpg"
+            alt="devices"
+            layout="responsive"
+            width={1170}
+            height={760}
+          />
         </Fade>
       </div>
       <Fade direction="up" triggerOnce>
@@ -27,9 +31,7 @@ export default function TVTable(props) {
           <tbody className={style.table_tv__body}>
             <tr>
               <td>1</td>
-              <td className={style.table_tv__color}>
-                {props.td22}
-              </td>
+              <td className={style.table_tv__color}>{props.td22}</td>
               <td>{props.td23}</td>
             </tr>
             <tr>
@@ -39,9 +41,7 @@ export default function TVTable(props) {
             </tr>
             <tr>
               <td>3</td>
-              <td className={style.table_tv__color}>
-                {props.td42}
-              </td>
+              <td className={style.table_tv__color}>{props.td42}</td>
               <td>{props.td43}</td>
             </tr>
             <tr>
@@ -53,5 +53,5 @@ export default function TVTable(props) {
         </table>
       </Fade>
     </div>
-  )
+  );
 }

@@ -1,31 +1,31 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
 import { ColumnsSvgText } from "../../ColumnsSvgText";
-import style from "../headband.module.scss"
+import style from "../headband.module.scss";
 
 export default function Control(props) {
-  const [title, titleIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
-  const [controlImage, controlImageIsVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [title, titleIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
+  const [controlImage, controlImageIsVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
     <div className={style.control_block_outside}>
       <div className={style.control_block}>
-        <section ref={title} className={`${style.control_block_section} fade-up-animation`} key={titleIsVisible ? "band-ct-inview" : "band-ct"}>
-          <h2 className={style.h2} >
-            {props.title}
-          </h2>
-          <p className="paragraph">
-            {props.text}
-          </p>
+        <section
+          ref={title}
+          className={`${style.control_block_section} fade-up-animation`}
+          key={titleIsVisible ? "band-ct-inview" : "band-ct"}
+        >
+          <h2 className={style.h2}>{props.title}</h2>
+          <p className="paragraph">{props.text}</p>
         </section>
-        <div ref={controlImage} key={controlImageIsVisible ? "band-ct-image-inview" : "band-ct-image"} className={`${style.control_block__img} fade-animation`}>
+        <div
+          ref={controlImage}
+          key={controlImageIsVisible ? "band-ct-image-inview" : "band-ct-image"}
+          className={`${style.control_block__img} fade-animation`}
+        >
           <Image
             src="/bandNetronic/bandblue.jpg"
             layout="responsive"
@@ -33,6 +33,7 @@ export default function Control(props) {
             height={385}
             quality={90}
             priority={true}
+            alt="bandblue"
           />
         </div>
         <div className={style.control_block_columnsvg}>
@@ -82,5 +83,5 @@ export default function Control(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

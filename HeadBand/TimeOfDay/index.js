@@ -1,29 +1,25 @@
 import Image from "next/image";
 import { useInView } from "react-hook-inview";
-import style from "../headband.module.scss"
+import style from "../headband.module.scss";
 
 export default function TimeOfDay(props) {
-  const [ref, isVisible] = useInView(
-    {
-      unobserveOnEnter: true
-    }
-  )
+  const [ref, isVisible] = useInView({
+    unobserveOnEnter: true,
+  });
   return (
-    <div className={style.timeofday} ref={ref} key={isVisible ? "band-time-of-day-inview" : "band-time-of-day"}>
+    <div
+      className={style.timeofday}
+      ref={ref}
+      key={isVisible ? "band-time-of-day-inview" : "band-time-of-day"}
+    >
       <section className="fade-up-animation">
-        <h2 className={style.h2}>
-          {props.title}
-        </h2>
-        <p className="paragraph">
-          {props.text}
-        </p>
+        <h2 className={style.h2}>{props.title}</h2>
+        <p className="paragraph">{props.text}</p>
       </section>
       <div className={`${style.before_after} fade-animation`}>
         <div className={style.before_after__modes}>
-          <img src="/bandNetronic/svg/day.svg" />
-          <p className="paragraph">
-            {props.defaultModeName}
-          </p>
+          <img src="/bandNetronic/svg/day.svg" alt="day image" />
+          <p className="paragraph">{props.defaultModeName}</p>
         </div>
         <div className={style.timeofday_image}>
           <Image
@@ -32,13 +28,12 @@ export default function TimeOfDay(props) {
             width={1100}
             height={405}
             priority={true}
+            alt="band"
           />
         </div>
         <div className={style.before_after__modes}>
           <img src="/bandNetronic/svg/night.svg" alt="night" />
-          <p className="paragraph">
-            {props.inversionName}
-          </p>
+          <p className="paragraph">{props.inversionName}</p>
         </div>
       </div>
       <div className={`${style.before_after_image_responsive}`}>
@@ -48,8 +43,9 @@ export default function TimeOfDay(props) {
           width={775}
           height={355}
           priority={true}
+          alt="band responsive"
         />
       </div>
     </div>
-  )
+  );
 }

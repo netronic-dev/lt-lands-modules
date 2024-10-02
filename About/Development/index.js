@@ -1,14 +1,12 @@
-import Image from "next/image"
-import { Fade, Zoom } from "react-awesome-reveal"
-import style from "../about.module.scss"
+import Image from "next/image";
+import { Fade, Zoom } from "react-awesome-reveal";
+import style from "../about.module.scss";
 
 export default function AboutDevelopment(props) {
   return (
     <div className={style.development}>
       <Fade direction="up" triggerOnce>
-        <h2 className={style.title}>
-          {props.title}
-        </h2>
+        <h2 className={style.title}>{props.title}</h2>
       </Fade>
       <div className={style.vision}>
         <div className={`${style.development_image} background`}>
@@ -17,6 +15,7 @@ export default function AboutDevelopment(props) {
             layout="fill"
             objectFit="contain"
             objectPosition="100% 100%"
+            alt="vision"
           />
         </div>
         <div className={`${style.development_image_responsive}`}>
@@ -25,16 +24,13 @@ export default function AboutDevelopment(props) {
             layout="responsive"
             width={325}
             height={200}
+            alt="vision-res"
           />
         </div>
         <Fade direction="left" triggerOnce>
           <div className={style.development_text_block}>
-            <h3 className={style.development_title}>
-              {props.subtitleFirst}
-            </h3>
-            <p className={style.development_text}>
-              {props.textFirst}
-            </p>
+            <h3 className={style.development_title}>{props.subtitleFirst}</h3>
+            <p className={style.development_text}>{props.textFirst}</p>
           </div>
         </Fade>
       </div>
@@ -46,6 +42,7 @@ export default function AboutDevelopment(props) {
               layout="fill"
               objectFit="contain"
               objectPosition="0 100%"
+              alt="concept"
             />
           </Fade>
         </div>
@@ -56,17 +53,14 @@ export default function AboutDevelopment(props) {
               layout="responsive"
               width={325}
               height={200}
+              alt="concept-res"
             />
           </Fade>
         </div>
         <Fade direction="right" triggerOnce>
           <div className={style.development_text_block}>
-            <h3 className={style.development_title}>
-              {props.subtitleSecond}
-            </h3>
-            <p className={style.development_text}>
-              {props.textSecond}
-            </p>
+            <h3 className={style.development_title}>{props.subtitleSecond}</h3>
+            <p className={style.development_text}>{props.textSecond}</p>
           </div>
         </Fade>
       </div>
@@ -78,6 +72,7 @@ export default function AboutDevelopment(props) {
               layout="fill"
               objectFit="contain"
               objectPosition="100% 100%"
+              alt="trials"
             />
           </Fade>
         </div>
@@ -88,17 +83,14 @@ export default function AboutDevelopment(props) {
               layout="responsive"
               width={325}
               height={200}
+              alt="trials-res"
             />
           </Fade>
         </div>
         <Fade direction="left" triggerOnce>
           <div className={style.development_text_block}>
-            <h3 className={style.development_title}>
-              {props.subtitleThird}
-            </h3>
-            <p className={style.development_text}>
-              {props.textThird}
-            </p>
+            <h3 className={style.development_title}>{props.subtitleThird}</h3>
+            <p className={style.development_text}>{props.textThird}</p>
           </div>
         </Fade>
       </div>
@@ -110,6 +102,7 @@ export default function AboutDevelopment(props) {
               layout="fill"
               objectFit="contain"
               objectPosition="0 100%"
+              alt="production"
             />
           </Fade>
         </div>
@@ -119,17 +112,13 @@ export default function AboutDevelopment(props) {
             layout="responsive"
             width={325}
             height={200}
+            alt="production-res"
           />
         </div>
         <Fade direction="right" triggerOnce>
           <div className={style.development_text_block}>
-
-            <h3 className={style.development_title}>
-              {props.subtitleFourth}
-            </h3>
-            <p className={style.development_text}>
-              {props.textFourth}
-            </p>
+            <h3 className={style.development_title}>{props.subtitleFourth}</h3>
+            <p className={style.development_text}>{props.textFourth}</p>
           </div>
         </Fade>
       </div>
@@ -141,6 +130,7 @@ export default function AboutDevelopment(props) {
               layout="fill"
               objectFit="contain"
               objectPosition="100% 100%"
+              alt="renewal"
             />
           </Fade>
         </div>
@@ -151,20 +141,17 @@ export default function AboutDevelopment(props) {
               layout="responsive"
               width={325}
               height={200}
+              alt="renewal-res"
             />
           </Fade>
         </div>
         <Fade direction="left" triggerOnce>
           <div className={style.development_text_block}>
-            <h3 className={style.development_title}>
-              {props.subtitleFivth}
-            </h3>
-            <p className={style.development_text}>
-              {props.textFivth}
-            </p>
+            <h3 className={style.development_title}>{props.subtitleFivth}</h3>
+            <p className={style.development_text}>{props.textFivth}</p>
           </div>
         </Fade>
       </div>
-    </div >
-  )
+    </div>
+  );
 }

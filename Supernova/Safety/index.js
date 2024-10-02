@@ -58,6 +58,7 @@ export default function SupernovaSafety(props) {
             height={1130}
             priority={true}
             quality={90}
+            alt="safety"
           />
         </Fade>
       </div>
