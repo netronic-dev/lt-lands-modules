@@ -6,7 +6,7 @@
 .main {
   position: relative;
   overflow-y: hidden;
-  height: 660px;
+  height: 700px;
   padding-top: 30px;
 }
 
@@ -86,7 +86,7 @@
 
 @media (max-width: 500px) {
   .main {
-    height: 690px;
+    // height: 640px;
     padding-top: 30px;
 
     .content {
@@ -115,3 +115,27 @@
   }
 }
 
+.dots {
+  li {
+    bottom: 30px !important;
+  }
+
+  :global(li.slick-active) button::before {
+    background-color: #fff !important;
+    border: 3px solid transparent !important;
+    opacity: 1 !important;
+    color: transparent !important;
+    border-radius: 50% !important;
+  }
+
+  button::before {
+    content: "";
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50% !important;
+    background-color: transparent !important;
+    border: 3px solid #fff !important;
+    opacity: 1 !important;
+    color: transparent !important;
+  }
+}
