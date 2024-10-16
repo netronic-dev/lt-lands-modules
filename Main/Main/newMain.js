@@ -1,10 +1,33 @@
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import style from "./style.module.scss";
 import { Fade } from "react-awesome-reveal";
 import { FillButton, Button } from "../../../lt-modules/Buttons";
+import BannerSlide from "../../../components/BannerSlider/BannerSlider";
+
+const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 743,
+      settings: {
+        dots: true,
+      },
+    },
+  ],
+};
 
 export default function NewMainMain(props) {
   return (
+    // <div>
+    //   <Slider {...settings}>
+    //     <div>
     <section className={style.main}>
       {props.image && (
         <div className="background desktop">
@@ -41,27 +64,55 @@ export default function NewMainMain(props) {
             text={props.buttonText}
             style="blueBlackMainBannerWithGirl"
           />
-          {props.eventButtonLink ? (
-            <Fade delay={1500} triggerOnce>
-              <div>
-                <Link
-                  href={props.eventButtonLink ? props.eventButtonLink : "/"}
-                >
-                  <a>
-                    <FillButton
-                      className={style.event_button}
-                      style="whiteBlack"
-                      text={props.eventButtonText}
-                    />
-                  </a>
-                </Link>
-              </div>
-            </Fade>
-          ) : (
-            ""
+          {props.eventButtonLink && (
+            <div>
+              <a href={props.eventButtonLink}>
+                <FillButton
+                  className={style.event_button}
+                  style="whiteBlack"
+                  text={props.eventButtonText}
+                />
+              </a>
+            </div>
           )}
         </div>
       </div>
     </section>
+    //     </div>
+
+    //     {/* Другий слайд */}
+    //     <div>
+    // <section>
+    //   <BannerSlide
+    //     logoImg="/blog/iaapa-expo-europe-2024/logo.png"
+    //     registerLink="/blog/iaapa-orlando-2024/#register"
+    //     title={
+    //       <>
+    //         at IAAPA EXPO <br /> ORLANDO 2024
+    //       </>
+    //     }
+    //     spanTitle="Visit NETRONIC"
+    //     subtitle="The Ultimate Attractions and Leisure Show in Orlando!"
+    //     dateName="Date"
+    //     date={
+    //       <>
+    //         November 19–22, <br /> 2024
+    //       </>
+    //     }
+    //     placeName="Location"
+    //     place={
+    //       <>
+    //         Orange County Convention Center 9400 Universal Blvd., Orlando,
+    //         Florida
+    //       </>
+    //     }
+    //     standName="Booth"
+    //     stand="#4478"
+    //     buttonText="Register Now"
+    //   />
+    // </section>
+    //     </div>
+    //   </Slider>
+    // </div>
   );
 }
