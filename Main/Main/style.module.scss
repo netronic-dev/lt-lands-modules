@@ -139,3 +139,13 @@
     color: transparent !important;
   }
 }
+
+.customSlider :global(.slick-slider),
+.customSlider :global(.slick-list),
+.customSlider :global(.slick-track) {
+  height: 640px !important;
+
+  @media (min-width: 956px) {
+    height: 700px !important;
+  }
+}

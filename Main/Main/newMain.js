@@ -56,7 +56,36 @@ const settings = {
 export default function NewMainMain(props) {
   return (
     <>
-      <Slider {...settings}>
+      <Slider {...settings} className={style.customSlider}>
+        <section>
+          <BannerSlide
+            logoImg="/blog/iaapa-expo-europe-2024/logo.png"
+            registerLink="/blog/iaapa-orlando-2024/#register"
+            title={
+              <>
+                at IAAPA EXPO <br /> ORLANDO 2024
+              </>
+            }
+            spanTitle="Visit NETRONIC"
+            subtitle="The Ultimate Attractions and Leisure Show in Orlando!"
+            dateName="Date"
+            date={
+              <>
+                November 19–22, <br /> 2024
+              </>
+            }
+            placeName="Location"
+            place={
+              <>
+                Orange County Convention Center 9400 Universal Blvd., Orlando,
+                Florida
+              </>
+            }
+            standName="Booth"
+            stand="#4478"
+            buttonText="Register Now"
+          />
+        </section>
         <section className={style.main}>
           {props.image && (
             <div className="background desktop">
@@ -108,35 +137,6 @@ export default function NewMainMain(props) {
               )}
             </div>
           </div>
-        </section>
-        <section>
-          <BannerSlide
-            logoImg="/blog/iaapa-expo-europe-2024/logo.png"
-            registerLink="/blog/iaapa-orlando-2024/#register"
-            title={
-              <>
-                at IAAPA EXPO <br /> ORLANDO 2024
-              </>
-            }
-            spanTitle="Visit NETRONIC"
-            subtitle="The Ultimate Attractions and Leisure Show in Orlando!"
-            dateName="Date"
-            date={
-              <>
-                November 19–22, <br /> 2024
-              </>
-            }
-            placeName="Location"
-            place={
-              <>
-                Orange County Convention Center 9400 Universal Blvd., Orlando,
-                Florida
-              </>
-            }
-            standName="Booth"
-            stand="#4478"
-            buttonText="Register Now"
-          />
         </section>
       </Slider>
     </>
