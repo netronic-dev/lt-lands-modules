@@ -149,3 +149,60 @@
     height: 700px !important;
   }
 }
+
+//Slider on main page
+// .slick-next {
+//   top: 54% !important;
+//   right: 5% !important;
+//   width: 50px !important;
+//   height: 50px !important;
+//   color: #fff !important;
+//   transition: color 0.3s ease !important;
+
+//   &:hover {
+//     color: #000 !important;
+//   }
+// }
+
+// .slick-prev {
+//   top: 50% !important;
+//   left: 5% !important;
+//   width: 50px !important;
+//   height: 50px !important;
+//   z-index: 10;
+//   transform: rotate(180deg) !important;
+//   color: #fff !important;
+//   transition: color 0.3s ease !important;
+
+//   &:hover {
+//     color: #000 !important;
+//   }
+// }
+
+.customSlider :global(.slick-next) {
+  top: 54% !important;
+  right: 5% !important;
+  width: 50px !important;
+  height: 50px !important;
+  color: #fff !important;
+  transition: color 0.3s ease !important;
+}
+
+.customSlider :global(.slick-next:hover) {
+  color: #000 !important;
+}
+
+.customSlider :global(.slick-prev) {
+  top: 50% !important;
+  left: 5% !important;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 10;
+  transform: rotate(180deg) !important;
+  color: #fff !important;
+  transition: color 0.3s ease !important;
+}
+
+.customSlider :global(.slick-prev:hover) {
+  color: #000 !important;
+}
