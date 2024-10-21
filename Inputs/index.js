@@ -495,6 +495,7 @@ export function Inputs(props) {
                   name="budget"
                   render={({ field }) => (
                     <Select
+                      aria-label="Budget"
                       {...field}
                       placeholder={props.budgetPlaceholder}
                       options={selectOptions}
