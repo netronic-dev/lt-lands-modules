@@ -1080,7 +1080,7 @@ function Agreement(props) {
               "I agree with conditions of the processing and use"}
           </span>{" "}
           <Link href="/privacy-policy">
-            <a>{props.agreementSpanText || "of my personal data"}</a>
+            <a> {props.agreementSpanText || "of my personal data"}</a>
           </Link>
         </p>
       </div>
