@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "./style.module.scss";
-import { Fade } from "react-awesome-reveal";
 import { FillButton, Button } from "../../../lt-modules/Buttons";
 import BannerSlide from "../../../components/BannerSlider/BannerSlider";
 import { Icon } from "../../../components/Icon";
