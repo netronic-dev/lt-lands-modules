@@ -242,7 +242,7 @@ export function Inputs(props) {
     });
   };
 
-  const handleAgreementChange = (e) => {
+  const handleAgreementChange = () => {
     setValue("agreement", !getValues("agreement"));
     trigger("agreement");
   };
@@ -1061,7 +1061,7 @@ export function InputsWName(props) {
   );
 }
 
-function Agreement(props) {
+ function Agreement(props) {
   return (
     <div className={style.input_out__outer}>
       <div className={style.agreement}>
