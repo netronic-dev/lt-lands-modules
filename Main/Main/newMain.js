@@ -39,8 +39,8 @@ const settings = {
   dotsClass: `slick-dots ${style.dots}`,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
-  // autoplay: true,
-  // autoplaySpeed: 3000,
+  autoplay: true,
+  autoplaySpeed: 3000,
   responsive: [
     {
       breakpoint: 743,
@@ -55,8 +55,8 @@ const settings = {
 export default function NewMainMain(props) {
   return (
     <>
-      {/* <Slider {...settings} className={style.customSlider}>
-        <Banner /> */}
+      <Slider {...settings} className={style.customSlider}>
+        <Banner />
         <section className={style.main}>
           {props.image && (
             <div className="background desktop">
@@ -109,7 +109,7 @@ export default function NewMainMain(props) {
             </div>
           </div>
         </section>
-      {/* </Slider> */}
+      </Slider>
     </>
   );
 }
