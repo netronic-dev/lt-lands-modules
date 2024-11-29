@@ -297,7 +297,16 @@ export function Inputs(props) {
         );
       });
     } catch (error) {
-      handleServerErrors(error.response.data);
+      if (error.response.data) {
+        handleServerErrors(error.response.data);
+      } else {
+        await axios.post(
+          "https://back.netronic.net/telegram/send-error-message",
+          {
+            message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
+          }
+        );
+      }
     }
   };
 
@@ -723,7 +732,16 @@ export function InputsWName(props) {
         );
       });
     } catch (error) {
-      handleServerErrors(error.response.data);
+      if (error.response.data) {
+        handleServerErrors(error.response.data);
+      } else {
+        await axios.post(
+          "https://back.netronic.net/telegram/send-error-message",
+          {
+            message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
+          }
+        );
+      }
     }
   };
 
@@ -1061,7 +1079,7 @@ export function InputsWName(props) {
   );
 }
 
- function Agreement(props) {
+function Agreement(props) {
   return (
     <div className={style.input_out__outer}>
       <div className={style.agreement}>

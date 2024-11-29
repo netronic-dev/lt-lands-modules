@@ -224,7 +224,16 @@ export function InputsWName(props) {
         router.push("/thanks-call");
       });
     } catch (error) {
-      handleServerErrors(error.response.data);
+      if (error.response.data) {
+        handleServerErrors(error.response.data);
+      } else {
+        await axios.post(
+          "https://back.netronic.net/telegram/send-error-message",
+          {
+            message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
+          }
+        );
+      }
     }
   };
 
