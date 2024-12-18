@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import style from "./style.module.scss";
 import { FillButton, Button } from "../../../lt-modules/Buttons";
 import { Icon } from "../../../components/Icon";
+import { Banner } from "../../../components/NewYear-2024/Banner";
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
@@ -38,8 +39,8 @@ const settings = {
   dotsClass: `slick-dots ${style.dots}`,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
-  autoplay: true,
-  autoplaySpeed: 3000,
+  // autoplay: true,
+  // autoplaySpeed: 3000,
   responsive: [
     {
       breakpoint: 743,
