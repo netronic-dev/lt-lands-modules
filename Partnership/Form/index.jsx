@@ -2,6 +2,7 @@ import Link from "next/link";
 import style from "./style.module.scss";
 
 import dynamic from "next/dynamic";
+import { obfuscateEmail } from "../../../lt-modules/functions/obfuscateEmail";
 
 const InputsWName = dynamic(
   () => import("../Form/Inputs").then((mod) => mod.InputsWName),
@@ -9,6 +10,7 @@ const InputsWName = dynamic(
 );
 
 const PartnershipForm = (props) => {
+  const obfuscatedEmail = obfuscateEmail(props.email);
   return (
     <section className={style.main} id="become_a_partner">
       <div className="container">
@@ -25,8 +27,19 @@ const PartnershipForm = (props) => {
                   <span className={style.contanct_title}>
                     {props.email_title}
                   </span>
-                  <Link href={`mailto:${props.email}`} target="_blank">
+                  {/* <Link href={`mailto:${props.email}`} target="_blank">
                     {props.email}
+                  </Link> */}
+                  <Link
+                    href={`mailto:${obfuscatedEmail}`}
+                    target="_blank"
+                    passHref
+                  >
+                    <a
+                      dangerouslySetInnerHTML={{
+                        __html: obfuscatedEmail,
+                      }}
+                    />
                   </Link>
                 </div>
                 <div className={style.contact_cell}>
