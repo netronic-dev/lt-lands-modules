@@ -12,7 +12,6 @@ export default function MSMain(props) {
   return (
     <>
       <div className={style.section_general}>
-        <h1 className="hidden">{props.hiddenTitle}</h1>
         <div className="background_image">
           <Fade triggerOnce>
             <Image
@@ -30,7 +29,7 @@ export default function MSMain(props) {
           key={isVisible ? 0 : 1}
           className={`${style.inside_general} fade-up-animation`}
         >
-          <p className={style.title}>{props.title}</p>
+          <h1 className={style.title}>{props.title}</h1>
           {logoMS}
           <div className={style.buttons}>
             <div className={style.price_button}>

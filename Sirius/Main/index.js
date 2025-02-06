@@ -29,7 +29,7 @@ export default function SiriusMain(props) {
         <div className={style.breadCrumbs}>
           <BreadCrumbs breadcrumbData={props.breadcrumbData} color="white" />
         </div>
-        <p className={style.title}>{props.title}</p>
+        <h1 className={style.title}>{props.title}</h1>
         {logoSirius}
         <Button
           type="catalog"

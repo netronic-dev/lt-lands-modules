@@ -55,6 +55,9 @@ $font: "Montserrat", sans-serif;
 		flex-direction: column;
 		align-items: center;
 	}
+	.main__title {
+		color: #ffffff;
+	}
 	.main__text {
 		font-family: $font;
 		font-weight: normal;

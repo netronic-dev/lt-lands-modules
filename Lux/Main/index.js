@@ -44,7 +44,11 @@ export default function Main(props) {
           {luxLogo}
         </animated.div>
         <div className={style.main_content__bottom}>
-          <h1 className="hidden">{props.hiddenTitle}</h1>
+          {props.title ? (
+            <h1 className={style.main__title}>{props.title}</h1>
+          ) : (
+            <h1 className="hidden">{props.hiddenTitle}</h1>
+          )}
           <p className={style.main__text}>{props.text}</p>
           <Button style="black" type="catalog" text={props.buttonText} />
         </div>
