@@ -27,9 +27,6 @@ const PartnershipForm = (props) => {
                   <span className={style.contanct_title}>
                     {props.email_title}
                   </span>
-                  {/* <Link href={`mailto:${props.email}`} target="_blank">
-                    {props.email}
-                  </Link> */}
                   <Link
                     href={`mailto:${obfuscatedEmail}`}
                     target="_blank"
