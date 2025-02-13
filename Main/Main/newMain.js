@@ -39,8 +39,8 @@ const settings = {
   dotsClass: `slick-dots ${style.dots}`,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
-  // autoplay: true,
-  // autoplaySpeed: 3000,
+  autoplay: true,
+  autoplaySpeed: 3000,
   responsive: [
     {
       breakpoint: 743,
