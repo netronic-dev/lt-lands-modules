@@ -222,12 +222,12 @@ export function Inputs(props) {
         setLoggedSocials("Facebook");
       } else {
         alert("Try again, please!");
-        await axios.post(
-          "https://back.netronic.net/telegram/send-error-message",
-          {
-            message: `frontend error: facebookAuth ❌ ${window.location.hostname}: Try again, please!`,
-          }
-        );
+        // await axios.post(
+        //   "https://back.netronic.net/telegram/send-error-message",
+        //   {
+        //     message: `frontend error: facebookAuth ❌ ${window.location.hostname}: Try again, please!`,
+        //   }
+        // );
       }
     }
   };
@@ -661,12 +661,12 @@ export function InputsWName(props) {
         setLoggedSocials("Facebook");
       } else {
         alert("Try again, please!");
-        await axios.post(
-          "https://back.netronic.net/telegram/send-error-message",
-          {
-            message: `frontend error: facebookAuth ❌ ${window.location.hostname}: Try again, please!`,
-          }
-        );
+        // await axios.post(
+        //   "https://back.netronic.net/telegram/send-error-message",
+        //   {
+        //     message: `frontend error: facebookAuth ❌ ${window.location.hostname}: Try again, please!`,
+        //   }
+        // );
       }
     }
   };
