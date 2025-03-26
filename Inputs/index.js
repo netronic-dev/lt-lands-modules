@@ -238,6 +238,7 @@ export function Inputs(props) {
     : `(Noauthorization) ${props.orderName}`;
 
   const onSubmit = async (values) => {
+    debouncedSubmit("attempt", window.location.hostname);
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
@@ -257,8 +258,6 @@ export function Inputs(props) {
       },
     };
     try {
-      debouncedSubmit("attempt", window.location.hostname);
-
       const sendEmailResponse = await axios.request(options);
       const postToCRMResponse = await postData(
         data,
@@ -270,6 +269,7 @@ export function Inputs(props) {
       );
 
       Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
+        debouncedSubmit("success", window.location.hostname);
         reset();
         ReactGA.event("generate_lead", {
           category: "form",
@@ -659,6 +659,7 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
+    debouncedSubmit("attempt", window.location.hostname);
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
@@ -678,8 +679,6 @@ export function InputsWName(props) {
       },
     };
     try {
-      debouncedSubmit("attempt", window.location.hostname);
-
       const sendEmailResponse = await axios.request(options);
       const postToCRMResponse = await postData(
         data,
@@ -691,6 +690,7 @@ export function InputsWName(props) {
       );
 
       Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
+        debouncedSubmit("success", window.location.hostname);
         reset();
         ReactGA.event("generate_lead", {
           category: "form",

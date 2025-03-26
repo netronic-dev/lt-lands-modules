@@ -168,6 +168,7 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
+    debouncedSubmit("attempt", window.location.hostname);
     dispatch(setUserData(values.name));
     const data = {
       ...values,
@@ -187,8 +188,6 @@ export function InputsWName(props) {
       },
     };
     try {
-      debouncedSubmit("attempt", window.location.hostname);
-
       const sendEmailResponse = await axios.request(options);
       const postToCRMResponse = await postData(
         data,
@@ -200,6 +199,7 @@ export function InputsWName(props) {
       );
 
       Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
+        debouncedSubmit("success", window.location.hostname);
         reset();
         ReactGA.event("generate_lead", {
           category: "form",
