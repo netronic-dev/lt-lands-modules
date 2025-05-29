@@ -17,6 +17,9 @@ export default function MCFAQ(props) {
       >
         FAQ
       </h3>
+      {props.topText && (
+        <p className={`${style.text} ${style.text_top} fade-up-animation`}>{props.topText}</p>
+      )}
       <div>
         {props.data.map(
           (item, index) => (
@@ -28,6 +31,9 @@ export default function MCFAQ(props) {
           // )
         )}
       </div>
+      {props.bottomText && (
+        <p className={`${style.text} ${style.text_bottom} fade-up-animation`}>{props.bottomText}</p>
+      )}
     </section>
   );
 }

@@ -7,8 +7,11 @@ export default function MainVideo(props) {
     <>
       <section className={style.video_block}>
         <Fade direction="up" triggerOnce>
-          <h2 className={style.video_title}>
-            {props.title}
+          <h2 className={style.video_title}>{props.title}</h2>
+        </Fade>
+        <Fade direction="up" triggerOnce>
+          <h2 className={`${style.video_text} ${style.video_text_top}`}>
+            {props.topText}
           </h2>
         </Fade>
         <Slide direction="up" triggerOnce>
@@ -16,7 +19,12 @@ export default function MainVideo(props) {
             <VideoBlock theme="short" videoLink={props.videoLink} />
           </div>
         </Slide>
+        <Fade direction="up" triggerOnce>
+          <h2 className={`${style.video_text} ${style.video_text_bottom}`}>
+            {props.bottomText}
+          </h2>
+        </Fade>
       </section>
     </>
-  )
+  );
 }

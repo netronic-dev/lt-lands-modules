@@ -11,6 +11,16 @@ export default function MainNumbers(props) {
         <Fade direction="up" triggerOnce>
           <h2 className={style.title}>{props.title}</h2>
         </Fade>
+        <Fade direction="up" triggerOnce>
+          <div className={`${style.second_text_box} fade-right-animation`}>
+            <p className={`${style.second_text} fade-right-animation`}>
+              {props.secondText}
+            </p>
+            <p className={`${style.second_text} fade-right-animation`}>
+              {props.thirdText}
+            </p>
+          </div>
+        </Fade>
         <div className={style.grid}>
           <Fade direction="up" triggerOnce>
             <div className={style.cell}>

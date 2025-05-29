@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { Fade } from "react-awesome-reveal";
 import ButtonDetails from "../../../lt-modules/Buttons/ButtonDetails";
 
 import style from "../main.module.scss";
 
-import dynamic from "next/dynamic";
 
 const ThemeForm = dynamic(
   () =>
@@ -42,6 +42,9 @@ export default function MainEquipment(props) {
     <section className={style.equipment}>
       <Fade direction="up" duration={300} triggerOnce>
         <h2 className={style.title}>{props.title}</h2>
+      </Fade>
+      <Fade direction="up" duration={300} triggerOnce>
+        <h2 className={style.subtitle}>{props.text}</h2>
       </Fade>
       <div className={style.equipment_menu}>
         <Link href={props.linkFirstActiveCell || "/mobile-laser-tag-equipment"}>
@@ -142,7 +145,17 @@ export default function MainEquipment(props) {
           </div>
         </Link>
       </div>
+      {props.underFormText && (
+        <Fade direction="up" duration={800} triggerOnce>
+          <div className={style.under_form_text_box}>
+            <p className={style.under_form_text}>{props.underFormText}</p>
+          </div>
+        </Fade>
+      )}
       <Fade direction="up" duration={800} triggerOnce>
+        {/* <Fade direction="up" duration={300} triggerOnce>
+          <h2 className={style.subtitle}>{props.bottomText}</h2>
+        </Fade> */}
         <div className={style.individual}>
           <h2 className={style.individual_title}>{props.formTitle}</h2>
           <p className={style.individual_text}>{props.formText}</p>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useInView } from "react-hook-inview";
 import style from "../main.module.scss";
@@ -16,6 +15,11 @@ export default function MainSupport(props) {
       <section className={style.support}>
         <Fade cascade direction="up" triggerOnce>
           <h2 className={style.title}>{props.title}</h2>
+        </Fade>
+        <Fade cascade direction="up" triggerOnce>
+          <p className={`${style.text} ${style.support_text_top}`}>
+            {props.topText}
+          </p>
         </Fade>
         <div className={style.support_grid} ref={ref}>
           <div
@@ -87,6 +91,11 @@ export default function MainSupport(props) {
             />
           </div>
         </div>
+        <Fade cascade direction="up" triggerOnce>
+          <p className={`${style.text} ${style.support_text_bottom}`}>
+            {props.bottomText}
+          </p>
+        </Fade>
       </section>
     </>
   );
