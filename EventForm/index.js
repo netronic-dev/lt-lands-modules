@@ -70,7 +70,10 @@ function Form(props) {
                         event_label: "generate_lead",
                     });
                     ReactPixel.track("Lead");
-                    sendEventToConversionApi(window.location.href, "Lead");
+                    sendEventToConversionApi(window.location.href, "Lead", {
+                      email: values.email,
+                      phone: `+${values.phoneNumber}`,
+                    });
                     window.scroll({ top: 0 });
                     props.thankYou();
                 })

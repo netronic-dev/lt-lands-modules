@@ -276,7 +276,10 @@ export function Inputs(props) {
           action: "submit",
         });
         ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead");
+        sendEventToConversionApi(window.location.href, "Lead", {
+          email: values.email,
+          phone: `+${values.phoneNumber}`,
+        });
         modal.closeModal();
         router.push(
           props.thank_you_page ? props.thank_you_page : "/thanks-call"
@@ -697,7 +700,10 @@ export function InputsWName(props) {
           action: "submit",
         });
         ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead");
+        sendEventToConversionApi(window.location.href, "Lead", {
+          email: values.email,
+          phone: `+${values.phoneNumber}`,
+        });
         modal.closeModal();
         router.push(
           props.thank_you_page ? props.thank_you_page : "/thanks-call"

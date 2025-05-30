@@ -206,7 +206,10 @@ export function InputsWName(props) {
           action: "submit",
         });
         ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead");
+        sendEventToConversionApi(window.location.href, "Lead", {
+          email: values.email,
+          phone: `+${values.phoneNumber}`,
+        });
         router.push("/thanks-call");
       });
     } catch (error) {
