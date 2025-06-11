@@ -35,6 +35,7 @@ import { selectOptions } from "../../constants/globalConstants";
 import googleLogo from "../../public/icons/google__logo.png";
 import { schema } from "../../Layouts/validate.js";
 import { Icon } from "../../components/Icon";
+import { generateUUID } from "../../lt-modules/functions/generateUUID";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -54,13 +55,13 @@ const debouncedSubmit = debounce(async (type, siteName) => {
 
 export function Inputs(props) {
   const router = useRouter();
-  const GAEvents = useGAEvents();
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
   const queryParams = useSelector(searchParams);
   const [isDesktop, setIsDesktop] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [loggedViaSocials, setLoggedSocials] = useState("");
+  const eventId = generateUUID();
 
   const handleServerErrors = (error) => {
     Object.entries(error).forEach(([key, message]) => {
@@ -275,11 +276,16 @@ export function Inputs(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead", {
-          email: values.email,
-          phone: `+${values.phoneNumber}`,
-        });
+        ReactPixel.track("Lead", {}, { eventID: eventId });
+        sendEventToConversionApi(
+          window.location.href,
+          "Lead",
+          {
+            email: values.email,
+            phone: `+${values.phoneNumber}`,
+          },
+          eventId
+        );
         modal.closeModal();
         router.push(
           props.thank_you_page ? props.thank_you_page : "/thanks-call"
@@ -557,6 +563,7 @@ export function InputsWName(props) {
   const router = useRouter();
   const GAEvents = useGAEvents();
   const queryParams = useSelector(searchParams);
+  const eventId = generateUUID();
 
   const [isDesktop, setIsDesktop] = useState(true);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -699,11 +706,16 @@ export function InputsWName(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead", {
-          email: values.email,
-          phone: `+${values.phoneNumber}`,
-        });
+        ReactPixel.track("Lead", {}, { eventID: eventId });
+        sendEventToConversionApi(
+          window.location.href,
+          "Lead",
+          {
+            email: values.email,
+            phone: `+${values.phoneNumber}`,
+          },
+          eventId
+        );
         modal.closeModal();
         router.push(
           props.thank_you_page ? props.thank_you_page : "/thanks-call"

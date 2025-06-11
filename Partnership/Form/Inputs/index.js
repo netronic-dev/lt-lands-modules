@@ -34,6 +34,7 @@ import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendF
 import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
 import { Icon } from "../../../../components/Icon";
+import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -61,6 +62,7 @@ export function InputsWName(props) {
   const [isDesktop, setIsDesktop] = useState(true);
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
+  const eventId = generateUUID();
 
   const orderName = loggedViaSocials
     ? `(${loggedViaSocials}) ${props.orderName}`
@@ -205,11 +207,16 @@ export function InputsWName(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead");
-        sendEventToConversionApi(window.location.href, "Lead", {
-          email: values.email,
-          phone: `+${values.phoneNumber}`,
-        });
+        ReactPixel.track("Lead", {}, { eventID: eventId });
+        sendEventToConversionApi(
+          window.location.href,
+          "Lead",
+          {
+            email: values.email,
+            phone: `+${values.phoneNumber}`,
+          },
+          eventId
+        );
         router.push("/thanks-call");
       });
     } catch (error) {
