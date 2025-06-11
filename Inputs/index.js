@@ -276,7 +276,7 @@ export function Inputs(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead", {}, { eventID: eventId });
+        ReactPixel.track("Lead", { eventID: eventId });
         sendEventToConversionApi(
           window.location.href,
           "Lead",
@@ -706,7 +706,7 @@ export function InputsWName(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead", {}, { eventID: eventId });
+        ReactPixel.track("Lead", { eventID: eventId });
         sendEventToConversionApi(
           window.location.href,
           "Lead",

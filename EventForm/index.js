@@ -67,7 +67,7 @@ function Form(props) {
             event_category: "button",
             event_label: "generate_lead",
           });
-          ReactPixel.track("Lead", {}, { eventID: eventId });
+          ReactPixel.track("Lead", { eventID: eventId });
           sendEventToConversionApi(
             window.location.href,
             "Lead",
