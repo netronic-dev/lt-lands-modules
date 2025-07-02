@@ -1,5 +1,4 @@
 import axios from "axios";
-import ReactPixel from "react-facebook-pixel";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
@@ -207,7 +206,9 @@ export function InputsWName(props) {
           category: "form",
           action: "submit",
         });
-        ReactPixel.track("Lead", { eventID: eventId });
+        if (typeof window !== "undefined" && window.fbq) {
+          window.fbq("track", "Lead", {}, { eventID: eventId });
+        }
         sendEventToConversionApi(
           window.location.href,
           "Lead",

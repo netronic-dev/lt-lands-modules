@@ -2,7 +2,6 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga4";
 import { useSelector } from "react-redux";
 import { FillButton } from "../../lt-modules/Buttons";
@@ -67,7 +66,9 @@ function Form(props) {
             event_category: "button",
             event_label: "generate_lead",
           });
-          ReactPixel.track("Lead", { eventID: eventId });
+          if (typeof window !== "undefined" && window.fbq) {
+            window.fbq("track", "Lead", {}, { eventID: eventId });
+          }
           sendEventToConversionApi(
             window.location.href,
             "Lead",
