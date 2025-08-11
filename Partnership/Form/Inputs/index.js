@@ -3,42 +3,23 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import Image from "next/image";
 import { debounce } from "lodash";
 import "react-phone-input-2/lib/style.css";
 import ReactGA from "react-ga4";
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signOut,
-  linkWithCredential,
-} from "firebase/auth";
-import { authentication } from "../../../../firebase-config";
 import style from "./style.module.scss";
 import { schema } from "./validate";
-import googleLogo from "../../../../public/icons/google__logo.png";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useInView } from "react-hook-inview";
 import { useDispatch, useSelector } from "react-redux";
 
-import { useGAEvents } from "../../../../context/GAEventsProvider";
-import { useValidation } from "../../../../context/ValidationProvider";
 import { postData } from "../../../../lt-modules/functions/postData";
 import { setUserData } from "../../../../store/actions/userData";
 import { searchParams } from "../../../../store/searchParamsSlice.js";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
 import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
-import { Icon } from "../../../../components/Icon";
 import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
-
-const inputsLandTheme = {
-  default: style.input_land,
-  light: style.input_land_light,
-};
 
 const debouncedSubmit = debounce(async (type, siteName) => {
   try {
@@ -52,24 +33,12 @@ const debouncedSubmit = debounce(async (type, siteName) => {
 }, 300);
 
 export function InputsWName(props) {
-  const validate = useValidation();
   const router = useRouter();
   const dispatch = useDispatch();
-  const GAEvents = useGAEvents();
   const queryParams = useSelector(searchParams);
-  const [loggedViaSocials, setLoggedSocials] = useState("");
-  const [isDesktop, setIsDesktop] = useState(true);
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
   const eventId = generateUUID();
-
-  const orderName = loggedViaSocials
-    ? `(${loggedViaSocials}) ${props.orderName}`
-    : `(Noauthorization) ${props.orderName}`;
-
-  useEffect(() => {
-    setIsDesktop(window.innerWidth >= 1200);
-  }, [window.innerWidth]);
 
   useEffect(() => {
     modal?.region
@@ -111,63 +80,6 @@ export function InputsWName(props) {
     trigger("agreement");
   };
 
-  const googleAuth = async () => {
-    await signOut(authentication);
-
-    const provider = new GoogleAuthProvider();
-    const { user } = await signInWithPopup(authentication, provider);
-    setLoggedSocials("Google");
-    reset({
-      email: user.email,
-      name: user.displayName,
-    });
-  };
-
-  const facebookAuth = async () => {
-    try {
-      const provider = new FacebookAuthProvider();
-      const { user } = await signInWithPopup(authentication, provider);
-
-      setLoggedSocials("Facebook");
-      reset({
-        email: user.email
-          ? user.email
-          : user.reloadUserInfo.providerUserInfo[0].email,
-        name: user.displayName,
-      });
-    } catch (error) {
-      if (error.code === "auth/popup-blocked") {
-        alert("Please allow pop-ups for this site.");
-      } else if (
-        error.code === "auth/account-exists-with-different-credential"
-      ) {
-        const pendingCred = FacebookAuthProvider.credentialFromError(error);
-        const googleProvider = new GoogleAuthProvider();
-        const googleUser = await signInWithPopup(
-          authentication,
-          googleProvider
-        );
-        const user = await linkWithCredential(googleUser.user, pendingCred);
-        reset({
-          email: user._tokenResponse.email,
-          name: user._tokenResponse.displayName,
-        });
-        setLoggedSocials("Facebook");
-      } else {
-        alert("Try again, please!");
-      }
-    }
-  };
-
-  const clearAuth = async () => {
-    await signOut(authentication);
-    setLoggedSocials("");
-    reset({
-      email: "",
-      name: "",
-    });
-  };
-
   const onSubmit = async (values) => {
     debouncedSubmit("attempt", window.location.hostname);
     dispatch(setUserData(values.name));
@@ -193,7 +105,7 @@ export function InputsWName(props) {
       const postToCRMResponse = await postData(
         data,
         props.destinationURL,
-        orderName,
+        props.orderName,
         window.location.href,
         window.location.hostname,
         queryParams || router.query
@@ -234,76 +146,8 @@ export function InputsWName(props) {
     }
   };
 
-  const [ref, isVisible] = useInView({
-    unobserveOnEnter: true,
-  });
-
   return (
     <div className={style.input_land_out}>
-      {isDesktop ? (
-        <div className={style.auth_block}>
-          <div className={style.buttons_row}>
-            {loggedViaSocials ? (
-              <>
-                <button className={style.clear_button} onClick={clearAuth}>
-                  Clear
-                </button>
-                <button
-                  className={style.change_button}
-                  onClick={
-                    loggedViaSocials === "Google" ? googleAuth : facebookAuth
-                  }
-                >
-                  Change account
-                </button>
-              </>
-            ) : (
-              <>
-                <button className={style.google_button} onClick={googleAuth}>
-                  <Image
-                    src={googleLogo}
-                    alt="google logo"
-                    height={15}
-                    width={15}
-                  />{" "}
-                  Authorization via Google
-                </button>
-                <button
-                  className={style.facebook_button}
-                  onClick={facebookAuth}
-                >
-                  <Icon
-                    name="icon-facebook_logo"
-                    className={style.facebook_icon}
-                    width={15}
-                    height={15}
-                  />{" "}
-                  Authorization via Meta (Facebook)
-                </button>
-              </>
-            )}
-          </div>
-          <div className={style.divider_block}>
-            <span
-              className={`${style.divider} ${
-                props.isModal ? "" : style.divider
-              }`}
-            ></span>
-            <span
-              className={`${style.divider_text} ${
-                props.isModal ? "" : style.divider_text
-              }`}
-            >
-              or
-            </span>
-            <span
-              className={`${style.divider} ${
-                props.isModal ? "" : style.divider
-              }`}
-            ></span>
-          </div>
-        </div>
-      ) : null}
       <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
         <div className={style.content}>
           <div className={style.input_out__outer}>
