@@ -146,8 +146,8 @@ export function InputsWName(props) {
   return (
     <div className={style.input_land_out}>
       <form onSubmit={handleSubmit(onSubmit)} className="">
-        <h3>Company details</h3>
         <div className={style.content}>
+          <h3>Company details</h3>
           <div className={style.input_out__outer}>
             <div className={style.input__label}>
               <input
