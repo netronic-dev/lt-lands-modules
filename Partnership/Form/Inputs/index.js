@@ -20,6 +20,9 @@ import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendF
 import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
 import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
+import { CountryDropdown } from "../../../../components/CountryDropdown";
+import { ChangeOptions } from "../../../../components/ChangeOptions";
+import { companyOptions } from "../../../../constants/globalConstants.js";
 
 const debouncedSubmit = debounce(async (type, siteName) => {
   try {
@@ -88,30 +91,19 @@ export function InputsWName(props) {
       phoneNumber: `+${values.phoneNumber}`,
     };
 
-    const options = {
-      method: "POST",
-      url: `https://back.netronic.net/send-email`,
-      headers: {
-        "content-type": "application/json",
-      },
-      data: {
-        email: values.email,
-        fromName: props.fromName,
-        letterId: props.letterId,
-      },
-    };
     try {
-      const sendEmailResponse = await axios.request(options);
-      const postToCRMResponse = await postData(
+      const postToPRMResponse = await axios.post(
+        "https://back.netronic.net/partners",
+        // "http://localhost:5002/partners",
         data,
-        props.destinationURL,
-        props.orderName,
-        window.location.href,
-        window.location.hostname,
-        queryParams || router.query
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
-      Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
+      Promise.all([postToPRMResponse]).then(() => {
         debouncedSubmit("success", window.location.hostname);
         reset();
         ReactGA.event("generate_lead", {
@@ -148,7 +140,7 @@ export function InputsWName(props) {
 
   return (
     <div className={style.input_land_out}>
-      <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
+      {/* <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
         <div className={style.content}>
           <div className={style.input_out__outer}>
             <div className={style.input__label}>
@@ -265,6 +257,347 @@ export function InputsWName(props) {
             ? props.submittingText || "Submitting..."
             : props.buttonText}
         </button>
+      </form> */}
+      <form onSubmit={handleSubmit(onSubmit)} className="">
+        {/* 1. Company details */}
+        <h3>Company details</h3>
+
+        <div className={style.content}>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.companyLegalName ? "#d22e2e" : "#000",
+                }}
+                error={errors.companyLegalName ? "true" : "false"}
+                {...register("companyLegalName", {
+                  required: "Company Legal Name is required",
+                })}
+                placeholder={
+                  props.companyLegalNamePlaceholder || "Company Legal Name*"
+                }
+              />
+              <p className={style.error__message}>
+                {errors.companyLegalName?.message}
+              </p>
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.businessAddress ? "#d22e2e" : "#000",
+                }}
+                error={errors.businessAddress ? "true" : "false"}
+                {...register("businessAddress", {
+                  required: "Registered Business Address is required",
+                })}
+                placeholder={
+                  props.businessAddressPlaceholder ||
+                  "Registered Business Address*"
+                }
+              />
+              <p className={style.error__message}>
+                {errors.businessAddress?.message}
+              </p>
+            </div>
+          </div>
+          <CountryDropdown
+            control={control}
+            name="country"
+            countryPlaceholder={props.country || "Country*"}
+            error={errors.country?.message}
+          />
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.city ? "#d22e2e" : "#000",
+                }}
+                error={errors.city ? "true" : "false"}
+                {...register("city", {
+                  required: "City is required",
+                })}
+                placeholder={props.city || "City*"}
+              />
+              <p className={style.error__message}>{errors.city?.message}</p>
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.vatNumber ? "#d22e2e" : "#000",
+                }}
+                error={errors.vatNumber ? "true" : "false"}
+                {...register("vatNumber", {
+                  required: "VAT / Tax ID is required",
+                })}
+                placeholder={
+                  props.vatNumber || "VAT / Tax Identification Number*"
+                }
+              />
+              <p className={style.error__message}>
+                {errors.vatNumber?.message}
+              </p>
+            </div>
+          </div>
+          <small className={style.note}>
+            * Please provide your official VAT number (or equivalent national
+            Tax ID). This information is used for company identification,
+            invoicing, and financial settlements within the NETRONIC Partner
+            Program. By submitting your VAT/Tax ID, you confirm that your
+            company is a legally registered business entity eligible for
+            commercial cooperation.
+          </small>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.website ? "#d22e2e" : "#000",
+                }}
+                error={errors.website ? "true" : "false"}
+                {...register("website")}
+                placeholder={props.website || "Website (optional)"}
+              />
+              <p className={style.error__message}>{errors.website?.message}</p>
+            </div>
+          </div>
+          {/* 2. Contact info */}
+          <h3>Contact information</h3>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.firstName ? "#d22e2e" : "#000",
+                }}
+                error={errors.firstName ? "true" : "false"}
+                {...register("firstName", {
+                  required: "First name is required",
+                })}
+                placeholder={props.firstName || "First name*"}
+              />
+              <p className={style.error__message}>
+                {errors.firstName?.message}
+              </p>
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.lastName ? "#d22e2e" : "#000",
+                }}
+                error={errors.lastName ? "true" : "false"}
+                {...register("lastName", {
+                  required: "Last name is required",
+                })}
+                placeholder={props.lastName || "Last name*"}
+              />
+              <p className={style.error__message}>{errors.lastName?.message}</p>
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.position ? "#d22e2e" : "#000",
+                }}
+                error={errors.position ? "true" : "false"}
+                {...register("position", {
+                  required: "Position is required",
+                })}
+                placeholder={props.position || "Position*"}
+              />
+              <p className={style.error__message}>{errors.position?.message}</p>
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <Controller
+                name="phoneNumber"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <PhoneInput
+                    international
+                    inputStyle={{
+                      height: "40px",
+                      width: "100%",
+                      boxSizing: "border-box",
+                      borderRadius: "8px",
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderColor: errors.phoneNumber ? "#d22e2e" : "#000",
+                      color: "#000",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "400",
+                      lineHeight: "140px",
+                      outline: "0",
+                      backgroundColor: "transparent",
+                    }}
+                    buttonStyle={{
+                      borderColor: errors.phoneNumber ? "#d22e2e" : "#000",
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                      borderTopLeftRadius: "8px",
+                      borderBottomLeftRadius: "8px",
+                      height: "40px",
+                    }}
+                    country={regionCode}
+                    enableSearch
+                    excludeCountries={["ru"]}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={props.callPlaceholder || "Phone number*"}
+                    error={
+                      value
+                        ? isValidPhoneNumber(`+${value}`)
+                          ? undefined
+                          : "Invalid phone number"
+                        : "Phone number is required"
+                    }
+                  />
+                )}
+              />
+              {errors.phoneNumber && (
+                <p className={style.error__message}>
+                  {errors.phoneNumber?.message}
+                </p>
+              )}
+            </div>
+          </div>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <input
+                className={style.input}
+                style={{
+                  borderColor: errors.email ? "#d22e2e" : "#000",
+                }}
+                error={errors.email ? "true" : "false"}
+                {...register("email", {
+                  required: "Email is required",
+                })}
+                placeholder={props.email || "Email*"}
+              />
+              <p className={style.error__message}>{errors.email?.message}</p>
+            </div>
+          </div>
+          {/* 3. Company type */}
+          <h3>Company Type & Motivation</h3>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <ChangeOptions
+                options={companyOptions}
+                isMulti
+                control={control}
+                name="companyType"
+                error={errors.companyType?.message}
+                placeholder={
+                  props.companyTypePlaceholder ||
+                  "Please select your company type:*"
+                }
+                rules={{
+                  validate: (value) =>
+                    (value && value.length > 0) || "Company type required",
+                }}
+              />
+              <p className={style.error__message}>
+                {errors.companyType?.message}
+              </p>
+            </div>
+          </div>
+          <textarea
+            className={style.textarea}
+            placeholder="Briefly describe why you are interested in partnering with NETRONIC:"
+            {...register("motivation")}
+          />
+          <p className={style.error__message}>{errors.motivation?.message}</p>
+
+          {/* 4. Experience */}
+          <h3>Experience & Current Projects</h3>
+          <p className={style.radioTitle}>
+            Have you previously worked with laser tag equipment?
+          </p>
+          <label>
+            <input type="radio" value="yes" {...register("experience")} /> Yes
+          </label>
+          <label>
+            <input type="radio" value="no" {...register("experience")} /> No
+          </label>
+          <p className={style.error__message}>{errors.experience?.message}</p>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <textarea
+                className={style.textarea}
+                placeholder="If yes – which brand(s)?"
+                {...register("brands")}
+              />
+              <p className={style.error__message}>{errors.brands?.message}</p>
+            </div>
+          </div>
+          <p className={style.radioTitle}>
+            Do you currently have any active projects or venues?
+          </p>
+          <label>
+            <input type="radio" value="yes" {...register("projects")} /> Yes
+          </label>
+          <label>
+            <input type="radio" value="no" {...register("projects")} /> No
+          </label>
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <textarea
+                className={style.textarea}
+                placeholder="Brief description:"
+                {...register("projectsDesc")}
+              />
+              <p className={style.error__message}>
+                {errors.projectsDesc?.message}
+              </p>
+            </div>
+          </div>
+          <Controller
+            name="agreement"
+            control={control}
+            render={({ field }) => (
+              <Agreement
+                isModal={props.isModal}
+                agreement={field.value}
+                agreementText={props.agreementText}
+                agreementSpanText={props.agreementSpanText}
+                error={errors.agreement?.message}
+                register={register}
+                onAgreementChange={handleAgreementChange}
+              />
+            )}
+          />
+          <button
+            className={style.button}
+            type="submit"
+            disabled={!isValid || isSubmitting}
+            style={{
+              cursor: !isValid || isSubmitting ? "not-allowed" : "pointer",
+              opacity: !isValid || isSubmitting ? 0.5 : 1,
+            }}
+          >
+            {isSubmitting
+              ? props.submittingText || "Submitting..."
+              : props.buttonText}
+          </button>
+          <small className={style.note}>
+            After submission, you will receive a confirmation email and an
+            invitation to access the PRM platform.
+          </small>
+        </div>
       </form>
     </div>
   );
