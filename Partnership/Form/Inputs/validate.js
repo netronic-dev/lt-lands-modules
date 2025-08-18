@@ -146,8 +146,6 @@ export const schema = yup
       .test("no-profanity", "Invalid words detected", (val) =>
         val ? badWordsValidator(val) : true
       ),
-
-    // 4. Experience & Current Projects
     experience: yup.string().required("Please select your experience"),
     brands: yup
       .string()

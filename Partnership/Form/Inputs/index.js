@@ -23,6 +23,7 @@ import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
 import { CountryDropdown } from "../../../../components/CountryDropdown";
 import { ChangeOptions } from "../../../../components/ChangeOptions";
 import { companyOptions } from "../../../../constants/globalConstants.js";
+import { getName } from "country-list";
 
 const debouncedSubmit = debounce(async (type, siteName) => {
   try {
@@ -59,6 +60,7 @@ export function InputsWName(props) {
     getValues,
     setValue,
     trigger,
+    watch,
   } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),
@@ -89,7 +91,10 @@ export function InputsWName(props) {
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
+      country: getName(values.country),
     };
+
+    // console.log(data, 'data');
 
     try {
       const postToPRMResponse = await axios.post(
@@ -140,128 +145,8 @@ export function InputsWName(props) {
 
   return (
     <div className={style.input_land_out}>
-      {/* <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
-        <div className={style.content}>
-          <div className={style.input_out__outer}>
-            <div className={style.input__label}>
-              <input
-                className={style.input}
-                style={{
-                  borderColor: errors.name ? "#d22e2e" : "#000",
-                }}
-                error={errors.name ? "true" : "false"}
-                {...register("name", {
-                  required: "Name is required",
-                })}
-                placeholder={props.namePlaceholder || "Name*"}
-              />
-              <p className={style.error__message}>{errors.name?.message}</p>
-            </div>
-          </div>
-          <div className={style.input_out__outer}>
-            <div className={style.input__label}>
-              <Controller
-                name="phoneNumber"
-                control={control}
-                render={({ field: { onChange, value } }) => (
-                  <PhoneInput
-                    international
-                    inputStyle={{
-                      height: "60px",
-                      width: "100%",
-                      boxSizing: "border-box",
-                      borderRadius: "8px",
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderColor: errors.phoneNumber ? "#d22e2e" : "#000",
-                      color: "#000",
-                      fontSize: "16px",
-                      fontStyle: "normal",
-                      fontWeight: "400",
-                      lineHeight: "140px",
-                      outline: "0",
-                      backgroundColor: "transparent",
-                    }}
-                    buttonStyle={{
-                      borderColor: errors.phoneNumber ? "#d22e2e" : "#000",
-                      borderWidth: "1px",
-                      borderStyle: "solid",
-                      borderTopLeftRadius: "8px",
-                      borderBottomLeftRadius: "8px",
-                      height: "60px",
-                    }}
-                    country={regionCode}
-                    enableSearch
-                    excludeCountries={["ru"]}
-                    value={value}
-                    onChange={onChange}
-                    placeholder={props.callPlaceholder || "Phone number*"}
-                    error={
-                      value
-                        ? isValidPhoneNumber(`+${value}`)
-                          ? undefined
-                          : "Invalid phone number"
-                        : "Phone number is required"
-                    }
-                  />
-                )}
-              />
-              {errors.phoneNumber && (
-                <p className={style.error__message}>
-                  {errors.phoneNumber?.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className={style.input_out__outer}>
-            <div className={style.input__label}>
-              <input
-                className={style.input}
-                style={{
-                  borderColor: errors.email ? "#d22e2e" : "#000",
-                }}
-                error={errors.email ? "true" : "false"}
-                {...register("email")}
-                placeholder={props.placeholder || "Email*"}
-              />
-              <p className={style.error__message}>{errors.email?.message}</p>
-            </div>
-          </div>
-        </div>
-        <Controller
-          name="agreement"
-          control={control}
-          render={({ field }) => (
-            <Agreement
-              isModal={props.isModal}
-              agreement={field.value}
-              agreementText={props.agreementText}
-              error={errors.agreement?.message}
-              register={register}
-              onAgreementChange={handleAgreementChange}
-            />
-          )}
-        />
-        <button
-          className={style.button}
-          id={props.id ? props.id : ""}
-          type="submit"
-          onClick={props.onClick}
-          disabled={!isValid || isSubmitting}
-          style={{
-            cursor: !isValid || isSubmitting ? "not-allowed" : "pointer",
-            opacity: !isValid || isSubmitting ? 0.5 : 1,
-          }}
-        >
-          {isSubmitting
-            ? props.submittingText || "Submitting..."
-            : props.buttonText}
-        </button>
-      </form> */}
       <form onSubmit={handleSubmit(onSubmit)} className="">
-        {/* 1. Company details */}
         <h3>Company details</h3>
-
         <div className={style.content}>
           <div className={style.input_out__outer}>
             <div className={style.input__label}>
@@ -368,7 +253,6 @@ export function InputsWName(props) {
               <p className={style.error__message}>{errors.website?.message}</p>
             </div>
           </div>
-          {/* 2. Contact info */}
           <h3>Contact information</h3>
           <div className={style.input_out__outer}>
             <div className={style.input__label}>
@@ -491,7 +375,6 @@ export function InputsWName(props) {
               <p className={style.error__message}>{errors.email?.message}</p>
             </div>
           </div>
-          {/* 3. Company type */}
           <h3>Company Type & Motivation</h3>
           <div className={style.input_out__outer}>
             <div className={style.input__label}>
@@ -515,14 +398,18 @@ export function InputsWName(props) {
               </p>
             </div>
           </div>
-          <textarea
-            className={style.textarea}
-            placeholder="Briefly describe why you are interested in partnering with NETRONIC:"
-            {...register("motivation")}
-          />
-          <p className={style.error__message}>{errors.motivation?.message}</p>
-
-          {/* 4. Experience */}
+          <div className={style.input_out__outer}>
+            <div className={style.input__label}>
+              <textarea
+                className={style.textarea}
+                placeholder="Briefly describe why you are interested in partnering with NETRONIC:"
+                {...register("motivation")}
+              />
+              <p className={style.error__message}>
+                {errors.motivation?.message}
+              </p>
+            </div>
+          </div>
           <h3>Experience & Current Projects</h3>
           <p className={style.radioTitle}>
             Have you previously worked with laser tag equipment?
@@ -534,16 +421,18 @@ export function InputsWName(props) {
             <input type="radio" value="no" {...register("experience")} /> No
           </label>
           <p className={style.error__message}>{errors.experience?.message}</p>
-          <div className={style.input_out__outer}>
-            <div className={style.input__label}>
-              <textarea
-                className={style.textarea}
-                placeholder="If yes – which brand(s)?"
-                {...register("brands")}
-              />
-              <p className={style.error__message}>{errors.brands?.message}</p>
+          {watch("experience") === "yes" && (
+            <div className={style.input_out__outer}>
+              <div className={style.input__label}>
+                <textarea
+                  className={style.textarea}
+                  placeholder="If yes – which brand(s)?"
+                  {...register("brands")}
+                />
+                <p className={style.error__message}>{errors.brands?.message}</p>
+              </div>
             </div>
-          </div>
+          )}
           <p className={style.radioTitle}>
             Do you currently have any active projects or venues?
           </p>
@@ -553,18 +442,20 @@ export function InputsWName(props) {
           <label>
             <input type="radio" value="no" {...register("projects")} /> No
           </label>
-          <div className={style.input_out__outer}>
-            <div className={style.input__label}>
-              <textarea
-                className={style.textarea}
-                placeholder="Brief description:"
-                {...register("projectsDesc")}
-              />
-              <p className={style.error__message}>
-                {errors.projectsDesc?.message}
-              </p>
+          {watch("projects") === "yes" && (
+            <div className={style.input_out__outer}>
+              <div className={style.input__label}>
+                <textarea
+                  className={style.textarea}
+                  placeholder="Brief description:"
+                  {...register("projectsDesc")}
+                />
+                <p className={style.error__message}>
+                  {errors.projectsDesc?.message}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
           <Controller
             name="agreement"
             control={control}
