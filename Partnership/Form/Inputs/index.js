@@ -11,11 +11,9 @@ import { schema } from "./validate";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { postData } from "../../../../lt-modules/functions/postData";
 import { setUserData } from "../../../../store/actions/userData";
-import { searchParams } from "../../../../store/searchParamsSlice.js";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
 import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
@@ -39,7 +37,6 @@ const debouncedSubmit = debounce(async (type, siteName) => {
 export function InputsWName(props) {
   const router = useRouter();
   const dispatch = useDispatch();
-  const queryParams = useSelector(searchParams);
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
   const eventId = generateUUID();
@@ -94,12 +91,9 @@ export function InputsWName(props) {
       country: getName(values.country),
     };
 
-    // console.log(data, 'data');
-
     try {
       const postToPRMResponse = await axios.post(
         "https://back.netronic.net/partners",
-        // "http://localhost:5002/partners",
         data,
         {
           headers: {
