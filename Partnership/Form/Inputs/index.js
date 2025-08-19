@@ -66,6 +66,22 @@ export function InputsWName(props) {
     },
   });
 
+    useEffect(() => {
+      const hash = window.location.hash;
+      if (hash === "#become_a_partner") {
+        setTimeout(() => {
+          const el = document.getElementById("become_a_partner");
+          if (el) {
+            const offset = 60;
+            const top =
+              el.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }, 300);
+      }
+    }, []);
+
   const handleServerErrors = (error) => {
     Object.entries(error).forEach(([key, message]) => {
       if (["name", "email", "phoneNumber"].includes(key)) {
