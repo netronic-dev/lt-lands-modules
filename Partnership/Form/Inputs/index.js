@@ -105,6 +105,9 @@ export function InputsWName(props) {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
       country: getName(values.country),
+      companyType: Array.isArray(values.companyType)
+        ? values.companyType.join(", ")
+        : values.companyType,
     };
 
     try {
