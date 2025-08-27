@@ -104,6 +104,7 @@ export const schema = yup
     experience: yup.string().required("Please select your experience"),
     brands: yup
       .string()
+      .trim()
       .nullable()
       .when("experience", {
         is: "yes",
@@ -118,6 +119,7 @@ export const schema = yup
     projects: yup.string().required("Please select your project status"),
     projectsDesc: yup
       .string()
+      .trim()
       .nullable()
       .when("projects", {
         is: "yes",
