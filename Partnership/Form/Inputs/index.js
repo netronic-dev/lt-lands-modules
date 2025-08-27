@@ -234,6 +234,8 @@ export function InputsWName(props) {
                 error={errors.vatNumber ? "true" : "false"}
                 {...register("vatNumber", {
                   required: "VAT / Tax ID is required",
+                  validate: (value) =>
+                    value.trim() !== "" || "VAT / Tax ID cannot be just spaces",
                 })}
                 placeholder={
                   props.vatNumber || "VAT / Tax Identification Number*"
