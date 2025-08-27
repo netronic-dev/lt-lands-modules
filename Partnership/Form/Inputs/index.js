@@ -66,21 +66,20 @@ export function InputsWName(props) {
     },
   });
 
-    useEffect(() => {
-      const hash = window.location.hash;
-      if (hash === "#become_a_partner") {
-        setTimeout(() => {
-          const el = document.getElementById("become_a_partner");
-          if (el) {
-            const offset = 60;
-            const top =
-              el.getBoundingClientRect().top + window.scrollY - offset;
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#become_a_partner") {
+      setTimeout(() => {
+        const el = document.getElementById("become_a_partner");
+        if (el) {
+          const offset = 60;
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
 
-            window.scrollTo({ top, behavior: "smooth" });
-          }
-        }, 300);
-      }
-    }, []);
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 300);
+    }
+  }, []);
 
   const handleServerErrors = (error) => {
     Object.entries(error).forEach(([key, message]) => {
@@ -233,9 +232,12 @@ export function InputsWName(props) {
                 }}
                 error={errors.vatNumber ? "true" : "false"}
                 {...register("vatNumber", {
-                  required: "VAT / Tax ID is required",
-                  validate: (value) =>
-                    value.trim() !== "" || "VAT / Tax ID cannot be just spaces",
+                  validate: (value) => {
+                    if (!value || value.trim() === "") {
+                      return "VAT / Tax ID is required";
+                    }
+                    return true;
+                  },
                 })}
                 placeholder={
                   props.vatNumber || "VAT / Tax Identification Number*"
