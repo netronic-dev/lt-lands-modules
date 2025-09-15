@@ -71,6 +71,7 @@ export default function MainNumbers(props) {
                 ) : (
                   ""
                 )}
+                +
               </h3>
               <p className={style.cell_text}>{props.thirdCellText}</p>
             </div>
