@@ -447,6 +447,31 @@ $white: #ffffff;
     }
   }
 
+  .why_us__list {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    @media (min-width: 744px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 50px;
+    }
+  }
+
+  .why_us__item {
+    position: relative;
+    aspect-ratio: 4/1;
+  }
+
   .cell {
     display: flex;
     flex-direction: column;
