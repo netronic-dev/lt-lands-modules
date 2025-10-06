@@ -40,8 +40,10 @@ export default function FalconMain(props) {
           key={isInsideGeneralVisible ? 1 : 2}
           className={`${style.inside_general} fade-up-animation`}
         >
-          <h1 className={style.title}>{props.title}</h1>
-          {logoFalcon}
+          <h1 className={style.title}>
+            {props.title}
+            <span>{logoFalcon}</span>
+          </h1>
           <p className={style.text}>{props.text}</p>
           <div className={style.general__buttons}>
             <div className={style.buttons_price}>
