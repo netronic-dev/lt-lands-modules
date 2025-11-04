@@ -50,7 +50,7 @@ export default function Main(props) {
             <h1 className="hidden">{props.hiddenTitle}</h1>
           )}
           <p className={style.main__text}>{props.text}</p>
-          <Button style="black" type="catalog" text={props.buttonText} />
+          <Button style="black" text={props.buttonText} />
         </div>
       </div>
     </section>
