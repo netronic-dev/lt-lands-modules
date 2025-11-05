@@ -1,6 +1,6 @@
-import Image from "next/image"
-import style from "../lux.module.scss"
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Image from "next/image";
+import style from "../lux.module.scss";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 export default function Shockproof(props) {
   return (
@@ -25,7 +25,7 @@ export default function Shockproof(props) {
         >
           <ParallaxLayer offset={0.9} speed={1.1} className={style.layer_1}>
             <Image
-              src="/lux/shockproof-hand.png"
+              src={props.shockproofHandImage}
               layout="fill"
               objectFit="cover"
               priority={true}

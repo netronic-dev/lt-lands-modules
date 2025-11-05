@@ -31,6 +31,7 @@ export default function FeaturesSlider(props) {
   return (
     <section className={style.features_slider}>
       <h2 className={style.title}>{props.title}</h2>
+      {props.text && <p className={style.text}>{props.text}</p>}
       <div className={style.slider}>
         <div className={style.cells}>
           {props.data &&

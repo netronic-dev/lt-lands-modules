@@ -28,9 +28,11 @@ export default function Features(props) {
       </div>
       <div className={style.content}>
         <div className={style.bright_colors_content}>
-          <h2 className={`${style.title} ${style.bright_title}`}>
-            {props.title}
-          </h2>
+          {props.title && (
+            <h2 className={`${style.title} ${style.bright_title}`}>
+              {props.title}
+            </h2>
+          )}
           <p className={style.text}>{props.text}</p>
         </div>
         <div className={style.impulse_recoil_content}>
