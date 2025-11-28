@@ -52,11 +52,13 @@ export default function MainWhyUs(props) {
                   src={data.image}
                   layout="fill"
                   alt="Why Us Default Image"
+                  sizes="(max-width: 768px) 200px, 500px"
                   className={style.defaultImg}
                 />
                 <Image
                   src={data.imageHover}
                   layout="fill"
+                  sizes="(max-width: 768px) 200px, 500px"
                   alt="Why Us Hover Image"
                   className={style.hoverImg}
                 />
