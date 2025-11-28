@@ -1,7 +1,7 @@
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import { MapSales } from "../../../lt-modules/Map/MapSales";
-import SliderSmallPics from "../../../lt-modules/Slider/SliderSmallPics";
+// import SliderSmallPics from "../../../lt-modules/Slider/SliderSmallPics";
 import style from "../main.module.scss";
 
 export default function MainWhyUs(props) {
@@ -47,12 +47,20 @@ export default function MainWhyUs(props) {
         <ul className={style.why_us__list}>
           {props.sliderData.map((data, index) => (
             <li className={style.why_us__item} key={index}>
-              <Image
-                src={data.image}
-                layout="fill"
-                objectFit="contain"
-                alt="image"
-              />
+              <div className={style.imageWrapper}>
+                <Image
+                  src={data.image}
+                  layout="fill"
+                  alt="Why Us Default Image"
+                  className={style.defaultImg}
+                />
+                <Image
+                  src={data.imageHover}
+                  layout="fill"
+                  alt="Why Us Hover Image"
+                  className={style.hoverImg}
+                />
+              </div>
             </li>
           ))}
         </ul>

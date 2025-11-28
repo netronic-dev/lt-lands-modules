@@ -458,12 +458,12 @@ $white: #ffffff;
     grid-gap: 20px;
 
     @media (min-width: 744px) {
-        grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     @media (min-width: 1024px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 50px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 50px;
     }
   }
 
@@ -496,6 +496,35 @@ $white: #ffffff;
     line-height: 20px;
     text-align: left;
     color: #8e8e8e;
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .defaultImg,
+  .hoverImg {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .defaultImg {
+    opacity: 1;
+  }
+
+  .hoverImg {
+    opacity: 0;
+  }
+
+  .imageWrapper:hover .defaultImg {
+    opacity: 0;
+  }
+
+  .imageWrapper:hover .hoverImg {
+    opacity: 1;
   }
 }
 
