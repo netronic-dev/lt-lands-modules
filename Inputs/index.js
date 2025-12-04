@@ -249,6 +249,8 @@ export function Inputs(props) {
       >
         <div className={style.left}>
           <form onSubmit={handleSubmit(onSubmit)} className="form_submit_land">
+            {props.title && <h2 className={style.title}>{props.title}</h2>}
+            {props.text && <p className={style.text}>{props.text}</p>}
             <div className={style.content}>
               <div className={style.grid}>
                 <div className={style.grid_cell}>
