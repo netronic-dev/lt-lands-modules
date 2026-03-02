@@ -80,7 +80,7 @@ export default function NewMainMain(props) {
               objectPosition={props.image_objectPosition}
               quality={90}
               priority={true}
-              alt="image"
+              alt="World leader in mobile laser tag solutions photo"
             />
           </div>
         )}
@@ -93,7 +93,7 @@ export default function NewMainMain(props) {
               objectPosition={props.image_responsive_objectPosition}
               quality={90}
               priority={true}
-              alt="image"
+              alt="World leader in mobile laser tag solutions photo"
             />
           </div>
         )}

@@ -403,7 +403,7 @@ export function Inputs(props) {
             objectFit={props.objectFit || "contain"}
             priority={true}
             quality={90}
-            alt="catalogs"
+            alt={props.alt || "image"}
           />
         </div>
       </div>

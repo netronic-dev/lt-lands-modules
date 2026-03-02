@@ -51,7 +51,7 @@ export default function MainWhyUs(props) {
                 <Image
                   src={data.image}
                   layout="fill"
-                  alt="Why Us Default Image"
+                  alt={data.alt}
                   sizes="(max-width: 768px) 200px, 500px"
                   className={style.defaultImg}
                 />
@@ -59,7 +59,7 @@ export default function MainWhyUs(props) {
                   src={data.imageHover}
                   layout="fill"
                   sizes="(max-width: 768px) 200px, 500px"
-                  alt="Why Us Hover Image"
+                  alt={data.alt}
                   className={style.hoverImg}
                 />
               </div>

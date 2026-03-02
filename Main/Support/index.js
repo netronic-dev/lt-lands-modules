@@ -40,7 +40,7 @@ export default function MainSupport(props) {
               height={270}
               width={575}
               priority={true}
-              alt="business"
+              alt="World leader in mobile laser tag solutions photo 19"
             />
           </div>
           <div
@@ -62,7 +62,7 @@ export default function MainSupport(props) {
               height={270}
               width={575}
               priority={true}
-              alt="materials"
+              alt="World leader in mobile laser tag solutions photo 20"
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function MainSupport(props) {
               width={330}
               quality={90}
               priority={true}
-              alt="managers"
+              alt="World leader in mobile laser tag solutions photo 21"
             />
           </div>
         </div>

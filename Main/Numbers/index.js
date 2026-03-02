@@ -1,4 +1,4 @@
-import { Fade, Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import CountUp from "react-countup";
 import { useInView } from "react-hook-inview";
 import style from "../main.module.scss";
@@ -27,7 +27,7 @@ export default function MainNumbers(props) {
               <img
                 src="/index/vector/falcon-2.svg"
                 className={style.image}
-                alt="falcon-2"
+                alt="World leader in mobile laser tag solutions photo 1"
               />
               <h3 className={style.cell_title}>
                 {isVisible ? (
@@ -45,7 +45,7 @@ export default function MainNumbers(props) {
               <img
                 src="/index/vector/icon.svg"
                 className={style.image}
-                alt="icon"
+                alt="World leader in mobile laser tag solutions photo 2"
               />
               <h3 className={style.cell_title}>
                 {isVisible ? (
@@ -63,7 +63,7 @@ export default function MainNumbers(props) {
               <img
                 src="/index/vector/map.svg"
                 className={style.image}
-                alt="map"
+                alt="World leader in mobile laser tag solutions photo 3"
               />
               <h3 className={style.cell_title}>
                 {isVisible ? (
@@ -81,7 +81,7 @@ export default function MainNumbers(props) {
               <img
                 src="/index/vector/cart.svg"
                 className={style.image}
-                alt="cart"
+                alt="World leader in mobile laser tag solutions photo 4"
               />
               <h3 className={style.cell_title}>
                 {isVisible ? (

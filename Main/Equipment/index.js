@@ -58,7 +58,7 @@ export default function MainEquipment(props) {
                 layout="fill"
                 objectFit="cover"
                 priority={true}
-                alt="mobile equipment"
+                alt="World leader in mobile laser tag solutions photo 5"
               />
             </div>
             <div className={style.cell_content}>
@@ -91,7 +91,7 @@ export default function MainEquipment(props) {
                 layout="fill"
                 objectFit="cover"
                 priority={true}
-                alt="outdoor equipment"
+                alt="World leader in mobile laser tag solutions photo 6"
               />
             </div>
             <div className={style.cell_content}>
@@ -122,7 +122,7 @@ export default function MainEquipment(props) {
                 layout="fill"
                 objectFit="cover"
                 priority={true}
-                alt="indoor equipment"
+                alt="World leader in mobile laser tag solutions photo 7"
               />
             </div>
             <div className={style.cell_content}>
