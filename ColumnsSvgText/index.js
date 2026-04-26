@@ -16,8 +16,8 @@ export function ColumnsSvgText(props) {
     <div
       ref={cellRef}
       className={styles[props.style]}
-      key={cellIsVisible ? 1 : 0}>
-
+      key={cellIsVisible ? 1 : 0}
+    >
       <div className={style.cell}>
         <div className={style.image_block}>{props.svgOne}</div>
         <section className={`${style.column_text_block} fade-up-animation`}>
@@ -25,7 +25,6 @@ export function ColumnsSvgText(props) {
           <p>{props.textOne}</p>
         </section>
       </div>
-
       <div className={style.cellTwo}>
         <div className={style.image_block}>{props.svgTwo}</div>
         <section className={`${style.column_text_block} fade-up-animation`}>
@@ -33,22 +32,24 @@ export function ColumnsSvgText(props) {
           <p>{props.textTwo}</p>
         </section>
       </div>
-
-      <div className={style.cellThree}>
-        <div className={style.image_block}>{props.svgThree}</div>
-        <section className={`${style.column_text_block} fade-up-animation`}>
-          <h3>{props.titleThree}</h3>
-          <p>{props.textThree}</p>
-        </section>
-      </div>
-
-      <div className={style.cellFour}>
-        <div className={style.image_block}>{props.svgFour}</div>
-        <section className={`${style.column_text_block} fade-up-animation`}>
-          <h3>{props.titleFour}</h3>
-          <p>{props.textFour}</p>
-        </section>
-      </div>
+      {props.titleThree && (
+        <div className={style.cellThree}>
+          <div className={style.image_block}>{props.svgThree}</div>
+          <section className={`${style.column_text_block} fade-up-animation`}>
+            <h3>{props.titleThree}</h3>
+            <p>{props.textThree}</p>
+          </section>
+        </div>
+      )}
+      {props.titleFour && (
+        <div className={style.cellFour}>
+          <div className={style.image_block}>{props.svgFour}</div>
+          <section className={`${style.column_text_block} fade-up-animation`}>
+            <h3>{props.titleFour}</h3>
+            <p>{props.textFour}</p>
+          </section>
+        </div>
+      )}
     </div>
   );
 }

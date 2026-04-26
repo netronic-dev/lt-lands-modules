@@ -4,12 +4,14 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
 import { Button, VideoButton } from "../../../lt-modules/Buttons";
 import style from "../maverick.module.scss";
 import useIsDesktop from "../../../hooks/useIsDesktop";
+import img from "../../../public//guns/maverick_tablet.webp";
 
-export default function FalconMain(props) {
+export default function MaverickMain(props) {
   const [InsideGeneralRef, isInsideGeneralVisible] = useInView({
     unobserveOnEnter: true,
   });
   const isDesktop = useIsDesktop(1024);
+  // const isTablet = useIsDesktop(744);
 
   return (
     <>
@@ -26,8 +28,8 @@ export default function FalconMain(props) {
         ) : (
           ""
         )}
-        <div className={`${style.section_general_bg}`}>
-          {isDesktop ? (
+        {isDesktop ? (
+          <div className={`${style.section_general_bg}`}>
             <Image
               src="/guns/maverick.webp"
               layout="fill"
@@ -35,7 +37,11 @@ export default function FalconMain(props) {
               quality={90}
               alt="AR-15 MAVERICK photo"
             />
-          ) : (
+          </div>
+        ) : (
+          <div
+            className={`${isDesktop ? style.section_general_bg : style.section_general_bg_mobile}`}
+          >
             <Image
               src="/guns/maverick_tablet.webp"
               layout="fill"
@@ -43,8 +49,8 @@ export default function FalconMain(props) {
               quality={90}
               alt="AR-15 MAVERICK photo"
             />
-          )}
-        </div>
+          </div>
+        )}
         <div className={style.empty}></div>
         <div className={style.general_bg}></div>
         <section
@@ -58,7 +64,7 @@ export default function FalconMain(props) {
           <div className={style.general__buttons}>
             <div className={style.buttons_price}>
               <Button
-                type="catalog"
+                type="price"
                 style="blueWhite"
                 text={props.buttonText}
               />
