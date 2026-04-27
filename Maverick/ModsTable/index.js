@@ -54,7 +54,7 @@ export default function MaverickModsTable(props) {
           </table>
         </Zoom>
         <div className={style.tagerModifications_button_box}>
-          <Button type="price" style="blueWhite" text={props.buttonText} />
+          <Button type="catalog" style="blueWhite" text={props.buttonText} />
         </div>
       </div>
     </>

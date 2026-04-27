@@ -64,7 +64,7 @@ export default function MaverickMain(props) {
           <div className={style.general__buttons}>
             <div className={style.buttons_price}>
               <Button
-                type="price"
+                type="catalog"
                 style="blueWhite"
                 text={props.buttonText}
               />
