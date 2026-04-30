@@ -131,7 +131,7 @@ const list_bottom = [
     id: 2,
     title: "Color IPS display",
     textTop:
-      "Just like the FALCON series taggers, the new tagger features a high-quality IPS display showing key game stats and service information: tagger battery level, status of connected headbands, vests, and the Scorpion shock bracelet. The display is protected by 5 mm tempered glass, which completely eliminates the risk of damage during intense games.",
+      'Just like the FALCON series taggers, the new tagger features a high-quality IPS display showing key game stats and service information: tagger battery level, status of connected headbands, vests, and the Scorpion shock bracelet. The display is protected by 5 mm (0.20") tempered glass, which completely eliminates the risk of damage during intense games.',
     textBottom:
       "A new convenient feature: even when the tagger is powered off and placed on charge, the current charge level indicator remains visible on the screen — laser tag arena staff can always see whether the tagger is ready for the next game.",
     image: "/guns/maverick_10.webp",
@@ -155,7 +155,7 @@ const list_bottom = [
   },
   {
     id: 4,
-    title: "Advanced NFC bonding system",
+    title: "Advanced NFC pairing system",
     textTop:
       "The new tagger uses an NFC-based system for pairing hit sensors and the shock bracelet. When you need to add a new device to the game set, simply switch the tagger to service mode and bring the desired headband, vest, or Scorpion shock bracelet close to it.",
     image: "/guns/maverick_12.webp",
