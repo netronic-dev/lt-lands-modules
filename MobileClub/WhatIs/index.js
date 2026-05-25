@@ -12,7 +12,7 @@ export default function MCWhatIs(props) {
         <h2 className={style.title}>{props.title}</h2>
         <p className={style.text}>{props.text}</p>
       </div>
-      <div
+      {/* <div
         className={style.image}
         onClick={() => modals.VideoModalOpen(props.videoLink)}
       >
@@ -39,7 +39,7 @@ export default function MCWhatIs(props) {
           />
         </div>
         <div className={style.play_button}>{playBtn}</div>
-      </div>
+      </div> */}
     </section>
   );
 }
