@@ -39,7 +39,7 @@ export default function SiriusMain(props) {
         />
       </div>
       <div className={style.video_button}>
-        <VideoButton link="poboasNSsng" text={props.videoButtonText} />
+        <VideoButton link="dJCJdx8-yDY" text={props.videoButtonText} />
       </div>
     </div>
   );

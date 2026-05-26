@@ -1,11 +1,16 @@
-import style from "../sirius.module.scss";
 import Image from "next/image";
+import style from "../sirius.module.scss";
+import Video from "../../../blogModules/Video";
+import useIsDesktop from "../../../hooks/useIsDesktop";
 
 export default function SiriusTitleCards(props) {
+  const isTablet = useIsDesktop({ width: 1201 });
   return (
     <>
       <div className={style.newTechnologies}>
+        {props.videoLink && isTablet && <Video src={props.videoLink} />}
         <p className={style.head_par}>{props.text}</p>
+
         <div className={style.cards}>
           <div className={style.cards__text_block}>
             <h2>{props.title}</h2>
