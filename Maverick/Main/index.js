@@ -4,14 +4,15 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
 import { Button, VideoButton } from "../../../lt-modules/Buttons";
 import style from "../maverick.module.scss";
 import useIsDesktop from "../../../hooks/useIsDesktop";
+import useIsTablet from "../../../hooks/useIsTablet";
 import img from "../../../public//guns/maverick_tablet.webp";
 
 export default function MaverickMain(props) {
   const [InsideGeneralRef, isInsideGeneralVisible] = useInView({
     unobserveOnEnter: true,
   });
-  const isDesktop = useIsDesktop(1024);
-  // const isTablet = useIsDesktop(744);
+ const isDesktop = useIsDesktop({ width: 1024 });
+ const isTablet = useIsTablet({ width: 744 });
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function MaverickMain(props) {
           ""
         )}
         {isDesktop ? (
-          <div className={`${style.section_general_bg}`}>
+          <div className={style.section_general_bg}>
             <Image
               src="/guns/maverick.webp"
               layout="fill"
@@ -38,12 +39,20 @@ export default function MaverickMain(props) {
               alt="AR-15 MAVERICK photo"
             />
           </div>
-        ) : (
-          <div
-            className={`${isDesktop ? style.section_general_bg : style.section_general_bg_mobile}`}
-          >
+        ) : isTablet ? (
+          <div className={style.section_general_bg_mobile}>
             <Image
               src="/guns/maverick_tablet.webp"
+              layout="fill"
+              objectFit="cover"
+              quality={90}
+              alt="AR-15 MAVERICK photo"
+            />
+          </div>
+        ) : (
+          <div className={style.section_general_bg_mobile}>
+            <Image
+              src="/guns/maverick_mob.webp"
               layout="fill"
               objectFit="cover"
               quality={90}
