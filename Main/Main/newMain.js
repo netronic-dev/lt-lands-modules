@@ -106,7 +106,8 @@ export default function NewMainMain(props) {
             <Button
               type="catalog"
               text={props.buttonText}
-              style="blueBlackMainBannerWithGirl"
+              // style="blueBlackMainBannerWithGirl"
+              style="pulse"
             />
             {props.eventButtonLink && (
               <div>
