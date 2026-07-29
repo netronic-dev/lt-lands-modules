@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { debounce } from "lodash";
-import { Turnstile } from "@marsidev/react-turnstile";
+import Turnstile from "../../../../lt-modules/functions/Turnstile";
 import "react-phone-input-2/lib/style.css";
 import ReactGA from "react-ga4";
 import style from "./style.module.scss";
@@ -513,20 +513,14 @@ export function InputsWName(props) {
               />
             )}
           />
-          <div style={{ marginTop: "15px" }}>
             <Turnstile
               siteKey={
-                process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
                 "0x4AAAAAAD9nNenDNZ5KX93b"
               }
-              options={{
-                execution: "render",
-                appearance: "interaction-only", // або 'execute'
-              }}
               onSuccess={(token) => setTurnstileToken(token)}
               onExpire={() => setTurnstileToken("")}
             />
-          </div>
           <button
             className={style.button}
             type="submit"

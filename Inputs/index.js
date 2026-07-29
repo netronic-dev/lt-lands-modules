@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Select, { components } from "react-select";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import Image from "next/image";
-import { Turnstile } from "@marsidev/react-turnstile";
+import Turnstile from "../../lt-modules/functions/Turnstile";
 import { debounce } from "lodash";
 import { useRouter } from "next/router";
 import style from "./style.module.scss";
@@ -413,20 +413,14 @@ export function Inputs(props) {
                 />
               )}
             />
-            <div style={{ marginTop: "15px" }}>
               <Turnstile
                 siteKey={
-                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
                   "0x4AAAAAAD9nNenDNZ5KX93b"
                 }
-                options={{
-                  execution: "render",
-                  appearance: "interaction-only", // або 'execute'
-                }}
                 onSuccess={(token) => setTurnstileToken(token)}
                 onExpire={() => setTurnstileToken("")}
               />
-            </div>
             <FillButton
               style="blueWhite"
               submit
@@ -825,20 +819,14 @@ export function InputsWName(props) {
                 />
               )}
             />
-            <div style={{ marginTop: "15px" }}>
               <Turnstile
                 siteKey={
-                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
                   "0x4AAAAAAD9nNenDNZ5KX93b"
                 }
-                options={{
-                  execution: "render",
-                  appearance: "interaction-only", // або 'execute'
-                }}
                 onSuccess={(token) => setTurnstileToken(token)}
                 onExpire={() => setTurnstileToken("")}
               />
-            </div>
             <FillButton
               style={props.theme === "light" ? "bigBlue" : "blueWhite"}
               submit
