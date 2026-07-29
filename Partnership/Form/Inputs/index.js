@@ -1,9 +1,11 @@
 import axios from "axios";
+import { useEffect, useState, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { debounce } from "lodash";
+import { Turnstile } from "@marsidev/react-turnstile";
 import "react-phone-input-2/lib/style.css";
 import ReactGA from "react-ga4";
 import style from "./style.module.scss";
@@ -15,7 +17,6 @@ import { useDispatch } from "react-redux";
 
 import { setUserData } from "../../../../store/actions/userData";
 import { sendEventToConversionApi } from "../../../../lt-modules/functions/sendFbPageView.js";
-import { useEffect, useState } from "react";
 import { useModals } from "../../../../context/ModalsProvider.js";
 import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
 import { CountryDropdown } from "../../../../components/CountryDropdown";
@@ -40,6 +41,12 @@ export function InputsWName(props) {
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
   const eventId = generateUUID();
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const formRenderTime = useRef(Date.now());
+
+  useEffect(() => {
+    formRenderTime.current = Date.now();
+  }, []);
 
   useEffect(() => {
     modal?.region
@@ -63,6 +70,7 @@ export function InputsWName(props) {
     resolver: yupResolver(schema),
     defaultValues: {
       agreement: true,
+      honeypot_check: "",
     },
   });
 
@@ -98,6 +106,23 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
+    if (values.honeypot_check) {
+      console.warn("Spam bot detected via honeypot!");
+      return;
+    }
+
+    const elapsedTime = (Date.now() - formRenderTime.current) / 1000;
+    if (elapsedTime < 4) {
+      console.warn(`Form submitted too fast: ${elapsedTime}s`);
+      alert("Please take your time filling out the form.");
+      return;
+    }
+
+    if (!turnstileToken) {
+      alert("Please wait for the CAPTCHA to be verified.");
+      return;
+    }
+
     debouncedSubmit("attempt", window.location.hostname);
     dispatch(setUserData(values.name));
     const data = {
@@ -117,7 +142,7 @@ export function InputsWName(props) {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       Promise.all([postToPRMResponse]).then(() => {
@@ -137,7 +162,7 @@ export function InputsWName(props) {
             email: values.email,
             phone: `+${values.phoneNumber}`,
           },
-          eventId
+          eventId,
         );
         router.push("/thanks-call");
       });
@@ -149,7 +174,7 @@ export function InputsWName(props) {
           "https://back.netronic.net/telegram/send-error-message",
           {
             message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
-          }
+          },
         );
       }
     }
@@ -488,6 +513,20 @@ export function InputsWName(props) {
               />
             )}
           />
+          <div style={{ marginTop: "15px" }}>
+            <Turnstile
+              siteKey={
+                process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                "0x4AAAAAAD9nNenDNZ5KX93b"
+              }
+              options={{
+                execution: "render",
+                appearance: "interaction-only", // або 'execute'
+              }}
+              onSuccess={(token) => setTurnstileToken(token)}
+              onExpire={() => setTurnstileToken("")}
+            />
+          </div>
           <button
             className={style.button}
             type="submit"
