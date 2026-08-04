@@ -23,7 +23,7 @@ export default function SupernovaScenarios (props) {
         )}
         <Fade delay={300} triggerOnce>
           <div className={style.button}>
-            <Button style="black" text="Get catalog" />
+            <Button type="catalog" style="black" text="Get catalog" />
           </div>
         </Fade>
       </div>

@@ -19,6 +19,7 @@ export default function Gallery(props) {
                     textTop={props.textTop}
                     textBottom={props.textBottom}
                     buttonText={props.buttonText}
+                    type={props.type}
                 />
             </div>
         </div>
