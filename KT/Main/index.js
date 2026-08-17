@@ -1,8 +1,9 @@
-import style from "../smart.module.scss"
-import Image from "next/image"
-import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs"
-import { Button } from "../../../lt-modules/Buttons"
-import { Fade } from "react-awesome-reveal"
+import Image from "next/image";
+import { Fade } from "react-awesome-reveal";
+import Video from "../../../blogModules/Video";
+import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
+import { Button } from "../../../lt-modules/Buttons";
+import style from "../smart.module.scss";
 
 export default function KTMain(props) {
   return (
@@ -23,14 +24,15 @@ export default function KTMain(props) {
       <BreadCrumbs color="black" breadcrumbData={props.breadcrumbData} />
       <div className={style.body_top__content}>
         <Fade direction="down" triggerOnce>
-          <h1 className={style.title}>
-            {props.title}
-          </h1>
+          <h1 className={style.title}>{props.title}</h1>
         </Fade>
+              {props.videoLink && (
+          <Fade direction="up" triggerOnce>
+            <Video src={props.videoLink} />
+          </Fade>
+        )}
         <Fade direction="down" triggerOnce>
-          <p className={style.text}>
-            {props.text}
-          </p>
+          <p className={style.text}>{props.text}</p>
         </Fade>
         <Fade direction="down" triggerOnce>
           <div className={style.button}>
@@ -55,5 +57,5 @@ export default function KTMain(props) {
         </div>
       </Fade>
     </div>
-  )
+  );
 }
