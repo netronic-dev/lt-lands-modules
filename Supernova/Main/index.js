@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
 import style from "../style.module.scss";
 
-export default function SupernovaMain() {
+export default function SupernovaMain(props) {
   return (
     <div className={style.main_out}>
       <BreadCrumbs color="white" breadcrumbData={props.breadcrumbs} />
