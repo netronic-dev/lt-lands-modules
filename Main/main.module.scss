@@ -411,12 +411,14 @@ $white: #ffffff;
 }
 
 .why_us {
+  background-color: #0090ff;
   padding: 80px 0;
 
   .title {
     @extend %title;
     text-align: center;
     margin-bottom: 40px;
+    color: #fff;
   }
 
   .why_us_text {
@@ -426,14 +428,17 @@ $white: #ffffff;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    color: #fff;
   }
 
   .why_us_text_bottom {
     margin-top: 40px;
+    color: #fff;
   }
 
   .why_us_text_top {
     margin-bottom: 40px;
+    color: #fff;
   }
 
   .why_us__grid {
@@ -445,6 +450,18 @@ $white: #ffffff;
     @media (max-width: 1200px) {
       padding: 0 20px;
     }
+  }
+
+  .why_us__list_title {
+    margin: 70px auto 50px;
+    display: flex;
+    justify-content: center;
+   font-family: "Inter-Medium";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000;
   }
 
   .why_us__list {
@@ -472,11 +489,29 @@ $white: #ffffff;
     aspect-ratio: 4/1;
   }
 
+  .consultation_btn_box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
   .cell {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 15px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    height: 100%;
   }
 
   .cell_title {
@@ -486,7 +521,7 @@ $white: #ffffff;
     font-size: 18px;
     line-height: 22px;
     text-align: left;
-    color: #0e0e0e;
+    color: #fff;
   }
 
   .cell_text {
@@ -495,7 +530,7 @@ $white: #ffffff;
     font-size: 14px;
     line-height: 20px;
     text-align: left;
-    color: #8e8e8e;
+    color: #fff;
   }
 
   .imageWrapper {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MapSales } from "../../../lt-modules/Map/MapSales";
 // import SliderSmallPics from "../../../lt-modules/Slider/SliderSmallPics";
 import style from "../main.module.scss";
+import { Button } from "../../../lt-modules/Buttons";
 
 export default function MainWhyUs(props) {
   return (
@@ -41,9 +42,13 @@ export default function MainWhyUs(props) {
             {props.bottomText}
           </p>
         </Fade>
-        <MapSales />
+        <div className={style.consultation_btn_box}>
+          <Button style="black" text="Get consultation" />
+        </div>
+        {/* <MapSales /> */}
         {/* <SliderSmallPics data={props.sliderData} /> */}
         {/* <Fade direction="up" triggerOnce> */}
+        <h4 className={style.why_us__list_title}>Official partners</h4>
         <ul className={style.why_us__list}>
           {props.sliderData.map((data, index) => (
             <li className={style.why_us__item} key={index}>
