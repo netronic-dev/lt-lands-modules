@@ -6,7 +6,7 @@ import style from "../style.module.scss";
 export default function SupernovaMain() {
   return (
     <div className={style.main_out}>
-      <BreadCrumbs color="white" breadcrumbData={breadcrumbs} />
+      <BreadCrumbs color="white" breadcrumbData={props.breadcrumbs} />
       <section className={style.main}>
         <Fade triggerOnce>
           <div className="background desktop">
@@ -51,30 +51,3 @@ export default function SupernovaMain() {
     </div>
   );
 }
-
-const breadcrumbs = [
-  {
-    "@type": "ListItem",
-    position: 1,
-    name: "Home",
-    item: "/",
-  },
-  {
-    "@type": "ListItem",
-    position: 2,
-    name: "Equipment",
-    item: "/equipment",
-  },
-  {
-    "@type": "ListItem",
-    position: 3,
-    name: "Game-based devices",
-    item: "/equipment/game-based-devices",
-  },
-  {
-    "@type": "ListItem",
-    position: 4,
-    name: "Supernova",
-    item: "/equipment/game-based-devices/lasertag-net-bomb-lite",
-  },
-];
