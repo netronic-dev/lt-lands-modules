@@ -18,7 +18,7 @@ const Main = (props) => {
                 <div className={style.content}>
                     <div className={style.breadcrumb}>
                         <BreadCrumbs
-                            breadcrumbData={breadcrumbData}
+                            breadcrumbData={props.breadcrumbData}
                             color='white'
                         />
                     </div>
@@ -115,29 +115,3 @@ const Main = (props) => {
 
 export default Main;
 
-const breadcrumbData = [
-    {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "/",
-    },
-    {
-        "@type": "ListItem",
-        position: 2,
-        name: "Equipment",
-        item: "/equipment",
-    },
-    {
-        "@type": "ListItem",
-        position: 3,
-        name: "Accessories",
-        item: "/equipment/accessories",
-    },
-    {
-        "@type": "ListItem",
-        position: 4,
-        name: "Nebula",
-        item: "",
-    },
-]
