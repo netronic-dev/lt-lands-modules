@@ -281,21 +281,26 @@ export function Inputs(props) {
               <div className={style.grid}>
                 <div className={style.grid_cell}>
                   <div
-              style={{
-                position: "absolute",
-                left: "-9999px",
-                opacity: 0,
-                height: 0,
-                overflow: "hidden",
-              }}
-            >
-              <input
-                type="text"
-                tabIndex="-1"
-                autoComplete="off"
-                {...register("honeypot_check")}
-              />
-            </div>
+                    style={{
+                      position: "absolute",
+                      opacity: 0,
+                      top: 0,
+                      left: 0,
+                      height: 0,
+                      width: 0,
+                      zIndex: -1,
+                      overflow: "hidden",
+                    }}
+                    aria-hidden="true"
+                  >
+                    <input
+                      type="text"
+                      tabIndex="-1"
+                      autoComplete="new-password"
+                      id="honeypot_check"
+                      {...register("honeypot_check")}
+                    />
+                  </div>
                   <div className={style.input__label}>
                     <input
                       className={style.input}
@@ -703,21 +708,26 @@ export function InputsWName(props) {
 
               <div className={style.input_out__outer}>
                 <div
-              style={{
-                position: "absolute",
-                left: "-9999px",
-                opacity: 0,
-                height: 0,
-                overflow: "hidden",
-              }}
-            >
-              <input
-                type="text"
-                tabIndex="-1"
-                autoComplete="off"
-                {...register("honeypot_check")}
-              />
-            </div>
+                  style={{
+                    position: "absolute",
+                    opacity: 0,
+                    top: 0,
+                    left: 0,
+                    height: 0,
+                    width: 0,
+                    zIndex: -1,
+                    overflow: "hidden",
+                  }}
+                  aria-hidden="true"
+                >
+                  <input
+                    type="text"
+                    tabIndex="-1"
+                    autoComplete="new-password"
+                    id="honeypot_check"
+                    {...register("honeypot_check")}
+                  />
+                </div>
                 <input
                   className={style.input}
                   style={{
