@@ -62,10 +62,11 @@ function Form(props) {
       })
         .then(() => {
           formik.resetForm();
-          ReactGA.event("generate_lead", {
-            event_category: "button",
-            event_label: "generate_lead",
-          });
+       ReactGA.event("generate_lead", {
+         event_category: "form",
+         event_label: "submit",
+         page_path: router.pathname,
+       });
           if (typeof window !== "undefined" && window.fbq) {
             window.fbq("track", "Lead", {}, { eventID: eventId });
           }

@@ -149,10 +149,11 @@ export function InputsWName(props) {
       Promise.all([postToPRMResponse]).then(() => {
         debouncedSubmit("success", window.location.hostname);
         reset();
-        ReactGA.event("generate_lead", {
-          category: "form",
-          action: "submit",
-        });
+      ReactGA.event("generate_lead", {
+        event_category: "form",
+        event_label: "submit",
+        page_path: router.pathname,
+      });
         if (typeof window !== "undefined" && window.fbq) {
           window.fbq("track", "Lead", {}, { eventID: eventId });
         }
