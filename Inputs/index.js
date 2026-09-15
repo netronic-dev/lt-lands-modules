@@ -157,7 +157,7 @@ export function Inputs(props) {
     resolver: yupResolver(schema),
     defaultValues: {
       agreement: true,
-      honeypot_check: "",
+      middle_name: "",
     },
   });
 
@@ -167,7 +167,7 @@ export function Inputs(props) {
   };
 
   const onSubmit = async (values) => {
-    if (values.honeypot_check) {
+    if (values.middle_name) {
       console.warn("Spam bot detected via honeypot!");
       return;
     }
@@ -218,11 +218,11 @@ export function Inputs(props) {
       Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
         debouncedSubmit("success", window.location.hostname);
         reset();
-      ReactGA.event("generate_lead", {
-        event_category: "form",
-        event_label: "submit",
-        page_path: router.pathname,
-      });
+        ReactGA.event("generate_lead", {
+          event_category: "form",
+          event_label: "submit",
+          page_path: router.pathname,
+        });
         if (typeof window !== "undefined" && window.fbq) {
           window.fbq("track", "Lead", {}, { eventID: eventId });
         }
@@ -282,24 +282,15 @@ export function Inputs(props) {
               <div className={style.grid}>
                 <div className={style.grid_cell}>
                   <div
-                    style={{
-                      position: "absolute",
-                      opacity: 0,
-                      top: 0,
-                      left: 0,
-                      height: 0,
-                      width: 0,
-                      zIndex: -1,
-                      overflow: "hidden",
-                    }}
+                    style={{ position: "absolute", left: "-9999px" }}
                     aria-hidden="true"
                   >
                     <input
                       type="text"
                       tabIndex="-1"
-                      autoComplete="new-password"
-                      id="honeypot_check"
-                      {...register("honeypot_check")}
+                      autoComplete="middle_name"
+                      id="middle_name"
+                      {...register("middle_name")}
                     />
                   </div>
                   <div className={style.input__label}>
@@ -448,7 +439,7 @@ export function Inputs(props) {
               style="blueWhite"
               submit
               text={isSubmitting ? props.submittingText : props.buttonText}
-              disabled={!isValid || isSubmitting}
+              disabled={!isValid || isSubmitting || !turnstileToken}
             />
           </form>
         </div>
@@ -508,7 +499,7 @@ export function InputsWName(props) {
     resolver: yupResolver(schema),
     defaultValues: {
       agreement: true,
-      honeypot_check: "",
+      middle_name: "",
     },
   });
 
@@ -518,7 +509,7 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
-    if (values.honeypot_check) {
+    if (values.middle_name) {
       console.warn("Spam bot detected via honeypot!");
       return;
     }
@@ -569,11 +560,11 @@ export function InputsWName(props) {
       Promise.all([sendEmailResponse, postToCRMResponse]).then(() => {
         debouncedSubmit("success", window.location.hostname);
         reset();
-      ReactGA.event("generate_lead", {
-  event_category: "form",
-  event_label: "submit",
-  page_path: router.pathname,
-});
+        ReactGA.event("generate_lead", {
+          event_category: "form",
+          event_label: "submit",
+          page_path: router.pathname,
+        });
         if (typeof window !== "undefined" && window.fbq) {
           window.fbq("track", "Lead", {}, { eventID: eventId });
         }
@@ -710,24 +701,15 @@ export function InputsWName(props) {
 
               <div className={style.input_out__outer}>
                 <div
-                  style={{
-                    position: "absolute",
-                    opacity: 0,
-                    top: 0,
-                    left: 0,
-                    height: 0,
-                    width: 0,
-                    zIndex: -1,
-                    overflow: "hidden",
-                  }}
+                  style={{ position: "absolute", left: "-9999px" }}
                   aria-hidden="true"
                 >
                   <input
                     type="text"
                     tabIndex="-1"
-                    autoComplete="new-password"
-                    id="honeypot_check"
-                    {...register("honeypot_check")}
+                    autoComplete="middle_name"
+                    id="middle_name"
+                    {...register("middle_name")}
                   />
                 </div>
                 <input
@@ -876,7 +858,7 @@ export function InputsWName(props) {
             <FillButton
               style={props.theme === "light" ? "bigBlue" : "blueWhite"}
               submit
-              disabled={!isValid || isSubmitting}
+              disabled={!isValid || isSubmitting || !turnstileToken}
               text={isSubmitting ? props.submittingText : props.buttonText}
             />
           </form>

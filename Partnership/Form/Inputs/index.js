@@ -70,7 +70,7 @@ export function InputsWName(props) {
     resolver: yupResolver(schema),
     defaultValues: {
       agreement: true,
-      honeypot_check: "",
+      middle_name: "",
     },
   });
 
@@ -106,7 +106,7 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
-    if (values.honeypot_check) {
+    if (values.middle_name) {
       console.warn("Spam bot detected via honeypot!");
       return;
     }
@@ -149,11 +149,11 @@ export function InputsWName(props) {
       Promise.all([postToPRMResponse]).then(() => {
         debouncedSubmit("success", window.location.hostname);
         reset();
-      ReactGA.event("generate_lead", {
-        event_category: "form",
-        event_label: "submit",
-        page_path: router.pathname,
-      });
+        ReactGA.event("generate_lead", {
+          event_category: "form",
+          event_label: "submit",
+          page_path: router.pathname,
+        });
         if (typeof window !== "undefined" && window.fbq) {
           window.fbq("track", "Lead", {}, { eventID: eventId });
         }
@@ -189,24 +189,15 @@ export function InputsWName(props) {
           <h3>Company details</h3>
           <div className={style.input_out__outer}>
             <div
-              style={{
-                position: "absolute",
-                opacity: 0,
-                top: 0,
-                left: 0,
-                height: 0,
-                width: 0,
-                zIndex: -1,
-                overflow: "hidden",
-              }}
+              style={{ position: "absolute", left: "-9999px" }}
               aria-hidden="true"
             >
               <input
                 type="text"
                 tabIndex="-1"
-                autoComplete="new-password"
-                id="honeypot_check"
-                {...register("honeypot_check")}
+                autoComplete="middle_name"
+                id="middle_name"
+                {...register("middle_name")}
               />
             </div>
             <div className={style.input__label}>
@@ -547,7 +538,7 @@ export function InputsWName(props) {
           <button
             className={style.button}
             type="submit"
-            disabled={!isValid || isSubmitting}
+            disabled={!isValid || isSubmitting || !turnstileToken}
             style={{
               cursor: !isValid || isSubmitting ? "not-allowed" : "pointer",
               opacity: !isValid || isSubmitting ? 0.5 : 1,
