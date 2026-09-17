@@ -160,7 +160,7 @@ export function InputsWName(props) {
       });
     } catch (error) {
       if (error.response.data) {
-        handleServerErrors(error.response.data);
+        handleServerErrors(error, setError);
       } else {
         await axios.post(
           "https://back.netronic.net/telegram/send-error-message",
