@@ -25,6 +25,7 @@ import { sendEventToConversionApi } from "../../lt-modules/functions/sendFbPageV
 import { selectOptions } from "../../constants/globalConstants";
 import { schema } from "../../Layouts/validate.js";
 import { generateUUID } from "../../lt-modules/functions/generateUUID";
+import { handleServerErrors } from "../../lt-modules/functions/handleServerErrors.js";
 
 const inputsLandTheme = {
   default: style.input_land,
@@ -55,17 +56,6 @@ export function Inputs(props) {
   useEffect(() => {
     formRenderTime.current = Date.now();
   }, []);
-
-  const handleServerErrors = (error) => {
-    Object.entries(error).forEach(([key, message]) => {
-      if (["name", "email", "phoneNumber"].includes(key)) {
-        setError(key, {
-          type: "server",
-          message,
-        });
-      }
-    });
-  };
 
   const customStyles = {
     control: (provided) => ({
@@ -472,17 +462,6 @@ export function InputsWName(props) {
   }, []);
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const handleServerErrors = (error) => {
-    Object.entries(error).forEach(([key, message]) => {
-      if (["name", "email", "phoneNumber"].includes(key)) {
-        setError(key, {
-          type: "server",
-          message,
-        });
-      }
-    });
-  };
 
   const {
     register,

@@ -23,6 +23,7 @@ import { CountryDropdown } from "../../../../components/CountryDropdown";
 import { ChangeOptions } from "../../../../components/ChangeOptions";
 import { companyOptions } from "../../../../constants/globalConstants.js";
 import { getName } from "country-list";
+import { handleServerErrors } from "../../../../lt-modules/functions/handleServerErrors.js";
 
 const debouncedSubmit = debounce(async (type, siteName) => {
   try {
@@ -88,17 +89,6 @@ export function InputsWName(props) {
       }, 300);
     }
   }, []);
-
-  const handleServerErrors = (error) => {
-    Object.entries(error).forEach(([key, message]) => {
-      if (["name", "email", "phoneNumber"].includes(key)) {
-        setError(key, {
-          type: "server",
-          message,
-        });
-      }
-    });
-  };
 
   const handleAgreementChange = (e) => {
     setValue("agreement", !getValues("agreement"));
