@@ -6,7 +6,6 @@ import { BreadCrumbs } from "../../../lt-modules/BreadCrumbs";
 export default function SiriusMain(props) {
   return (
     <div className={style.section_general}>
-      <h1 className="hidden">{props.hiddenTitle}</h1>
       <div className={`${style.section_general_bg} desktop`}>
         <Image
           src="/sirius/sirius-home.jpg"
