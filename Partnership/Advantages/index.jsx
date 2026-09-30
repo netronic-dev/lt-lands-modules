@@ -13,7 +13,7 @@ const PartnershipAdvantages = (props) => {
                             key={index}
                         >
                             <div className={style.icon}>
-                                <Image src={item.icon} alt='icon' />
+                                <Image src={item.icon} alt={item.alt} />
                             </div>
                             <p className={style.text}>{item.text}</p>
                         </div>

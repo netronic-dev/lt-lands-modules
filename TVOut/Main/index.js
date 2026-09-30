@@ -15,7 +15,7 @@ export default function TVMain(props) {
             objectFit="contain"
             objectPosition="50% 15%"
             priority={true}
-            alt="tvoutbg"
+            alt="Show the game with TV-OUT photo"
           />
         </Fade>
       </div>

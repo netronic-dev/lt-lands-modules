@@ -8,54 +8,42 @@ export function PhoneSection(props) {
   })
   return (
     <div className={style.phoneSection} ref={ref} key={isVisible ? 0 : 1}>
-      <div className={`${style.firstCard} zoom-animation`}
+      <div
+        className={`${style.firstCard} zoom-animation`}
         style={{ backgroundColor: props.bgColor }}
       >
-        <div className={style.card_first_inside} >
-          <h3>
-            {props.title}
-          </h3>
+        <div className={style.card_first_inside}>
+          <h3>{props.title}</h3>
           <div className={style.grid_icon_text}>
             <div className={style.item}>
-              <img src="/PhoneSection/icon6.svg" alt="icon6" />
-              <p className={`${style.text} paragraph`}>
-                {props.first}
-              </p>
+              <img src="/PhoneSection/icon6.svg" alt="Sirius photo 15" />
+              <p className={`${style.text} paragraph`}>{props.first}</p>
             </div>
             <div className={style.item}>
-              <img src="/PhoneSection/icon5.svg" alt="icon5" />
-              <p className={`${style.text} paragraph`}>
-                {props.second}
-              </p>
+              <img src="/PhoneSection/icon5.svg" alt="Sirius photo 16" />
+              <p className={`${style.text} paragraph`}>{props.second}</p>
             </div>
             <div className={style.item}>
-              <img src="/PhoneSection/icon2.svg" alt="icon2" />
-              <p className={`${style.text} paragraph`}>
-                {props.third}
-              </p>
+              <img src="/PhoneSection/icon2.svg" alt="Sirius photo 17" />
+              <p className={`${style.text} paragraph`}>{props.third}</p>
             </div>
             <div className={style.item}>
-              <img src="/PhoneSection/icon1.svg" alt="icon1" />
-              <p className={`${style.text} paragraph`}>
-                {props.fourth}
-              </p>
+              <img src="/PhoneSection/icon1.svg" alt="Sirius photo 18" />
+              <p className={`${style.text} paragraph`}>{props.fourth}</p>
             </div>
             <div>
-              <img src="/PhoneSection/icon3.svg" alt="icon3" />
-              <p className={`${style.text} paragraph`}>
-                {props.fivth}
-              </p>
+              <img src="/PhoneSection/icon3.svg" alt="Sirius photo 19" />
+              <p className={`${style.text} paragraph`}>{props.fivth}</p>
             </div>
             <div>
-              <img src="/PhoneSection/icon4.svg" alt="icon4" />
-              <p className={`${style.text} paragraph`}>
-                {props.sixth}
-              </p>
+              <img src="/PhoneSection/icon4.svg" alt="Sirius photo 20" />
+              <p className={`${style.text} paragraph`}>{props.sixth}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className={`${style.secondCard} zoom-animation animated-second`}
+      <div
+        className={`${style.secondCard} zoom-animation animated-second`}
         style={{ backgroundColor: props.bgColor }}
       >
         <Image
@@ -63,7 +51,7 @@ export function PhoneSection(props) {
           src={props.image}
           width={425}
           height={870}
-          alt="Phone Section image"
+          alt="Sirius photo 21"
         />
       </div>
     </div>

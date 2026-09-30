@@ -12,7 +12,7 @@ export default function TVTable(props) {
         <Fade direction="up" triggerOnce>
           <Image
             src="/tvOut/devices-new.jpg"
-            alt="devices"
+            alt="Show the game with TV-OUT photo 13"
             layout="responsive"
             width={1170}
             height={760}

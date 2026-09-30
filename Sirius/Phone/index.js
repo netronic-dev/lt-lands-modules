@@ -16,7 +16,7 @@ export default function SiriusPhone(props) {
             layout="responsive"
             width={1170}
             height={665}
-            alt="sirius phone remote controle"
+            alt="Sirius photo 14"
           />
         </div>
       </div>

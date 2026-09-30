@@ -12,7 +12,7 @@ const PartnershipLanguages = (props) => {
                             <div className={style.icon_wrapper}>
                                 <Image
                                     src={item.src}
-                                    alt={item.text}
+                                    alt={item.alt}
                                     width={item.width}
                                     height={item.height}
                                     quality={100}

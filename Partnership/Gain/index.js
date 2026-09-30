@@ -63,6 +63,7 @@ export default function LPGain(props) {
                     subTitle={data.subTitle}
                     name={data.name}
                     image={data.image}
+                    alt={data.alt}
                     width={data.image_width}
                     height={data.image_height}
                     flag={data.flag}
@@ -90,12 +91,12 @@ function Cell(props) {
           }}
           width={props.width}
           height={props.height}
-          alt="Gain image"
+          alt={props.alt}
         />
       </div>
       <h3 className={style.cell__name}>{props.name}</h3>
       <div className={style.cell__info}>
-        <img src={props.flag} className={style.cell__flag} alt="Flag" />
+        <img src={props.flag} className={style.cell__flag} alt={props.altFlag} />
         <div className={style.text_block}>
           <p className={style.cell__title}>{props.title}</p>
           <p className={style.cell__subtitle}>{props.subTitle}</p>

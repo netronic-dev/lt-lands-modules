@@ -20,7 +20,7 @@ export default function SiriusDeactivate(props) {
             layout="fill"
             objectFit="cover"
             objectPosition="0% 100%"
-            alt="sirius target"
+            alt="Sirius photo 13"
           />
         </div>
       </div>

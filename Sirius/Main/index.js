@@ -12,7 +12,7 @@ export default function SiriusMain(props) {
           layout="fill"
           objectFit="cover"
           objectPosition="70% 50%"
-          alt="sirius home"
+          alt="Sirius photo"
         />
       </div>
       <div className={`${style.section_general_bg} mobile`}>

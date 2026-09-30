@@ -7,21 +7,17 @@ export default function TVStatistics(props) {
     <div className={style.lastgame_statistics}>
       <section>
         <Fade direction="up" triggerOnce>
-          <h2 className={style.h2}>
-            {props.title}
-          </h2>
+          <h2 className={style.h2}>{props.title}</h2>
         </Fade>
         <Fade direction="up" triggerOnce>
-          <p className="paragraph">
-            {props.text}
-          </p>
+          <p className="paragraph">{props.text}</p>
         </Fade>
-      </section >
+      </section>
       <div className={style.lastgame_statistics__img}>
         <Fade direction="up" triggerOnce>
           <Image
             src="/tvOut/tvscore.png"
-            alt="tvscore"
+            alt="Show the game with TV-OUT photo 9"
             layout="responsive"
             width={1025}
             height={675}
@@ -29,6 +25,6 @@ export default function TVStatistics(props) {
           />
         </Fade>
       </div>
-    </div >
-  )
+    </div>
+  );
 }

@@ -23,7 +23,7 @@ export default function TVCards(props) {
         >
           <Image
             src="/tvOut/tv.jpg"
-            alt="Statistic"
+            alt="Show the game with TV-OUT photo 6"
             layout="responsive"
             width={1170}
             height={580}
@@ -41,7 +41,7 @@ export default function TVCards(props) {
           <div className={style.grid_easy_game__img}>
             <img
               src={props.secondImage ? props.secondImage : "/tvOut/cell.svg"}
-              alt="cell"
+              alt="Show the game with TV-OUT photo 7"
             />
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function TVCards(props) {
           <h3>{props.cardTwoTitle}</h3>
           <p className="paragraph">{props.cardTwoText}</p>
           <div className={style.grid_easy_game__img}>
-            <img src="/tvOut/statistic.svg" alt="statistic" />
+            <img src="/tvOut/statistic.svg" alt="Show the game with TV-OUT photo 8" />
           </div>
         </div>
       </div>
