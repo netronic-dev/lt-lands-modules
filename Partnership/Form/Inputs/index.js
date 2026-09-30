@@ -159,16 +159,30 @@ export function InputsWName(props) {
         router.push("/thanks-call");
       });
     } catch (error) {
-      if (error.response.data) {
-        handleServerErrors(error, setError);
-      } else {
-        await axios.post(
-          "https://back.netronic.net/telegram/send-error-message",
-          {
-            message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
-          },
-        );
+      // if (error.response.data) {
+      //   handleServerErrors(error, setError);
+      // } else {
+      //   await axios.post(
+      //     "https://back.netronic.net/telegram/send-error-message",
+      //     {
+      //       message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
+      //     },
+      //   );
+      // }
+      await axios.post(
+        "https://back.netronic.net/telegram/send-error-message",
+        {
+          message: `CREATE PARTNER FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
+        },
+      );
+
+      const serverData = error.response?.data;
+      const errorMessage = serverData?.errorMessage;
+
+      if (errorMessage) {
+        toast.error(errorMessage);
       }
+      handleServerErrors(error, setError);
     }
   };
 
