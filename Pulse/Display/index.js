@@ -11,7 +11,7 @@ export default function PulseDisplay(props) {
             layout="fill"
             objectFit="cover"
             objectPosition="50% 50%"
-            alt="display"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 8"
           />
         </div>
         <div className={style.empty}></div>
@@ -19,15 +19,15 @@ export default function PulseDisplay(props) {
           <h2>{props.title}</h2>
           <div className={style.section_oled_grid}>
             <div>
-              <img src="/GalaxyPulse/game-indicators.svg" alt="Indicators" />
+              <img src="/GalaxyPulse/game-indicators.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 9" />
               <p className="paragraph">{props.cellText}</p>
             </div>
             <div>
-              <img src="/GalaxyPulse/screen.svg" alt="Screen" />
+              <img src="/GalaxyPulse/screen.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 10" />
               <p className="paragraph">{props.cellTwoText}</p>
             </div>
             <div>
-              <img src="/GalaxyPulse/glass.svg" alt="Glass" />
+              <img src="/GalaxyPulse/glass.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 11" />
               <p className="paragraph">{props.cellThreeText}</p>
             </div>
           </div>
@@ -40,21 +40,21 @@ export default function PulseDisplay(props) {
             layout="responsive"
             width={466}
             height={918}
-            alt="display-mob"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 12"
           />
         </div>
         <h2 className={style.section_oled_title}>{props.title}</h2>
         <div className={style.section_oled_grid_mob}>
           <div>
-            <img src="/GalaxyPulse/game-indicators.svg" alt="Game-indicators" />
+            <img src="/GalaxyPulse/game-indicators.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 13" />
             <p className="paragraph">{props.cellText}</p>
           </div>
           <div>
-            <img src="/GalaxyPulse/screen.svg" alt="Screen" />
+            <img src="/GalaxyPulse/screen.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 14" />
             <p className="paragraph">{props.cellTwoText}</p>
           </div>
           <div>
-            <img src="/GalaxyPulse/glass.svg" alt="Glass" />
+            <img src="/GalaxyPulse/glass.svg" alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 15" />
             <p className="paragraph">{props.cellThreeText}</p>
           </div>
         </div>

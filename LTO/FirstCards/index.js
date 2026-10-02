@@ -39,14 +39,18 @@ export default function FirstCards(props) {
           <img
             src="/lasertagOperator/svg/lo-easy-2.svg"
             alt={props.cellText}
-            className="zoom-animation"
+            className="Lasertag Operator photo 4"
           />
           <p className="paragraph fade-up-animation">{props.cellText}</p>
         </div>
         <div className={style.column}>
           <img
             src="/lasertagOperator/svg/lo-easy-1.svg"
-            alt={props.cellTwoText}
+            alt={
+              props.cellTwoText
+                ? props.cellTwoText
+                : "Lasertag Operator photo 5"
+            }
             className="zoom-animation"
           />
           <p className="paragraph fade-up-animation">{props.cellTwoText}</p>
@@ -54,7 +58,11 @@ export default function FirstCards(props) {
         <div className={style.column}>
           <img
             src="/lasertagOperator/svg/lo-easy-3.svg"
-            alt={props.cellThreeText}
+            alt={
+              props.cellThreeText
+                ? props.cellThreeText
+                : "Lasertag Operator photo 6"
+            }
             className="zoom-animation"
           />
           <p className="paragraph fade-up-animation">{props.cellThreeText}</p>
@@ -62,7 +70,11 @@ export default function FirstCards(props) {
         <div className={style.column}>
           <img
             src="/lasertagOperator/svg/lo-easy-4.svg"
-            alt={props.cellFourText}
+            alt={
+              props.cellFourText
+                ? props.cellFourText
+                : "Lasertag Operator photo 7"
+            }
             className="zoom-animation"
           />
           <p className="paragraph fade-up-animation">{props.cellFourText}</p>
@@ -88,7 +100,7 @@ export default function FirstCards(props) {
               layout="responsive"
               width={310}
               height={620}
-              alt="3 clicks"
+              alt="Lasertag Operator photo 8"
             />
           </div>
         </div>
@@ -111,56 +123,11 @@ export default function FirstCards(props) {
               layout="responsive"
               width={310}
               height={620}
-              alt="autoending"
+              alt="Lasertag Operator photo 9"
             />
           </div>
         </div>
       </div>
-      {/* <div className={style.grid_fastLearning}>
-                <div
-                    className={style.grid_card_left}
-                    ref={refCard3}
-                    key={card3IsVisible ? 'eg-card3-inview' : 'eg-card3'}
-                >
-                    <section className='fade-up-animation'>
-                        <h3>{props.cardThreeTitle}</h3>
-                        <p className='paragraph'>{props.cardThreeText}</p>
-                    </section>
-                    <div
-                        className={`${style.grid_fastLearning__img} zoom-animation`}
-                    >
-                        <div className={style.empty}></div>
-                        <Image
-                            src={
-                                props.thirdImage
-                                    ? props.thirdImage
-                                    : '/lasertagOperator/fastLearning.png'
-                            }
-                            layout='responsive'
-                            width={360}
-                            height={350}
-                        />
-                    </div>
-                </div>
-                <div
-                    className={style.card}
-                    ref={refCard4}
-                    key={card4IsVisible ? 'eg-card4-inview' : 'eg-card4'}
-                >
-                    <div className={`${style.image} zoom-animation`}>
-                        <Image
-                            src={
-                                props.fourthImage
-                                    ? props.fourthImage
-                                    : '/lasertagOperator/fastLearning-2.jpg'
-                            }
-                            layout='responsive'
-                            width={310}
-                            height={620}
-                        />
-                    </div>
-                </div>
-            </div> */}
     </section>
   );
 }

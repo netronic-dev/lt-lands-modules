@@ -25,7 +25,7 @@ export default function Indication(props) {
           width={1920}
           height={1190}
           priority={true}
-          alt="girl with gun"
+          alt="Headband for outdoor laser tag photo 20"
         />
       </div>
       <div className={`${style.hit_indication__image} mobile fade-animation`}>
@@ -35,7 +35,7 @@ export default function Indication(props) {
           width={466}
           height={612}
           priority={true}
-          alt="girl with gun mobile"
+          alt="Headband for outdoor laser tag photo 21"
         />
       </div>
     </div>

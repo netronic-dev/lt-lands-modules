@@ -12,10 +12,14 @@ export default function HowItWorks(props) {
       <div className={style.bg__CSVGT}>
         <ColumnsSvgText2
           style="blackest"
-          svgOne={<img src="/scorpion/svg/icon4.svg" alt="icon4" />}
+          svgOne={
+            <img src="/scorpion/svg/icon4.svg" alt="Shock-band photo 2" />
+          }
           titleOne={props.titleOne}
           textOne={props.textOne}
-          svgTwo={<img src="/scorpion/svg/icon5.svg" alt="icon5" />}
+          svgTwo={
+            <img src="/scorpion/svg/icon5.svg" alt="Shock-band photo 3" />
+          }
           titleTwo={props.titleTwo}
           textTwo={props.textTwo}
         />
@@ -27,7 +31,7 @@ export default function HowItWorks(props) {
             height={715}
             width={1920}
             layout="responsive"
-            alt="manwithgun"
+            alt="Shock-band photo 4"
           />
         </div>
         <div className="mobile">
@@ -36,7 +40,7 @@ export default function HowItWorks(props) {
             height={345}
             width={470}
             layout="responsive"
-            alt="manwithgun"
+            alt="Shock-band photo 5"
           />
         </div>
       </Fade>

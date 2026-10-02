@@ -46,7 +46,7 @@ export default function SecondCards(props) {
                 layout="responsive"
                 width={365}
                 height={375}
-                alt="statistics"
+                alt="Lasertag Operator photo 10"
               />
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function SecondCards(props) {
               layout="responsive"
               width={310}
               height={620}
-              alt="alone image"
+              alt="Lasertag Operator photo 11"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function SecondCards(props) {
                 layout="responsive"
                 width={1200}
                 height={390}
-                alt="performanceIndicators"
+                alt="Lasertag Operator photo 12"
               />
             </div>
           </div>

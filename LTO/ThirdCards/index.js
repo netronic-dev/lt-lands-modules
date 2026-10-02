@@ -57,7 +57,11 @@ export default function ThirdCards(props) {
             <div className={style.grid_ready_chars__img}>
               <img
                 src="/lasertagOperator/svg/char-2.svg"
-                alt={props.characterTwoName}
+                alt={
+                  props.characterTwoName
+                    ? props.characterTwoName
+                    : "Lasertag Operator photo 13"
+                }
               />
             </div>
             <p>{props.characterTwoName}</p>
@@ -66,7 +70,11 @@ export default function ThirdCards(props) {
             <div className={style.grid_ready_chars__img}>
               <img
                 src="/lasertagOperator/svg/char-3.svg"
-                alt={props.characterThreeName}
+                alt={
+                  props.characterThreeName
+                    ? props.characterThreeName
+                    : "Lasertag Operator photo 14"
+                }
               />
             </div>
             <p>{props.characterThreeName}</p>
@@ -75,7 +83,11 @@ export default function ThirdCards(props) {
             <div className={style.grid_ready_chars__img}>
               <img
                 src="/lasertagOperator/svg/char-4.svg"
-                alt={props.characterFourName}
+                alt={
+                  props.characterFourName
+                    ? props.characterFourName
+                    : "Lasertag Operator photo 15"
+                }
               />
             </div>
             <p>{props.characterFourName}</p>
@@ -84,7 +96,11 @@ export default function ThirdCards(props) {
             <div className={style.grid_ready_chars__img}>
               <img
                 src="/lasertagOperator/svg/char-5.svg"
-                alt={props.characterFiveName}
+                alt={
+                  props.characterFiveName
+                    ? props.characterFiveName
+                    : "Lasertag Operator photo 16"
+                }
               />
             </div>
             <p>{props.characterFiveName}</p>
@@ -93,7 +109,11 @@ export default function ThirdCards(props) {
             <div className={style.grid_ready_chars__img}>
               <img
                 src="/lasertagOperator/svg/char-6.svg"
-                alt={props.characterSixName}
+                alt={
+                  props.characterSixName
+                    ? props.characterSixName
+                    : "Lasertag Operator photo 17"
+                }
               />
             </div>
             <p>{props.characterSixName}</p>
@@ -116,7 +136,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-1.svg"
-                  alt="char-constr-1"
+                  alt="Lasertag Operator photo 18"
                 />
               }
               title={props.cellTitle}
@@ -127,7 +147,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-2.svg"
-                  alt="char-constr-2"
+                  alt="Lasertag Operator photo 19"
                 />
               }
               title={props.cellTwoTitle}
@@ -138,7 +158,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-3.svg"
-                  alt="char-constr-3"
+                  alt="Lasertag Operator photo 20"
                 />
               }
               title={props.cellThreeTitle}
@@ -149,7 +169,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-4.svg"
-                  alt="char-constr-4"
+                  alt="Lasertag Operator photo 21"
                 />
               }
               title={props.cellFourTitle}
@@ -160,7 +180,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-6.svg"
-                  alt="char-constr-6"
+                  alt="Lasertag Operator photo 22"
                 />
               }
               title={props.cellFiveTitle}
@@ -171,7 +191,7 @@ export default function ThirdCards(props) {
               icon={
                 <img
                   src="/lasertagOperator/svg/char-constr-5.svg"
-                  alt="char-constr-5"
+                  alt="Lasertag Operator photo 23"
                 />
               }
               title={props.cellSixTitle}
@@ -198,7 +218,7 @@ export default function ThirdCards(props) {
               layout="responsive"
               width={310}
               height={620}
-              alt="accessToolbar"
+              alt="Lasertag Operator photo 24"
             />
           </div>
         </div>

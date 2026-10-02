@@ -20,7 +20,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
-            alt="first image"
+            alt="Lasertag Operator photo 25"
           />
         </div>
         <div className={style.phones_second}>
@@ -29,7 +29,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
-            alt="second image"
+            alt="Lasertag Operator photo 26"
           />
         </div>
         <div className={style.phones_third}>
@@ -38,7 +38,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
-            alt="lastScreenGeneral"
+            alt="Lasertag Operator photo 27"
           />
         </div>
         <div className={style.phones_fours}>
@@ -47,7 +47,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
-            alt="lastScreen3"
+            alt="Lasertag Operator photo 28"
           />
         </div>
         <div className={style.phones_fives}>
@@ -56,7 +56,7 @@ export default function Images(props) {
             layout="responsive"
             width={300}
             height={600}
-            alt="lastScreen4"
+            alt="Lasertag Operator photo 29"
           />
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function Modes(props) {
           key={isVisible ? "modes-card1" : "modes-card1-inview"}
         >
           <BlockIconText
-            icon={<img src="/bandNetronic/svg/5modes-1.svg" alt="5modes-1" />}
+            icon={<img src="/bandNetronic/svg/5modes-1.svg" alt="Headband for outdoor laser tag photo 7" />}
             title={props.bitTitle1}
             text={props.bitText1}
             style="black"
@@ -35,7 +35,7 @@ export default function Modes(props) {
           key={isVisible ? "modes-card2" : "modes-card2-inview"}
         >
           <BlockIconText
-            icon={<img src="/bandNetronic/svg/5modes-2.svg" alt="5modes-2" />}
+            icon={<img src="/bandNetronic/svg/5modes-2.svg" alt="Headband for outdoor laser tag photo 8" />}
             title={props.bitTitle2}
             text={props.bitText2}
             style="black"
@@ -46,7 +46,7 @@ export default function Modes(props) {
           key={isVisible ? "modes-card3" : "modes-card3-inview"}
         >
           <BlockIconText
-            icon={<img src="/bandNetronic/svg/5modes-3.svg" alt="5modes-3" />}
+            icon={<img src="/bandNetronic/svg/5modes-3.svg" alt="Headband for outdoor laser tag photo 9" />}
             title={props.bitTitle3}
             text={props.bitText3}
             style="black"
@@ -58,7 +58,7 @@ export default function Modes(props) {
           key={line2IsVisible ? "modes-card4" : "modes-card4-inview"}
         >
           <BlockIconText
-            icon={<img src="/bandNetronic/svg/5modes-4.svg" alt="5modes-4" />}
+            icon={<img src="/bandNetronic/svg/5modes-4.svg" alt="Headband for outdoor laser tag photo 10" />}
             title={props.bitTitle4}
             text={props.bitText4}
             style="black"
@@ -69,7 +69,7 @@ export default function Modes(props) {
           key={line2IsVisible ? "modes-card5" : "modes-card5-inview"}
         >
           <BlockIconText
-            icon={<img src="/bandNetronic/svg/5modes-5.svg" alt="5modes-5" />}
+            icon={<img src="/bandNetronic/svg/5modes-5.svg" alt="Headband for outdoor laser tag photo 11" />}
             title={props.bitTitle5}
             text={props.bitText5}
             style="black"

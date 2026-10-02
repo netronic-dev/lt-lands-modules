@@ -24,7 +24,7 @@ export default function Main(props) {
             quality={90}
             objectFit="contain"
             objectPosition="0% 0%"
-            alt="lasertagOperator"
+            alt={props.alt ? props.alt : "Lasertag Operator photo"}
           />
         </div>
         <div className={`${style.bg_first} mobile`}>
@@ -34,7 +34,7 @@ export default function Main(props) {
             quality={90}
             objectFit="contain"
             objectPosition="0% 0%"
-            alt="lasertagOperator mobile"
+            alt={props.alt ? props.alt : "Lasertag Operator photo 2"}
           />
         </div>
         <div className={style.inside_general}>
@@ -49,7 +49,7 @@ export default function Main(props) {
               width={355}
               height={720}
               quality={90}
-              alt="generalPhone"
+              alt={props.alt ? props.alt : "Lasertag Operator photo 3"}
             />
           </div>
           <div className={`${style.general_content} fade-up-animation`}>

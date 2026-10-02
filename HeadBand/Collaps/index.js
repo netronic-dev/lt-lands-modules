@@ -24,7 +24,7 @@ export default function Collaps(props) {
             width={992}
             height={505}
             priority={true}
-            alt="collapsibledesign"
+            alt="Headband for outdoor laser tag photo 18"
           />
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function Collaps(props) {
             src="/bandNetronic/collapsibledesign.jpg"
             layout="fill"
             objectFit="cover"
-            alt="collapsibledesign"
+            alt="Headband for outdoor laser tag photo 19"
           />
         </div>
         <section

@@ -33,7 +33,7 @@ export default function Control(props) {
             height={385}
             quality={90}
             priority={true}
-            alt="bandblue"
+            alt="Headband for outdoor laser tag photo 28"
           />
         </div>
         <div className={style.control_block_columnsvg}>

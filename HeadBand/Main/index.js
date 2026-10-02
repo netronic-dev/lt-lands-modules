@@ -19,7 +19,7 @@ export default function Main(props) {
           layout="fill"
           quality={90}
           priority={true}
-          alt="bg"
+          alt="Headband for outdoor laser tag photo"
         />
       </div>
       {props.breadcrumbData ? (
@@ -47,7 +47,7 @@ export default function Main(props) {
       >
         <Image
           src="/bandNetronic/band.png"
-          alt="band"
+          alt="Headband for outdoor laser tag photo 2"
           layout="responsive"
           width={1100}
           height={405}

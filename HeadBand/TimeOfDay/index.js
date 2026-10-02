@@ -18,7 +18,10 @@ export default function TimeOfDay(props) {
       </section>
       <div className={`${style.before_after} fade-animation`}>
         <div className={style.before_after__modes}>
-          <img src="/bandNetronic/svg/day.svg" alt="day image" />
+          <img
+            src="/bandNetronic/svg/day.svg"
+            alt="Headband for outdoor laser tag photo 24"
+          />
           <p className="paragraph">{props.defaultModeName}</p>
         </div>
         <div className={style.timeofday_image}>
@@ -28,11 +31,14 @@ export default function TimeOfDay(props) {
             width={1100}
             height={405}
             priority={true}
-            alt="band"
+            alt="Headband for outdoor laser tag photo 25"
           />
         </div>
         <div className={style.before_after__modes}>
-          <img src="/bandNetronic/svg/night.svg" alt="night" />
+          <img
+            src="/bandNetronic/svg/night.svg"
+            alt="Headband for outdoor laser tag photo 26"
+          />
           <p className="paragraph">{props.inversionName}</p>
         </div>
       </div>
@@ -43,7 +49,7 @@ export default function TimeOfDay(props) {
           width={775}
           height={355}
           priority={true}
-          alt="band responsive"
+          alt="Headband for outdoor laser tag photo 27"
         />
       </div>
     </div>

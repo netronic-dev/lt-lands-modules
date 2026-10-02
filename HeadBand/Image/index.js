@@ -15,7 +15,7 @@ export default function ImagePage(props) {
           height={1320}
           quality={90}
           priority={true}
-          alt="rainbow band"
+          alt="Headband for outdoor laser tag photo 12"
         />
       </div>
       <div className="mobile">
@@ -26,7 +26,7 @@ export default function ImagePage(props) {
           height={335}
           quality={90}
           priority={true}
-          alt="rainbow band mobile"
+          alt="Headband for outdoor laser tag photo 13"
         />
       </div>
     </div>

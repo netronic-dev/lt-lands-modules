@@ -16,7 +16,7 @@ export default function SiriusPhone(props) {
             layout="responsive"
             width={1170}
             height={665}
-            alt="Sirius photo 14"
+            alt="Game based device Sirius photo 15"
           />
         </div>
       </div>
@@ -33,6 +33,7 @@ export default function SiriusPhone(props) {
           fivth={props.fivth}
           sixth={props.sixth}
           image="/PhoneSection/sirius.jpg"
+          alt="Game based device Sirius photo 16"
           bgColor="#101010"
         />
       </div>

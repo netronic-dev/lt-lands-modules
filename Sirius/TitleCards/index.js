@@ -22,7 +22,7 @@ export default function SiriusTitleCards(props) {
               layout="responsive"
               width={775}
               height={515}
-              alt="Sirius photo 2"
+              alt="Game based device Sirius photo 3"
             />
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function SiriusTitleCards(props) {
           layout="responsive"
           width={1920}
           height={825}
-          alt="Sirius photo 3"
+          alt="Game based device Sirius photo 4"
         />
       </div>
       <div className="mobile">
@@ -42,7 +42,7 @@ export default function SiriusTitleCards(props) {
           layout="responsive"
           width={470}
           height={555}
-          alt="Sirius photo 4"
+          alt="Game based device Sirius photo 5"
         />
       </div>
     </>

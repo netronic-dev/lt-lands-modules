@@ -35,7 +35,7 @@ export default function PulseMain(props) {
             width={1015}
             height={1205}
             quality={90}
-            alt="vest and gun"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo"
           />
         </div>
         <div

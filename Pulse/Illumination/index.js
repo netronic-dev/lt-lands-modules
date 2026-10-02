@@ -22,7 +22,7 @@ export default function PulseIllumination(props) {
             layout="responsive"
             width={491}
             height={655}
-            alt="laser"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 4"
           />
         </div>
         <div className={`${style.laserRay} zoom-animation`}>
@@ -31,7 +31,7 @@ export default function PulseIllumination(props) {
               objectFit="cover"
               src="/GalaxyPulse/laser.jpg"
               layout="fill"
-              alt="laser"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 5"
             />
           </div>
           <section className={style.cards_content}>
@@ -47,7 +47,7 @@ export default function PulseIllumination(props) {
             layout="responsive"
             width={433}
             height={491}
-            alt="blustercloser-mob"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 6"
           />
         </div>
         <div
@@ -58,7 +58,7 @@ export default function PulseIllumination(props) {
               objectFit="cover"
               src="/GalaxyPulse/blustercloser.jpg"
               layout="fill"
-              alt="blustercloser"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 7"
             />
           </div>
           <section className={style.cards_content}>

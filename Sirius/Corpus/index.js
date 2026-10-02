@@ -15,7 +15,7 @@ export default function SiriusCorpus(props) {
             layout="responsive"
             width={1170}
             height={900}
-            alt="Sirius photo 22"
+            alt={props.alt ? props.alt : "Game based device Sirius photo 22"}
           />
         </div>
         <div className={style.cards}>
@@ -29,7 +29,7 @@ export default function SiriusCorpus(props) {
               layout="responsive"
               width={775}
               height={515}
-              alt="Sirius photo 23"
+              alt="Game based device Sirius photo 23"
             />
           </div>
         </div>

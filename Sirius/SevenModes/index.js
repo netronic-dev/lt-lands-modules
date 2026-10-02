@@ -15,7 +15,7 @@ export default function SiriusSevenModes(props) {
       <div className={style.block_icon_text}>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon1.svg" alt="Sirius photo 5" />}
+            icon={<img src="/sirius/icon1.svg" alt="Game based device Sirius photo 6" />}
             title={props.bitOneTitle}
             text={props.bitOneText}
             style="black"
@@ -23,7 +23,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon2.svg" alt="Sirius photo 6" />}
+            icon={<img src="/sirius/icon2.svg" alt="Game based device Sirius photo 7" />}
             title={props.bitTwoTitle}
             text={props.bitTwoText}
             style="black"
@@ -31,7 +31,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon3.svg" alt="Sirius photo 7" />}
+            icon={<img src="/sirius/icon3.svg" alt="Game based device Sirius photo 8" />}
             title={props.bitThreeTitle}
             text={props.bitThreeText}
             style="black"
@@ -39,7 +39,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon4.svg" alt="Sirius photo 8" />}
+            icon={<img src="/sirius/icon4.svg" alt="Game based device Sirius photo 9" />}
             title={props.bitFourTitle}
             text={props.bitFourText}
             style="black"
@@ -47,7 +47,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon5.svg" alt="Sirius photo 9" />}
+            icon={<img src="/sirius/icon5.svg" alt="Game based device Sirius photo 10" />}
             title={props.bitFiveTitle}
             text={props.bitFiveText}
             style="black"
@@ -55,7 +55,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon6.svg" alt="Sirius photo 10" />}
+            icon={<img src="/sirius/icon6.svg" alt="Game based device Sirius photo 11" />}
             title={props.bitSixTitle}
             text={props.bitSixText}
             style="black"
@@ -63,7 +63,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon7.svg" alt="Sirius photo 11" />}
+            icon={<img src="/sirius/icon7.svg" alt="Game based device Sirius photo 12" />}
             title={props.bitSevenTitle}
             text={props.bitSevenText}
             style="black"
@@ -71,7 +71,7 @@ export default function SiriusSevenModes(props) {
         </div>
         <div className={style.bit_sirius_cell}>
           <BlockIconText
-            icon={<img src="/sirius/icon8.svg" alt="Sirius photo 12" />}
+            icon={<img src="/sirius/icon8.svg" alt="Game based device Sirius photo 13" />}
             title={props.bitEightTitle}
             text={props.bitEightText}
             style="black"

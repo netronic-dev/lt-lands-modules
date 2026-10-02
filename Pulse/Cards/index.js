@@ -12,7 +12,7 @@ export default function PulseCards(props) {
           layout="responsive"
           width={435}
           height={655}
-          alt="Cable mob"
+          alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 16"
         />
       </div>
       <div className={style.grid_equip}>
@@ -21,7 +21,7 @@ export default function PulseCards(props) {
             objectFit="cover"
             src="/GalaxyPulse/cable.jpg"
             layout="fill"
-            alt="Cable"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 17"
           />
         </div>
         <section className={style.cards_content}>
@@ -38,7 +38,7 @@ export default function PulseCards(props) {
             layout="responsive"
             width={595}
             height={885}
-            alt="Vest closer"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 18"
           />
         </div>
         <div className={style.grid_equip_cardone}>
@@ -47,7 +47,7 @@ export default function PulseCards(props) {
               objectFit="cover"
               src="/GalaxyPulse/vestcloser.jpg"
               layout="fill"
-              alt="Vest closer"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 19"
             />
           </div>
           <section className={style.cards_content}>
@@ -64,7 +64,7 @@ export default function PulseCards(props) {
             layout="responsive"
             width={595}
             height={885}
-            alt="Sensor disassembled"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 20"
           />
         </div>
         <div className={style.grid_equip_cardtwo}>
@@ -73,7 +73,7 @@ export default function PulseCards(props) {
               objectFit="cover"
               src="/GalaxyPulse/sensordisassembled.jpg"
               layout="fill"
-              alt="Sensor disassembled"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 21"
             />
           </div>
           <section className={style.cards_content}>
@@ -91,7 +91,7 @@ export default function PulseCards(props) {
             layout="responsive"
             width={390}
             height={655}
-            alt="Vest belt"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 22"
           />
         </div>
         <div className={style.grid_equip_cardone}>
@@ -100,7 +100,7 @@ export default function PulseCards(props) {
               objectFit="cover"
               src="/GalaxyPulse/vestbelt.jpg"
               layout="fill"
-              alt="Vest belt"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 23"
             />
           </div>
           <section className={style.cards_content}>
@@ -116,7 +116,7 @@ export default function PulseCards(props) {
             layout="responsive"
             width={797}
             height={655}
-            alt="Vest"
+            alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 24"
           />
         </div>
         <div className={style.grid_equip_cardtwo}>
@@ -125,7 +125,7 @@ export default function PulseCards(props) {
               objectFit="cover"
               src="/GalaxyPulse/vest.jpg"
               layout="fill"
-              alt="Vest"
+              alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 25"
             />
           </div>
           <section className={style.cards_content}>

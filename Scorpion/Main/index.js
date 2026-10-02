@@ -17,7 +17,7 @@ export default function ScorpionMain(props) {
             src="/scorpion/shockbandbg.jpg"
             layout="fill"
             objectFit="cover"
-            alt="shockbandbg"
+            alt="Shock-band photo"
           />
         </div>
       </Fade>

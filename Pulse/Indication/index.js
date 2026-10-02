@@ -15,7 +15,7 @@ export default function PulseIndication(props) {
           width={1920}
           height={975}
           quality={90}
-          alt="two people with sensors"
+          alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 26"
         />
       </div>
       <div className={`mobile`}>
@@ -26,7 +26,7 @@ export default function PulseIndication(props) {
           quality={90}
           width={475}
           height={970}
-          alt="two people with sensors"
+          alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 27"
         />
       </div>
     </div>

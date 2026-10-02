@@ -19,7 +19,7 @@ export default function ChooseConfig(props) {
               height={765}
               width={775}
               layout="responsive"
-              alt="vestnshockband"
+              alt="Shock-band photo 22"
             />
           </Fade>
         </div>

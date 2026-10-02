@@ -21,7 +21,7 @@ export default function BlastWave(props) {
           width={575}
           height={400}
           priority={true}
-          alt="blastwave"
+          alt="Headband for outdoor laser tag photo 22"
         />
       </div>
       <div className="fade-up-animation animated-second">
@@ -33,7 +33,7 @@ export default function BlastWave(props) {
           width={575}
           height={400}
           priority={true}
-          alt="throughwounds"
+          alt="Headband for outdoor laser tag photo 23"
         />
       </div>
     </div>

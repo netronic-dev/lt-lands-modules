@@ -12,7 +12,7 @@ export default function SiriusWaterProtection(props) {
           layout="responsive"
           width={1920}
           height={910}
-          alt="Sirius photo 24"
+          alt="`Game based device Sirius photo 24`"
         />
       </div>
       <div className={style.block_half_outside}>
@@ -34,14 +34,14 @@ export default function SiriusWaterProtection(props) {
             layout="responsive"
             width={1240}
             height={790}
-            alt="Sirius photo 25"
+            alt={props.alt ? props.alt : "Game based device Sirius photo 25"}
           />
         </div>
         <div className={style.columns}>
           <div className={style.cell}>
             <BlockIconText
               icon={
-                <img src="/sirius/battery-charge.svg" alt="Sirius photo 26" />
+                <img src="/sirius/battery-charge.svg" alt="Game based device Sirius photo 26" />
               }
               title={props.bitTitle}
               text={props.bitText}
@@ -50,7 +50,7 @@ export default function SiriusWaterProtection(props) {
           </div>
           <div className={style.cell}>
             <BlockIconText
-              icon={<img src="/sirius/phone.svg" alt="Sirius photo 27" />}
+              icon={<img src="/sirius/phone.svg" alt="Game based device Sirius photo 27" />}
               title={props.bitTwoTitle}
               text={props.bitTwoText}
               style="45"

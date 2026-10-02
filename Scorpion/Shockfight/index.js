@@ -11,20 +11,20 @@ export default function Shockfight(props) {
       </Fade>
       <ColumnTextImage
         title={props.columnTitle}
-        svgOne={<img src="/scorpion/svg/icon7.svg" alt="icon7" />}
+        svgOne={<img src="/scorpion/svg/icon7.svg" alt="Shock-band photo 17" />}
         textOne={props.text}
-        svgTwo={<img src="/scorpion/svg/icon8.svg" alt="icon8" />}
+        svgTwo={<img src="/scorpion/svg/icon8.svg" alt="Shock-band photo 18" />}
         textTwo={props.textTwo}
-        svgThree={<img src="/scorpion/svg/icon10.svg" alt="icon10" />}
+        svgThree={<img src="/scorpion/svg/icon10.svg" alt="Shock-band photo 19" />}
         textThree={props.textThree}
-        svgFour={<img src="/scorpion/svg/icon13.svg" alt="icon13" />}
+        svgFour={<img src="/scorpion/svg/icon13.svg" alt="Shock-band photo 20" />}
         textFour={props.textFour}
         image={
           <Image
             src="/scorpion/gunnshockband.jpg"
             layout="fill"
             objectFit="cover"
-            alt="gunnshockband"
+            alt="Shock-band photo 21"
           />
         }
       />

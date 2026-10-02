@@ -23,7 +23,7 @@ export default function PulseImpulse(props) {
           layout="responsive"
           width={1920}
           height={955}
-          alt="two people w blusters"
+          alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 2"
         />
       </div>
       <div className={`${style.impulse_image} mobile fade-animation`}>
@@ -33,7 +33,7 @@ export default function PulseImpulse(props) {
           layout="responsive"
           width={465}
           height={705}
-          alt="two people w blusters"
+          alt="The world's only indoor laser tag Game-kit with impulse recoil simulation photo 3"
         />
       </div>
     </div>

@@ -26,7 +26,7 @@ export default function FiveModes(props) {
               height={607}
               width={675}
               layout="intrinsic"
-              alt="shockband"
+              alt="Shock-band photo 6"
             />
           </Fade>
           <Fade delay={500} triggerOnce>
@@ -35,7 +35,7 @@ export default function FiveModes(props) {
               height={190}
               width={215}
               layout="intrinsic"
-              alt="shockband"
+              alt="Shock-band photo 7"
             />
           </Fade>
         </div>
@@ -46,7 +46,7 @@ export default function FiveModes(props) {
         >
           <div className={`${style.fivemodes_grid_cell} zoom-animation`}>
             <BlockIconText
-              icon={<img src="/scorpion/svg/icon1.svg" alt="icon" />}
+              icon={<img src="/scorpion/svg/icon1.svg" alt="Shock-band photo 8" />}
               title={props.blockTitle}
               text={props.blockText}
               style="black"
@@ -56,7 +56,7 @@ export default function FiveModes(props) {
             className={`${style.fivemodes_grid_cell} zoom-animation animated-second`}
           >
             <BlockIconText
-              icon={<img src="/scorpion/svg/icon6.svg" alt="icon" />}
+              icon={<img src="/scorpion/svg/icon6.svg" alt="Shock-band photo 9" />}
               title={props.blockTitleTwo}
               text={props.blockTextTwo}
               style="black"

@@ -12,7 +12,7 @@ export default function SiriusMain(props) {
           layout="fill"
           objectFit="cover"
           objectPosition="70% 50%"
-          alt="Sirius photo"
+          alt="Game based device Sirius photo"
         />
       </div>
       <div className={`${style.section_general_bg} mobile`}>
@@ -21,7 +21,7 @@ export default function SiriusMain(props) {
           layout="fill"
           objectFit="cover"
           objectPosition="70% 50%"
-          alt="sirius home mobile"
+          alt="Game based device Sirius photo 2"
         />
       </div>
       <div className={style.inside_general}>
