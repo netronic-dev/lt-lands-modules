@@ -14,9 +14,9 @@ export default function FalconModifications(props) {
       >
         <Fade direction="up" triggerOnce>
           <div>
-            <h1 className={`${style.title_white} ${style.title}`}>
+            <h2 className={`${style.title_white} ${style.title}`}>
               {props.title}
-            </h1>
+            </h2>
             {props.subtitle && (
               <h3 className={`${style.title_white} ${style.title}`}>
                 {props.subtitle}
