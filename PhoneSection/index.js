@@ -51,7 +51,7 @@ export function PhoneSection(props) {
           src={props.image}
           width={425}
           height={870}
-          alt={props.alt}
+          alt={props.alt ? props.alt : "Phone section img"}
         />
       </div>
     </div>
