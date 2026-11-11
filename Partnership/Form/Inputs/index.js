@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import { debounce } from "lodash";
-import Turnstile from "../../../../lt-modules/functions/Turnstile";
+// import Turnstile from "../../../../lt-modules/functions/Turnstile";
 import "react-phone-input-2/lib/style.css";
 import ReactGA from "react-ga4";
 import style from "./style.module.scss";
@@ -43,12 +43,12 @@ export function InputsWName(props) {
   const [regionCode, setRegionCode] = useState();
   const modal = useModals();
   const eventId = generateUUID();
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const formRenderTime = useRef(Date.now());
+  // const [turnstileToken, setTurnstileToken] = useState("");
+  // const formRenderTime = useRef(Date.now());
 
-  useEffect(() => {
-    formRenderTime.current = Date.now();
-  }, []);
+  // useEffect(() => {
+  //   formRenderTime.current = Date.now();
+  // }, []);
 
   useEffect(() => {
     modal?.region
@@ -72,7 +72,7 @@ export function InputsWName(props) {
     resolver: yupResolver(schema),
     defaultValues: {
       agreement: true,
-      middle_name: "",
+      // middle_name: "",
     },
   });
 
@@ -97,22 +97,22 @@ export function InputsWName(props) {
   };
 
   const onSubmit = async (values) => {
-    if (values.middle_name) {
-      console.warn("Spam bot detected via honeypot!");
-      return;
-    }
+    // if (values.middle_name) {
+    //   console.warn("Spam bot detected via honeypot!");
+    //   return;
+    // }
 
-    const elapsedTime = (Date.now() - formRenderTime.current) / 1000;
-    if (elapsedTime < 4) {
-      console.warn(`Form submitted too fast: ${elapsedTime}s`);
-      alert("Please take your time filling out the form.");
-      return;
-    }
+    // const elapsedTime = (Date.now() - formRenderTime.current) / 1000;
+    // if (elapsedTime < 4) {
+    //   console.warn(`Form submitted too fast: ${elapsedTime}s`);
+    //   alert("Please take your time filling out the form.");
+    //   return;
+    // }
 
-    if (!turnstileToken) {
-      alert("Please wait for the CAPTCHA to be verified.");
-      return;
-    }
+    // if (!turnstileToken) {
+    //   alert("Please wait for the CAPTCHA to be verified.");
+    //   return;
+    // }
 
     debouncedSubmit("attempt", window.location.hostname);
     dispatch(setUserData(values.name));
@@ -123,7 +123,7 @@ export function InputsWName(props) {
       companyType: Array.isArray(values.companyType)
         ? values.companyType.join(", ")
         : values.companyType,
-      turnstileToken,
+      // turnstileToken,
     };
 
     try {
@@ -160,16 +160,6 @@ export function InputsWName(props) {
         router.push("/thanks-call");
       });
     } catch (error) {
-      // if (error.response.data) {
-      //   handleServerErrors(error, setError);
-      // } else {
-      //   await axios.post(
-      //     "https://back.netronic.net/telegram/send-error-message",
-      //     {
-      //       message: `frontend error: FORM SUBMIT ❌ ${window.location.hostname}: ${error}`,
-      //     },
-      //   );
-      // }
       await axios.post(
         "https://back.netronic.net/telegram/send-error-message",
         {
@@ -193,7 +183,7 @@ export function InputsWName(props) {
         <div className={style.content}>
           <h3>Company details</h3>
           <div className={style.input_out__outer}>
-            <div
+            {/* <div
               style={{ position: "absolute", left: "-9999px" }}
               aria-hidden="true"
             >
@@ -204,7 +194,7 @@ export function InputsWName(props) {
                 id="middle_name"
                 {...register("middle_name")}
               />
-            </div>
+            </div> */}
             <div className={style.input__label}>
               <input
                 className={style.input}
@@ -532,18 +522,19 @@ export function InputsWName(props) {
               />
             )}
           />
-          <Turnstile
+          {/* <Turnstile
             siteKey={
               process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
               "0x4AAAAAAD9nNenDNZ5KX93b"
             }
             onSuccess={(token) => setTurnstileToken(token)}
             onExpire={() => setTurnstileToken("")}
-          />
+          /> */}
           <button
             className={style.button}
             type="submit"
-            disabled={!isValid || isSubmitting || !turnstileToken}
+            // disabled={!isValid || isSubmitting || !turnstileToken}
+            disabled={!isValid || isSubmitting}
             style={{
               cursor: !isValid || isSubmitting ? "not-allowed" : "pointer",
               opacity: !isValid || isSubmitting ? 0.5 : 1,
