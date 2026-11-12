@@ -665,7 +665,7 @@ export function InputsWName(props) {
   };
 
   return (
-    <div className={style.input_land_out}>
+    <div className={style.input_land_out} id={props.id || ""}>
       <div
         ref={ref}
         key={isVisible ? 1 : 2}
