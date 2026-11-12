@@ -510,7 +510,7 @@ export function InputsWName(props) {
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
-      budget: values.budget.value,
+      budget: values.budget.value ? values.budget.value : "",
       // turnstileToken,
     };
 
@@ -783,35 +783,37 @@ export function InputsWName(props) {
                 />
                 <p className={style.error__message}>{errors.email?.message}</p>
               </div>
-              <div className={style.input_out__outer}>
-                <Controller
-                  control={control}
-                  name="budget"
-                  render={({ field }) => (
-                    <Select
-                      aria-label="Change budget"
-                      {...field}
-                      placeholder={
-                        props.budgetPlaceholder
-                          ? props.budgetPlaceholder
-                          : "Budget*"
-                      }
-                      options={selectOptions}
-                      isSearchable={false}
-                      components={{ DropdownIndicator }}
-                      onMenuOpen={handleMenuOpen}
-                      onMenuClose={handleMenuClose}
-                      menuIsOpen={menuIsOpen}
-                      styles={customStyles}
-                    />
+              {!props.isWithoutBudgetField && (
+                <div className={style.input_out__outer}>
+                  <Controller
+                    control={control}
+                    name="budget"
+                    render={({ field }) => (
+                      <Select
+                        aria-label="Change budget"
+                        {...field}
+                        placeholder={
+                          props.budgetPlaceholder
+                            ? props.budgetPlaceholder
+                            : "Budget*"
+                        }
+                        options={selectOptions}
+                        isSearchable={false}
+                        components={{ DropdownIndicator }}
+                        onMenuOpen={handleMenuOpen}
+                        onMenuClose={handleMenuClose}
+                        menuIsOpen={menuIsOpen}
+                        styles={customStyles}
+                      />
+                    )}
+                  />
+                  {errors.budget && (
+                    <p className={style.error__message}>
+                      {errors.budget.value.message}
+                    </p>
                   )}
-                />
-                {errors.budget && (
-                  <p className={style.error__message}>
-                    {errors.budget.value.message}
-                  </p>
-                )}
-              </div>
+                </div>
+              )}
             </div>
             <Controller
               name="agreement"
