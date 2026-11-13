@@ -28,6 +28,7 @@ function Form(props) {
         callPlaceholder={props.callPlaceholder}
         budgetPlaceholder={props.budgetPlaceholder}
         isWithoutBudgetField={props.isWithoutBudgetField}
+        thank_you_page={props.thank_you_page}
         id={props.id}
       />
     </div>
