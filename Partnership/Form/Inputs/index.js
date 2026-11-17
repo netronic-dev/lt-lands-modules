@@ -62,7 +62,7 @@ export function InputsWName(props) {
     mode: "onChange",
     resolver: yupResolver(schema),
     defaultValues: {
-      firstName: "",
+      fullName: "",
       email: "",
       companyType: [],
       agreement: true,
@@ -156,7 +156,7 @@ export function InputsWName(props) {
           {
             email: values.email,
             phone: `+${values.phoneNumber}`,
-            first_name: values.firstName,
+            first_name: values.fullName,
           },
           eventId,
         );
@@ -197,16 +197,14 @@ export function InputsWName(props) {
               <input
                 className={style.input}
                 style={{
-                  borderColor: errors.firstName ? "#d22e2e" : "#c4c4c4",
+                  borderColor: errors.fullName ? "#d22e2e" : "#c4c4c4",
                 }}
-                {...register("firstName", {
+                {...register("fullName", {
                   required: "Full name is required",
                 })}
-                placeholder={props.firstName || "Full name*"}
+                placeholder={props.fullName || "Full name*"}
               />
-              <p className={style.error__message}>
-                {errors.firstName?.message}
-              </p>
+              <p className={style.error__message}>{errors.fullName?.message}</p>
             </div>
           </div>
 
