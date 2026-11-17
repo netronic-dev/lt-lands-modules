@@ -110,7 +110,7 @@ export function InputsWName(props) {
       countryName = countryFixes[countryName];
     }
 
-    const options = companyOptions(t);
+    const options = companyOptions();
 
     const selectedLabels = Array.isArray(values.companyType)
       ? values.companyType
