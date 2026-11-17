@@ -613,6 +613,7 @@ import { useModals } from "../../../../context/ModalsProvider.js";
 import { generateUUID } from "../../../../lt-modules/functions/generateUUID";
 import { companyOptions } from "../../../../constants/globalConstants.js";
 import { handleServerErrors } from "../../../../lt-modules/functions/handleServerErrors.js";
+import { getLocationData } from "../../../../lt-modules/functions/postData.js";
 
 const debouncedSubmit = debounce(async (type, siteName) => {
   try {
@@ -971,7 +972,7 @@ export function InputsWName(props) {
           >
             {isSubmitting
               ? props.submittingText || "Submitting..."
-              : props.buttonText || "Submit"}
+              : props.buttonText || "Become a NETRONIC Partner"}
           </button>
 
           <small className={style.bottomNote}>
