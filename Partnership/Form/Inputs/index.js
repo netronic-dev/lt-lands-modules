@@ -110,11 +110,12 @@ export function InputsWName(props) {
       countryName = countryFixes[countryName];
     }
 
-    const options = companyOptions();
-
     const selectedLabels = Array.isArray(values.companyType)
       ? values.companyType
-          .map((val) => options.find((opt) => opt.value === val)?.label || val)
+          .map(
+            (val) =>
+              companyOptions.find((opt) => opt.value === val)?.label || val,
+          )
           .join(", ")
       : values.companyType;
 
