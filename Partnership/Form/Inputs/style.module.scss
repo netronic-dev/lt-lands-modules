@@ -1,22 +1,336 @@
+// .input_land_out {
+//   width: 100%;
+//   position: relative;
+//   overflow-x: hidden;
+// }
+
+// .content {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+
+//   .input_out__outer {
+//     position: relative;
+//   }
+
+//   .error {
+//     padding-left: 30px;
+//     font-family: "Manrope";
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 10px;
+//     line-height: 14px;
+//     color: #df2111;
+//   }
+
+//   .input {
+//     width: 100%;
+//     height: 40px;
+//     padding: 18px 0 19px 30px;
+//     background: transparent;
+//     border: 1px solid #c4c4c4;
+//     border-radius: 10px;
+//     outline: 0;
+//     font-family: "Manrope";
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 14px;
+//     line-height: 22px;
+//     color: #000000;
+
+//     &::placeholder {
+//       color: #000000;
+//     }
+//   }
+
+//   .error__message {
+//     position: absolute;
+//     left: 0;
+//     bottom: -14px;
+//     color: #d22e2e;
+//     font-size: 12px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: 140%;
+//   }
+
+//   .input_error {
+//     border: 1px solid #e92727;
+//   }
+
+//   .input:focus {
+//     border: 1px solid #0090ff;
+//     color: #000;
+//   }
+
+//   .input:last-child {
+//     margin-bottom: 0;
+//   }
+// }
+
+// .agreement__outer {
+//   position: relative;
+//   margin-top: 18px;
+
+//   .agreement {
+//     display: flex;
+//     align-items: center;
+//     gap: 12px;
+
+//     .agreement_dot_button {
+//       cursor: pointer;
+//       padding: 0;
+//       outline: 0;
+//       border: 0;
+//       height: max-content;
+//       background-color: transparent;
+
+//       // .dot {
+//       // 	fill: #383838;
+//       // }
+//     }
+
+//     .agreement_dot_button_active {
+//       padding: 0;
+//       cursor: pointer;
+//       outline: 0;
+//       border: 0;
+//       height: max-content;
+//       background-color: rgba(255, 255, 255, 0);
+
+//       .dot {
+//         fill: #0090ff;
+//       }
+//     }
+
+//     .agreement__text {
+//       font-family: "IBM Plex Sans";
+//       font-style: normal;
+//       font-weight: 400;
+//       font-size: 10px;
+//       line-height: 14px;
+//       color: #4f4f4f;
+
+//       a {
+//         color: #0090ff;
+//       }
+
+//       a:hover {
+//         color: #005ca3;
+//       }
+//     }
+//   }
+
+//   .error {
+//     position: absolute;
+//     font-family: "Manrope";
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 10px;
+//     line-height: 14px;
+//     color: #df2111;
+//   }
+// }
+
+// .note {
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 10px;
+// }
+
+// .select {
+//   width: 100%;
+//   height: 40px;
+//   padding-left: 25px;
+//   background: transparent;
+//   border: 1px solid #000000;
+//   border-radius: 10px;
+//   outline: 0;
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 22px;
+//   color: #000000;
+// }
+
+// .textarea {
+//   width: 100%;
+//   background: transparent;
+//   border: 1px solid #000000;
+//   border-radius: 10px;
+//   outline: 0;
+//   padding: 18px 0 19px 30px;
+//   resize: none;
+// }
+
+// .option {
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 22px;
+//   color: #000000;
+// }
+
+// .radioTitle {
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 22px;
+//   color: #000000;
+// }
+
+// .button {
+//   padding: 16px 30px;
+//   margin-top: 12px;
+//   background: #0090ff;
+//   border-radius: 60px;
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 600;
+//   font-size: 18px;
+//   line-height: 25px;
+//   text-align: center;
+//   letter-spacing: 0.02em;
+//   text-transform: uppercase;
+//   color: #ffffff;
+//   border: 0;
+//   outline: none;
+//   cursor: pointer;
+
+//   &:hover {
+//     transition: all 0.4s ease;
+//     background-color: #000;
+//     color: #fff;
+//   }
+// }
+
+// @media (max-width: 1200px) {
+//   // .content {
+//   //   display: flex;
+//   //   flex-direction: column;
+//   //   gap: 20px;
+
+//   //   .input_out__outer {
+//   //     position: relative;
+//   //   }
+
+//   //   .error {
+//   //     padding-left: 30px;
+//   //     font-family: "Manrope";
+//   //     font-style: normal;
+//   //     font-weight: 500;
+//   //     font-size: 10px;
+//   //     line-height: 14px;
+//   //     color: #df2111;
+//   //   }
+
+//   //   .input {
+//   //     width: 100%;
+//   //     height: 60px;
+//   //     padding: 18px 0 19px 30px;
+//   //     background: transparent;
+//   //     border: 1px solid #c4c4c4;
+//   //     border-radius: 10px;
+//   //     outline: 0;
+//   //     font-family: "Manrope";
+//   //     font-style: normal;
+//   //     font-weight: 500;
+//   //     font-size: 16px;
+//   //     line-height: 22px;
+//   //     color: #000000;
+
+//   //     &::placeholder {
+//   //       color: #000000;
+//   //     }
+//   //   }
+
+//   //   .input_error {
+//   //     border: 1px solid #e92727;
+//   //   }
+
+//   //   .input:focus {
+//   //     border: 1px solid #0090ff;
+//   //     color: #000;
+//   //   }
+
+//   //   .input:last-child {
+//   //     margin-bottom: 0;
+//   //   }
+//   // }
+// }
+
+// @media (max-width: 800px) {
+//   .input_land_out {
+//     margin-top: 18px;
+//   }
+
+//   .button {
+//     display: block;
+//     // margin: 41px auto 0 auto;
+//   }
+// }
+
+// @media (max-width: 500px) {
+//   .input_land_out {
+//     margin-top: 18px;
+//   }
+
+//   .button {
+//     width: 100%;
+//   }
+// }
+
 .input_land_out {
   width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
   position: relative;
   overflow-x: hidden;
+}
+
+.formDescription {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+
+  h3 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #111;
+    margin-bottom: 12px;
+  }
+
+  .contactGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
 
   .input_out__outer {
     position: relative;
+    width: 100%;
   }
 
   .error {
-    padding-left: 30px;
-    font-family: "Manrope";
-    font-style: normal;
+    padding-left: 0;
+    font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
@@ -26,51 +340,108 @@
   .input {
     width: 100%;
     height: 40px;
-    padding: 18px 0 19px 30px;
+    padding: 0 15px 0 15px;
     background: transparent;
     border: 1px solid #c4c4c4;
     border-radius: 10px;
     outline: 0;
-    font-family: "Manrope";
-    font-style: normal;
+    font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    line-height: 22px;
     color: #000000;
 
     &::placeholder {
-      color: #000000;
+      color: #666;
+    }
+
+    &:focus {
+      border: 1px solid #0090ff;
     }
   }
 
   .error__message {
     position: absolute;
     left: 0;
-    bottom: -14px;
+    bottom: -20px;
+    color: #d22e2e;
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .error__messageStatic {
     color: #d22e2e;
     font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
+    font-weight: 700;
+    margin-top: 6px;
   }
+}
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
 
-  .input_error {
-    border: 1px solid #e92727;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
+}
 
-  .input:focus {
-    border: 1px solid #0090ff;
-    color: #000;
-  }
+.checkboxCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
 
-  .input:last-child {
-    margin-bottom: 0;
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.5);
   }
+}
+
+.checkboxCardActive {
+  border-color: #000;
+  background-color: #fff;
+}
+
+.customCheckbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 4px;
+  border: 1px solid #383838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.customCheckboxActive {
+  background-color: #383838;
+  border-color: #383838;
+}
+
+.checkboxLabel {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #111;
+}
+
+.agreementWrapper {
+  margin-top: 16px;
+  margin-bottom: 20px;
 }
 
 .agreement__outer {
   position: relative;
-  margin-top: 18px;
 
   .agreement {
     display: flex;
@@ -84,10 +455,6 @@
       border: 0;
       height: max-content;
       background-color: transparent;
-
-      // .dot {
-      // 	fill: #383838;
-      // }
     }
 
     .agreement_dot_button_active {
@@ -96,7 +463,7 @@
       outline: 0;
       border: 0;
       height: max-content;
-      background-color: rgba(255, 255, 255, 0);
+      background-color: transparent;
 
       .dot {
         fill: #0090ff;
@@ -104,10 +471,10 @@
     }
 
     .agreement__text {
-      font-family: "IBM Plex Sans";
+      font-family: "IBM Plex Sans", sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 10px;
+      font-size: 11px;
       line-height: 14px;
       color: #4f4f4f;
 
@@ -123,76 +490,29 @@
 
   .error {
     position: absolute;
-    font-family: "Manrope";
-    font-style: normal;
+    font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
     color: #df2111;
+    margin-top: 4px;
   }
 }
 
-.note {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-}
-
-.select {
-  width: 100%;
-  height: 40px;
-  padding-left: 25px;
-  background: transparent;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  outline: 0;
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
-  color: #000000;
-}
-
-.textarea {
-  width: 100%;
-  background: transparent;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  outline: 0;
-  padding: 18px 0 19px 30px;
-  resize: none;
-}
-
-.option {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
-  color: #000000;
-}
-
-.radioTitle {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
-  color: #000000;
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-  padding: 16px 30px;
-  margin-top: 12px;
+  padding: 16px 40px;
+  margin-top: 8px;
   background: #0090ff;
   border-radius: 60px;
-  font-family: "Manrope";
-  font-style: normal;
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 22px;
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -200,86 +520,39 @@
   border: 0;
   outline: none;
   cursor: pointer;
+  transition: all 0.4s ease;
 
   &:hover {
-    transition: all 0.4s ease;
     background-color: #000;
     color: #fff;
   }
-}
 
-@media (max-width: 1200px) {
-  // .content {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 20px;
-
-  //   .input_out__outer {
-  //     position: relative;
-  //   }
-
-  //   .error {
-  //     padding-left: 30px;
-  //     font-family: "Manrope";
-  //     font-style: normal;
-  //     font-weight: 500;
-  //     font-size: 10px;
-  //     line-height: 14px;
-  //     color: #df2111;
-  //   }
-
-  //   .input {
-  //     width: 100%;
-  //     height: 60px;
-  //     padding: 18px 0 19px 30px;
-  //     background: transparent;
-  //     border: 1px solid #c4c4c4;
-  //     border-radius: 10px;
-  //     outline: 0;
-  //     font-family: "Manrope";
-  //     font-style: normal;
-  //     font-weight: 500;
-  //     font-size: 16px;
-  //     line-height: 22px;
-  //     color: #000000;
-
-  //     &::placeholder {
-  //       color: #000000;
-  //     }
-  //   }
-
-  //   .input_error {
-  //     border: 1px solid #e92727;
-  //   }
-
-  //   .input:focus {
-  //     border: 1px solid #0090ff;
-  //     color: #000;
-  //   }
-
-  //   .input:last-child {
-  //     margin-bottom: 0;
-  //   }
-  // }
-}
-
-@media (max-width: 800px) {
-  .input_land_out {
-    margin-top: 18px;
-  }
-
-  .button {
-    display: block;
-    // margin: 41px auto 0 auto;
-  }
-}
-
-@media (max-width: 500px) {
-  .input_land_out {
-    margin-top: 18px;
-  }
-
-  .button {
+  @media (max-width: 500px) {
     width: 100%;
+  }
+}
+
+.bottomNote {
+  display: block;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #555;
+  opacity: 0.8;
+}
+
+.note {
+  display: flex;
+  justify-content: center;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 30px;
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
   }
 }
