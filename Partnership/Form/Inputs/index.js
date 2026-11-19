@@ -119,8 +119,6 @@ export function InputsWName(props) {
           .join(", ")
       : values.companyType;
 
-    console.log(selectedLabels, "selectedLabels");
-
     const data = {
       ...values,
       phoneNumber: `+${values.phoneNumber}`,
